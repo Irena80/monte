@@ -1,0 +1,11 @@
+---
+import Button from '~/components/ui/Button.astro';
+const { imageURL, buttonText } = Astro.props;
+---
+
+<div class="mx-auto mb-44">
+    <img src={imageURL} alt="" class="w-96 h-full object-cover" />
+   <slot/>
+    <Button href="/" buttonText={buttonText} />
+</div>
+

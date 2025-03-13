@@ -1,0 +1,295 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/landet.astro
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
+import ComponentRight from '~/components/widgets/ComponentRight.astro';
+import DestinationCard from '~/components/DestinationCard.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import ImageGallery from '~/components/ImageGallery.astro';
+import Content from '~/components/widgets/Content.astro';
+import TitleBlock from '~/components/TitleBlock.astro';
+import FlexCard from '~/components/FlexCard.astro';
+
+
+const metadata = {
+  title: 'Inlandet',
+};
+
+const galleryImages = [
+  { src: '../src/assets/images/kolasin2.jpg', alt: 'Image 1' },
+  { src: '../src/assets/images/image2.jpg', alt: 'Image 2' },
+  { src: '../src/assets/images/image3.jpg', alt: 'Image 3' },
+  { src: '../src/assets/images/image4.jpg', alt: 'Image 4' },
+  { src: '../src/assets/images/image5.jpg', alt: 'Image 5' },
+  { src: '../src/assets/images/image6.jpg', alt: 'Image 6' },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    image={{
+      src: '~/assets/images/priroda.webp',
+      alt: 'Caos Image',
+    }}
+    actions={[
+      { text: 'Kolašin Valleys', icon: 'tabler:mountain', href: 'https://www.kolasinvalleys.com/' },
+    ]}
+  >
+    <Fragment slot="title">
+    Året runt<span class="hidden sm:inline"> </span> <span class="text-accent dark:text-white highlight">äventyr</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Låt oss guida dig till Montenegros bästa pärlor - en av Europas mest spännande och mångsidiga destination! Upplev landets bäst bevarade skidhemlighet, djupdyk i Europas sista orörda vildmark och njut av en aktiv semester. 
+    
+    </Fragment>
+  </Hero>
+
+ 
+
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed={true}
+    items={[
+      {
+        title: 'Europas bäst bevarade skidhemlighet',
+        description:
+          'Djupt inbäddad bland Europas sista orörda vildmark finns en dold pärla som väntar på att upptäckas. En sann bergsparadis inbäddad bland majestätiska höjder och imponerande djup. <br> <br> Omgiven av den imponerande bergskedjan Bjelasica har Kolašin med rätta förtjänat sitt rykte som en av de mest spektakulära skid- och vintersportdestinationerna i denna del av världen. Till skillnad från andra berg, har Bjelašicas vulkaniska ursprung resulterat i vita vintrar, gröna somrar och strömmande bäckar i överflöd. Toppar når över 2 200 meter och tack vare den närliggande nationalparken Biogradska Gora gör karga landskap och slingrande pister Kolašin Montenegros svar på de schweiziska alperna.',
+        icon: 'tabler:mountain',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/planina1.jpg',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kolašin Skidresort</h3>
+    </Fragment>
+  </Content>
+
+  
+
+  <!-- Content Widget **************** -->
+  <Content
+  isAfterContent
+    items={[
+      {
+        title: '5 nationalparker',
+        description:
+          'Ge dig in i Montenegros inland och upplev den fascinerande vilda sidan av detta lilla land, representerad av dess fem unika nationalparker, som tillsammans utgör 8 % av landets totala yta. Dessa parker är kanske landets mest populära sevärdheter! När man jämför dem med den vackra kustlinjen blir det tydligt att detta verkligen är en enastående destination. <br> Nationalparkerna Durmitor, Skadarsjön, Lovćen, Biogradska Gora och Prokletije kännetecknas av dramatiska bergslandskap, magnifika glaciärsjöar, en otrolig biologisk mångfald och mycket mer. <br> Oavsett var i Montenegro du befinner dig är du aldrig långt från någon av dessa naturskatter – och en rundtur genom dem är verkligen värd upplevelsen!',
+        icon: 'tabler:mountain',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/biograd.jpg',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Upplev UNESCOs naturarv </h3>
+    </Fragment>
+  </Content>
+
+
+  <!-- Content Widget **************** -->
+  <Content
+  isReversed={true}
+    items={[
+      {
+        title: 'De mest kända vandringslederna i Montenegro',
+        description:
+          'Montenegro är ett paradis för vandrare och äventyrare, med enastående naturliga landskap och spektakulära utsikter. Här är några av de mest kända vandringslederna i landet.<br> <br> Förutom Kotors stadsmurar och fästningen Sveti Ivan, varifrån den berömda utsikten över Boka Kotorska-bukten breder ut sig, samt Ivanova Korita och Njegoš-mausoleet på Lovćen, Savin Kuk på Durmitor och Svarta sjön, kan du vandra genom den nästan overkliga Lukavica-dalen till Kapetanovo-sjön. <br> <br> Ta dig sedan genom Mrtvica-kanjonen och Önskans port. Du kan också upptäcka det hjärtformade Trnovačko-sjön och uppleva Orjen-berget under en fullmånenatt. ' ,
+        icon: 'tabler:mountain',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hiking4.jpg',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Majestätiska berg </h3>
+    </Fragment>
+  </Content>
+
+ <!-- Content Widget **************** -->
+ <Content
+ isAfterContent
+ items={[
+   {
+     title: 'Canyoning i Montenegro',
+     description:
+       'Canyoning är det mest spännande sättet att utforska Montenegros floder och berg! Förbered dig på att klättra över hala klippor, hoppa från svindlande höjder och dyka ner i kanjonens iskalla vatten!',
+     icon: 'tabler:tree',
+   },
+ ]}
+ image={{
+   src: '~/assets/images/tara.webp',
+   alt: 'Benefits Image',
+ }}
+>
+ <Fragment slot="content">
+   <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Canyoning</h3>
+   
+ </Fragment>
+
+
+</Content>
+
+  <!-- Add space between image and title -->
+   <!-- Add FlexCards -->
+  
+
+   <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-6xl mb-2 text-center">Salig utbud av nationalparker</h2>
+  <p class="text-lg text-center mb-8">Upptäck de mest populära destinationerna i Montenegro</p>
+ 
+  
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
+    <FlexCard
+  imageUrl= "../src/assets/images/hrid.jpg"
+    title="Hrid sjön"
+    description="Hrid-sjön ligger i ett spektakulärt landskap som kännetecknas av höga tallar, blekta trädstammar och intressanta klippformationer. Omsluten av den intensiva doften av tallarna kan naturälskare och de som söker lugn och ro finna en plats för avkoppling och drömmar."
+  />
+  <FlexCard
+    imageUrl= "../src/assets/images/buka.jpg"
+    title="Bukumirsko-sjön"
+    description="Bukumirsko-sjön är en av Montenegros legendariska sjöar. Den är omgiven av berg och ligger på en höjd av 1443 meter över havet. Här kan du bada, slå upp ett läger på stranden bredvid vasskogen och njuta av bergen, det natursköna landskapet ovanför samt lyssna på sjöns berättelser hela natten.."
+  />
+  <FlexCard
+    imageUrl= "../src/assets/images/piva .jpg"
+    title="Piva-sjön"
+    description="Piva-sjön (Pivsko jezero) är en konstgjord sjö belägen i Plužine kommun, i den nordvästra delen av Montenegro. Piva-landskapet präglas av täta skogar, kalkstensplatåer och spektakulära kanjoner formade av floderna Tara, Piva, Komarnica och Sušica."
+  />
+  <FlexCard
+    imageUrl= "../src/assets/images/lipa.jpg"
+    title="Lipa grottan"
+    description="Strax utanför kungliga huvudstaden Cetinje ligger Lipa-grottan, ett av de största grottsystemen i Montenegro och det första som öppnats för turister. Dess trånga gångar och stora salar sträcker sig mer än 2,5 km under marken, från byn Lipa in i bergen längs Adriatiska kusten."
+  />
+</div>
+   <!-- Add space between image and title -->
+  
+  </div>
+  <br>
+  <br>
+  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-6xl mb-2 text-center">Majestätiska berg</h2>
+  <p class="text-lg text-center mb-8">Upptäck de mest populära destinationerna i Montenegro</p>
+ 
+  
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+      <a href="https://example.com/link1">
+        <img src="../src/assets/images/Durmitor.jpg" alt="Image 1" class="w-full h-auto" />
+      </a>
+      <div class="p-4">
+        <h3 class="text-xl font-bold mt-4">Durmitor</h3>
+        <p>Om du älskar storslagen natur får du absolut inte missa Durmitor nationalpark, en av Europas mest imponerande! Belägen i den norra delen av landet och listad som ett UNESCO-världsarv, omfamnas parken av floden Tara, som är hem till Tara-kanjonen – världens näst djupaste kanjon.
+    </p>
+      </div>
+    </div>
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+      <a href="https://example.com/link1">
+        <img src="../src/assets/images/skadar3.jpg" alt="Image 1" class="w-full h-auto" />
+      </a>
+      <div class="p-4">
+        <h3 class="text-xl font-bold mt-4">Skadarsjön</h3>
+        <p>Med två tredjedelar av sjön tillhörande Montenegro och resten Albanien är Skadar-sjön den största sjön på Balkan. Känd för sin otroliga fågelrikedom är Skadar en favoritdestination för naturälskare som trivs i vildmarkens harmoni. Skadar nationalpark är hem för några av de sällsyntaste växt- och djurarterna, samt 18 historiska monument. Här möts du av en fascinerande blandning av flytande näckrosor, branta berg och ökloster.
+    </p>
+      </div>
+    </div>
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+      <a href="https://example.com/link1">
+        <img src="../src/assets/images/lovcen.webp" alt="Image 1" class="w-full h-auto" />
+      </a>
+      <div class="p-4">
+        <h3 class="text-xl font-bold mt-4">Lovćen</h3>
+        <p>Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.
+    </p>
+      </div>
+    </div>
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+      <a href="https://example.com/link1">
+        <img src="../src/assets/images/biograd.jpg" alt="Image 1" class="w-full h-auto" />
+      </a>
+      <div class="p-4">
+        <h3 class="text-xl font-bold mt-4">Biogradska Gora</h3>
+        <p>Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.
+    </p>
+      </div>
+    </div>
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+      <a href="https://example.com/link1">
+        <img src="../src/assets/images/prokletije3.jpg" alt="Image 1" class="w-full h-auto" />
+      </a>
+      <div class="p-4">
+        <h3 class="text-xl font-bold mt-4">Prokletije</h3>
+        <p>I den sydöstra delen av landet, nära gränsen till Kosovo och Albanien, hittar du en av Montenegros mest avlägsna men hisnande naturscenerier. Här finns höga berg, djupa dalar och glaciärsjöar. Montenegros högsta topp – Zla Kolata (2534 meter) – ligger i Prokletije nationalpark.
+    </p>
+      </div>
+    </div>
+  
+  
+   
+   
+   
+   
+   
+   
+    
+  </div>
+ <!-- Steps Widget ****************** -->
+
+ <Steps
+ id="resume"
+ title="Intressant fakta"
+ items={[
+   {
+     title: ` Europas djupaste kanjon <br /> <span class="font-normal">1,333m - Floden Taras kanjon</span> <br /> <span class="text-sm font-normal"></span>`,
+     icon: 'tabler:settings',
+   },
+   {
+     title: `Europas största vingård <br /> <span class="font-normal">Den imponerande vingården på 23 km2 med 11,5 miljoner vinrankor är den största vingårdsplantagen i hela Europa </span> <br /> <span class="text-sm font-normal"></span>`,
+     icon: 'tabler:settings',
+   },
+   {
+     title: `Europas äldsta olivträd <br /> <span class="font-normal">Finns i staden Bar  </span> <br /> <span class="text-sm font-normal"></span>`,
+     icon: 'tabler:settings',
+   },
+   
+   {
+     title: `Längsta sandstrand vid Adriatiska kusten <br /> <span class="font-normal">13km - Long Beach Ulcinj  </span> <br /> <span class="text-sm font-normal"></span>`,
+     icon: 'tabler:settings',
+   },
+   {
+     title: `Störta sjön på Balkan <br /> <span class="font-normal">530km2 - Sjön Skadar   </span> <br /> <span class="text-sm font-normal"></span>`,
+     icon: 'tabler:settings',
+   },
+   {
+     title: `Högsta bergstopp <br /> <span class="font-normal">2,534m - Zla Kolata, Prokletije   </span> <br /> <span class="text-sm font-normal"></span>`,
+     icon: 'tabler:settings',
+   },
+   {
+     title: `Kusten <br /> <span class="font-normal">294km med 117 stränder   </span> <br /> <span class="text-sm font-normal"></span>`,
+     icon: 'tabler:settings',
+   },
+   
+ ]}
+ classes={{ container: 'max-w-3xl' }}
+/>
+ 
+
+
+
+  
+</Layout>
+
+<style>
+.same-size {
+  width: 100%;
+  height: auto;
+}
+</style>

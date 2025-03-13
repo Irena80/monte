@@ -1,0 +1,278 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import { headerData } from '~/navigation';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+
+const metadata = {
+  title: 'Företagsresor',
+};
+---
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      actions={[
+        {
+          variant: 'secondary',
+          text: 'Login',
+          href: '#',
+        },
+        {
+          variant: 'primary',
+          text: 'Läs mer',
+          href: '#',
+        },
+      ]}
+      isSticky
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Aktiva resor för grupper & företag"
+    actions={[
+      { variant: 'primary', target: '_blank', text: 'Boka', href: '/boka' },
+      { text: 'Utforska', href: 'https://www.montenegro.travel/en' },
+    ]}
+    image={{
+    src: '~/assets/images/Pogled terasa HN.png',
+    alt: 'AstroWind Hero Image',
+  }}
+>
+    <Fragment slot="title">
+       Företagsresor <span class="text-accent dark:text-white highlight"
+        > &Teambuildning</span
+      ><br />
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Dags för nästa äventyr med kollegorna? Flytta kontoret några dagar till varmare breddgrader. Med en härlig och och äventyrlig företagsaresa skapar ni sammanhållning, bra relationer och förutsättningar förutsättningar för att nå era mål för året. Från segling och dykning till surf och vandring. Eller varför inte bara hänga i sköna omgivningar på en vingård eller ett gammalt pyttoresk villa?   
+    </Fragment>
+   
+</Hero2>
+  <!-- Features Widget ************** -->
+
+  <Features
+    id="features"
+    title="Därför ska du välja Montenegro för konferens"
+    subtitle="Montenegro ligger i sydöstra Europa vid Adriatiska havets stränder och lockar resenärer med sin orörda natur. Pittoreska montenegrinska landskap, klippiga toppar, gröna skogar, glasklara sjöar och floder, små fiskebyar och charmiga gamla städer, 117 stränder och avskilda vikar längs klippiga kuster - det här är Montenegro."
+    columns={2}
+    items={[
+      {
+        title: 'Avstånden är korta mellan berg och hav',
+        description:
+          'Här får ni mycket för er investering i konferensresan och avstånden är korta. Landet, som består av 60% berg, 30% kust och 10% höglandsplatå, är ungefär lika stort som Skåne och är rikt på kontraster. Här finns allt att erbjuda – från boende på en lokal bondgård till 5-stjärniga lyxhotell. Från att bada i en vacker turkosblå badvik – till skidåkning endast några timmar från kusten.',
+        icon: 'tabler:map',
+      },
+      {
+        title: 'Konferens i vacker natur',
+        description: ` Längs Montenegros nästan 300 kilometer långa kust ligger stränderna på rad. Här möts det kristallklara vattnet med både sand- och stenstränder. I norra delen hittar vi mindre skidorter, nationalparker och floden Tara som räknas till världens näst djupaste kanjon efter Grand Canyon i USA.`,
+        icon: 'tabler:artboard',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/1 (27).png',
+      alt: 'Colorful Image',
+    }}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    title="Urval av några upplevelser"
+    subtitle="Här presenterar vi ett urval av några av våra populäraste upplevelser som vi arrangerar för företagsgrupper i  Montenegro.  Intresserad av något helt annat? Vi har bred erfarenhet av att arrangera gruppresor för företag till Montenegro. Kontakta oss gärna och berätta om era önskemål."
+    isReversed
+    items={[
+      {
+        title: 'Kust- och bergsupplevelse på en dag',
+        description:
+          'På en dag kan man uppleva den lilla orten Rosas underbara havsmiljö och njuta av dykning, fiske, segling och därefter fortsätta äventyret med att cykla, vandra eller till och med åka skidor i en helt annan miljö bland de vackra landskapen i Orjenas sluttningar. <br>'
+      },
+      {
+        title: 'Utbud av flertal aktiviteter',
+        description: `Äventyr väntar på dig i Boka Bukten, Europas mest dramatiska kustlinje. Med mer än  117 olika stränder och avskilda vikar längs klippiga kuster - finns ett stort utbud av olika aktiviteter så som dykning, paddling, klättring, cykla, rafting.`,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/jedrenje4.webp',
+      alt: 'Startup Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Två upplevelser på en dag <br /><span class="text-2xl">Kombinera jobb och äventyr</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  
+  <Content
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Upplev Gamla Stan',
+        description: `Gamla Stan i Herceg Novi är en av regionens bäst bevarade medeltida städer och finns upptagen på UNESCOS världsarvslista. Med guide promenerar vi i stadens trånga gränder, kullerstensbelagda torg och gator. Vi avslutar turen med en stärkande brunch på ringmuren, där vi bjuds på en utsikt över bukten och gamla stans takåsar.`,
+      },
+      {
+        title: 'Där historien möter nutid',
+        description: `Här hittar du en del av av historia som ligger på UNESCO:s världsarvslista. Pittoreska montenegrinska landskap, klippiga toppar, gröna skogar, glasklara sjöar och floder, små fiskebyar och charmiga gamla städer.`,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/stari-grad3.jpg',
+      alt: 'SaaS Businesses Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Stadsvandring <br /><span class="text-2xl">Guidad tur med brunch</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Utforska den orörda skönheten',
+        description: `Montenegro är en perfekt destination för segling på grund av dess 295 mil kust, milt medelhavsklimat och naturlig skönhet och rik historia. Adriatiska havet är djupt, kristallklart och det är lätt att navigera eftersom det finns så få grund. Varje ö har sin egen historia att berätta. Historien av denna seglings destination går tillbaka till 9: e århundradet. Under den tiden har det har formats av ortodoxa, islamiska och Adriatiska influenser såväl som Centraleuropeiska. En vacker kust och hav med stor hjälp av gynnsamma vindar gör den utmärkt för segling. `,
+      },
+     
+    ]}
+    image={{
+      src:'~/assets/images/jedrenje2.webp',
+      alt: 'Portfolio Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Segling <br /><span class="text-2xl">Res genom natur och historia</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    items={[
+      {
+        title: 'Upplev den vilda naturen',
+        description: `En oförglömlig offroad upplevelse där vi på en dag kan uppleva Montenegros mångfacitterande skönhet. Vi kör på nervkittlande serpentinvägar och når Montenegros högsta berg, passerar Boka Bay som påminner om Norges dramatiska fjordlandskap och gör stopp i lokala byar där vi får provsmaka på lokala delikatesser`,
+      },
+     
+    ]}
+    image={{
+      src:'~/assets/images/planina.jpg',
+      alt: 'Small Business Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Naturäventyr <br /><span class="text-2xl">Jeeptur i bergen</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  
+  <Steps
+  title="En guidad resa från planering till kreativitet"
+  tagline="Reseupplägg"
+  isReversed={true}
+  items={[
+    {
+      title: 'Flyg tur/retur Dubrovnik eller Tivat',
+      icon: 'tabler:number-1',
+    },
+    {
+      title: 'Transfer med buss',
+      icon: 'tabler:number-2',
+    },
+    {
+      title: 'Boende på 4 stjärnigt hotell',
+      icon: 'tabler:number-3',
+    },
+    {
+      title: 'Luncher och middagar',
+      icon: 'tabler:number-4',
+    },
+    {
+      title: 'Valbar aktivitet: segling, zipline, canyoning, kajakpaddling',
+      icon: 'tabler:number-5',
+    },
+    {
+      title: '2 halvdagars konferens',
+      icon: 'tabler:number-6',
+    },
+    {
+      title: 'Mediteranobayguider på plats',
+      icon: 'tabler:number-7',
+    },
+    {
+      title: 'Pris från: 12 995 Kr',
+      icon: '',
+    },
+  ]}
+  image={{
+   src: '~/assets/images/konferens.png',
+    alt: 'Steps image',
+  }}
+ />
+ 
+
+ 
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title=" Bästsäljande resepaket"
+    subtitle="Välj mellan redan färdiga resepaket eller kontakta oss för en skräddarsydd upplevelse!"
+    callToAction={{
+      text: 'Boka',
+      href: '/boka',
+    }}
+    
+  />
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Låt dig inspireras i vår reseblogg"
+    information={`Smaka på Montenegro. Dyk ner i vår resa om Montenegro och låt dig inspireras av inhemska maträtter, pampiga sevärdheter och magnifik historia.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>

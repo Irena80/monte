@@ -1,0 +1,373 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import TitleBlock from '~/components/TitleBlock.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+
+const metadata = {
+  title: 'Sportresor',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+       
+     
+      ]}
+     
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+  
+  
+  <Hero
+   tagline="Aktiva sportresor i Montenegro"
+  image={{
+    src: '~/assets/images/zipline.webp',
+    alt: 'Caos Image',
+  }}
+  actions={[
+    { text: 'Boka', icon: 'tabler:run', href: 'https://www.kolasinvalleys.com/' },
+  ]}
+>
+
+  <Fragment slot="title">
+Sportresor<span class="hidden sm:inline"> </span> <span class="text-accent dark:text-white highlight"></span>
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    Intresserad av fotbollsläger eller spela tennis i solen med klubben? Är ni ett gäng spelare som spelar och är intresserade av att åka på sportresa tillsammans. Spela på förmiddagen, ta ett dopp på eftermiddagen och ät gott på kvällen. 
+  </Fragment>
+</Hero>
+
+  
+
+   
+ <!-- Add space between image and title -->
+
+
+
+ 
+ 
+  <!-- Content Widget **************** -->
+
+
+  <Content
+
+
+    title="Utforska äventyrslandet Montenegro"
+    subtitle="Kombinera den fantastiska naturen, bygg gemenskap och njut av olika sportevenemang för en aktiv och hälsosam livsstil. Brett utbud av utomhusaktiviteter för både grupp och företag."
+    isReversed
+    
+  >
+    
+
+  </Content>
+<!-- Content Widget **************** -->
+
+<Content
+id="about"
+columns={3}
+items={[
+  {
+    icon: 'tabler:swiming',
+    callToAction: {
+      target: '_blank',
+      text: 'Simning',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:play-football',
+    callToAction: {
+      target: '_blank',
+      text: 'Fotboll',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:ball-tennis',
+    callToAction: {
+      target: '_blank',
+      text: 'Tennis',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:play',
+    callToAction: {
+      target: '_blank',
+      text: 'Paddel',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:play',
+    callToAction: {
+      target: '_blank',
+      text: 'Cykling',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:play',
+    callToAction: {
+      target: '_blank',
+      text: 'Klättning',
+      href: '#',
+    },
+  },
+ 
+]}
+image={{
+ src:'~/assets/images/cykla.jpg',
+  alt: 'Colorful Image',
+  loading: 'eager',
+}}
+>
+<Fragment slot="content">
+  <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Träningsläger</h2>
+  <p>
+  Spela tennis på samma bana där Novak Djokovic brukar träna. Eller varför inte en paddelturnering med klubben? När man är ett gäng som spelar tillsammans hemma är det kul att åka utomlands, bo bra och ha tillgång till bra banor för olika aktiviteter.  Spela på förmiddagen, ta ett dopp på eftermiddagen och ät gott på kvällen.
+  </p>
+  <br />
+  <p>
+    Segling, dykning, simning, tennis, paddel, klättring,cykling är några av aktiviteterna som finns att tillgå.
+  </p>
+  <br />
+  <p>Resa solo eller med sällskap. Att röra sig på semestern och ha en aktiv resa i grupp innebär hos oss att komma närmare resmålet, den goda maten och uppleva natur och gemenskap. Vi har träningsresor i härliga miljöer.
+
+  </p>
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+id="about"
+columns={3}
+items={[
+  {
+    icon: 'tabler:sailboat',
+    callToAction: {
+      target: '_blank',
+      text: 'Segling',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:play-football',
+    callToAction: {
+      target: '_blank',
+      text: 'Dykning',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:ball-tennis',
+    callToAction: {
+      target: '_blank',
+      text: 'Vindsurfing',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:ball-tennis',
+    callToAction: {
+      target: '_blank',
+      text: 'Kajak',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:play',
+    callToAction: {
+      target: '_blank',
+      text: 'Rafting',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:play',
+    callToAction: {
+      target: '_blank',
+      text: 'Canyoning',
+      href: '#',
+    },
+  },
+  {
+    icon: 'tabler:play',
+    callToAction: {
+      target: '_blank',
+      text: 'Flygfiske',
+      href: '#',
+    },
+  },
+ 
+]}
+image={{
+ src:'~/assets/images/sailing.jpg',
+  alt: 'Colorful Image',
+  loading: 'eager',
+}}
+>
+<Fragment slot="content">
+  <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Vattensporter</h2>
+  <p>
+    Lugna vatten gör de närliggande stränderna perfekta för både aktiva och avkopplande simmare. Oavsett om du gillar stand-up paddleboarding, föredrar kajakpaddling eller letar efter ett äventyr till havs, kommer våra vattensportaktiviteter att ge dig energi och hålla dig uppfriskad.
+  </p>
+ 
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+ <!-- Content Widget **************** -->
+
+
+ <Content
+ id="about"
+ columns={3}
+ items={[
+  
+   {
+     icon: 'tabler:play-football',
+     callToAction: {
+       target: '_blank',
+       text: 'Klättring ',
+       href: '#',
+     },
+   },
+   {
+     icon: 'tabler:ball-tennis',
+     callToAction: {
+       target: '_blank',
+       text: 'Paragliding',
+       href: '#',
+     },
+   },
+   
+   {
+     icon: 'tabler:play',
+     callToAction: {
+       target: '_blank',
+       text: 'Zipline',
+       href: '#',
+     },
+   },
+   {
+     icon: 'tabler:play',
+     callToAction: {
+       target: '_blank',
+       text: 'Vandring',
+       href: '#',
+     },
+   },
+  
+ ]}
+ image={{
+  src:'~/assets/images/klättring.jpg',
+   alt: 'Colorful Image',
+   loading: 'eager',
+ }}
+ >
+ <Fragment slot="content">
+   <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Klättring & Vandring </h2>
+   <p> Upptäckt den omtalande vandringsstigen som har rankats som en av världens bästa destinationer – Via Dinarica! 
+
+   
+   </p>
+   <br />
+   <p>
+    Vill du vandra längs denna imponerande vandrings- och trekkingled, som förbinder de naturliga och kulturella sevärdheterna i Dinariderna? Kom till Montenegro!
+   </p>
+   <br />
+   <p>Resa solo eller med sällskap. Att röra sig på semestern och ha en aktiv resa i grupp innebär hos oss att komma närmare resmålet, den goda maten och uppleva natur och gemenskap. Vi har träningsresor i härliga miljöer.
+ 
+   </p>
+ </Fragment>
+ 
+ <Fragment slot="bg">
+   <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+ </Fragment>
+ </Content>
+
+   <!-- Steps Widget ****************** -->
+
+   <Steps
+   id="resume"
+   title="Fem bästa vandringsleder på Luštica"
+   items={[
+      {
+        title:
+          ' GORNJI KLINCI – OBOSNIK',
+        description: ` Längd: 4.1 km| Tid: 1:20 | Upplev: Högsta toppen av Luštica halvön`,
+        icon: 'tabler:mountain',
+      },
+      {
+        title:
+          ' RADOVIĆI – BABUNCI – TIĆI ŽANJICE',
+        description: ` Längd: 12.3 km| Tid: 3:15 | Upplev: Historisk vandringsled, olivlundar, Žanjice-stranden`,
+        icon: 'tabler:mountain',
+      },
+      {
+        title:
+          ' KRAŠIĆI – Mr. KRAŠIĆI – GOŠIĆI',
+        description: ` Längd: 3.7 km| Tid: 1:45 | Upplev: Den gamla byn Krašići, den gamla gångstigen, den stora gamla cisternen och S:t Nikolaus kyrkan.`,
+        icon: 'tabler:mountain',
+      },
+      {
+        title:
+          'SOLILA – GRABOVAC',
+        description: ` Längd: 4.2 km| Tid: 1:30 | Upplev: Tivat Solia, österrikisk-ungerska fästning Grabovac`,
+        icon: 'tabler:mountain',
+      },
+      {
+        title:
+          ' LUŠTICA GOLF AREA',
+        description: ` Längd: 6 km| Tid: 1:20 | Upplev: Magnifik utsikt över Kotorbukten`,
+        icon: 'tabler:mountain',
+      },
+   
+   
+ 
+     
+   ]}
+   classes={{ container: 'max-w-3xl' }}
+ />
+
+    
+   <!-- Steps2 Widget ****************** -->
+
+   <Steps2
+   title="Välj mellan redan färdiga resepaket eller kontakta oss för en skräddarsydd upplevelse!"
+   subtitle="Låt oss hjälpa dig att skapa en oförglömlig resa!"
+   callToAction={{
+     text: 'Kontakta oss',
+     href: '/contact',
+   }}
+   
+ />
+ 
+
+  
+</Layout>

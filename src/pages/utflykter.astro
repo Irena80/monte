@@ -1,0 +1,460 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+
+  actions={[
+  {
+    variant: 'primary',
+    text: 'Festivaler',
+    href: 'https://www.hercegfest.me/en/festivals/',
+    target: '_blank',
+    icon: 'tabler:sun',
+  },
+
+]}
+  
+  image={{
+    src: '~/assets/images/lustica.webp',
+    alt: 'Caos Image',
+  }}
+>
+
+
+  
+  
+
+  <Fragment slot="title">
+    <span class="hidden sm:inline"> Urval av olika </span>  
+    <span class="text-accent dark:text-white highlight"> utflyktspaket</span>
+  </Fragment>
+  <Fragment slot="subtitle">
+    Välj mellan olika aktiviterer året om! Välj bland vår mångsidiga utbud av utflykter där du hittar bland annat halv- och heldagsutflykter med olika teman som aktivitet, natur, mat och kultur. <br> <br> Från avskilda stränder till majestätiska nationalparker, kristallklart vatten och antika städer fyllda av historia – upptäck Montenegro genom skräddarsydda aktiviteter och exklusiva upplevelser öppnar vi dörren till denna enastående region. Upptäck den nya Rivieran.
+  </Fragment>
+</Hero>
+
+ 
+
+
+  
+  <!-- Content Widget **************** -->
+
+  <Content
+   
+    isReversed={true}
+    items={[
+      {
+        title: 'Om aktivitet',
+        description:
+          'Upptäck essensen av Montenegro när du utforskar natursköna vyer och nationalparker, historia och kultur, lokalt hantverk och gastronomi. Res från en värld till en annan mellan Adriatiska havet och Lovćens serpentinvägar. Få en helhetsbild av detta vackra och mångsidiga land genom att besöka museerna i den gamla kungliga huvudstaden Cetinje och njuta av nationella kulinariska specialiteter i Njeguši.',
+        icon: 'tabler:settings',
+      },
+     
+      {
+        title: 'Tillgänglighet',
+        description:
+          ' Varaktighet: 7 timmar <br> Tillgänglighet: Mars - November <br>Antal personer: Max 10',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Sevärdigheter',
+        description:
+          ' Boka Bay, Lovćen National Park, Mausoleumet av Petar II. <br> Under den charmiga färden längs serpentinvindlarna, unna dig ett vinpaus på Horizon Bar och njut av den hänförande utsikten över bukten. <br> Turen finns tillgänglig med både båt och bil, eller enbart bil',
+        icon: 'tabler:sun',
+      },
+     
+ 
+    ]}
+    image={{
+      src: '~/assets/images/more.JPG',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Royal Montenegro tur</h3>
+    </Fragment>
+  </Content>
+
+ 
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Om aktiviteten',
+        description:
+          'Från venetianska torg fyllda med barockpalats och katedraler till den förtrollande ön Our Lady of the Rocks samt traditionella delikatesser, konst och musik – en storslagen upptäcktsfärd genom den magiska Boka-bukten och dess två UNESCO:s världsarvsstäder Perast och Kotor. Två medeltidsstäder som  berättar sin historia inte bara genom sin enastående skönhet, utan också genom 500 år av historia som gömmer sig i deras kullerstensgator, gamla stenkyrkor och ståtliga palats.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Tillgänglighet',
+        description:
+          'Transport: Båttur <br>  Varaktighet: 6 timmar <br>Tillgänglighet: April-Oktober <br>Antal personer: Max 10' ,
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Sevärdigheter',
+        description:
+          ' Boka Bay, Perast från båten, Our Lady of the Rocks, Kotor, Prčanj – besök i klosterkomplexet & matlagningskurs.',
+        icon: 'tabler:sun',
+      },
+     
+    ]}
+    image={{
+      src: '~/assets/images/portonovi.webp',
+      alt: 'Benefits Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Upplev det historiska arvet i Kotor och Perast</h3>
+    </Fragment>
+  </Content>
+
+  <Content
+   
+    isReversed={true}
+    items={[
+      {
+        title: 'Om aktivitet',
+        description:
+          'Öppna dörren till en annan värld, upptäckt de hisnande sluttningarna av berget Orjen. En uppfriskande vandring uppför Orjen-berget till byn Žlijebi, där den unika Stone Village väntar.',
+        icon: 'tabler:settings',
+      },
+     
+      {
+        title: 'Tillgänglighet',
+        description:
+          'Transport: Bil <br>  Varaktighet: 4-6 timmar <br>Tillgänglighet: Mars-November <br>Antal personer: Max 10' ,
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Sevärdigheter',
+        description:
+          ' Žlijebi Stone Village, provsmakning av traditionell mat, naturskön bilfärd tillbaka till hotellet.',
+        icon: 'tabler:sun',
+      },
+     
+ 
+    ]}
+    image={{
+      src: '~/assets/images/Orjen.jpg',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Den majestätiska Orjen</h3>
+    </Fragment>
+  </Content>
+
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Om aktiviteten',
+        description:
+          'Efter en promenad genom århundraden gamla olivlundar, ackompanjerad av traditionell montenegrinsk gästfrihet och lokala berättelser, kommer olivolja aldrig att smaka likadant igen. <br> Njut av färska råvaror intill en 300 år gammal kvarn och lär dig allt om denna gyllene skörd och dess betydelse i Montenegros kök.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Tillgänglighet',
+        description:
+          'Varaktighet: 3,5 timmar <br>Tillgänglighet: April-Oktober <br>Antal personer: Max 10' ,
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Sevärdigheter',
+        description:
+          ' Luštica halvön, Klinci .',
+        icon: 'tabler:sun',
+      },
+     
+    ]}
+    image={{
+      src: '~/assets/images/masline.webp',
+      alt: 'Benefits Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Upplev landsbygden</h3>
+    </Fragment>
+  </Content>
+
+
+  <Content
+   
+    isReversed={true}
+    items={[
+      {
+        title: 'Om aktivitet',
+        description:
+          'Herceg Novi, känd som solens och blommornas stad, inbjuder dig att utforska dess berömda förflutna och avslöja de dolda lagren av historien inom dess månghundraåriga fästningar, som den magnifika Kanli Kula och Forte Mare. Hör den delade andan i berättelserna om ortodoxa och katolska präster, och gå vilse i det charmiga, trånga, stenbelagda gator i Gamla stan. Det här är en resa som lovar att skapa vackra och hjärtevärmande minnen som bara kan skapas här.',
+        icon: 'tabler:settings',
+      },
+     
+      {
+        title: 'Tillgänglighet',
+        description:
+          'Varaktighet: 3,5 timmar <br>Tillgänglighet: Året runt <br>Antal personer: Max 10 <br>*Vandringstur med många trappsteg.'  ,
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Sevärdigheter',
+        description:
+          ' Herceg Novi, Forte Mare fortress,Kanli Kula, St Michael och St Jerome kyrkor. <br> Rekommendation: Efter en guidad tur genom Herceg Novis gamla stad, njut av en avkopplande promenad längs den vackra strandpromenaden och avsluta dagen med en traditionell montenegrinsk måltid. ',
+        icon: 'tabler:sun',
+      },
+     
+     
+ 
+    ]}
+    image={{
+      src: '~/assets/images/Istorijahn.webp',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Herceg Novis hemligheter</h3>
+    </Fragment>
+  </Content>
+
+    <!-- Content Widget **************** -->
+
+    <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Om aktiviteten',
+        description:
+          'Upptäck den pittoreska charmen i Boka Bay Essence-turen, kombinerad med en fascinerande färd med Kotors linbana. Vandra genom historiska kuststäder innan du svävar upp till panoramiska höjder, där den förtrollande Adriatiska kusten breder ut sig framför dig.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Tillgänglighet',
+        description:
+          'Varaktighet: 5-7 timmar <br>Tillgänglighet: April-Oktober <br>Antal personer: Max 10' ,
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Sevärdigheter',
+        description:
+          ' Boka Bay, Perast, Our Lady of the Rocks, Kotor promenadstur, Kotors linbana. <br>Denna tur inkluderar både båt och biltransport.',
+        icon: 'tabler:sun',
+      },
+     
+    ]}
+    image={{
+      src: '~/assets/images/prevlaka.jpg',
+      alt: 'Benefits Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Upptäck glansen av Boka Bay</h3>
+    </Fragment>
+  </Content>
+
+  <Content
+   
+    isReversed={true}
+    items={[
+      {
+        title: 'Om aktivitet',
+        description:
+          ' Från den vackra bukten och det azurblå havet, upp genom kalkstensklippor, djupa kanjoner, gröna skogar med mäktiga tallar och nordens turkosa glaciärsjöar – upplev Montenegros häpnadsväckande mångfald, allt på en enda dag. <br> Från ett UNESCO-världsarv till ett annat, genom nationalparker och naturreservat. Utforska Durmitor National Park, en av de mest spektakulära platserna i Montenegro, och njut av en guidad vandringstur genom den vackra Tara-kanjonen, en av de djupaste i världen.',
+        icon: 'tabler:settings',
+      },
+     
+      {
+        title: 'Tillgänglighet',
+        description:
+          ' Varaktighet: 12 timmar <br>Tillgänglighet: April-Oktober <br>Antal personer: Max 10 <br> Välj mellan en timmer ridning eller sightseeing från Tara bron.'  ,
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Sevärdigheter',
+        description:
+          ' Durmitor Nationalpark, Svarta sjön, ekologisk matlagningskurs, Tara-kanjonen, Tara-bron.',
+        icon: 'tabler:sun',
+      },
+     
+ 
+    ]}
+    image={{
+      src: '~/assets/images/most2.jpeg',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Oupptäckt norr </h3>
+    </Fragment>
+  </Content>
+  
+
+  <Content
+  isAfterContent
+  items={[
+    {
+      title: 'Om aktiviteten',
+      description:
+        'Följ med oss på en fisketur till exklusiva fiskeplatser där du kan fånga allt från troféstor havsabborre till utsökt grouper. Våra erfarna guidern delar mig sig av sin kunskap och låter er använda förstklassig utrustning samtidigt som de delar med sig av sin kunskap för att säkerställa att ni får en unik upplevelse. När du har dragit upp din fångst finns det kockar på plats som förvandla den till ett kulinariskt mästerverk. Vi är starkt engagerade i hållbart fiske och följer strikta riktlinjer för att skydda miljön och säkerställa att fiskbestånden bevaras för framtiden.',
+      icon: 'tabler:clock',
+    },
+    {
+      title: 'Tillgänglighet',
+      description:
+        'Varaktighet: 3,5 timmar <br>Tillgänglighet: April-Oktober <br>Antal personer: Max 10' ,
+      icon: 'tabler:settings',
+    },
+   
+   
+  ]}
+  image={{
+    src: '~/assets/images/rose-lustica.jpg',
+    alt: 'Features Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Trofé fiskexpeditioin</h3>
+  </Fragment>
+</Content>
+
+<Content
+   
+isReversed={true}
+items={[
+  {
+    title: 'Om aktivitet',
+      description:
+        'Ge dig ut på ett förfinat äventyr, perfekt utformat för små upptäckare, där lantlig charm och kulturell elegans smälter samman i Montenegro. Börja denna interaktiva upplevelse på ranchen i byn Žvinje med en ledd ridtur genom orörda landskap, följt av en smakupplevelse av traditionell mat. Fortsätt sedan till Herceg Novis gamla stad för en guidad vandringstur som avslöjar århundraden gamla hemligheter.',
+      icon: 'tabler:settings',
+    },
+   
+    {
+      title: 'Tillgänglighet',
+      description:
+        'Transport:Båt eller bil <br>  Varaktighet: 3-5 timmar <br>Tillgänglighet: Året runt <br>Antal personer: Max 10' ,
+      icon: 'tabler:settings',
+    },
+    {
+      title: 'Sevärdigheter',
+      description:
+        ' Byn Žvinje, fotopromenad av Hergeg Novi bukten, vandringstur på ranchen, ridlektion, provsmakning av traditionell mat, rundtur i Herceg Novis gamla stad.',
+      icon: 'tabler:settings',
+    },
+
+]}
+image={{
+  src: '~/assets/images/spring montenegro.jpg',
+  alt: 'Features Image',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Små upptäckter </h3>
+</Fragment>
+</Content>
+<Content
+isAfterContent
+items={[
+  {
+    title: 'Om aktivitet',
+      description:
+        'Ge dig ut på ett vinteräventyr till Kolasin 1600 Ski Center från Budva, Tivat eller Herceg Novi. Välj bland en rad olika aktiviteter som skidåkning, snowboard och mycket mer. Njut av en traditionell lunch i Kolasin och ta in den fantastiska utsikten över det montenegrinska vinterlandskapet.',
+      icon: 'tabler:settings',
+    },
+   
+    {
+      title: 'Tillgänglighet',
+      description:
+        'Transport:bil <br>  Varaktighet: 9,5 timmar <br>Tillgänglighet: November-Mars <br>Antal personer: Max 10' ,
+      icon: 'tabler:settings',
+    },
+    {
+      title: 'Sevärdigheter',
+      description:
+        ' Resort Kolašin, belägen på berget Bjelašica.Traditionell montenegrinsk lunch på en charmig lokal restaurang.',
+      icon: 'tabler:settings',
+    },
+   
+
+  ]}
+  image={{
+    src: '~/assets/images/kolasin.jpg',
+    alt: 'Features Image',
+  }}
+
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Kolašin Vinteräventyr</h3>
+</Fragment>
+</Content>
+
+<Content
+isAfterContent
+items={[
+  {
+    title: 'Om aktiviteten',
+    description:
+      'Följ med oss på en fisketur till exklusiva fiskeplatser där du kan fånga allt från troféstor havsabborre till utsökt grouper. Våra erfarna guidern delar mig sig av sin kunskap och låter er använda förstklassig utrustning samtidigt som de delar med sig av sin kunskap för att säkerställa att ni får en unik upplevelse. När du har dragit upp din fångst finns det kockar på plats som förvandla den till ett kulinariskt mästerverk. Vi är starkt engagerade i hållbart fiske och följer strikta riktlinjer för att skydda miljön och säkerställa att fiskbestånden bevaras för framtiden.',
+    icon: 'tabler:clock',
+  },
+  {
+    title: 'Tillgänglighet',
+    description:
+      'Varaktighet: 3,5 timmar <br>Tillgänglighet: April-Oktober <br>Antal personer: Max 10' ,
+    icon: 'tabler:settings',
+  },
+  {
+    title: 'Sevärdigheter',
+    description:
+      ' Luštica halvön, Klinci .',
+    icon: 'tabler:settings',
+  },
+ 
+]}
+image={{
+  src: '~/assets/images/ostrvo.webp',
+  alt: 'Benefits Image',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Där land möter hav</h3>
+</Fragment>
+</Content>
+
+
+  
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title=" Bästsäljande utflyktspaket"
+    subtitle="Välj mellan redan färdiga utflykter eller kontakta oss för en skräddarsydd upplevelse!"
+    callToAction={{
+      text: 'Boka',
+      href: '/boka',
+    }}
+    
+  />
+ 
+  
+
+</Layout>

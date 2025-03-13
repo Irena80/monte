@@ -5,75 +5,75 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Kontakta oss',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText tagline="Kontakta oss" title="Hör av dig till oss!" />
 
   <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    title="Berätta gärna vad ni efterfrågar för resepaket!"
+    subtitle="För snabbare svar, utforska FAQ del. Du kanske hittar svar du letar efter just där! Om inte, hjälper vårt supportteam dig gärna."
     inputs={[
       {
         type: 'text',
-        name: 'name',
-        label: 'Name',
+        name: 'namn',
+        label: 'Namn',
       },
       {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
+        type: 'E-post',
+        name: 'E-post',
+        label: 'E-post',
       },
     ]}
     textarea={{
-      label: 'Message',
+      label: 'Meddelande',
     }}
     disclaimer={{
       label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+        'Genom att skicka in detta kontaktformulär godkänner och samtycker du till insamlingen av dina personuppgifter.',
     }}
-    description="Our support team typically responds within 24 business hours."
+    description="Vårt supportteam svarar inom 24 timmar."
   />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="We are here to help!"
+    title="Låt oss hjälpa till!"
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+        title: 'Support',
+        description: `Chatta med oss för förfrågningar kring resor, planeringen inför resan, bokningen eller om ni har frågor som rör betalning, ändringar mm.`,
       },
       {
-        title: 'Contact sales',
+        title: 'Säljavdelning',
         description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+          'Chatta med oss om ni vill beställa ett resepaket eller har frågor om redan köpta resepaket.',
       },
       {
-        title: 'Technical support',
+        title: 'Teknisk support',
         description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+          'Chatta med oss om ni behöver hjälp med bokningar.',
       },
       {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
+        title: 'Kontakt',
+        description: '+46 (0) 73 756 71 96',
         icon: 'tabler:headset',
       },
       {
-        title: 'Email',
-        description: 'contact@support.com',
+        title: 'E-post',
+        description: 'info@mediteranobay.com',
         icon: 'tabler:mail',
       },
       {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        title: 'Mediteranobay Travel',
+        description: 'Stockholm, Sverige',
         icon: 'tabler:map-pin',
       },
     ]}
   />
+  
 </Layout>

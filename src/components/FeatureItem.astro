@@ -1,0 +1,19 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/components/FeatureItem.astro
+const { imageUrl, title, content } = Astro.props;
+---
+
+<div class="feature-item bg-white shadow-md rounded-lg overflow-hidden">
+  <img src={imageUrl} alt={title} class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="text-xl font-bold mb-2">{title}</h3>
+    <p>{content}</p>
+  </div>
+</div>
+
+<style>
+.feature-item img {
+  max-width: 100%;
+  height: auto;
+}
+</style>

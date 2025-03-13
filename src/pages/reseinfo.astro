@@ -1,0 +1,227 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+
+
+import { YouTube } from 'astro-embed';
+
+const metadata = {
+  title: 'Reseinfo',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Reseinfo"
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Get templates',
+        href: 'https://github.com/onwidget/astrowind',
+        icon: 'tabler:download',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{
+      src: '~/assets/images/Tivat.webp',
+      alt: 'Caos Image',
+    }}
+  >
+    <Fragment slot="title">
+Anvädbar info <span class="hidden sm:inline"></span>  om <span
+        class="text-accent dark:text-white highlight">Montenegro</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Här framgår  <span class="font-semibold">relevant information</span> inför din resa.
+    </Fragment>
+
+  
+  </Hero>
+
+
+
+  
+
+  <!-- Features2 Widget ************** -->
+
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Inför resan till Montenegro"
+    subtitle="Montenegro gränsar till Kroatien och Bosnien och Hercegovina i norr, Serbien och Kosovo i öster samt Albanien i söder"
+    columns={3}
+    items={[
+      {
+        title: 'Huvudstad',
+        description:
+          'Podgorica',
+        icon: 'tabler:globe',
+      },
+      {
+        title: 'Folkmängd',
+        description: '650 000',
+        icon: 'tabler:man',
+      },
+      {
+        title: 'Språk',
+        description:
+          'Montenegriniska',
+        icon: 'tabler:adjustments-horizontal',
+      },
+      {
+        title: 'Valuta',
+        description: 'Euro (EUR)',
+        icon: 'tabler:cash',
+      },
+      {
+        title: 'Tid',
+        description:
+          'Det är ingen tidsskillnad mellan Sverige och Montenegro.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Religion',
+        description:
+          'Kristendom (främst ortodoxt kristna)',
+        icon: 'tabler:man',
+      },
+     
+    ]}
+  />
+ 
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frågor och svar"
+    items={[
+      {
+        title: 'Pass och visum',
+        description:
+          'För att resa till Montenegro som svensk medborgare krävs endast giltigt pass. Visum för svenska medborgare behövs inte, man får stanna i Montenegro i 90 dagar. Registrering på vistelsen krävs enligt montenegrinsk lag, detta brukar skötas via hotellen. Passets giltighetstid måste överstiga vistelsetiden i Montenegro med 90 dagar.',
+      },
+      
+      {
+        title: 'Väder och klimat',
+        description:
+          'I Montenegro råder medelhavsklimat vid kusten, med torra och varma somrar och milda vintrar. I de bergiga områdena är temperaturerna lägre. Då landet har en stor variation i landskap, klimat, jordmån och höjdskillnader har de en av Europas största biologiska mångfalder.',
+      },
+      {
+        title: 'Bästa reseperiod',
+        description:
+          'Mellan maj och oktober är vädret som bäst, men högsäsongen med flest besökare är mellan juli och september.',
+      },
+      {
+        title: 'Debit & kredit kort',
+        description:
+          'Kortbetalningar är accepterade överallt.',
+      },
+      {
+        title: 'Flyg',
+        description:
+          'Direktflyg finns från Stockholm eller Göteborg till Tivat eller Dubrovnik. Flygtiden är ca 3 timmar. Transfer från Dubrovnik till Montenegro tar ca 30 min.  ',
+      },
+     
+      {
+        title: 'Perfekt positionering för internationella flyg:',
+        description:
+          'Tivat 17km sydväst <br> Dubrovnik 35km nordväst   <br> Podgorica 101km sydöst ',
+      },
+      
+    
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+
+    
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Let us know how we can help"
+    subtitle="We’re here to help and answer any question you might have."
+    columns={4}
+    items={[
+      {
+        title: 'Phone',
+        icon: 'tabler:phone',
+        callToAction: {
+          target: '_blank',
+          text: 'Call us',
+          href: '/',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Email',
+        icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'Write to us',
+          href: '/',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Chat with sales',
+        icon: 'tabler:message-circle',
+        callToAction: {
+          target: '_blank',
+          text: 'Start chatting',
+          href: '/',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Chat with support',
+        icon: 'tabler:message-circle',
+        callToAction: {
+          target: '_blank',
+          text: 'Start chatting',
+          href: '/',
+          variant: 'link',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Get templates',
+        href: 'https://github.com/onwidget/astrowind',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">Be a part of our vision</Fragment>
+
+    <Fragment slot="subtitle">
+      Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful
+      impact.
+    </Fragment>
+  </CallToAction>
+</Layout>

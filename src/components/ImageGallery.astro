@@ -1,0 +1,19 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/components/ImageGallery.astro
+const { images } = Astro.props;
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  {images.map((image) => (
+    <div class="gallery-item">
+      <img src={image.src} alt={image.alt} class="w-full h-auto object-cover rounded-lg shadow-md" />
+    </div>
+  ))}
+</div>
+
+<style>
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+}
+</style>

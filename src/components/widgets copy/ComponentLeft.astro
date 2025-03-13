@@ -1,0 +1,21 @@
+---
+interface Props {
+    imageUrl: string;
+    title: string;
+    content: string;
+    color: string;
+}
+const { imageUrl, title, content, color } = Astro.props;
+---
+<div class="grid grid-cols-1 md:grid-cols-2 p-4 m-8">
+    <div class={`p-4 text-lg bg-${color}-300`}>
+        <div class="mx-auto p-12">
+            <h1 class=" text-3xl font-bold text-balance">{title}</h1> <!-- Increased text size -->
+            <br>
+            <p>{content}</p>
+        </div>
+    </div>
+    <div>
+        <img src={imageUrl} alt="Image" class="h-96 w-full object-cover" />
+    </div>
+</div>

@@ -1,0 +1,59 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/components/FlexCard.astro
+const { imageUrl, title, description } = Astro.props;
+---
+
+<div class="flex flex-col bg-white shadow-md rounded-lg overflow-hidden mx-4 my-2">
+  <img src={imageUrl} alt={title} class="w-full h-72 object-cover" />
+  <div class="p-4">
+    <h3 class="text-lg font-bold mt-2">{title}</h3>
+    <p>{description}</p>
+  </div>
+</div>
+<style>
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+  .bg-white {
+    background-color: white;
+  }
+  .shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .h-64 {
+    height: 16rem; /* Increase the height of the image */
+  }
+  .object-cover {
+    object-fit: cover;
+  }
+  .p-4 {
+    padding: 1rem; /* Increase the padding */
+  }
+  .mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem; /* Increase the margin on the sides */
+  }
+  .my-2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; /* Keep the margin on top and bottom */
+  }
+  .text-lg {
+    font-size: 1.125rem; /* Decrease the font size */
+  }
+  .font-bold {
+    font-weight: bold;
+  }
+  .mt-2 {
+    margin-top: 0.5rem; /* Reduce the margin-top */
+  }
+</style>

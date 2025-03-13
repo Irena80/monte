@@ -1,0 +1,212 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import TitleBlock from '~/components/TitleBlock.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
+import ComponentRight from '~/components/widgets/ComponentRight.astro';
+import ImageCard1 from '~/components/ImageCard1.astro';
+import ImageCard1 from '~/components/ImageCard1.astro';
+const metadata = {
+  title: 'Gruppresor',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+       
+     
+      ]}
+     
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+  
+  
+  <Hero
+   tagline="Aktiva gruppresor"
+  image={{
+    src: '~/assets/images/pogled.JPG',
+    alt: 'Caos Image',
+  }}
+  actions={[
+    { text: 'Boka', icon: 'tabler:run', href: '/boka' },
+  ]}
+>
+
+<Fragment slot="title">
+Aktiva  <span class="hidden xl:inline"></span> <span class="text-indigo-600 dark:text-white highlight"> gruppresor </span> 
+</Fragment>
+
+<Fragment slot="subtitle">
+  <span class="hidden sm:inline">
+    <span class="font-semibold">Upptäck kontrasternas land </span> en äkta skattkista inramad av Adriatiska havets kristallklara vatten och Balkans majestätiska berg.   
+</Fragment> 
+
+
+</Hero>
+
+
+
+
+ 
+   <!-- Features Widget *************** -->
+
+   <Features
+   id="features"
+  
+   title="Utforska äventyrslandet Montenegro"
+   subtitle="Låt oss guida dig till Montenegros bästa pärlor - en av Europas mest spännande och mångsidiga destinationer! Välj bland våra färdiga resepaket eller kontakta oss för en skräddarsydd upplevelse – oavsett om ni är en stor grupp eller ett mindre sällskap, ser vi till att hitta det perfekta paketet för just er."
+   
+ />
+
+   
+
+<!-- Content Widget **************** -->
+
+<Content
+
+image={{
+ src:'~/assets/images/lustica1.JPG',
+  alt: 'Colorful Image',
+  loading: 'eager',
+}}
+>
+<Fragment slot="content">
+  <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Upplev kusten</h2>
+  <p>
+    Lilla Montenegro är en äkta skattkista, inramad av Adriatiska havets kristallklara vatten och Balkans majestätiska berg. Längs den nästan 30 mil långa kustlinjen gömmer sig charmiga, okända badorter och välbevarade pärlor som Herceg Novi, Tivat, Kotor, Budva och Bar.
+  </p>
+  <br />
+  <p>
+    Montenegro bär på en rik historia, där varje liten by känns som en tidsresa genom smala gränder, vackra stenhus och lummiga trädgårdar. I norr, bara en halvtimmes bilresa från Dubrovniks flygplats, ligger Herceg Novi – en pittoresk kuststad som klättrar längs bergssluttningen ner mot den skyddade viken.
+
+  </p>
+  <br />
+  <p>Resa solo eller med sällskap. Att röra sig på semestern och ha en aktiv resa i grupp innebär hos oss att komma närmare resmålet, den goda maten och uppleva natur och gemenskap. 
+
+  </p>
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+
+image={{
+ src:'~/assets/images/lukavica.webp',
+  alt: 'Colorful Image',
+  loading: 'eager',
+}}
+>
+<Fragment slot="content">
+  <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Berg och land</h2>
+  <p>
+    Utforska bergstoppar som är 2000 meter höga eller mer, ta dig ner i de utmanande vertikalerna av fantastiska kanjoner, bada i en safirblå grotta gömd av havet, prova traditionellt hantverk, åk på äventyr i urskogen, fest på kačamak i fridfulla katuns, svalka dig i Tara och långt borta på den kända vägen. Så mycket väntar på att utforskas!
+  </p>
+  <br />
+ 
+  
+  <br />
+  
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+
+
+  
+  <!-- Features Widget *************** -->
+
+  <Features
+  id="features"
+ 
+  title="Letar du efter en unik upplevelse? <br> Sätt siktet på Montenegro och upplev kontrasternas land!"
+  
+/>
+
+<div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+  <ComponentLeft 
+    imageUrl="../src/assets/images/jesen.jpg" 
+    title="Upplev den vilda naturen" 
+    content="Det är lätt att förälska sig i Dubrovnik och dess medeltida trånga gränder och pampiga torg som kantas av palats, kyrkor, kloster och charmiga caféer. Vi börjar med att upptäcka Dubrovnik från ovan, med en promenerad på Dubrovniks ringmur, för att sedan strosa längs Dubrovniks kullerstensbelagda gränder och torg."
+    color="blue"
+  />
+  <ComponentRight 
+    imageUrl="../src/assets/images/ridning.jpg" 
+    title="Från sadeln, upptäck Montenegros natursköna charm" 
+    content=" Tycker du om lugn, stillhet och grönska, omgivna av de mest spektakulära landskapen? Låt då din vilda sida leda dig till att utforska stigar som motorfordon inte kan nå, på en av de många organiserade ridturerna som erbjuds."
+    color="blue"
+  />
+  <ComponentLeft 
+    imageUrl="../src/assets/images/covekmost.jpg" 
+    title="Äventyr" 
+    content="Ta en tur genom nationalparken Durmitor, en UNESCO-plats sedan 1980, beundra storheten i Tara-kanjonen och njuta av en mycket trevlig panoramautsikt över norra Montenegro"
+    color="blue"
+  />
+  <ComponentRight 
+    imageUrl="../src/assets/images/camac.jpg" 
+    title="Test" 
+    content="Njut av en dagsutflykt till Biogradaska Gora och Durmitor nationalpark via Tara Canyon. Vandra till skyhöga toppar för en oslagbar utsikt över glittrande glaciärsjöar."
+    color="blue"
+  />
+</div>
+<!-- Add ImageCards -->
+<h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2 text-center">Utvalda aktiviteter</h2>
+<p class="text-lg text-center mb-8">Här delar vi med oss av flera tips på aktiviteter i Montenegro</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-4">
+ 
+  <ImageCard1
+  imageUrl="../src/assets/images/Orjen.jpg"
+  title="Bergsäventyr"
+  link="/mountain-adventure"
+/>
+<ImageCard1
+    imageUrl="../src/assets/images/zicara.jpeg"
+    title="Kotor linbana"
+    link="/mountain-adventure"
+  />
+ 
+  <ImageCard1
+  imageUrl="../src/assets/images/unesco1.webp"
+  title="Vandra genom historien"
+  link="/mountain-adventure"
+/>
+</div>
+   <!-- Steps2 Widget ****************** -->
+
+   <Steps2
+   title="Välj mellan redan färdiga resepaket eller kontakta oss för en skräddarsydd upplevelse!"
+   subtitle="Låt oss hjälpa dig att skapa en oförglömlig resa!"
+   callToAction={{
+     text: 'Kontakta oss',
+     href: '/contact',
+   }}
+   
+ />
+ 
+
+  
+</Layout>

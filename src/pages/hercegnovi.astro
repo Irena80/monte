@@ -1,0 +1,178 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/hercegnovi.astro
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Carousel from '~/components/Carousel.astro';
+
+import TitleBlock from '~/components/TitleBlock.astro';
+import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
+import ComponentRight from '~/components/widgets/ComponentRight.astro';
+import { YouTube } from 'astro-embed';
+import FlexCard from '~/components/FlexCard.astro';
+
+
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+  
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Festivaler',
+      href: 'https://www.hercegfest.me/en/festivals/',
+      target: '_blank',
+      icon: 'tabler:sun',
+    },
+    { text: 'Virtuell promenad', icon:'tabler:stairs', href: 'https://virtualtours.virtualno360.hr/F17tWnGjbU/43435577p&348.89h&79.41t' },
+  ]}
+   
+   
+  
+    
+    image={{
+      src: '~/assets/images/HN pogled zaliv.jpg',
+      alt: 'Caos Image',
+    }}
+  >
+  <Fragment slot="title">
+     <span class="hidden sm:inline">Staden som du längtar till</span>  <span
+
+      class="text-accent dark:text-white highlight">Herceg Novi</span
+    > 
+  </Fragment>
+    <Fragment slot="subtitle">
+      Vid en av världens vackraste vikar, Kotorbukten, finns Herceg Novi, solens, grönskans och festivalernas stad. 
+    </Fragment>
+
+    <Fragment slot="image">
+      <YouTube id="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
+      <style is:inline>
+        lite-youtube {
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      </style>
+    </Fragment>
+  </Hero>
+
+  
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Snabb statistik"
+    stats={[
+      { title: 'Soldagar om året', amount: '250+' },
+      { title: 'Trappsteg', amount: '100 001' },
+      { title: 'Kartlagda stigar för aktiv semester', amount: '250 km' },
+      { title: 'Strandpromenad' , amount: '6 km' },
+      { title: 'Antal stränder' , amount: '70+' },
+      { title: 'Kust' , amount: '18 km' },
+     
+    ]}
+  />
+
+
+<Content
+    
+    image={{
+      src: '~/assets/images/gradhn.jpg',
+      alt: 'Colorful Image',
+    }}
+    
+  >
+
+  <Fragment slot="content">
+    <TitleBlock title="Solens och grönskans stad" style="margin-bottom: 20px;"/>
+    
+    <p style="margin-top: 40px;">Herceg Novi sägs vara en av de vackraste städerna vid Adriatiska havet. Denna urbana oas av grönska och blåa vyer är en idealisk plats för semester. En oas av romantik när som helst på året då det är lika vackert. <br> Vackra stränder, medelhavsklimat, parker och trädgårdar med ett brett utbud av exotisk grönska och ett utmärkt gastronomiskt utbud gör denna destination idealisk för alla som planerar att tillbringa sin semester längs Montenegros kust. <br> <br> Varje företagsresa är en investering och med genomtänkt innehåll, engagemang och en stor dos kreativitet skapar vi nya upplevelser.</p>
+  </Fragment>
+
+  
+
+    <Fragment slot="bg">
+     
+    </Fragment>
+    
+  </Content>
+
+
+ 
+<div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+  <ComponentLeft 
+    imageUrl="../src/assets/images/hn3.webp" 
+    title="Gamla Stan" 
+    content="Det är lätt att förälska sig i Herceg Novi och dess medeltida trånga gränder och pampiga torg som kantas av palats, kyrkor, kloster och charmiga caféer. Vi börjar med att upptäcka Herceg Novi från ovan, med en promenerad på Herceg Novis ringmur, för att sedan strosa längs dess kullerstensbelagda gränder och torg."
+    color="blue"
+  />
+  <ComponentRight 
+    imageUrl="../src/assets/images/jedrenje3.webp" 
+    title="Utforska den pittoreska bukten" 
+    content=" Glid längs kusten till gömda stränder och charmiga fiskebyar. Simma i det turkosa vattnet i den majestätiska Blue Cave och se solljuset förvandla väggarna till ett hisnande naturskådespel. Besök den förtrollande ön Our Lady of the Rock, utforska en kyrka som är genomsyrad av historia och ett museum som berättar om kärlek, hängivenhet och tradition."
+    color="blue"
+  />
+  <ComponentLeft 
+    imageUrl="../src/assets/images/covekmost.jpg" 
+    title="Äventyr" 
+    content="Ta en tur genom nationalparken Durmitor, en UNESCO-plats sedan 1980, beundra storheten i Tara-kanjonen och njuta av en mycket trevlig panoramautsikt över norra Montenegro"
+    color="blue"
+  />
+  <ComponentRight 
+    imageUrl="../src/assets/images/camac.jpg" 
+    title="Test" 
+    content="Njut av en dagsutflykt till Biogradaska Gora och Durmitor nationalpark via Tara Canyon. Vandra till skyhöga toppar för en oslagbar utsikt över glittrande glaciärsjöar."
+    color="blue"
+  />
+</div>
+
+ 
+ 
+<!-- Steps2 Widget ****************** -->
+
+<Steps2
+  title="Äventyret startar här"
+  subtitle="Välkommen till Herceg Novi, där Adriatiska havet smälter samman sitt glittrande blå med frodig grönska. Mellan historiska fästningar och livliga gränder gömmer sig en stad som förtrollar med charm och historia."
+  isReversed={true}
+  callToAction={{
+    text: 'Kontakta oss',
+    href: 'contact',
+  }}
+   
+  items={[
+    {
+      title: 'Flyg',
+      description: 'Direktflyg finns från mars till november till Dubrovnik eller Tivat och resan tar ca 2,5 timmar . Alternativ flyg med mellanlandning från  Skandinavien till huvudstaden Podgorica i Montenegro går dagligen. Flygresan tar ca 4-5 timmar. <br> Är ni en större företagsgrupp på ca 100 personer och uppåt, kan vi hjälpa Er att privatchartra Ert egna flyg, som avgår direkt från er närmaste avrese-ort till Tivat i Montenegro.',
+      icon: 'tabler:plane',
+    },
+    {
+      title: 'Transfertider',
+      description:
+        'Från Tivats flygplats till Herceg Novi är det ca 15 minuters transfer. Från Dubrovnik är det ca 30 min bilväg.',
+      icon: 'tabler:message-star',
+    },
+    {
+      title: 'Hotell och boende i Montenegro',
+      description:
+        'I den charmiga orten Herceg Novi finns 4* hotell med utmärkta konferensmöjligheter för grupper upp till flera hundra personer. I närheten ligger resort Porto Novi med 5* hotell.',
+      icon: 'tabler:award',
+    },
+  ]}
+/>
+
+
+  
+  
+</Layout>

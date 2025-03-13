@@ -1,0 +1,234 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    
+    image={{
+      src: '~/assets/images/beograd.jpg',
+      alt: 'Caos Image',
+    }}
+  >
+  <Fragment slot="title">
+     <span class="hidden sm:inline">Konferensresa</span>  <span
+      class="text-accent dark:text-white highlight">Belgrad</span
+    > 
+  </Fragment>
+    <Fragment slot="subtitle">
+      Upptäck Belgrad, uppstickaren på konferensmarknaden! Belgrad har genomgått en imponerande förvandling från sitt östeuropeiska arv till en modern metropol med välutvecklade konferensanläggningar. 
+      
+    </Fragment>
+  </Hero>
+
+ 
+<!-- Features2 Widget ************** -->
+
+<Features2
+title="Upplev porten till Balkan- där väst och öst möts"
+subtitle="Perfekt destination för en konferensresa med trendiga restauranger och kul aktiviteter!Belgrad nås inom en kort flygresa från Skandinavien. Väl framme möts ni av en stad som vimlar av trendiga restauranger och coola klubbar. Floden Sava delar upp Belgrad i två delar och den gamla stadsdelen i öst kännetecknas av gamla palats och historiska byggnader medan den västra sidan med sina höga betonghus vittnar om en tid då kommunismen präglade landet. "
+>
+
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  
+</Fragment>
+</Features2>
+
+
+<!-- Steps2 Widget ****************** -->
+
+<Steps2
+title="En lockade Metropolis "
+subtitle="Belgrad erbjuder en smältdegel av olika kulturer som har format en unik anda av öppenhet och kosmopolitism. Staden ligger där de två stora floderna, Sava och Donau, möts – en verklig mötesplats för människor, idéer och kulturer. Här finner du en stad fylld av liv, präglad av en mångfald av kulturella evenemang och mötesplatser. Med ett överflöd av attraktioner, vackra byggnader, museer, kyrkor, gator och parker utstrålar Belgrad en stark och oemotståndlig urban charm som lockar besökare från hela världen."
+isReversed={true}
+callToAction={{
+  text: 'Boka',
+  href: 'http://localhost:4321/boka',
+}}
+ 
+items={[
+  {
+    title: 'Prisvärd destination med direktflyg',
+    description: 'Belgrad nås inom en kort flygresa från Skandinavien.Flygtiden till Belgrad är cirka två och en halv timme och transfer från flygplatsen in till centrala Belgrad tar cirka 25 minuter.',
+   icon: 'tabler:message-star',
+  },
+  {
+    title: 'En av Europas mest intressanta och pulserande städer',
+    description:
+      'Väl framme möts ni av en av Europas mest intressanta och pulserande städer. Dess behagliga klimat gör dessutom staden till en perfekt destination både under hösten och våren. Och om man letar efter en stad där man sannerligen får mycket för pengarna finns det få städer som slår Belgrad på fingrarna.',
+    icon: 'tabler:globe',
+  },
+  {
+    title: 'Trendiga restauranger och charmiga och mysiga caféer',
+    description:
+      'Matupplevelserna är både fantastiska och prisvärda i Belgrad och ni bör testa allt från de serbiska grillspecialiteterna till några av de storslagna och moderna restaurangerna som under senare år också öppnat upp här. ',
+    icon: 'tabler:award',
+  },
+  {
+    title: 'Fenomenal nattliv',
+    description:
+      'Staden sover aldrig..',
+    icon: 'tabler:award',
+  },
+]}
+/>
+  
+  <!-- Content Widget **************** -->
+
+  <Content
+      title='Belgrad en stad med många ess i rockärmen '
+    isReversed={true}
+    items={[
+      {
+        title: 'En av Europas äldsta städer',
+        description:
+          'I bohemkvarteren runt Skadarlija trängs charmiga restauranger och mysiga caféer. Resor till Belgrad passar för grupper i alla storlekar. Flygtiden till Belgrad är cirka två och en halv timme och transfer från flygplatsen in till centrala Belgrad tar cirka 25 minuter. med sin rika historia och moderna puls, är en prisvärd destination för en konferensresa. Stadens mångsidiga mötesplatser och hotell, kombinerat med dess unika kulturella och historiska miljöer, gör den till ett idealiskt val för företag och organisationer som söker en inspirerande miljö för sina konferenser.Belgrad är känt för sitt nattliv.',
+        icon: 'tabler:wand',
+      },
+      {
+        title: 'Historiska sevärdighter',
+        description:
+          'Upplev staden där östliga och västliga influenser vävs samman.Stadens unika position vid korsvägen mellan Öst- och Västeuropa ger den en distinkt karaktär. Utforksa blandning av ottomansk, österrikisk-ungersk och socialistisk arkitektur. Upplev den vibrerande nattlivet.',
+        icon: 'tabler:settings',
+      },
+ 
+    ]}
+    image={{
+      src: '~/assets/images/bg1.jpg',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Där öst och väst möts</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Belgrad Balkans Berlin',
+        description:
+          'Belgrad sägs vara Balkans Berlin, staden som aldrig sover.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Professional Appearance',
+        description:
+          'Belgrad är en stad som pulserar av musik, god mat, fantastisk feststämning och kärleksfullt och öppenhjärtat folk',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Cost-Efficiency',
+        description:
+          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Instant Download',
+        description:
+          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
+        icon: 'tabler:file-download',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/zurka.jpg',
+      alt: 'Benefits Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Mötens stad</h3>
+    </Fragment>
+  </Content>
+
+  
+ <!-- Steps Widget ****************** -->
+
+ <Steps
+ title="Konferens & kickoff"
+ tagline="simplified process"
+ isReversed={true}
+ items={[
+   {
+     title: 'Guidad vandring genom Belgrads underjordiska tunnlar',
+     icon: 'tabler:number-1',
+   },
+   {
+     title: 'Tur genom Vojvodina-provinsen',
+     icon: 'tabler:number-2',
+   },
+   {
+     title: 'Båttur På Donau',
+     icon: 'tabler:number-3',
+   },
+   {
+     title: 'Belgrads restauranger, barer och nattliv',
+     icon: 'tabler:number-4',
+   },
+   {
+     title: 'Hög kvalitet på mat och dryck',
+     icon: 'tabler:number-5',
+   },
+  
+   
+ ]}
+ image={{
+   src: '~/assets/images/beograd1.jpg',
+   alt: 'Steps image',
+ }}
+ 
+ 
+/>
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Technical Support"
+    tagline="Contact us"
+    columns={2}
+    items={[
+      {
+        title: 'Chat with us',
+        description:
+          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Call us',
+        description:
+          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
+        icon: 'tabler:headset',
+      },
+    ]}
+  />
+   <!-- Stats Widget ****************** -->
+
+   <Stats
+   title="Snabb statistik"
+   stats={[
+       { title: 'Prisvärt', amount: ' 2h direktflyg' }, 
+     { title: 'Historiska platser ', amount: '235+' },
+     { title: 'Rikligt nattliv' , amount: '204+' },
+     { title: 'Antal stränder' , amount: '70+' },
+     { title: 'Kust' , amount: '18 km' },
+    
+ 
+   ]}
+ />
+</Layout>

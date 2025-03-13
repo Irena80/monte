@@ -1,0 +1,63 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/components/ImageCard1.astro
+export interface Props {
+  imageUrl: string;
+  title: string;
+  link: string;
+}
+
+const { imageUrl, title, link } = Astro.props;
+---
+
+<style>
+  .card-container {
+    width: 100%; /* Make the card responsive */
+    position: relative; /* Enable absolute positioning for child elements */
+    margin: 0; /* Remove margin to eliminate white space */
+    overflow: hidden; /* Ensure content does not overflow */
+  }
+  .card-image {
+    width: 100%; /* Make the image responsive */
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the entire area */
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cover the entire card */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-container:hover .overlay {
+    opacity: 1; /* Show on hover */
+  }
+  .title {
+    font-size: 1.5rem; /* Adjust font size for mobile */
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+</style>
+
+<a href={link} class="block">
+  <div class="card-container rounded-3xl shadow-2xl overflow-hidden">
+    <img
+      class="card-image"
+      src={imageUrl}
+      alt={title}
+    />
+    <div class="overlay">
+      <h3 class="title">{title}</h3>
+      <p class="text mt-2">Explore this activity</p> <!-- Add any additional text here -->
+    </div>
+  </div>
+</a>

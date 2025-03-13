@@ -1,0 +1,108 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Costcard from '~/components/Costcard.astro';
+import TitleBlock from '~/components/TitleBlock.astro';
+
+const metadata = {
+  title: 'Pris',
+};
+const costs = [
+	{
+		title:"Konferensresa till Budva",
+		location:"Avresa februari-oktober 2025 | Flyg från Stockholm | 4* hotell",
+		description:"Här spenderar ni tre dagar i Budva området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest. ",
+		price:"10999",
+		imageUrl:"friends.webp",
+    href:"/budva", // Ensure the href property is set correctly
+	},
+  
+
+	{
+		title:"Konferensresa till Herceg Novi",
+		location:"Avresa februari-oktober 2025| Flyg från Stockholm | 5* hotell",
+		description:"Här spenderar ni tre dagar i Budva området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest. ",
+		price:"12900",
+		imageUrl:"portonovi.webp",
+    href:"/hercegnovi", // Ensure the href property is set correctly
+    },
+	
+	{
+		title:"Gruppresor till Montenegro",
+		location:"Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
+		description:"Här spenderar ni fyra dagar ",
+		price:"test",
+		imageUrl:"biograd.jpg",
+    href:"/budva", // Ensure the href property is set correctly
+	},
+  {
+		title:"Sportresor till Montenegro",
+		location:"Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
+		description:"Här spenderar ni fyra dagar ",
+		price:"test",
+		imageUrl:"yoga.jpg",
+    href:"/budva", // Ensure the href property is set correctly
+	},
+  {
+		title:"Höstpaket",
+		location:"Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
+		description:"Här spenderar ni fyra dagar ",
+		price:"test",
+		imageUrl:"jesen.jpg",
+    href:"/budva", // Ensure the href property is set correctly
+	},
+  {
+		title:"Kolašin Village vinteräventyr",
+		location:"Avresa november-april | Flyg från Stockholm, Göteborg | 4* hotell",
+		description:"Här spenderar ni fyra dagar ",
+		price:"test",
+		imageUrl:"kolasin2.jpg",
+    href:"/budva", // Ensure the href property is set correctly
+	},
+]
+
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    
+    title="Vi sammanför Montenegro med Skandinavien"
+    subtitle="Välj mellan salig utbud av redan paketerade helhetsupplevelser eller hör av er så tar vi fram skräddarsydda paket utifrån era behov."
+  />
+
+  
+  {costs.map(cost => (
+    <Costcard 
+      title={cost.title}
+      location={cost.location}
+      description={cost.description}
+      price={cost.price}
+      imageURL={cost.imageUrl}
+      href={cost.href} 
+    
+  />
+  ))}
+
+ 
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Upplev landet full av möjligheter"
+    subtitle="Vi är inspirerade av Montenegros hisnande skönhet och är dedikerade till att dela vår passion för denna fantastiska destination med dig"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Kontakta oss',
+        href: 'contact',
+      },
+    ]}
+  />
+</Layout>

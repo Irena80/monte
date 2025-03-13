@@ -1,0 +1,103 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import TitleBlock from '~/components/TitleBlock.astro';
+import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
+import ComponentRight from '~/components/widgets/ComponentRight.astro';
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    
+    image={{
+      src: '~/assets/images/Stari grad Budva.jpeg',
+      alt: 'Caos Image',
+    }}
+  >
+  <Fragment slot="title">
+     <span class="hidden sm:inline"> En historisk pärla</span>  <span
+      class="text-accent dark:text-white highlight">Budva</span
+    > 
+  </Fragment>
+    <Fragment slot="subtitle">
+      "Lilla Dubrovnik" brukar den Budvanska Rivieran kallas som på senare tid lockar allt fler besökare. Medeltidsstaden Budva ger det bästa Montenegro har att erbjuda vad gäller kultur, stränder och pulserande nattliv.
+    </Fragment>
+  </Hero>
+
+ 
+<!-- Features2 Widget ************** -->
+
+<Features2
+title="En av de äldsta städerna vid Adriatiska havet"
+subtitle="Budva ligger längs den centrala delen av Montenegros solrika kust, omgiven av naturens skönhet. Med en imponerande och majestätisk bergskedja som skydd mot starka nordliga vindar, erbjuder Budva ett unikt klimat och en spektakulär miljö. <br> Idag framstår Budva som en kombination av fästning och teaterscen, där otaliga kulturella evenemang äger rum. Under sommarmånaderna ökar antalet besökare hundrafalt, vilket förvandlar staden till en livfull och dynamisk mötesplats." 
+
+>
+
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  
+</Fragment>
+</Features2>
+  
+
+    <div class="relative mx-auto max-w-8xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default"></div>
+   
+   
+  
+   <ComponentLeft imageUrl= "../src/assets/images/budva3.webp", title = ' Upptäck den charmiga Gamla Stan i Budva', content=' Budvas mest populära turistnav och en fristad för angelägna historiker, den otroligt vackra Gamla stan är en naturlig utgångspunkt för alla resor, men särskilt för förstagångsbesökare. Gamla stan har anor från medeltiden, vilket placerar Budva bland regionens äldsta städer vid Adriatiska kusten. Varje hörn känns som om det kommer från en saga, med smala gator och stenklädda byggnader som påminner om en mini Dubrovnik.', color='blue'/>
+   <ComponentRight imageUrl= "../src/assets/images/mogren.jpg", title = 'Simma i det klara vattnet vid Mogren strand', content='Den spektakulära stranden Mogren ligger undangömd strax väster om Budvas gamla stadsdel. Denna vackra plats har blivit en av Budvas mest populära turistmål tack vare dess glasliknande vatten och imponerande klippomgivningar.', color='blue'/>
+   <ComponentLeft imageUrl= "../src/assets/images/svetistefan1-1.jpg", title = 'Få en glimt av den ikoniska Sveti Stefan', content='Mindre än 15 minuter söder om Budva ligger den lyxiga orten Sveti Stefan, Den bildsköna ön utgör dock lyxhotellet Amans ägor och är därför utom räckhåll att utforska för de som inte bor där. Men det kostar naturligtvis inte att beskåda den från de solblekta svagt rosa klapperstensstränderna som ligger utanför.', color='blue'/>
+   <ComponentRight imageUrl= "../src/assets/images/lovcen.webp", title = 'Besök Lovćen National Park', content=' Besök den otroliga nationalparken Lovćen som är känd för sina bergstoppar, sin historiska mausoleum och den fantastiksa utsikten där man kan se över hela landet! Boka en bekväm dagsutflykt med en tur med linbanan, en bilresa på den berömda serpentinvägen, byn Njegusi och en 1-timmes vandringstur i Cetinje  för att utforska Cetinje-klostret.', color='blue'/>
+  </div>
+
+
+   
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Äventyret startar här"
+    subtitle="Njut av ett stort restaurangutbud, bra nattliv och många stränder. Tack vare dess läge är Budva även en bra utgångspunkt till ett flertal andra intressanta platser."
+    isReversed={true}
+    callToAction={{
+      text: 'Boka paketresa',
+      href: 'paketresabudva',
+    }}
+     
+    items={[
+      {
+        title: 'Flyg',
+        description: 'Direktflyg finns från mars till november till Dubrovnik eller Tivat och resan tar ca 2,5 timmar . Alternativ flyg med mellanlandning från  Skandinavien till huvudstaden Podgorica i Montenegro går dagligen. Flygresan tar ca 4-5 timmar. <br> Är ni en större företagsgrupp på ca 100 personer och uppåt, kan vi hjälpa Er att privatchartra Ert egna flyg, som avgår direkt från er närmaste avrese-ort till Tivat i Montenegro.',
+        icon: 'tabler:plane',
+      },
+      {
+        title: 'Transfertider',
+        description:
+          'Från Tivats flygplats till Budva är det ca 30 minuters transfer och till Bay of Kotor är det ca 15 minuters transfer. Från Podgoricias internationella flygplats är det ca 1 timmes transfer till Budva.',
+        icon: 'tabler:message-star',
+      },
+      {
+        title: 'Hotell och boende i Montenegro',
+        description:
+          'I den charmiga orten Budva finns 4* hotell med utmärkta konferensmöjligheter för grupper upp till flera hundra personer. I området runt Tivat med Kotor och Porto Montenegro hittar vi flera läckra 5* hotell.',
+        icon: 'tabler:award',
+      },
+    ]}
+  />
+
+
+  
+
+  
+</Layout>

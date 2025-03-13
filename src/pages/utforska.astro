@@ -1,0 +1,386 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/utforska.astro
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import TitleBlock from '~/components/TitleBlock.astro';
+import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
+import ComponentRight from '~/components/widgets/ComponentRight.astro';
+import DestinationCard from '~/components/DestinationCard.astro';
+import FeatureItem from '~/components/FeatureItem.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FlexCard from '~/components/FlexCard.astro';
+const metadata = {
+  title: 'Utforska',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Kusten',
+      href: '/kusten',
+      target: '_blank',
+      icon: 'tabler:sun',
+    },
+    { text: 'Inlandet', icon:'tabler:mountain', href: 'resor/gruppresor/inlandet' },
+  ]}
+  >
+    <Fragment slot="title">
+      Upptäck<span class="hidden sm:inline"> och utforska</span> den vilda <span class="text-accent dark:text-white highlight">Montenegro</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Upplev nöjen året runt med äventyr för den medvetna, aktiva och ständigt nyfikna.
+    </Fragment>
+    <Fragment slot="image">
+      <video controls autoplay muted class="w-full h-auto">
+        <source src="/src/assets/images/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </Fragment>
+  </Hero>
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title="Adriatiska havets juvel"
+    subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten till den montenegrinska landsbygden. Ett noggrant utvalt urval av oförglömliga upplevelser, personliga turer och exklusiva gourmetresor. Upptäck regionens kulinariska mästerverk, njut av förstklassiga lokala viner och låt dig förföras av skräddarsydda cocktails som speglar Montenegros unika charm och kultur."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+  
+
+
+
+
+<!-- Content Widget **************** -->
+<Content
+title="Kontrasternas land"
+subtitle="Upplev det bästa av två världar, med bara två timmars bilresa bort ligger den fängslande montenegrinska kusten."
+ items={[
+   {
+     title: 'Kusten',
+     description:
+       'Montenegros kustlinje är en av de vackraste i världen. Med sina 117 stränder, 73 km kustlinje och 250 soliga dagar om året är det en av de mest populära turistdestinationerna i Europa. Kusten är känd för sina vackra stränder, kristallklara vatten och pittoreska byar. Här kan du njuta av en mängd olika aktiviteter, som vattensporter, båtturer, vandring och cykling. Du kan också besöka några av de många historiska sevärdheterna, som de gamla städerna Kotor och Budva, eller utforska de många nationalparkerna och naturreservaten i området.',
+     icon: 'tabler:beach',
+   },
+ ]}
+image={{ src: '~/assets/images/petrovac.png', alt: 'AstroWind Hero Image' }}
+>
+</Content>
+<div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+  
+
+  <div class="relative m-auto max-w-5xl">
+  
+    <img src="../src/assets/images/BB.jpg" alt="Your Image" class="min-w-full h-auto mb-8 same-size" />
+  </div>
+</div>
+
+
+ <!-- Add FlexCards -->
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
+  <FlexCard
+  imageUrl= "../src/assets/images/Skver.png"
+    title="Fästningar"
+    description="Utforska de historiska fästningarna i Herceg Novi, som erbjuder fantastisk utsikt över Kotorbukten och en inblick i stadens rika historia."
+  />
+  <FlexCard
+    imageUrl= "../src/assets/images/Skver.png"
+    title="Stränder"
+    description="Njut av de vackra stränderna i Herceg Novi, med kristallklart vatten och en avslappnad atmosfär som är perfekt för avkoppling."
+  />
+  <FlexCard
+    imageUrl= "../src/assets/images/Skver.png"
+    title="Parker"
+    description="Besök de lummiga parkerna i Herceg Novi, där du kan promenera bland exotiska växter och njuta av den fridfulla miljön."
+  />
+</div>
+
+  <!-- Add space between image and title -->
+<div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+  <br><TitleBlock title="Upptäck kusten" class="mb-8"/>
+ <br> 
+
+ <div class="relative m-auto max-w-5xl">
+    
+ </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link1">
+      <img src="../src/assets/images/st.jpg" alt="Image 1" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">St Nicola</h3>
+      <p>Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.
+  </p>
+    </div>
+  </div>
+
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link2">
+      <img src="../src/assets/images/mamula.jpg" alt="Image 2" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Forten Mamula</h3>
+      <p>Fästningen Mamula byggdes på den lilla klippiga ön Lastavica nära Herceg Novi. Enligt många experter är denna fästning fortfarande ett mästerverk inom militär arkitektur och imponerar med sin storslagna struktur och fascinerande historia.
+      </p></div>
+  </div>
+
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link3">
+      <img src="../src/assets/images/blue.jpg" alt="Image 3" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Blue Cave</h3>
+      <p>Ett sant naturunder, Blue Cave förtrollar besökare med sitt magiska blå sken, skapat när solljuset bryts genom det kristallklara vattnet. Känd för sin fängslande ljuseffekt och sina turkosfärgade vatten, är ett besök i denna spektakulära havsgrotta ett måste för alla som utforskar Montenegros kust.</p>
+    </div>
+  </div>
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link3">
+      <img src="../src/assets/images/ulcinj.jpg" alt="Image 3" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Ulcinj</h3>
+      <p>Ulcinj är en fantastisk central plats för att utforska Montenegros sydkustregion (från Bar till Skadarsjön till Ada Bojana) och delar av Albanien. Regionen Ulcinjs sydkust har några av de mest intressanta äventyrs-, historiska och ekologiska turerna och semesterstrandvistelser i hela Adriatiska havet.</p>
+    </div>
+  </div>
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link3">
+      <img src="../src/assets/images/svetistefan2.jpg" alt="Image 3" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Sveti Stefan ö</h3>
+      <p>Sveti Stefan är exceptionellt pittoresk. Med sina hus med terrakottatak från så långt tillbaka som 1400-talet, sina klippiga stränder och sin frodiga medelhavsvegetation, är detta utan tvekan stjärnattraktionen på Montenegros kust.</p>
+    </div>
+  </div>
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link3">
+      <img src="../src/assets/images/bar.jpg" alt="Image 3" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Gamla stan i Bar</h3>
+      <p>Stari Grad is an open-air museum. Here you can see the remains of buildings from ancient times.You can see the remains of the Roman-Gothic cathedral of St. George and two Gothic churches or the remains of the church of St. Nicholas, which was built in the 13th century.</p>
+    </div>
+  </div>
+ 
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link3">
+      <img src="../src/assets/images/kotor.jpg" alt="Image 3" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Kotorbukten</h3>
+      <p>Om Kotor var ett ord skulle det behöva vara ’förtrollande’; att gå runt och genom sina kullerstensgator är som att leva i en saga. Väggarna i dess UNESCO-skyddade gamla stad berättar historier om medeltiden, och det omgivande landskapet är så magiskt som det kan bli. Medan du är där bör du definitivt besöka Perast.</p>
+    </div>
+  </div>
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link3">
+      <img src="../src/assets/images/adabojana.jpg" alt="Image 3" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Ada Bojana</h3>
+      <p>Det är här floden möter havet, och inte vilket hav som helst, utan kanske det renaste havet att överlämna sig till. De kallar denna plats för paradis på jorden; historien om dess bildande och vad den nu har blivit gör detta till en mystisk ö av absolut finess. Ada Bojana gränsar till floden Bojana från två sidor och möter Adriatiska havet på den tredje av dess triangulära himmel. Ada Bojana är en 3 km lång sträcka med sandstrand och fisk- och skaldjursrestauranger att lägga till på din bucket list.</p>
+    </div>
+  </div>
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link3">
+      <img src="../src/assets/images/budva.jpg" alt="Image 3" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Budva</h3>
+      <p>
+      Budva är för själar som vill ha glädje på dagen och mycket nöje på natten. De fina morgontimmarna kan lätt ägnas åt att utforska den gamla stadens charmiga gator och lata sig i solstolar, medan natten skulle handla om barhoppning och massor av beats att dansa till.</p>
+    </div>
+  </div>
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link3">
+      <img src="../src/assets/images/hercegnovi5.jpg" alt="Image 3" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Herceg Novi</h3>
+      <p>
+       mycket att utforska, från att gå sin 6 km långa strandpromenad, stanna vid Kanli-Kulas stentorn och upptäcka sin gamla stad, till att klättra uppför Forte Mare och paddla kajak genom den blå grottan</p>
+    </div>
+  </div>
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link3">
+      <img src="../src/assets/images/Tivat.webp" alt="Image 3" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Tivat</h3>
+      <p>
+        En helt annan känsla skiljer Tivat från resten av kuststäderna; det som en gång var en enkel plats vid havet har nu blivit en hamn med storslagna yachter och glittriga hus. Tivat har genomgått en massiv makeover och förvandlat det till ett populärt turistmål med en snygg strandpromenad och ett livligt nattliv.</p>
+    </div>
+  </div>
+  <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <a href="https://example.com/link3">
+      <img src="../src/assets/images/perast.jpg" alt="Image 3" class="w-full h-auto" />
+    </a>
+    <div class="p-4">
+      <h3 class="text-xl font-bold mt-4">Perast</h3>
+      <p>Det som tidigare var känt som sjömanscentrum anses nu vara en av de vackraste små kuststäderna i Montenegro. En romantisk och barockkänsla fyller luften i denna charmiga stad med två kyrköar du måste se att åka ut till med båt. När du står vid dess kust och bara tittar ut över havet, kommer du att bli förundrad över naturens underverk. Med mer än 16 kyrkor och fästningar att besöka måste Perast vara ett måste på din lista.</p>
+    </div>
+  </div>
+  
+</div>
+
+
+  <!-- Add Destination Cards in the same row -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
+    <DestinationCard 
+      link="/boka" 
+      imageURL="most.jpg" 
+      destination="Boka Bay" 
+      title="Boka Bay Adventure" 
+      text="Utforska den vackra Boka Bay med våra guidade turer. Upptäck historiska platser, njut av fantastisk utsikt och upplev den lokala kulturen."
+    />
+    <DestinationCard 
+      link="/boka" 
+      imageURL="muslje.jpg" 
+      destination="Boka Bay" 
+      title="Boka Bay Cruise" 
+      text="Njut av en avkopplande kryssning i Boka Bay. Beundra den natursköna skönheten, besök charmiga byar och njut av den friska havsluften."
+    />
+    <DestinationCard 
+      link="/boka" 
+      imageURL="muslje.jpg" 
+      destination="Boka Bay" 
+      title="Boka Bay Exploration" 
+      text="Upptäck Boka Bays dolda pärlor med våra utforskningsturer. Vandra genom natursköna landskap, besök historiska monument och njut av den lokala atmosfären."
+    />
+  </div>
+
+  <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+    <br><TitleBlock title="Upptäck kusten" class="mb-8"/>
+   <br> 
+  
+   <div class="relative m-auto max-w-5xl">
+      
+   </div>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 m-2">
+    <DestinationCard 
+      link="/aktiviteter" 
+      imageURL='st.jpg' 
+      destination='St Nikolas ö' 
+      title='St Nikolas ö' 
+      text='Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.'
+    />
+    <DestinationCard 
+      link="/aktiviteter" 
+      imageURL='HNkula.webp' 
+      destination='Forte Mamula' 
+      title='Hemlighetsfulla Herceg Novi' 
+      text='Fästningen Mamula byggdes på den lilla klippiga ön Lastavica nära Herceg Novi. Enligt många experter är denna fästning fortfarande ett mästerverk inom militär arkitektur och imponerar med sin storslagna struktur och fascinerande historia..'
+    /> 
+    <DestinationCard 
+      link="/aktiviteter" 
+      imageURL='muslje.jpg' 
+      destination='Matupplevelser' 
+      title='Culinary Experiences' 
+      text='Njut av de finaste kulinariska upplevelserna Montenegro har att erbjuda.'
+    /> 
+    <DestinationCard 
+    link="/aktiviteter" 
+    imageURL='ostrvo.webp' 
+    destination='Historia' 
+    title='Vandra genom historien' 
+    text='Ge dig ut på en tur i Boka Bay och dess två pärlor: de bevarade medeltida städerna Kotor och Perast. Låt dig förföras av venetianska torg, barockpalats och kullerstensgator, innan du beundrar landskapet från ovan med linbana.'
+    /> 
+    <DestinationCard 
+      link="/aktiviteter" 
+      imageURL='st.jpg' 
+      destination='St Nikolas ö' 
+      title='St Nikolas ö' 
+      text='Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.'
+    />
+    <DestinationCard 
+      link="/aktiviteter" 
+      imageURL='HNkula.webp' 
+      destination='Herceg Novi och dess hemligheter' 
+      title='Hemlighetsfulla Herceg Novi' 
+      text='Upptäck Herceg Novis dolda hemligheter med vår guidade tur. Känd som solens och blommornas stad är Herceg Novi hem till imponerande fästningar, dolda arv och en labyrintliknande gamla stad. Vår skräddarsydda fyratimmarsresa avslöjar dess tidlösa hemligheter.'
+    /> 
+    <DestinationCard 
+      link="/aktiviteter" 
+      imageURL='muslje.jpg' 
+      destination='Matupplevelser' 
+      title='Culinary Experiences' 
+      text='Njut av de finaste kulinariska upplevelserna Montenegro har att erbjuda.'
+    /> 
+    <DestinationCard 
+    link="/aktiviteter" 
+    imageURL='ostrvo.webp' 
+    destination='Historia' 
+    title='Vandra genom historien' 
+    text='Ge dig ut på en tur i Boka Bay och dess två pärlor: de bevarade medeltida städerna Kotor och Perast. Låt dig förföras av venetianska torg, barockpalats och kullerstensgator, innan du beundrar landskapet från ovan med linbana.'/>
+  </div>
+  
+
+  
+
+
+ 
+   <!-- Steps Widget ****************** -->
+
+   <Steps
+   id="resume"
+   title="Fem bästa vandringsleder på Luštica"
+   items={[
+      {
+        title:
+          ' GORNJI KLINCI – OBOSNIK',
+        description: ` Längd: 4.1 km| Tid: 1:20 | Upplev: Högsta toppen av Luštica halvön`,
+        icon: 'tabler:mountain',
+      },
+      {
+        title:
+          ' RADOVIĆI – BABUNCI – TIĆI ŽANJICE',
+        description: ` Längd: 12.3 km| Tid: 3:15 | Upplev: Historisk vandringsled, olivlundar, Žanjice-stranden`,
+        icon: 'tabler:mountain',
+      },
+      {
+        title:
+          ' KRAŠIĆI – Mr. KRAŠIĆI – GOŠIĆI',
+        description: ` Längd: 3.7 km| Tid: 1:45 | Upplev: Den gamla byn Krašići, den gamla gångstigen, den stora gamla cisternen och S:t Nikolaus kyrkan.`,
+        icon: 'tabler:mountain',
+      },
+      {
+        title:
+          'SOLILA – GRABOVAC',
+        description: ` Längd: 4.2 km| Tid: 1:30 | Upplev: Tivat Solia, österrikisk-ungerska fästning Grabovac`,
+        icon: 'tabler:mountain',
+      },
+      {
+        title:
+          ' LUŠTICA GOLF AREA',
+        description: ` Längd: 6 km| Tid: 1:20 | Upplev: Magnifik utsikt över Kotorbukten`,
+        icon: 'tabler:mountain',
+      },
+   
+   
+ 
+     
+   ]}
+   classes={{ container: 'max-w-3xl' }}
+ />
+</Layout>
+<style>
+  .card-image {
+    width: 100%;
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the area */
+  }
+</style>
