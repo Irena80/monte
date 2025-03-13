@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink, } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -62,10 +62,7 @@ export const headerData = {
       text: 'Utforska',
       links: [
         
-        {
-          text: 'Saker att göra',
-          href: getPermalink('/utforska'),
-        },
+      
         {
           text: 'Kusten',
           href: getPermalink('/kusten'),
@@ -84,10 +81,7 @@ export const headerData = {
           text: 'Hotell',
           href: getPermalink('/hotell'),
         },
-        {
-          text: 'Reseinfo',
-          href: getPermalink('/reseinfo'),
-        },
+      
         
         {
           text: 'Blog',
@@ -109,13 +103,14 @@ export const headerData = {
           href: getPermalink('/about'),
         },
         {
+          text: 'Reseinfo',
+          href: getPermalink('/reseinfo'),
+        },
+        {
           text: 'Resevillkor',
           href: getPermalink('/privacy'),
         },
-        {
-          text: 'FQA',
-          href: getPermalink('/terms'),
-        },
+       
        
       
         

@@ -12,6 +12,7 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+
 const metadata = {
   title: 'MediteranoBay — Aktiva resor för grupper och företag',
   ignoreTitleTemplate: true,
@@ -20,7 +21,6 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
   <Hero
     actions={[
       {
@@ -34,15 +34,20 @@ const metadata = {
     ]}
     image={{ src: '~/assets/images/petrovac.png', alt: 'AstroWind Hero Image' }}
   >
-  <Fragment slot="title">
-    Upplev Montenegro <span class="hidden xl:inline"></span> <span class="text-indigo-600 dark:text-white highlight"> aktiva resor </span> för grupper och företag
-  </Fragment>
+    <Fragment slot="title">
+      Upplev Montenegro<span class="hidden xl:inline"> aktiva resor för</span>
+      <span class="text-accent dark:text-white highlight">  grupper och företag</span> 
+    </Fragment>
 
-  <Fragment slot="subtitle">
-    <span class="hidden sm:inline">
-      <span class="font-semibold">Res till Montenegro</span> på företagsevent, kick-off, konferens eller gruppresa. Vid det Adriatiska havet ligger Montenegro med dess medeltida charm. Ett litet land som är den perfekta destinationen för teambuildning och nya upplevelser.  
-  </Fragment> 
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Res till Montenegro</span> på företagsevent, kick-off, konferens eller gruppresa. Vid det Adriatiska havet ligger Montenegro med dess medeltida charm. Ett litet land som är den perfekta destinationen för teambuildning och nya upplevelser.</span
+      >
+
+      
+    </Fragment>
   </Hero>
+
 
  
 
@@ -240,28 +245,6 @@ const metadata = {
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Boka redan idag',
-        href: '/contact',
-        target: '_blank',
-        icon: 'tabler:phone',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Företag&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Event</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Om det är dags att samla företaget för en storslagen konferens med roliga aktiviteter eller om du bara letar efter den perfekta upplevelsen för en fullfjädrad get-away med dina vänner har vi fantastiska helhetslösningar som passar alla målgrupper. <br class="hidden md:inline" />
-  
-    </Fragment>
-  </CallToAction>
 
 
   <!-- HighlightedPosts Widget ******* -->
@@ -271,4 +254,5 @@ const metadata = {
     information={`Följ med på en upplevelserik resa
                 `}
   />
+  
 </Layout>
