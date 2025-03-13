@@ -12,7 +12,7 @@ const { title, price, location, description, imageURL, href } = Astro.props;
 
 <div class="grid grid-cols-1 justify-between md:grid-cols-3 mb-4 p-2 bg-white shadow-md hover:shadow-lg">
     <img
-        src={`~/assets/images/${imageURL}`}
+        src={`../src/assets/images/${imageURL}`}
         class="h-72 w-full object-cover"
         alt={title}
     />
