@@ -1,7 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -11,36 +9,24 @@ import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import TitleBlock from '~/components/TitleBlock.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
-
 import Features from '~/components/widgets/Features.astro';
 import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
 import ComponentRight from '~/components/widgets/ComponentRight.astro';
 import ImageCard1 from '~/components/ImageCard1.astro';
-import ImageCard1 from '~/components/ImageCard1.astro';
+
 const metadata = {
   title: 'Gruppresor',
 };
 ---
 
 <Layout metadata={metadata}>
-  <Fragment slot="announcement"></Fragment>
-  <Fragment slot="header">
-    <Header
-      links={[
-       
-     
-      ]}
-     
-      isSticky
-      showToggleTheme
-    />
-  </Fragment>
+
 
   <!-- Hero2 Widget ******************* -->
   
   
   <Hero
-   tagline="Aktiva gruppresor"
+   
   image={{
     src: '~/assets/images/pogled.JPG',
     alt: 'Caos Image',
@@ -160,7 +146,7 @@ image={{
     color="blue"
   />
   <ComponentLeft 
-    imageUrl="../src/assets/images/covekmost.jpg" 
+    imageUrl="../images/covekmost.jpg" 
     title="Äventyr" 
     content="Ta en tur genom nationalparken Durmitor, en UNESCO-plats sedan 1980, beundra storheten i Tara-kanjonen och njuta av en mycket trevlig panoramautsikt över norra Montenegro"
     color="blue"

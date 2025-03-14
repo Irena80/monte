@@ -84,7 +84,7 @@ export const headerData = {
       
         
         {
-          text: 'Blog',
+          text: 'Blogg',
           href: getBlogPermalink(),
         },
       ],
@@ -100,7 +100,7 @@ export const headerData = {
         },
         {
           text: 'Om oss',
-          href: getPermalink('/about'),
+          href: getPermalink('/om'),
         },
         {
           text: 'Reseinfo',
@@ -108,7 +108,7 @@ export const headerData = {
         },
         {
           text: 'Resevillkor',
-          href: getPermalink('/privacy'),
+          href: getPermalink('/resevillkor'),
         },
        
        
@@ -118,59 +118,52 @@ export const headerData = {
     },
   
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+ 
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'Resor',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'Företagsresor', href: '/resor/foretagsresor' },
+        { text: 'Gruppresor', href: '/resor/gruppresor' },
+        { text: 'Sportresor', href: '/resor/sportresor' },
+     
       ],
     },
     {
-      title: 'Platform',
+      title: 'Resepaket',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: 'Färdiga paket', href: '/boka' },
+        { text: 'Utflykter', href: '/utflykter' },
+     
       ],
     },
     {
-      title: 'Support',
+      title: 'Utforska',
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: 'Aktiviteter', href: '/aktiviteter' },
+        { text: 'Kusten', href: '/kusten' },
+        { text: 'Inlandet', href: '/inlandet' },
+        { text: 'Blogg', href: '/blog' },
+     
       ],
     },
     {
-      title: 'Company',
+      title: 'Info',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+      
+        { text: 'Om oss', href: '/om' },
+        { text: 'Kontakt', href: '/contact' }, 
+     
+ 
       ],
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Resevillkor', href: getPermalink('/resevillkor') },
+    { text: 'Reseinfo', href: getPermalink('/reseinfo') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
@@ -180,7 +173,7 @@ export const footerData = {
     
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="../src/assets/images/morecovek.webp" alt="onWidget logo" loading="lazy"></img>
+    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="../images/logo3.png" alt="onWidget logo" loading="lazy"></img>
      <a class="text-blue-600 underline dark:text-muted" href="https://mediteranobay.com/"> Mediteranobay</a> · All rights reserved.
   `,
 };
