@@ -1,16 +1,13 @@
 ---
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/landet.astro
-import Features2 from '~/components/widgets/Features2.astro';
+
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
-import ComponentRight from '~/components/widgets/ComponentRight.astro';
-import DestinationCard from '~/components/DestinationCard.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+
 import Steps from '~/components/widgets/Steps.astro';
-import ImageGallery from '~/components/ImageGallery.astro';
+
 import Content from '~/components/widgets/Content.astro';
-import TitleBlock from '~/components/TitleBlock.astro';
+
 import FlexCard from '~/components/FlexCard.astro';
 
 
@@ -18,14 +15,7 @@ const metadata = {
   title: 'Inlandet',
 };
 
-const galleryImages = [
-  { src: '../src/assets/images/kolasin2.jpg', alt: 'Image 1' },
-  { src: '../src/assets/images/image2.jpg', alt: 'Image 2' },
-  { src: '../src/assets/images/image3.jpg', alt: 'Image 3' },
-  { src: '../src/assets/images/image4.jpg', alt: 'Image 4' },
-  { src: '../src/assets/images/image5.jpg', alt: 'Image 5' },
-  { src: '../src/assets/images/image6.jpg', alt: 'Image 6' },
-];
+
 ---
 
 <Layout metadata={metadata}>
@@ -150,22 +140,22 @@ const galleryImages = [
   
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
     <FlexCard
-  imageUrl= "../src/assets/images/hrid.jpg"
+  imageUrl= "../images/hrid.jpg"
     title="Hrid sjön"
     description="Hrid-sjön ligger i ett spektakulärt landskap som kännetecknas av höga tallar, blekta trädstammar och intressanta klippformationer. Omsluten av den intensiva doften av tallarna kan naturälskare och de som söker lugn och ro finna en plats för avkoppling och drömmar."
   />
   <FlexCard
-    imageUrl= "../src/assets/images/buka.jpg"
+    imageUrl= "../images/buka.jpg"
     title="Bukumirsko-sjön"
     description="Bukumirsko-sjön är en av Montenegros legendariska sjöar. Den är omgiven av berg och ligger på en höjd av 1443 meter över havet. Här kan du bada, slå upp ett läger på stranden bredvid vasskogen och njuta av bergen, det natursköna landskapet ovanför samt lyssna på sjöns berättelser hela natten.."
   />
   <FlexCard
-    imageUrl= "../src/assets/images/piva .jpg"
+    imageUrl= "../images/piva .jpg"
     title="Piva-sjön"
     description="Piva-sjön (Pivsko jezero) är en konstgjord sjö belägen i Plužine kommun, i den nordvästra delen av Montenegro. Piva-landskapet präglas av täta skogar, kalkstensplatåer och spektakulära kanjoner formade av floderna Tara, Piva, Komarnica och Sušica."
   />
   <FlexCard
-    imageUrl= "../src/assets/images/lipa.jpg"
+    imageUrl= "../images/lipa.jpg"
     title="Lipa grottan"
     description="Strax utanför kungliga huvudstaden Cetinje ligger Lipa-grottan, ett av de största grottsystemen i Montenegro och det första som öppnats för turister. Dess trånga gångar och stora salar sträcker sig mer än 2,5 km under marken, från byn Lipa in i bergen längs Adriatiska kusten."
   />
@@ -183,7 +173,7 @@ const galleryImages = [
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link1">
-        <img src="../src/assets/images/Durmitor.jpg" alt="Image 1" class="w-full h-auto" />
+        <img src="../images/Durmitor.jpg" alt="Image 1" class="w-full h-auto" />
       </a>
       <div class="p-4">
         <h3 class="text-xl font-bold mt-4">Durmitor</h3>
@@ -193,7 +183,7 @@ const galleryImages = [
     </div>
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link1">
-        <img src="../src/assets/images/skadar3.jpg" alt="Image 1" class="w-full h-auto" />
+        <img src="../images/skadar3.jpg" alt="Image 1" class="w-full h-auto" />
       </a>
       <div class="p-4">
         <h3 class="text-xl font-bold mt-4">Skadarsjön</h3>
@@ -203,7 +193,7 @@ const galleryImages = [
     </div>
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link1">
-        <img src="../src/assets/images/lovcen.webp" alt="Image 1" class="w-full h-auto" />
+        <img src="../images/lovcen.webp" alt="Image 1" class="w-full h-auto" />
       </a>
       <div class="p-4">
         <h3 class="text-xl font-bold mt-4">Lovćen</h3>
@@ -213,7 +203,7 @@ const galleryImages = [
     </div>
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link1">
-        <img src="../src/assets/images/biograd.jpg" alt="Image 1" class="w-full h-auto" />
+        <img src="../images/biograd.jpg" alt="Image 1" class="w-full h-auto" />
       </a>
       <div class="p-4">
         <h3 class="text-xl font-bold mt-4">Biogradska Gora</h3>
@@ -223,7 +213,7 @@ const galleryImages = [
     </div>
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link1">
-        <img src="../src/assets/images/prokletije3.jpg" alt="Image 1" class="w-full h-auto" />
+        <img src="../images/prokletije3.jpg" alt="Image 1" class="w-full h-auto" />
       </a>
       <div class="p-4">
         <h3 class="text-xl font-bold mt-4">Prokletije</h3>

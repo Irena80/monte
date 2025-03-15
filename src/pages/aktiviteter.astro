@@ -1,29 +1,19 @@
 ---
-// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/utforska.astro
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
+// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/aktiviteter.astro
 import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
-import TitleBlock from '~/components/TitleBlock.astro';
-import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
-import ComponentRight from '~/components/widgets/ComponentRight.astro';
-import DestinationCard from '~/components/DestinationCard.astro';
-import FeatureItem from '~/components/FeatureItem.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import ImageCard1 from '~/components/ImageCard1.astro';
-import FlexCard from '~/components/FlexCard.astro';
+
+
 const metadata = {
   title: 'Utforska',
 };
 ---
 
 <Layout metadata={metadata}>
-    <!-- Hero Widget ******************* -->
-    <Hero
+  <!-- Hero Widget ******************* -->
+  <Hero
     actions={[
       {
         variant: 'primary',
@@ -34,127 +24,118 @@ const metadata = {
       },
       { text: 'Inlandet', icon:'tabler:mountain', href: 'resor/gruppresor/inlandet' },
     ]}
-    >
-      <Fragment slot="title">
-        Upptäck<span class="hidden sm:inline"> och utforska</span> den vilda <span class="text-accent dark:text-white highlight">Montenegro</span>
-      </Fragment>
-      <Fragment slot="subtitle">
-        Upplev nöjen året runt med äventyr för den medvetna, aktiva och ständigt nyfikna.
-      </Fragment>
-      <Fragment slot="image">
-        <video controls autoplay muted class="w-full h-auto">
-          <source src="/images/vildamng.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </Fragment>
-    </Hero>
+  >
+    <Fragment slot="title">
+      Upptäck<span class="hidden sm:inline"> och utforska</span> den vilda <span class="text-accent dark:text-white highlight">Montenegro</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Upplev nöjen året runt med äventyr för den medvetna, aktiva och ständigt nyfikna.
+    </Fragment>
+    <Fragment slot="image">
+      <video controls autoplay muted playsinline class="w-full h-auto">
+        <source src="/images/vildamng.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </Fragment>
+  </Hero>
   
   <!-- Content Widget **************** -->
-<Content
-title="Destination för alla årstider"
-subtitle="Här har vi listat de mest populäraste aktiviteter."
- items={[
+  <Content
+    title="Destination för alla årstider"
+    subtitle="Här har vi listat de mest populäraste aktiviteter."
+    items={[]}
+  >
+  </Content>
   
- ]}
->
-</Content>
-  
-<!-- Add ImageCards -->
-<div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-  <div class="relative m-auto max-w-5xl">
-    <img src="../src/assets/images/morecovek.webp" alt="Your Image" class="min-w-full h-auto mb-8 same-size" />
+  <!-- Add ImageCards -->
+  <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+    <div class="relative m-auto max-w-5xl">
+      <img src="../images/morecovek.webp" alt="Your Image" class="min-w-full h-auto mb-8 same-size" />
+    </div>
   </div>
-</div>
 
-<h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2 text-center">Letar du efter fler idéer till din resa?</h2>
-<p class="text-lg text-center mt-4">Utforska den fantastiska kusten och dess dolda skatter</p> <br>
+  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2 text-center">Letar du efter fler idéer till din resa?</h2>
+  <p class="text-lg text-center mt-4">Utforska den fantastiska kusten och dess dolda skatter</p> <br>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
-  <ImageCard1
-    imageUrl="../src/assets/images/cykla4.jpg"
-    title="Cykla"
-    link="/sunny-beach"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/jedrenje.jpg"
-    title="Segling"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/dyka.jpg"
-    title="Dykning"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/ridning.jpg"
-    title="Ridning"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/zicara2.webp"
-    title="Linbana"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/rafting2.webp"
-    title="Rafting"
-    link="/sunny-beach"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/kolasinski.jpg"
-    title="Skidåkning"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/kanjon1.webp"
-    title="Canyoning"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/paragliding.webp"
-    title="Paragliding"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/jeep2.jpg"
-    title="Kolašin Jeep Safari"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/kajaking2.jpg"
-    title="Kayaking on Skadar sjön"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/flygfiske.webp"
-    title="Flygfiske"
-    link="/sunny-beach"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/zipline.webp"
-    title="Zip Line"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/dipovi.jpg"
-    title="Quad-turer"
-    link="/mountain-adventure"
-  />
-  <ImageCard1
-    imageUrl="../src/assets/images/hiking.webp"
-    title="Vandring & Trekking"
-    link="/mountain-adventure"
-  />
-</div>
-
-  
-  
-
-
-
-
- 
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
+    <ImageCard1
+      imageUrl="../images/cykla4.jpg"
+      title="Cykla"
+      link="/sunny-beach"
+    />
+    <ImageCard1
+      imageUrl="../images/jedrenje.jpg"
+      title="Segling"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/dyka.jpg"
+      title="Dykning"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/ridning.jpg"
+      title="Ridning"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/zicara2.webp"
+      title="Linbana"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/rafting2.webp"
+      title="Rafting"
+      link="/sunny-beach"
+    />
+    <ImageCard1
+      imageUrl="../images/kolasinski.jpg"
+      title="Skidåkning"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/kanjon1.webp"
+      title="Canyoning"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/paragliding.webp"
+      title="Paragliding"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/jeep2.jpg"
+      title="Kolašin Jeep Safari"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/kajaking2.jpg"
+      title="Kayaking on Skadar sjön"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/flygfiske.webp"
+      title="Flygfiske"
+      link="/sunny-beach"
+    />
+    <ImageCard1
+      imageUrl="../images/zipline.webp"
+      title="Zip Line"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/dipovi.jpg"
+      title="Quad-turer"
+      link="/mountain-adventure"
+    />
+    <ImageCard1
+      imageUrl="../images/hiking.webp"
+      title="Vandring & Trekking"
+      link="/mountain-adventure"
+    />
+  </div>
 </Layout>
+
 <style>
   .card-image {
     width: 80%;
