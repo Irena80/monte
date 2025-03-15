@@ -1,4 +1,5 @@
 ---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/kusten.astro
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
@@ -21,62 +22,45 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-  actions={[
-   
-    { text: 'Festivaler', icon:'tabler:sun', href: 'https://www.hercegfest.me/en/festivals/' },
-  ]}
-    
+    actions={[
+      { text: 'Festivaler', icon:'tabler:sun', href: 'https://www.hercegfest.me/en/festivals/' },
+    ]}
   >
-  <Fragment slot="title">
-    Upptäck <span class="hidden sm:inline"> </span>  <span
-      class="text-accent dark:text-white highlight">kontrasternas </span <span class="hidden sm:inline"> land</span> 
-    
-  </Fragment>
+    <Fragment slot="title">
+      Upptäck <span class="hidden sm:inline"> </span>  <span class="text-accent dark:text-white highlight">kontrasternas </span> <span class="hidden sm:inline"> land</span> 
+    </Fragment>
 
- 
     <Fragment slot="subtitle">
       Upplev nöjen året runt med äventyr för den medvetna, aktiva och ständigt nyfikna. 
     </Fragment>
 
     <Fragment slot="image">
-      <video controls autoplay muted class="w-full h-auto">
+      <video controls autoplay muted playsinline class="w-full h-auto">
         <source src="../images/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </Fragment>
   </Hero>
 
-  
-<!-- Features2 Widget ************** -->
+  <!-- Features2 Widget ************** -->
 
-<Features2
-title="Adriatiska havets juvel"
-subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten till den montenegrinska landsbygden. Ett noggrant utvalt urval av oförglömliga upplevelser, personliga turer och exklusiva gourmetresor. Upptäck regionens kulinariska mästerverk, njut av förstklassiga lokala viner och låt dig förföras av skräddarsydda cocktails som speglar Montenegros unika charm och kultur." 
+  <Features2
+    title="Adriatiska havets juvel"
+    subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten till den montenegrinska landsbygden. Ett noggrant utvalt urval av oförglömliga upplevelser, personliga turer och exklusiva gourmetresor. Upptäck regionens kulinariska mästerverk, njut av förstklassiga lokala viner och låt dig förföras av skräddarsydda cocktails som speglar Montenegros unika charm och kultur." 
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
 
->
-
-
-<Fragment slot="bg">
-  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-  
-</Fragment>
-</Features2>
-
-
-
-
-   <!-- Add space between image and title -->
-   <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+  <!-- Add space between image and title -->
+  <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
     <br><TitleBlock title="Upptäck kusten" class="mb-8"/>
-   <br> 
-  
-   <div class="relative m-auto max-w-5xl">
-      
-   </div>
+    <br> 
+    <div class="relative m-auto max-w-5xl"></div>
   </div>
   
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
-  
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link3">
         <img src="../src/assets/images/perast.jpg" alt="Image 3" class="w-full h-auto" />
@@ -86,8 +70,6 @@ subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten til
         <p>Det som tidigare var känt som sjömanscentrum anses nu vara en av de vackraste små kuststäderna i Montenegro. En romantisk och barockkänsla fyller luften i denna charmiga stad med två kyrköar du måste se att åka ut till med båt. När du står vid dess kust och bara tittar ut över havet, kommer du att bli förundrad över naturens underverk. Med mer än 16 kyrkor och fästningar att besöka måste Perast vara ett måste på din lista.</p>
       </div>
     </div>
-  
-  
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link3">
         <img src="../src/assets/images/blue.jpg" alt="Image 3" class="w-full h-auto" />
@@ -115,16 +97,13 @@ subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten til
         <p>Sveti Stefan är exceptionellt pittoresk. Med sina hus med terrakottatak från så långt tillbaka som 1400-talet, sina klippiga stränder och sin frodiga medelhavsvegetation, är detta utan tvekan stjärnattraktionen på Montenegros kust.</p>
       </div>
     </div>
-   
-    
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link3">
         <img src="../src/assets/images/budva.jpg" alt="Image 3" class="w-full h-auto" />
       </a>
       <div class="p-4">
         <h3 class="text-xl font-bold mt-4">Budva</h3>
-        <p>
-        Budva är för själar som vill ha glädje på dagen och mycket nöje på natten. De fina morgontimmarna kan lätt ägnas åt att utforska den gamla stadens charmiga gator och lata sig i solstolar, medan natten skulle handla om barhoppning och massor av beats att dansa till.</p>
+        <p>Budva är för själar som vill ha glädje på dagen och mycket nöje på natten. De fina morgontimmarna kan lätt ägnas åt att utforska den gamla stadens charmiga gator och lata sig i solstolar, medan natten skulle handla om barhoppning och massor av beats att dansa till.</p>
       </div>
     </div>
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
@@ -136,15 +115,14 @@ subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten til
         <p>Om Kotor var ett ord skulle det behöva vara ’förtrollande’; att gå runt och genom sina kullerstensgator är som att leva i en saga. Väggarna i dess UNESCO-skyddade gamla stad berättar historier om medeltiden, och det omgivande landskapet är så magiskt som det kan bli. Medan du är där bör du definitivt besöka Perast.</p>
       </div>
     </div>
-   
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link2">
         <img src="../src/assets/images/mamula.jpg" alt="Image 2" class="w-full h-auto" />
       </a>
       <div class="p-4">
         <h3 class="text-xl font-bold mt-4">Forten Mamula</h3>
-        <p>Fästningen Mamula byggdes på den lilla klippiga ön Lastavica nära Herceg Novi. Enligt många experter är denna fästning fortfarande ett mästerverk inom militär arkitektur och imponerar med sin storslagna struktur och fascinerande historia.
-        </p></div>
+        <p>Fästningen Mamula byggdes på den lilla klippiga ön Lastavica nära Herceg Novi. Enligt många experter är denna fästning fortfarande ett mästerverk inom militär arkitektur och imponerar med sin storslagna struktur och fascinerande historia.</p>
+      </div>
     </div>
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link3">
@@ -152,8 +130,7 @@ subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten til
       </a>
       <div class="p-4">
         <h3 class="text-xl font-bold mt-4">Herceg Novi</h3>
-        <p>
-         mycket att utforska, från att gå sin 6 km långa strandpromenad, stanna vid Kanli-Kulas stentorn och upptäcka sin gamla stad, till att klättra uppför Forte Mare och paddla kajak genom den blå grottan</p>
+        <p>Mycket att utforska, från att gå sin 6 km långa strandpromenad, stanna vid Kanli-Kulas stentorn och upptäcka sin gamla stad, till att klättra uppför Forte Mare och paddla kajak genom den blå grottan.</p>
       </div>
     </div>
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
@@ -162,11 +139,9 @@ subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten til
       </a>
       <div class="p-4">
         <h3 class="text-xl font-bold mt-4">Tivat</h3>
-        <p>
-          En helt annan känsla skiljer Tivat från resten av kuststäderna; det som en gång var en enkel plats vid havet har nu blivit en hamn med storslagna yachter och glittriga hus. Tivat har genomgått en massiv makeover och förvandlat det till ett populärt turistmål med en snygg strandpromenad och ett livligt nattliv.</p>
+        <p>En helt annan känsla skiljer Tivat från resten av kuststäderna; det som en gång var en enkel plats vid havet har nu blivit en hamn med storslagna yachter och glittriga hus. Tivat har genomgått en massiv makeover och förvandlat det till ett populärt turistmål med en snygg strandpromenad och ett livligt nattliv.</p>
       </div>
     </div>
-   
     <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link3">
         <img src="../src/assets/images/bar.jpg" alt="Image 3" class="w-full h-auto" />
@@ -176,33 +151,22 @@ subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten til
         <p>Stari Grad is an open-air museum. Here you can see the remains of buildings from ancient times.You can see the remains of the Roman-Gothic cathedral of St. George and two Gothic churches or the remains of the church of St. Nicholas, which was built in the 13th century.</p>
       </div>
     </div>
-  
-      <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
       <a href="https://example.com/link1">
         <img src="../src/assets/images/st.jpg" alt="Image 1" class="w-full h-auto" />
       </a>
       <div class="p-4">
         <h3 class="text-xl font-bold mt-4">St Nicola ö</h3>
-        <p>Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.
-    </p>
+        <p>Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.</p>
       </div>
     </div>
-    
   </div>
 
-
- 
   <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-  
-
     <div class="relative m-auto max-w-5xl">
-        
-       <img src="../src/assets/images/morecovek.webp" alt="Your Image" class="min-w-full h-auto mb-8 same-size" />
-      
+      <img src="../src/assets/images/morecovek.webp" alt="Your Image" class="min-w-full h-auto mb-8 same-size" />
     </div>
   </div>
-
-  
 
   <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 text-center">Letar du efter fler idéer till din resa?</h2>
   <p class="text-lg text-center mt-4">Utforska den fantastiska kusten och dess dolda skatter</p> <br>
@@ -229,12 +193,5 @@ subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten til
       title='Yahting & Segling' 
       text='Upplev Montenegros kust från vattnet och njut av en dag på en lyxyacht.'
     />
-  
   </div>
-   
-  </div>
-  
-  
-
-  
 </Layout>
