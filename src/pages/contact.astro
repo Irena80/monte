@@ -3,7 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-
+import Features from '~/components/widgets/Features.astro';
 const metadata = {
   title: 'Kontakta oss',
 };
@@ -38,7 +38,48 @@ const metadata = {
     }}
     description="Vårt supportteam svarar inom 24 timmar."
   />
+<!-- Features Widget *************** -->
 
+<Features
+id="features"
+tagline="Varför boka med oss"
+title="Stora grupper, teambuildning eller kanske kompisgäng som vill få nya upplevelser"
+subtitle="Vi tror på magin i att förvandla idéer till fantastiska upplevelser. Grundat av passionerade reseentusiaster erbjuder vi inspirerande och utmanande grupp- och eventresor till privatpersoner och företag. Upplev Montenegros finaste resmål genom unika boenden, aktiviteter och måltidsupplever."
+items={[
+  {
+    title: 'Helhetsupplevelsen',
+    description:
+      'Vår ambiton är att sammanföra Skandinavien med Montenegro. Genom att paketera resor som en helhetsupplevelse från start till mål erbjuder vi ett genomtänkt innehåll, engagemang och en stor dos kreativitet. Välj mellan redan färdiga helhetslösningar eller skräddarsydda paket.',
+    icon: 'tabler:brand-tailwind',
+  },
+  {
+    title: 'Trygghet',
+    description:
+      'Att resa med MediteranoBay är tryggt. Genom att ställa statliga garantier till Kammarkollegiet får ni en trygg och verifierad paketresa.  Utifrån vår omfattande lokalkännedom samarbetar vi endast med seriösa leverantörer och partners. Våra duktiga reseledare på plats hjälper er så att er resa blir precis som ni tänkt Er.',
+    icon: 'tabler:components',
+  },
+  
+  {
+    title: 'Lokal kännedom',
+    description:
+      '  Utifrån vår omfattande lokalkännedom samarbetar vi endast med seriösa leverantörer och partners och kan därmed erbjuda bästa möjliga pris när du bokar din resa med oss. Våra duktiga reseledare på plats hjälper er under hela resan så att er resa blir precis som ni tänkt Er.',
+    icon: 'tabler:arrows-right-left',
+  },
+ 
+  {
+    title: 'Klimatsmart resa',
+    description:
+      'Vikten av att kunna leverera hållbara resepaket med fokus på miljö och klimatavtryck värdesätter vi högt. Därför erbjuder vi klimatkompensation på samtliga av våra resor.',
+    icon: 'tabler:rocket',
+  },
+  {
+    
+  },
+  {
+    
+  },
+]}
+/>
   <!-- Features2 Widget ************** -->
 
   <Features2
@@ -48,16 +89,7 @@ const metadata = {
         title: 'Support',
         description: `Chatta med oss för förfrågningar kring resor, planeringen inför resan, bokningen eller om ni har frågor som rör betalning, ändringar mm.`,
       },
-      {
-        title: 'Säljavdelning',
-        description:
-          'Chatta med oss om ni vill beställa ett resepaket eller har frågor om redan köpta resepaket.',
-      },
-      {
-        title: 'Teknisk support',
-        description:
-          'Chatta med oss om ni behöver hjälp med bokningar.',
-      },
+     
       {
         title: 'Kontakt',
         description: '+46 (0) 73 756 71 96',
@@ -73,6 +105,7 @@ const metadata = {
         description: 'Stockholm, Sverige',
         icon: 'tabler:map-pin',
       },
+      
     ]}
   />
   
