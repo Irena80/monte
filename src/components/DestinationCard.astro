@@ -1,15 +1,21 @@
 ---
 // filepath: /Users/irena80/Documents/GitHub/monte/src/components/DestinationCard.astro
 export interface Props {
-  link: string;
   imageURL: string;
   destination: string;
   title: string;
   text: string;
 }
-
-const { link, imageURL, destination, title, text } = Astro.props;
+const { imageURL, destination, title, text } = Astro.props;
 ---
+
+<div class="relative overflow-hidden rounded-lg shadow-md">
+  <img src={imageURL} alt={destination} class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="text-lg font-bold">{title}</h3>
+    <p class="text-sm text-gray-600 mt-2">{text}</p>
+  </div>
+</div>
 
 <style>
   .fixed-size {
