@@ -52,7 +52,10 @@ export const headerData = {
           text: 'Utflykter',
           href: getPermalink('/utflykter'),
         },
-       
+        {
+          text: 'Utvalt',
+          href: getPermalink('/Utvalt'),
+        },
         
     
      

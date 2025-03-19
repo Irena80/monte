@@ -16,12 +16,17 @@ const metadata = {
 
   <ContactUs
     title="Berätta gärna vad ni efterfrågar för resepaket!"
-    subtitle="För snabbare svar, utforska FAQ del. Du kanske hittar svar du letar efter just där! Om inte, hjälper vårt supportteam dig gärna."
+    subtitle="Maila, ring eller chatta med oss."
     inputs={[
       {
         type: 'text',
         name: 'namn',
         label: 'Namn',
+      },
+      {
+        type: 'text',
+        name: 'Företag',
+        label: 'Företag',
       },
       {
         type: 'E-post',
@@ -97,7 +102,7 @@ items={[
       },
       {
         title: 'E-post',
-        description: 'info@mediteranobay.com',
+        description: '<a href="mailto:info@mediteranobay.com" class="text-blue-500">info@mediteranobay.com</a>',
         icon: 'tabler:mail',
       },
       {
@@ -105,7 +110,7 @@ items={[
         description: 'Stockholm, Sverige',
         icon: 'tabler:map-pin',
       },
-      
+
     ]}
   />
   
