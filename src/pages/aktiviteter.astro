@@ -4,7 +4,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
 import ImageCard1 from '~/components/ImageCard1.astro';
-
+import DestinationCard from '~/components/DestinationCard.astro';
 
 const metadata = {
   title: 'Utforska',
@@ -49,7 +49,29 @@ const metadata = {
   
   <!-- Add ImageCards -->
  
-
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
+    <DestinationCard 
+   
+      imageURL='vin2.webp' 
+      destination='Vinupplevelser' 
+      title='Vinprovning' 
+      text='Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.'
+    />
+    <DestinationCard 
+     
+      imageURL='muslje.jpg' 
+      destination='Matupplevelser' 
+      title='Matupplevelser' 
+      text='Njut av de finaste kulinariska upplevelserna Montenegro har att erbjuda.'
+    /> 
+    <DestinationCard 
+      
+      imageURL='jedrenje.webp' 
+      destination='Yahting & Segling' 
+      title='Yahting & Segling' 
+      text='Upplev Montenegros kust från vattnet och njut av en dag på en lyxyacht.'
+    />
+  </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
     <ImageCard1
       imageUrl="../images/cykla4.jpg"
