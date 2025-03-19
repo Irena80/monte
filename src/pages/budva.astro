@@ -1,5 +1,6 @@
 ---
 import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 
@@ -49,9 +50,20 @@ subtitle="Budva ligger längs den centrala delen av Montenegros solrika kust, om
   
 </Fragment>
 </Features2>
-  
+<Features
+  id="features"
+  title="Utvalda aktiviteter"
+>
+  <Fragment slot="subtitle">
+    Budva erbjuder något för alla – från avkoppling vid stranden
+    till kulturella utflykter och natursköna äventyr. Staden är
+    känd för sina stränder, sitt pulserande nattliv och sin
+    historiska stadskärna. Här är några av våra mest populära
+    aktiviteter.
+  </Fragment>
+</Features>
 
-    <div class="relative mx-auto max-w-8xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default"></div>
+
    
    
  
@@ -87,6 +99,7 @@ subtitle="Budva ligger längs den centrala delen av Montenegros solrika kust, om
     </div>
   </div>
 <br> 
+
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
