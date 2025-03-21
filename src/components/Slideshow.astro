@@ -1,0 +1,55 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/components/Slideshow.astro
+export interface Props {
+  images: { src: string; alt: string }[];
+}
+const { images } = Astro.props;
+---
+
+<div class="relative overflow-hidden rounded-lg">
+  <!-- Match the size of the Content image -->
+  <div class="w-full h-[520px] relative slideshow-container">
+    {images.map((image, index) => (
+      <img
+        src={image.src}
+        alt={image.alt}
+        class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+          index === 0 ? 'opacity-100' : 'opacity-0'
+        }`}
+        data-index={index}
+      />
+    ))}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slideshow-container img');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function showNextSlide() {
+      // Hide the current slide
+      slides[currentIndex].classList.remove('opacity-100');
+      slides[currentIndex].classList.add('opacity-0');
+
+      // Move to the next slide
+      currentIndex = (currentIndex + 1) % totalSlides;
+
+      // Show the next slide
+      slides[currentIndex].classList.remove('opacity-0');
+      slides[currentIndex].classList.add('opacity-100');
+    }
+
+    // Preload all images to avoid delays
+    slides.forEach((slide) => {
+      slide.style.transition = 'opacity 1s ease-in-out';
+      slide.style.display = 'block'; // Ensure all images are loaded
+    });
+
+    // Start the slideshow
+    setInterval(() => {
+      showNextSlide();
+    }, 4000); // Change slide every 5 seconds
+  });
+</script>
