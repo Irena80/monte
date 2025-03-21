@@ -59,50 +59,17 @@ const metadata = {
     },
   ]}
 >
-  <Fragment slot="image">
-    <Slideshow
-      images={[
-        { src: '../images/Skver.png', alt: 'Portonovi' },
-        { src: '../images/zicara.jpeg', alt: 'Orjen' },
-        { src: '../images/lovcen2.jpg', alt: 'Masline' },
-      ]}
-    />
-  </Fragment>
+<Fragment slot="image">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+    <img src="../images/Kotor City.jpeg" alt="Portonovi" class="rounded-lg object-cover w-full h-80" />
+    <img src="../images/zicara.jpeg" alt="Orjen" class="rounded-lg object-cover w-full h-80" />
+    <img src="../images/lovcen2.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
+    <img src="../images/mamula1.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
+  </div>
+</Fragment>
 </Content>
 
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Reportage 2',
-        description:
-          'Den förtrollande ön Our Lady of the Rocks – en storslagen upptäcktsfärd genom den magiska Boka-bukten...',
-        icon: 'tabler:settings',
-      },
-      {
-        title: 'Tillgänglighet',
-        description:
-          'Transport: Båttur <br> Varaktighet: 6 timmar <br> Tillgänglighet: April-Oktober <br> Antal personer: Max 10',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'Sevärdigheter',
-        description:
-          'Boka Bay, Perast från båten, Our Lady of the Rocks, Kotor, Prčanj – besök i klosterkomplexet & matlagningskurs.',
-        icon: 'tabler:sun',
-      },
-    ]}
-  >
-    <Fragment slot="image">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
-        <img src="../images/Kotor City.jpeg" alt="Portonovi" class="rounded-lg object-cover w-full h-80" />
-        <img src="../images/zicara.jpeg" alt="Orjen" class="rounded-lg object-cover w-full h-80" />
-        <img src="../images/lovcen2.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
-        <img src="../images/mamula1.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
-      </div>
-    </Fragment>
-  </Content>
-
+ 
   <!-- Carousel Section -->
   <Carousel
     images={[
