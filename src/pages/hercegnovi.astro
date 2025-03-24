@@ -1,20 +1,17 @@
 ---
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/hercegnovi.astro
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
+
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
-import Carousel from '~/components/Carousel.astro';
-
 import TitleBlock from '~/components/TitleBlock.astro';
 import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
 import ComponentRight from '~/components/widgets/ComponentRight.astro';
 import { YouTube } from 'astro-embed';
-import FlexCard from '~/components/FlexCard.astro';
+
 
 
 
@@ -108,7 +105,35 @@ const metadata = {
     </Fragment>
     
   </Content>
+  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2 text-center">Saker att göra i Herceg Novi</h2>
+  
+ <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+  <!-- ComponentLeft -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="order-2 md:order-1">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">Gamla Stan</h2>
+      <p class="text-gray-700">
+        Det är lätt att förälska sig i Herceg Novi och dess medeltida trånga gränder och pampiga torg som kantas av palats, kyrkor, kloster och charmiga caféer. Vi börjar med att upptäcka Herceg Novi från ovan, med en promenerad på Herceg Novis ringmur, för att sedan strosa längs dess kullerstensbelagda gränder och torg.
+      </p>
+    </div>
+    <div class="order-1 md:order-2">
+      <img src="../images/hn3.webp" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-72 object-cover" />
+    </div>
+  </div>
 
+  <!-- ComponentRight -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
+    <div class="order-1">
+      <img src="../images/jedrenje3.webp" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-72 object-cover" />
+    </div>
+    <div class="order-2">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">Utforska den pittoreska bukten</h2>
+      <p class="text-gray-700">
+        Glid längs kusten till gömda stränder och charmiga fiskebyar. Simma i det turkosa vattnet i den majestätiska Blue Cave och se solljuset förvandla väggarna till ett hisnande naturskådespel. Besök den förtrollande ön Our Lady of the Rock, utforska en kyrka som är genomsyrad av historia och ett museum som berättar om kärlek, hängivenhet och tradition.
+      </p>
+    </div>
+  </div>
+</div>
 
  
 <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">

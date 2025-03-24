@@ -1,88 +1,81 @@
 ---
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/Utvalt.astro
 import Hero from '~/components/widgets/Hero.astro';
-import ImageGallery from '~/components/ImageGallery.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
-import Carousel from '~/components/widgets/Carousel.astro'; // Import Carousel
-import Slideshow from '~/components/Slideshow.astro';
+
 
 const metadata = {
   title: 'Utvalt',
 };
+
+const carouselImages = [
+  { src: '../images/Kotor City.jpeg', alt: 'Portonovi' },
+  { src: '../images/zicara.jpeg', alt: 'Orjen' },
+  { src: '../images/lovcen2.jpg', alt: 'Masline' },
+  { src: '../images/mamula1.jpg', alt: 'Masline' },
+  { src: '../images/lustica5.webp', alt: 'Lustica' },
+  { src: '../images/rafting2.webp', alt: 'Rafting' },
+];
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Section -->
   <Hero
     actions={[
-      { text: 'Boka', icon: 'tabler:run', href: '/boka' },
+      { text: 'Festivaler', icon: 'tabler:sun', href: 'https://www.hercegfest.me/en/festivals/' },
     ]}
   >
     <Fragment slot="title">
-      Det lilla landet med de <span class="text-indigo-600 dark:text-white highlight"> stora kontrasterna </span>
+      Upptäck <span class="hidden sm:inline"> </span> <span class="text-accent dark:text-white highlight">kontrasternas </span> <span class="hidden sm:inline"> land</span>
     </Fragment>
+
     <Fragment slot="subtitle">
-      Tänk att njuta av en medelhavskust med kristallklart vatten på förmiddagen och på eftermiddagen vandra bland fascinerande bergstoppar. I Montenegro är detta möjligt!
+      Upplev nöjen året runt med äventyr för den medvetna, aktiva och ständigt nyfikna.
     </Fragment>
+
     <Fragment slot="image">
       <video autoplay muted playsinline class="w-full h-auto">
-        <source src="/images/vildamng.mp4" type="video/mp4">
+        <source src="../images/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </Fragment>
   </Hero>
 
   <!-- Featured Content Section -->
-
   <Content
-  isAfterContent
-  items={[
-    {
-      title: 'Om aktivitet',
-      description:
-        'Resan börjar i UNESCO-skyddade Kotor där vi tar en statsvandring i dess förtrollade kullerstensgator som berättar historier om medeltiden. Från venetianska torg fyllda med barockpalats och katedraler fortsätter vi resan mot de mäktiga bergstoppen Lov.',
-      icon: 'tabler:settings',
-    },
-    {
-      title: 'Tillgänglighet',
-      description:
-        'Transport: Båttur <br> Varaktighet: 6 timmar <br> Tillgänglighet: April-Oktober <br> Antal personer: Max 10',
-      icon: 'tabler:clock',
-    },
-    {
-      title: 'Sevärdigheter',
-      description:
-        'Boka Bay, Perast från båten, Our Lady of the Rocks, Kotor, Prčanj – besök i klosterkomplexet & matlagningskurs.',
-      icon: 'tabler:sun',
-    },
-  ]}
->
-<Fragment slot="image">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
-    <img src="../images/Kotor City.jpeg" alt="Portonovi" class="rounded-lg object-cover w-full h-80" />
-    <img src="../images/zicara.jpeg" alt="Orjen" class="rounded-lg object-cover w-full h-80" />
-    <img src="../images/lovcen2.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
-    <img src="../images/mamula1.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
-  </div>
-</Fragment>
-</Content>
-
- 
-  <!-- Carousel Section -->
-  <Carousel
-    images={[
-      { src: '../images/Kotor City.jpeg', alt: 'Portonovi' },
-      { src: '../images/zicara.jpeg', alt: 'Orjen' },
-      { src: '../images/lovcen2.jpg', alt: 'Masline' },
-      { src: '../images/mamula1.jpg', alt: 'Masline' },
-      { src: '../images/lustica5.webp', alt: 'Lustica' },
-      { src: '../images/rafting2.webp', alt: 'Rafting' },
+    isAfterContent
+    items={[
+      {
+        title: 'Om aktivitet',
+        description:
+          'Resan börjar i UNESCO-skyddade Kotor där vi tar en statsvandring i dess förtrollade kullerstensgator som berättar historier om medeltiden. Från venetianska torg fyllda med barockpalats och katedraler fortsätter vi resan mot de mäktiga bergstoppen Lov.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Tillgänglighet',
+        description:
+          'Transport: Båttur <br> Varaktighet: 6 timmar <br> Tillgänglighet: April-Oktober <br> Antal personer: Max 10',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Sevärdigheter',
+        description:
+          'Boka Bay, Perast från båten, Our Lady of the Rocks, Kotor, Prčanj – besök i klosterkomplexet & matlagningskurs.',
+        icon: 'tabler:sun',
+      },
     ]}
-  />
-
-
+  >
+    <Fragment slot="image">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+        <img src="../images/Kotor City.jpeg" alt="Portonovi" class="rounded-lg object-cover w-full h-80" />
+        <img src="../images/zicara.jpeg" alt="Orjen" class="rounded-lg object-cover w-full h-80" />
+        <img src="../images/lovcen2.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
+        <img src="../images/mamula1.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
+      </div>
+    </Fragment>
+  </Content>
 
 
   <!-- Call-to-Action Section -->

@@ -1,0 +1,45 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/components/widgets/ImageGallery.astro
+export interface Props {
+  images: { src: string; alt: string }[];
+}
+const { images } = Astro.props;
+
+let selectedImage = images[0]; // Default to the first image
+---
+
+<div class="image-gallery">
+  <!-- Large Image -->
+  <div class="large-image mb-4">
+    <img
+      src={selectedImage.src}
+      alt={selectedImage.alt}
+      class="w-full h-96 object-cover rounded-lg shadow-lg"
+    />
+  </div>
+
+  <!-- Thumbnails -->
+  <div class="thumbnails grid grid-cols-4 gap-4">
+    {images.map((image) => (
+      <button
+        class="thumbnail border-2 border-transparent hover:border-indigo-500 rounded-lg"
+        onClick={() => (selectedImage = image)}
+      >
+        <img
+          src={image.src}
+          alt={image.alt}
+          class="w-full h-24 object-cover rounded-lg"
+        />
+      </button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .thumbnail img {
+    transition: transform 0.2s ease-in-out;
+  }
+  .thumbnail img:hover {
+    transform: scale(1.05);
+  }
+</style>
