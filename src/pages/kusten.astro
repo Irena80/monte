@@ -29,10 +29,18 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="image">
-      <video autoplay muted playsinline loop class="w-full h-auto">
-        <source src="../images/video.mp4" type="video/mp4">
+      <!-- Video for larger screens -->
+      <video autoplay muted playsinline loop class="hidden md:block w-full h-auto">
+        <source src="/images/vildamng.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+    
+      <!-- Image for smaller screens -->
+      <img
+        src="/images/paragliding.webp"
+        alt="Montenegro video preview"
+        class="block md:hidden w-full h-auto"
+      />
     </Fragment>
   </Hero>
 
