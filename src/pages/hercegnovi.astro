@@ -8,9 +8,9 @@ import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
 import TitleBlock from '~/components/TitleBlock.astro';
-import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
-import ComponentRight from '~/components/widgets/ComponentRight.astro';
+
 import { YouTube } from 'astro-embed';
+import ImageCard1 from '~/components/ImageCard1.astro';
 
 
 
@@ -86,7 +86,7 @@ const metadata = {
 <Content
     
     image={{
-      src: '~/assets/images/gradhn.jpg',
+      src: '~/assets/images/hn3.webp',
       alt: 'Colorful Image',
     }}
     
@@ -107,61 +107,74 @@ const metadata = {
   </Content>
   <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2 text-center">Saker att göra i Herceg Novi</h2>
   
- <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-  <!-- ComponentLeft -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    <div class="order-2 md:order-1">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">Gamla Stan</h2>
-      <p class="text-gray-700">
-        Det är lätt att förälska sig i Herceg Novi och dess medeltida trånga gränder och pampiga torg som kantas av palats, kyrkor, kloster och charmiga caféer. Vi börjar med att upptäcka Herceg Novi från ovan, med en promenerad på Herceg Novis ringmur, för att sedan strosa längs dess kullerstensbelagda gränder och torg.
-      </p>
+  <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+    <!-- ComponentLeft -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="order-2 md:order-1">
+        <h2 class="text-2xl font-bold text-blue-600 mb-4">Stadsvandring i gamla stan</h2>
+        <p class="text-gray-700">
+          Det är lätt att förälska sig i Herceg Novi och dess medeltida trånga gränder och pampiga torg som kantas av palats, kyrkor, kloster och charmiga caféer. Vi börjar med att upptäcka Herceg Novi från ovan, med en promenerad på Herceg Novis ringmur, för att sedan strosa längs dess kullerstensbelagda gränder och torg.
+        </p>
+      </div>
+      <div class="order-1 md:order-2">
+        <img src="../images/hn.jpg" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+      </div>
     </div>
-    <div class="order-1 md:order-2">
-      <img src="../images/hn3.webp" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-72 object-cover" />
+  
+    <!-- ComponentRight -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
+      <div class="order-1">
+        <img src="../images/jedrenje3.webp" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+      </div>
+      <div class="order-2">
+        <h2 class="text-2xl font-bold text-blue-600 mb-4">Segling genom Europas sydligaste fjord</h2>
+        <p class="text-gray-700">
+          Glid längs kusten till gömda stränder och charmiga fiskebyar. Simma i det turkosa vattnet i den majestätiska Blue Cave och se solljuset förvandla väggarna till ett hisnande naturskådespel. Besök den förtrollande ön Our Lady of the Rock, utforska en kyrka som är genomsyrad av historia och ett museum som berättar om kärlek, hängivenhet och tradition.
+        </p>
+      </div>
     </div>
   </div>
-
-  <!-- ComponentRight -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
-    <div class="order-1">
-      <img src="../images/jedrenje3.webp" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-72 object-cover" />
+  <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+    <!-- ComponentLeft -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="order-2 md:order-1">
+        <h2 class="text-2xl font-bold text-blue-600 mb-4">Middag med havsutsikt</h2>
+        <p class="text-gray-700">
+       Längs Montenegros kust finns en rad förstklassiga restauranger och takterrasser med fantastisk havsutsikt – den perfekta platsen för en avkopplande företagsmiddag eller minnesvärd festkväll. Njut av en oförglömlig middag i en storslagen miljö med panoramavy över Herceg Novi och dess bukt. Kvällen inleds med ett stilfullt cocktailmingel i solnedgången, där kollegorna kan njuta av både atmosfären och varandras sällskap. Därefter serveras en utsökt middag under bar himmel, och vi kan ordna livemusik eller en DJ som sätter stämningen och gör kvällen komplett.
+        </p>
+      </div>
+      <div class="order-1 md:order-2">
+        <img src="../images/verige.jpg" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+      </div>
     </div>
-    <div class="order-2">
-      <h2 class="text-2xl font-bold text-blue-600 mb-4">Utforska den pittoreska bukten</h2>
-      <p class="text-gray-700">
-        Glid längs kusten till gömda stränder och charmiga fiskebyar. Simma i det turkosa vattnet i den majestätiska Blue Cave och se solljuset förvandla väggarna till ett hisnande naturskådespel. Besök den förtrollande ön Our Lady of the Rock, utforska en kyrka som är genomsyrad av historia och ett museum som berättar om kärlek, hängivenhet och tradition.
-      </p>
+  
+    <!-- ComponentRight -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
+      <div class="order-1">
+        <img src="../images/orjen1.png" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+      </div>
+      <div class="order-2">
+        <h2 class="text-2xl font-bold text-blue-600 mb-4">Roadtrip till Orjen</h2>
+        <p class="text-gray-700">
+          Intensiv fysisk aktivitet, en adrenalinkick och tid i naturen är något du garanterat får uppleva när du vandrar eller cyklar mountainbike i naturparken Orjen.
+        </p>
+      </div>
+    </div>
+     <!-- ComponentLeft -->
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="order-2 md:order-1">
+        <h2 class="text-2xl font-bold text-blue-600 mb-4">Besök vingården Savina Castle</h2>
+        <p class="text-gray-700">
+          Savina vingård bjuder på en panoramautsikt över hela Herceg Novi. Få en guidad rundtur och genomgång av hur vinet produceras på plats. Med en fantastisk miljö med bra viner och mat, vackra omgivningar och väldigt kunnig persona är det här ett perfekt sätt att spendera en eftermiddag på i Herceg Novi.  
+        </p>
+      </div>
+      <div class="order-1 md:order-2">
+        <img src="../images/savina.jpg" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+      </div>
     </div>
   </div>
-</div>
 
  
-<div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-  <ComponentLeft 
-    imageUrl="../images/hn3.webp" 
-    title="Gamla Stan" 
-    content="Det är lätt att förälska sig i Herceg Novi och dess medeltida trånga gränder och pampiga torg som kantas av palats, kyrkor, kloster och charmiga caféer. Vi börjar med att upptäcka Herceg Novi från ovan, med en promenerad på Herceg Novis ringmur, för att sedan strosa längs dess kullerstensbelagda gränder och torg."
-    color="blue"
-  />
-  <ComponentRight 
-    imageUrl="../images/jedrenje3.webp" 
-    title="Utforska den pittoreska bukten" 
-    content=" Glid längs kusten till gömda stränder och charmiga fiskebyar. Simma i det turkosa vattnet i den majestätiska Blue Cave och se solljuset förvandla väggarna till ett hisnande naturskådespel. Besök den förtrollande ön Our Lady of the Rock, utforska en kyrka som är genomsyrad av historia och ett museum som berättar om kärlek, hängivenhet och tradition."
-    color="blue"
-  />
-  <ComponentLeft 
-    imageUrl="../images/covekmost.jpg" 
-    title="Äventyr" 
-    content="Ta en tur genom nationalparken Durmitor, en UNESCO-plats sedan 1980, beundra storheten i Tara-kanjonen och njuta av en mycket trevlig panoramautsikt över norra Montenegro"
-    color="blue"
-  />
-  <ComponentRight 
-    imageUrl="../images/camac.jpg" 
-    title="Test" 
-    content="Njut av en dagsutflykt till Biogradaska Gora och Durmitor nationalpark via Tara Canyon. Vandra till skyhöga toppar för en oslagbar utsikt över glittrande glaciärsjöar."
-    color="blue"
-  />
-</div>
 
  
  
@@ -169,7 +182,7 @@ const metadata = {
 
 <Steps2
   title="Äventyret startar här"
-  subtitle="Välkommen till Herceg Novi, där Adriatiska havet smälter samman sitt glittrande blå med frodig grönska. Mellan historiska fästningar och livliga gränder gömmer sig en stad som förtrollar med charm och historia."
+  subtitle="Välkommen till Herceg Novi, där Adriatiska havet smälter samman med riklig naturgrönska. Mellan historiska fästningar och livliga gränder gömmer sig en stad som förtrollar med charm och historia."
   isReversed={true}
   callToAction={{
     text: 'Kontakta oss',
@@ -195,9 +208,30 @@ const metadata = {
       icon: 'tabler:award',
     },
   ]}
+
 />
 
 
+  <!-- Add ImageCards -->
+  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2 text-center">Utvalda aktiviteter</h2>
+  <p class="text-lg text-center mb-8">Här delar vi med oss av flera tips på aktiviteter i Montenegro</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-4">
+    <ImageCard1
+      imageUrl="../images/hn6.png"
+      title="Fästningarna i Herceg Novi"
+      link="/aktiviteter"
+    />
+    <ImageCard1
+      imageUrl="../images/kula.JPG"
+      title="Kultur och historia"
+      link="/aktiviteter"
+    />
+    <ImageCard1
+      imageUrl="../images/unesco1.webp"
+      title="Vandra genom historien"
+      link="/aktiviteter"
+    />
+  </div>
   
   
 </Layout>
