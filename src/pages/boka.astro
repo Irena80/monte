@@ -11,9 +11,9 @@ const metadata = {
 const costs = [
 	{
 		title:"Konferensresa till Budva",
-		location:"Avresa februari-oktober 2025 | Flyg från Stockholm | 4* hotell",
+		location:"Avresa februari-oktober 2025 | Flyg från Stockholm, Göteborg | 4* hotell",
 		description:"Här spenderar ni tre dagar i Budva området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest. ",
-		price:"10999",
+		price:"12999",
 		imageUrl:"friends.webp",
     href:"/budva", // Ensure the href property is set correctly
 	},
@@ -21,8 +21,8 @@ const costs = [
 
 	{
 		title:"Konferensresa till Herceg Novi",
-		location:"Avresa februari-oktober 2025| Flyg från Stockholm | 5* hotell",
-		description:"Här spenderar ni tre dagar i Budva området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest. ",
+		location:"Avresa februari-oktober 2025|Flyg från Stockholm, Göteborg| 4* hotell",
+		description:"Här spenderar ni tre dagar i Herceg Novi området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest. ",
 		price:"12900",
 		imageUrl:"portonovi.webp",
     href:"/hercegnovi", // Ensure the href property is set correctly
@@ -31,34 +31,32 @@ const costs = [
 	{
 		title:"Gruppresor till Montenegro",
 		location:"Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Här spenderar ni fyra dagar ",
-		price:"test",
-		imageUrl:"biograd.jpg",
-    href:"/budva", // Ensure the href property is set correctly
+		description:"Hör av er till oss så tar vi fram det bästa resepaket som passar just er. ",
+		imageUrl:"friends.webp",
+    href:"/contact", // Ensure the href property is set correctly
 	},
   {
 		title:"Sportresor till Montenegro",
 		location:"Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Här spenderar ni fyra dagar ",
-		price:"test",
+		description:"Kontakta oss så tar vi fram ett sportarrangemang som passar just er. ",
 		imageUrl:"yoga.jpg",
-    href:"/budva", // Ensure the href property is set correctly
+    href:"/contact", // Ensure the href property is set correctly
 	},
   {
 		title:"Höstpaket",
 		location:"Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Här spenderar ni fyra dagar ",
-		price:"test",
+		description:"Hör av er till oss så tar vi fram det bästa resepaket som passar just er ",
+		
 		imageUrl:"jesen.jpg",
-    href:"/budva", // Ensure the href property is set correctly
+    href:"/contact", // Ensure the href property is set correctly
 	},
   {
 		title:"Kolašin Village vinteräventyr",
 		location:"Avresa november-april | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Här spenderar ni fyra dagar ",
-		price:"test",
+		description:"Hör av er till oss så tar vi fram det bästa resepaket som passar just er ",
+
 		imageUrl:"kolasin2.jpg",
-    href:"/budva", // Ensure the href property is set correctly
+    href:"/contact", // Ensure the href property is set correctly
 	},
 ]
 
@@ -76,15 +74,14 @@ const costs = [
   
   {costs.map(cost => (
     <Costcard 
-      title={cost.title}
-      location={cost.location}
-      description={cost.description}
-      price={cost.price}
-      imageURL={cost.imageUrl}
-      href={cost.href} 
-    
-  />
-  ))}
+        title={cost.title}
+        location={cost.location}
+        description={cost.description}
+        price={cost.price}
+        imageURL={cost.imageUrl}
+        href={cost.href} 
+    />
+))}
 
  
 
