@@ -1,5 +1,6 @@
 site:
-  name: AstroWind
+  name: mediteranobay travel
+  description: "Discover the beauty of Mediteranobay with our travel guide. Explore stunning beaches, vibrant culture, and unforgettable experiences."
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false

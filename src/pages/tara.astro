@@ -1,0 +1,167 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/Utvalt.astro
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets copy/Features.astro';
+
+const metadata = {
+  title: 'Utvalt',
+};
+
+const carouselImages = [
+  { src: '../images/Kotor City.jpeg', alt: 'Portonovi' },
+  { src: '../images/zicara.jpeg', alt: 'Orjen' },
+  { src: '../images/lovcen2.jpg', alt: 'Masline' },
+  { src: '../images/mamula1.jpg', alt: 'Masline' },
+  { src: '../images/lustica5.webp', alt: 'Lustica' },
+  { src: '../images/rafting2.webp', alt: 'Rafting' },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero
+    actions={[
+      { text: 'Festivaler', icon: 'tabler:sun', href: 'https://www.hercegfest.me/en/festivals/' },
+    ]}
+  >
+    <Fragment slot="title">
+    Tara <span class="hidden sm:inline"> </span> <span class="text-accent dark:text-white highlight">rafting </span> <span class="hidden sm:inline"></span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+    Paddla genom den djupaste canyoning i Europa- äventyr för den medvetna, aktiva och ständigt nyfikna.
+    </Fragment>
+
+    <Fragment slot="image">
+      <video autoplay muted playsinline loop class="w-full h-auto">
+        <source src="../images/rafting.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </Fragment>
+  </Hero>
+<!-- Features2 Widget ************** -->
+
+<Features2
+title="Upplev den längsta och djupaste kanjonen i Europa"
+subtitle="Tara Canyon är en av de mest spektakulära och vackra platserna i Montenegro. Det är en del av Durmitor National Park och UNESCO:s världsarv. Den är känd för sin fantastiska natur, djupa raviner och kristallklara floder. Tara Canyon sträcker sig över 82 kilometer och når ett djup på upp till 1 300 meter. Det är en av de mest imponerande kanjonerna i världen och erbjuder en mängd olika aktiviteter för äventyrslystna resenärer." 
+
+>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  
+</Fragment>
+</Features2>
+
+  <!-- Featured Content Section -->
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Rafting national park Durmitor (14km rafting)',
+        description:
+          'Upplev ett äkta vattenäventyr på denna forsränningstur på floden Tara från Kotor. Utöver de turistattraktioner som Kotor har att erbjuda har Montenegro gott om alternativ för roliga vattenaktiviteter. I det här fallet kommer du att forsränna nerför forsar och vattenfall i en av de bästa miljöerna.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Svårighetsgrad',
+        description:
+          'Nybörjare <br> Varaktighet: Från 3 timmar till heldag <br> Tillgänglighet: April-Oktober <br> Antal personer: Max 30',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Sevärdigheter',
+        description:
+          'Black Lake i Žabljak, Žugića luka, Ljutica flod.',
+        icon: 'tabler:sun',
+      },
+    ]}
+  >
+    <Fragment slot="image">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+        <img src="../images/rafting1.webp" alt="Portonovi" class="rounded-lg object-cover w-full h-80" />
+        <img src="../images/tara1.jpg" alt="Orjen" class="rounded-lg object-cover w-full h-80" />
+        <img src="../images/tara.webp" alt="Masline" class="rounded-lg object-cover w-full h-80" />
+        <img src="../images/tara3.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
+      </div>
+    </Fragment>
+  </Content>
+  <Content
+  isAfterContent
+  items={[
+    {
+      title: 'Forsränning genom den djupaste delen av Tara Canyon (36 km forsränning)',
+      description:
+        'Förbered dig på ett extraordinärt heldagsäventyr när vi ger oss ut på en spännande forsränningstur genom den fascinerande Tara-kanjonen – världens näst djupaste kanjon. Denna exklusiva forsränningsupplevelse är det enda sättet för besökare att uppleva kanjonens hisnande skönhet från detta unika perspektiv.',
+      icon: 'tabler:settings',
+    },
+    {
+      title: 'Svårighetsgrad',
+      description:
+        'Medel<br> Varaktighet: Från 5 timmar till heldag <br> Tillgänglighet: April-Oktober <br> Antal personer: Max 30',
+      icon: 'tabler:clock',
+    },
+    {
+      title: 'Sevärdigheter',
+      description:
+        'Tara Canyon, Radovan luka, Ljutica flod.',
+      icon: 'tabler:sun',
+    },
+  ]}
+>
+  <Fragment slot="image">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+      <img src="../images/rafting1.png" alt="Portonovi" class="rounded-lg object-cover w-full h-80" />
+      <img src="../images/tara5.jpg" alt="Orjen" class="rounded-lg object-cover w-full h-80" />
+      <img src="../images/rafting2.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
+      <img src="../images/tara4.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
+    </div>
+  </Fragment>
+</Content>
+<Content
+isAfterContent
+items={[
+  {
+    title: 'Rafting & Jeep safari',
+    description:
+      'Upplev forsränning och jeep tur på samma dag. Resan utgår från Žabljak och tar dig genom den vackra Tara floden. Njut av jeepsafari nerför den mest spännande delen av Durmitor National Park med imponerande utsikt över både den djupaste flodkanjonen i Europa och Montenegros största bergsmassiv.',
+    icon: 'tabler:settings',
+  },
+  {
+    title: 'Svårighetsgrad',
+    description:
+      'Medel<br> Varaktighet: Från 7 timmar till heldag <br> Tillgänglighet: April-Oktober <br> Antal personer: Max 30',
+    icon: 'tabler:clock',
+  },
+  {
+    title: 'Sevärdigheter',
+    description:
+      'Tara Canyon, Pivska-berget och Piva-sjöarna, Durmitor.',
+    icon: 'tabler:sun',
+  },
+]}
+>
+<Fragment slot="image">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+    <img src="../images/jeep.jpg" alt="Portonovi" class="rounded-lg object-cover w-full h-80" />
+    <img src="../images/durmitor3.jpg" alt="Orjen" class="rounded-lg object-cover w-full h-80" />
+    <img src="../images/durmitor2.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
+    <img src="../images/tara8.jpg" alt="Masline" class="rounded-lg object-cover w-full h-80" />
+  </div>
+</Fragment>
+</Content>
+
+
+  <!-- Call-to-Action Section -->
+  <Steps2
+    title="Bästsäljande utflyktspaket"
+    subtitle="Välj mellan redan färdiga utflykter eller kontakta oss för en skräddarsydd upplevelse!"
+    callToAction={{
+      text: 'Kontakta oss',
+      href: '/contact',
+    }}
+  />
+</Layout>

@@ -41,7 +41,7 @@ export const headerData = {
       ],
     },
     {
-      text: 'Resepaket',
+      text: 'Boka',
       links: [
        
         {
@@ -53,8 +53,12 @@ export const headerData = {
           href: getPermalink('/utflykter'),
         },
         {
-          text: 'Utvalt',
-          href: getPermalink('/Utvalt'),
+          text: 'Yahting Club',
+          href: getPermalink('/yahting'),
+        },
+        {
+          text: 'Tara ',
+          href: getPermalink('/tara'),
         },
         
     

@@ -1,0 +1,212 @@
+---
+// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/hercegnovi.astro
+
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import TitleBlock from '~/components/TitleBlock.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import { YouTube } from 'astro-embed';
+import ImageCard1 from '~/components/ImageCard1.astro';
+
+
+
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+  
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Yahting Club',
+      href: 'https://www.hercegfest.me/en/festivals/',
+      target: '_blank',
+      icon: 'tabler:sun',
+    },
+
+  ]}
+   
+   
+  
+    
+    image={{
+      src: '~/assets/images/jedrenje.webp',
+      alt: 'Caos Image',
+    }}
+  >
+  <Fragment slot="title">
+     <span class="hidden sm:inline">Segling i</span>  <span
+
+      class="text-accent dark:text-white highlight">Adriatiska havet</span
+    > 
+  </Fragment>
+    <Fragment slot="subtitle">
+       Upptäck en av världens vackraste vikar, segla i skärgården, besök grannlandet Kroatien eller varför inte segla över till Italien.
+    </Fragment>
+
+    
+  </Hero>
+
+
+
+
+  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2 text-center">Utvalda seglingsresor</h2>
+  
+  <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+    <!-- ComponentLeft -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="order-2 md:order-1">
+        <h2 class="text-2xl font-bold text-blue-600 mb-4">Sunset Sailing Boka Bay</h2>
+        <p class="text-gray-700">
+          Upplev Boka-buktens magi i solnedgången med ett glas vin i handen. Perfekt som avslutning på en konferensdag eller för par i gruppen.
+        </p>
+        <div class="mt-4">
+          <p class="flex items-center text-gray-700">
+            <span class="iconify mr-2" data-icon="tabler:map-pin"></span> Tid: 3 timmar | Avgång från Herceg Novi
+          </p>
+          <p class="flex items-center text-gray-700">
+            <span class="iconify mr-2" data-icon="tabler:check"></span> Ingår: Kapten, snacks, vin/öl, musik, flytvästar
+          </p>
+        </div>
+      </div>
+      
+      <div class="order-1 md:order-2">
+        <img src="../images/jedrenje.jpg" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+      </div>
+    </div>
+   
+  
+    <!-- ComponentRight -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
+      <div class="order-1">
+        <img src="../images/jedrenje3.webp" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+      </div>
+      <div class="order-2">
+        <h2 class="text-2xl font-bold text-blue-600 mb-4">Heldag till Blue Cave & Lustica</h2>
+        <p class="text-gray-700">
+          Ett heldagsäventyr till Montenegros mest ikoniska kustpärlor. Bad i Blue Cave, lunch på Lustica, besök i små byar längs vägen.
+        </p>
+        <div class="mt-4">
+          <p class="flex items-center text-gray-700">
+            <span class="iconify mr-2" data-icon="tabler:map-pin"></span>6 timmar | Avgång från Zanjice eller Herceg Novi
+          </p>
+          <p class="flex items-center text-gray-700">
+    <span class="iconify mr-2" data-icon="tabler:check"></span> Ingår: Kapten & guide, badstopp, lunch i lokal fiskrestaurang, vatten/snacks   </p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+    <!-- ComponentLeft -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="order-2 md:order-1">
+        <h2 class="text-2xl font-bold text-blue-600 mb-4">Luxury Sailing – Privat katamaran</h2>
+        <p class="text-gray-700">
+          Njut av en exklusiv seglingsupplevelse på en modern katamaran med egen besättning. Perfekt för ledningsgrupper eller mindre team.
+        </p>
+        <div class="mt-4">
+          <p class="flex items-center text-gray-700">
+            <span class="iconify mr-2" data-icon="tabler:map-pin"></span>Heldag | För grupper upp till 12 personer 
+          </p>
+          <p class="flex items-center text-gray-700">
+    <span class="iconify mr-2" data-icon="tabler:check"></span> Privat båt, kapten + värd, lunch & dryck, badstopp, snorkelutrustning  </p>
+          </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <img src="../images/jedrenje4.webp" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+      </div>
+    </div>
+   <!-- ComponentRight -->
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
+    <div class="order-1">
+      <img src="../images/jedrenje3.webp" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+    </div>
+    <div class="order-2">
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">Teambuilding på havet</h2>
+      <p class="text-gray-700">
+        Lär er grunderna i segling som team! Aktiv teambuilding med gemensamma utmaningar, navigation och samarbete – ledd av certifierad instruktör.
+      </p>
+      <div class="mt-4">
+        <p class="flex items-center text-gray-700">
+          <span class="iconify mr-2" data-icon="tabler:map-pin"></span> Halvdag | Interaktiv segling-  Perfekt som del i kickoff
+        </p>
+        <p class="flex items-center text-gray-700">
+  <span class="iconify mr-2" data-icon="tabler:check"></span> Ingår: Instruktör, segelbåt, säkerhetsutrustning, diplom  </p>
+        </div>
+    </div>
+  </div>
+   
+    
+  </div>
+
+ 
+
+ 
+ 
+<!-- Steps2 Widget ****************** -->
+
+<Steps2
+  title="Företagssegling i Montenegro"
+  subtitle="Ta företagskulturen till nya höjder med vår teambuilding- och konferenssegling, en konferensresa utöver det vanliga. Mellan historiska städer och vackra öar, med en fantastisk utsikt över fjordarna och bergen, erbjuder vi en unik upplevelse för ditt team."
+  isReversed={true}
+  callToAction={{
+    text: 'Kontakta oss',
+    href: 'contact',
+  }}
+   
+  items={[
+    {
+      title: 'Målet med resan',
+      description: 'Målet med resan är att motivera och uppmuntra kollegorna i en stimulerande miljö. Deltagarna ställs inför olika utmaningar/uppdrag, där det i vissa fall finns ett tävlingsmoment. Uppdragen vävs naturligt in i seglingen så att deltagarna gemensamt får uppleva destinationen och få ett mervärde.',
+      icon: 'tabler:plane',
+    },
+    {
+      title: 'Resans längd',
+      description:
+        'Resdagar - 4 dagar, 3 nätter (lördag – tisdag, andra dagar på förfrågan). Skräddarsytt program utifrån kundens önskemål som innefattar måltider, aktiviteter, konferenspass etc..',
+      icon: 'tabler:message-star',
+    },
+    {
+      title: 'Boende',
+      description:
+        'Deltagarna bor ombord på bekväma segelbåtar/katamaraner utifrån gruppens önskemål.',
+      icon: 'tabler:award',
+    },
+  ]}
+
+/>
+
+
+  <!-- Add ImageCards -->
+  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2 text-center">Utvalda aktiviteter</h2>
+  <p class="text-lg text-center mb-8">Här delar vi med oss av flera tips på aktiviteter i Montenegro</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-4">
+    <ImageCard1
+      imageUrl="../images/hn6.png"
+      title="Fästningarna i Herceg Novi"
+      link="/utflykter"
+    />
+    <ImageCard1
+      imageUrl="../images/kula.JPG"
+      title="Kultur och historia"
+      link="/utflykter"
+    />
+    <ImageCard1
+      imageUrl="../images/unesco1.webp"
+      title="Vandra genom historien"
+      link="/utflykter"
+    />
+  </div>
+  
+  
+</Layout>
