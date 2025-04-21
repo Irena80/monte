@@ -36,28 +36,28 @@ const carouselImages = [
     </Fragment>
 
     <Fragment slot="image">
-      <video autoplay muted playsinline loop class="w-full h-auto">
+      <!-- Video for larger screens -->
+      <video autoplay muted playsinline loop class="hidden sm:block w-full h-auto">
         <source src="../images/rafting.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-        <!-- Image for smaller screens -->
-        <img
-        src="/images/tara1.jpg"
-        alt="Montenegro video preview"
-        class="block md:hidden w-full h-auto"
-      />
+    
+      <!-- Image for mobile screens -->
+      <img src="../images/rafting-placeholder.jpg" alt="Rafting" class="block sm:hidden w-full h-auto" />
     </Fragment>
   </Hero>
 <!-- Features2 Widget ************** -->
 
 <Features2
-  title="Upplev den längsta och djupaste kanjonen i Europa"
-  subtitle="Tara Canyon är en av de mest spektakulära och vackra platserna i Montenegro. Det är en del av Durmitor National Park och UNESCO:s världsarv. Den är känd för sin fantastiska natur, djupa raviner och kristallklara floder. Tara Canyon sträcker sig över 82 kilometer och når ett djup på upp till 1 300 meter. Det är en av de mest imponerande kanjonerna i världen och erbjuder en mängd olika aktiviteter för äventyrslystna resenärer."
-  class="hidden md:block" <!-- Add this class -->
+title="Upplev den längsta och djupaste kanjonen i Europa"
+subtitle="Tara Canyon är en av de mest spektakulära och vackra platserna i Montenegro. Det är en del av Durmitor National Park och UNESCO:s världsarv. Den är känd för sin fantastiska natur, djupa raviner och kristallklara floder. Tara Canyon sträcker sig över 82 kilometer och når ett djup på upp till 1 300 meter. Det är en av de mest imponerande kanjonerna i världen och erbjuder en mängd olika aktiviteter för äventyrslystna resenärer." 
+
 >
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-  </Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  
+</Fragment>
 </Features2>
 
   <!-- Featured Content Section -->
