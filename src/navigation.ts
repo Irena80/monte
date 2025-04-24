@@ -52,16 +52,8 @@ export const headerData = {
           text: 'Utflykter',
           href: getPermalink('/utflykter'),
         },
-        {
-          text: 'Yahting Club',
-          href: getPermalink('/yahting'),
-        },
-        {
-          text: 'Tara ',
-          href: getPermalink('/tara'),
-        },
-        
-    
+ 
+      
      
       ],
     },
