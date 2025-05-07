@@ -19,18 +19,24 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Företagsresor',
-        href: 'resor/foretagsresor',
-        target: '_blank',
-        icon: 'tabler:plane',
-      },
-      { text: 'Gruppresor', icon:'tabler:sun', href: 'resor/gruppresor' },
-    ]}
-    image={{ src: '~/assets/images/petrovac.png', alt: 'AstroWind Hero Image' }}
-  >
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Företagsresor',
+      href: 'resor/foretagsresor',
+      target: '_blank',
+      icon: 'tabler:plane',
+      class: 'hidden sm:inline-flex', // Hide on mobile
+    },
+    {
+      text: 'Gruppresor',
+      icon: 'tabler:sun',
+      href: 'resor/gruppresor',
+      class: 'hidden sm:inline-flex', // Hide on mobile
+    },
+  ]}
+  image={{ src: '~/assets/images/petrovac.png', alt: 'AstroWind Hero Image' }}
+>
     <Fragment slot="title">
       <span class="text-accent dark:text-white highlight">   </span> Aktiva resor för
       <span class="text-accent dark:text-white highlight">  grupper och företag</span> 
