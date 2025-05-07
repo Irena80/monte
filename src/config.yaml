@@ -1,7 +1,7 @@
 site:
   name: mediteranobay travel
   description: "Discover the beauty of Mediteranobay with our travel guide. Explore stunning beaches, vibrant culture, and unforgettable experiences."
-  site: 'https://astrowind.vercel.app'
+  site: 'https://mediteranobay.com'
   base: '/'
   trailingSlash: false
 
@@ -10,16 +10,16 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
+    default: Mediteranobay Travel
     template: '%s — AstroWind'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Mediteranobay travel
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/perast.jpg'
         width: 1200
         height: 628
     type: website
