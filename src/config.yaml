@@ -10,16 +10,16 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Mediteranobay Travel
+    default: Mediteranobay travel
     template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F680 Aktiva resor för grupper och företag. Upptäck den vilda Montenegro."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Mediteranobay travel
     images:
-      - url: '~/assets/images/perast.jpg'
+      - url: '~/assets/images/favicon.ico'
         width: 1200
         height: 628
     type: website
