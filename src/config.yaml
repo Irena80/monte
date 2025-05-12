@@ -67,7 +67,8 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+    id: 'G-7JZNBLDK5X' # Replace with your actual Measurement ID
+   
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
