@@ -40,9 +40,16 @@ const { language, textDirection } = I18N;
     <ClientRouter fallback="swap" />
 
     <!-- Add this in the <head> section of your layout file -->
-<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JZNBLDK5X"></script>
-<script></script>
+<!-- Google tag (gtag.js) -->
+<script type="text/partytown"
+async src="https://www.googletagmanager.com/gtag/js?id=G-CS8EJ7QXJG"></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CS8EJ7QXJG');
+</script>
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
