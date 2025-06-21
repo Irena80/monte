@@ -77,10 +77,7 @@ export const headerData = {
           text: 'Aktiviteter',
           href: getPermalink('/aktiviteter'),
         },
-        {
-          text: 'Aktiviteter',
-          href: getPermalink('/aktiviteter copy'),
-        },
+        
         {
           text: 'Hotell',
           href: getPermalink('/hotell'),
