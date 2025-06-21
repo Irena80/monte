@@ -9,18 +9,10 @@ export const headerData = {
           text: 'Företagsresor',
           href: getPermalink('/resor/foretagsresor'),
         },
-       
-         {
-          text: 'Företagsresor',
-          href: getPermalink('/resor/foretagsresor copy'),
-        },
+      
         {
           text: 'Gruppresor',
           href: getPermalink('/resor/gruppresor'),
-        },
-       {
-          text: 'Gruppresor',
-          href: getPermalink('/resor/gruppresor copy'),
         },
         {
           text: 'Sportresor',
@@ -81,10 +73,6 @@ export const headerData = {
           text: 'Inlandet',
           href: getPermalink('/inlandet'),
         }, 
-        {
-          text: 'Inlandet',
-          href: getPermalink('/inlandet copy'),
-        },
         {
           text: 'Aktiviteter',
           href: getPermalink('/aktiviteter'),

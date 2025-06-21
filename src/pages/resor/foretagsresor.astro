@@ -42,31 +42,30 @@ const metadata = {
     </Fragment>
    
 </Hero2>
+ <!-- USP/Features Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-blue-900">Därför Montenegro</h2>
+      <p class="text-lg md:text-xl text-gray-700">
+        Det lilla landet med de stora kontrasterna! Njut av medelhavskust och kristallklart vatten på förmiddagen – och vandra bland bergstoppar på eftermiddagen. Här är avstånden korta och upplevelserna stora.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div class="bg-blue-50 rounded-xl shadow-md p-8 flex flex-col items-center text-center">
+        <svg class="w-10 h-10 mb-3 text-blue-700" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 class="text-xl font-bold mb-2 text-blue-900">Korta avstånd</h3>
+        <p class="text-gray-700 text-sm">Berg, hav och stad – allt nära. Perfekt för effektiva och varierade konferensresor.</p>
+      </div>
+      <div class="bg-blue-50 rounded-xl shadow-md p-8 flex flex-col items-center text-center">
+        <svg class="w-10 h-10 mb-3 text-blue-700" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 1.343-3 3 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3zm0 10c-4.418 0-8-1.79-8-4V6c0-2.21 3.582-4 8-4s8 1.79 8 4v8c0 2.21-3.582 4-8 4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 class="text-xl font-bold mb-2 text-blue-900">Unika miljöer</h3>
+        <p class="text-gray-700 text-sm">Konferera på vingård, boutiquehotell eller vid havet. Alltid med personlig service.</p>
+      </div>
+    </div>
+  </section>
   <!-- Features Widget ************** -->
 
-  <Features
-    id="features"
-    title="Därför ska du välja Montenegro för konferens"
-    subtitle="<strong><em>Det lilla landet med de stora kontrasterna!</em></strong> Tänk att njuta av en medelhavskust med kristallklart vatten på förmiddagen och på eftermiddagen vandra bland fascinerande bergstoppar. I Montenegro är detta möjligt! "
-    columns={2}
-    items={[
-      {
-        title: 'Avstånden är korta mellan berg och hav',
-        description:
-          'Här får ni mycket för er investering i konferensresan och avstånden är korta. Landet, som består av 60% berg, 30% kust och 10% höglandsplatå, är ungefär lika stort som Skåne och är rikt på kontraster. Här finns allt att erbjuda – från boende på en lokal bondgård till 5-stjärniga lyxhotell. Från att bada i en vacker turkosblå badvik – till skidåkning endast några timmar från kusten.',
-        icon: 'tabler:map',
-      },
-      {
-        title: 'Konferens i vacker natur',
-        description: ` Längs Montenegros nästan 300 kilometer långa kust ligger stränderna på rad. Här möts det kristallklara vattnet med både sand- och stenstränder. I norra delen hittar vi mindre skidorter, nationalparker och floden Tara som räknas till världens näst djupaste kanjon efter Grand Canyon i USA.`,
-        icon: 'tabler:artboard',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/1 (27).png',
-      alt: 'Colorful Image',
-    }}
-  />
+  
 
   <!-- Content Widget **************** -->
 
@@ -180,74 +179,132 @@ const metadata = {
     </Fragment>
   </Content>
   
-  <Steps
-  title="En guidad resa från planering till kreativitet"
-  tagline="Reseupplägg"
-  isReversed={true}
-  items={[
-    {
-      title: 'Flyg t/r Dubrovnik eller Tivat',
-      icon: 'tabler:number-1',
-    },
-    {
-      title: 'Transfer med buss',
-      icon: 'tabler:number-2',
-    },
-    {
-      title: 'Boende på 4 stjärnigt hotell',
-      icon: 'tabler:number-3',
-    },
-    {
-      title: 'Luncher och middagar',
-      icon: 'tabler:number-4',
-    },
-    {
-      title: 'Valbar aktivitet: segling, zipline, canyoning, kajakpaddling',
-      icon: 'tabler:number-5',
-    },
-    {
-      title: '2 halvdagars konferens',
-      icon: 'tabler:number-6',
-    },
-    {
-      title: 'Mediteranobayguider på plats',
-      icon: 'tabler:number-7',
-    },
-    {
-      title: 'Pris från: 12 995 Kr',
-      icon: '',
-    },
-  ]}
-  image={{
-   src: '~/assets/images/konferens.png',
-    alt: 'Steps image',
-  }}
- />
+   <!-- Paket/Process Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-2 text-blue-900">Så går det till</h2>
+      <p class="text-lg text-gray-700">Vi hjälper dig hela vägen – från planering till hemresa.</p>
+    </div>
+    <div class="max-w-4xl mx-auto">
+      <ol class="space-y-4 text-left">
+        <li class="flex items-start gap-3">
+          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</span>
+          <span>Boka flyg till Dubrovnik eller Tivat</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">2</span>
+          <span>Transfer med buss till ert boende</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">3</span>
+          <span>Boende på 4-stjärnigt hotell</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">4</span>
+          <span>Luncher och middagar ingår</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">5</span>
+          <span>Valbara aktiviteter: segling, zipline, canyoning, kajakpaddling</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">6</span>
+          <span>2 halvdagars konferens</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">7</span>
+          <span>Mediteranobayguider på plats</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">8</span>
+          <span class="font-semibold">Pris från: 12 995 kr</span>
+        </li>
+      </ol>
+    </div>
+    <div class="text-center mt-10">
+      <a href="/boka" class="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition text-lg shadow-lg">
+        Boka offert
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
  
-
- 
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title=" Bästsäljande resepaket"
-    subtitle="Välj mellan redan färdiga resepaket eller kontakta oss för en skräddarsydd upplevelse!"
-    callToAction={{
-      text: 'Boka',
-      href: '/boka',
-    }}
-    
-  />
 
   <!-- BlogLatestPost Widget **************** -->
 
-  <BlogLatestPosts
-    id="blog"
-    title="Låt dig inspireras i vår reseblogg"
-    information={`Smaka på Montenegro. Dyk ner i vår resa om Montenegro och låt dig inspireras av inhemska maträtter, pampiga sevärdheter och magnifik historia.`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
+<section id="blog" class="py-16 bg-blue-50 relative overflow-hidden">
+  <div class="max-w-3xl mx-auto text-center mb-12 relative z-10">
+    <h2 class="text-3xl md:text-4xl font-bold mb-2 text-blue-900">Låt dig inspireras i vår reseblogg</h2>
+    <p class="text-lg text-gray-700">
+      Smaka på Montenegro. Dyk ner i vår resa om Montenegro och låt dig inspireras av inhemska maträtter, pampiga sevärdheter och magnifik historia.
+    </p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative z-10">
+    <a href="/skatt" class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:scale-105 transition">
+      <div class="relative w-full">
+        <img src="/images/muslje.jpg" alt="Mat & Vin i Montenegro" class="w-full h-56 object-cover transition group-hover:scale-110 duration-300" />
+        <span class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Mat & Vin</span>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between w-full">
+        <h3 class="text-lg font-bold mb-2 text-blue-900">Mat & Vin i Montenegro</h3>
+        <p class="text-gray-700 text-sm mb-4">Upptäck Montenegros kulinariska traditioner och vingårdar.</p>
+        <span class="inline-flex items-center text-blue-700 font-semibold group-hover:underline text-sm">
+          Läs mer
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+      </div>
+    </a>
+    <a href="/skatt" class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:scale-105 transition">
+      <div class="relative w-full">
+        <img src="/images/biciklizam.jpg" alt="Äventyr vid kusten" class="w-full h-56 object-cover transition group-hover:scale-110 duration-300" />
+        <span class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Äventyr</span>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between w-full">
+        <h3 class="text-lg font-bold mb-2 text-blue-900">Äventyr vid kusten</h3>
+        <p class="text-gray-700 text-sm mb-4">Tips om vandring, cykling och aktiviteter längs Adriatiska havet.</p>
+        <span class="inline-flex items-center text-blue-700 font-semibold group-hover:underline text-sm">
+          Läs mer
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+      </div>
+    </a>
+    <a href="/skatt" class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:scale-105 transition">
+      <div class="relative w-full">
+        <img src="/images/Prcanj.jpeg" alt="Kultur & Historia" class="w-full h-56 object-cover transition group-hover:scale-110 duration-300" />
+        <span class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Kultur</span>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between w-full">
+        <h3 class="text-lg font-bold mb-2 text-blue-900">Kultur & Historia</h3>
+        <p class="text-gray-700 text-sm mb-4">Få inspiration om kuststäder, historia och kulturupplevelser.</p>
+        <span class="inline-flex items-center text-blue-700 font-semibold group-hover:underline text-sm">
+          Läs mer
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>
+  <div class="text-center mt-10 relative z-10">
+    <a href="/blog" class="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition text-lg shadow-lg">
+      Till bloggen
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+  <div class="absolute inset-0 pointer-events-none z-0">
+    <div class="w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30 absolute -top-32 -left-32"></div>
+    <div class="w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-20 absolute -bottom-32 -right-32"></div>
+  </div>
+</section>
+</Layout>
+
+ 
 </Layout>
