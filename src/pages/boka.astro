@@ -1,117 +1,254 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Costcard from '~/components/Costcard.astro';
-
+import Prices from '~/components/widgets/Pricing.astro';
 
 const metadata = {
-  title: 'Pris',
+  title: 'Boka din resa',
 };
-const costs = [
-	{
-		title:"Konferensresa till Budva",
-		location:"Avresa februari-oktober 2025 | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Här spenderar ni tre dagar i Budva området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest. ",
-		price:"12999",
-		imageUrl:"friends.webp",
-    href:"/budva", // Ensure the href property is set correctly
-	},
+
+const packages = [
   
+  {
+    title: "Konferensresa till Budva",
+    location: "Avresa februari-oktober 2025 | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Här spenderar ni tre dagar i Budva området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest.",
+    price: "Pris från: 12 999 sek",
+    imageUrl: "/images/Budva.jpg",
+    link: "/budva",
+  },
+  {
+    title: "Konferensresa till Herceg Novi",
+    location: "Avresa februari-oktober 2025 | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Här spenderar ni tre dagar i Herceg Novi området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest.",
+    price: "Pris från: 12 900 sek",
+    imageUrl: "/images/stari-grad3.jpg",
+     link: "/hercegnovi", // Lägg till denna rad
+  },
+    {
+    title: "Konferensresa till Tivat",
+    location: "Avresa året runt | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Här spenderar ni tre dagar i Tivat där ni mellan konferenser och teambuildning njuter av den vackra staden.",
+    price: "Pris från: 11 000 sek",
+    imageUrl: "/images/Tivat.webp",
+    link: "tivat", // Lägg till denna rad
+  },
+    {
+    title: "Konferensresa till Kotor",
+    location: "Avresa året runt | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Här spenderar ni tre dagar i Kotor där ni mellan konferenser och teambuildning njuter av den vackra staden.",
+    price: "Pris från: 10 000 sek",
+    imageUrl: "/images/kotorbukten.jpg",
+    link: "kotor", // Lägg till denna rad
+  },
+   {
+    title: "Gruppresor till Montenegro",
+    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
+    price: "Pris från: 14 900 sek",
+    imageUrl: "/images/friends.webp",
+     link: "resor/gruppresor", // Lägg till denna rad
+  },
+   {
+    title: "Sportresor till Montenegro",
+    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Kontakta oss så tar vi fram ett sportarrangemang som passar just er.",
+   price: "Pris från: 16 900 sek",
+    imageUrl: "/images/paragliding.webp",
+     link: "resor/sportresor", // Lägg till denna rad
+  },
 
-	{
-		title:"Konferensresa till Herceg Novi",
-		location:"Avresa februari-oktober 2025|Flyg från Stockholm, Göteborg| 4* hotell",
-		description:"Här spenderar ni tre dagar i Herceg Novi området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest. ",
-		price:"12900",
-		imageUrl:"portonovi.webp",
-    href:"/hercegnovi", // Ensure the href property is set correctly
-    },
-	
-	{
-		title:"Gruppresor till Montenegro",
-		location:"Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Hör av er till oss så tar vi fram det bästa resepaket som passar just er. ",
-		imageUrl:"friends.webp",
-    href:"/contact", // Ensure the href property is set correctly
-	},
-  {
-		title:"Sportresor till Montenegro",
-		location:"Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Kontakta oss så tar vi fram ett sportarrangemang som passar just er. ",
-		imageUrl:"yoga.jpg",
-    href:"/contact", // Ensure the href property is set correctly
-	},
-  {
-		title:"Konferensresa till Belgrad",
-		location:"Avresa året runt | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Här spenderar ni tre dagar i Belgrad där ni mellan konferenser och teambuildning njuter av den pulserade staden. ",
-		price:"9000",
-		imageUrl:"beograd.jpg",
-    href:"/belgrad", // Ensure the href property is set correctly
-	},
-  {
-		title:"Höstpaket",
-		location:"Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Hör av er till oss så tar vi fram det bästa resepaket som passar just er ",
-		
-		imageUrl:"jesen.jpg",
-    href:"/contact", // Ensure the href property is set correctly
-	},
-  {
-		title:"Ekologik matupplevelse",
-		location:"Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Hör av er till oss så tar vi fram det bästa resepaket som passar just er ",
-		
-		imageUrl:"ovcepriroda.jpg",
-    href:"/contact", // Ensure the href property is set correctly
-	},
-  {
-		title:"Kolašin Village vinteräventyr",
-		location:"Avresa november-april | Flyg från Stockholm, Göteborg | 4* hotell",
-		description:"Hör av er till oss så tar vi fram det bästa resepaket som passar just er ",
+   {
+    title: "Höstpaket till Montenegro",
+    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
+    price: "Kontakta oss för pris",
+     imageUrl: "/images/priroda.webp",
+     // Lägg till länk till kontaktformuläret
+     link: "contact", // Lägg till denna rad
+  },
+   {
+    title: "Vårpaket till Montenegro",
+    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
+    price: "Kontakta oss för pris",
+     imageUrl: "/images/spring montenegro.jpg",
+     // Lägg till länk till kontaktformuläret
+     link: "contact", // Lägg till denna rad
+  },
+ 
+  
+ 
 
-		imageUrl:"kolasin2.jpg",
-    href:"/contact", // Ensure the href property is set correctly
-	},
-]
+  {
+    title: "Vinterpaket till Montenegro",
+    location: "Avresa november-april | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
+    price: "Kontakta oss för pris",
+    imageUrl: "/images/kolasin2.jpg",
+     link: "contact", // Lägg till denna rad
+  },
+ 
+  
+ 
+  {
+    title: "Ekologik matupplevelse",
+    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
+    price: "",
+    imageUrl: "/images/ovcepriroda.jpg",
+  },
+  {
+    title: "Skräddarsydda resor",
+    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
+    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
+    price: "",
+    imageUrl: "/images/svetistefan2.jpg",
+    link: "contact", // Lägg till denna rad
+  },
+];
 
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
   <HeroText
-    
     title="Vi sammanför Montenegro med Skandinavien"
     subtitle="Välj mellan salig utbud av redan paketerade helhetsupplevelser eller hör av er så tar vi fram skräddarsydda paket utifrån era behov."
   />
 
-  
-  {costs.map(cost => (
-    <Costcard 
-        title={cost.title}
-        location={cost.location}
-        description={cost.description}
-        price={cost.price}
-        imageURL={cost.imageUrl}
-        href={cost.href} 
-    />
-))}
+<section class="py-8">
+  <div class="max-w-5xl mx-auto flex flex-col gap-12">
+    {packages.map((pkg) => (
+      <div class="bg-white rounded-2xl shadow-xl p-8 flex flex-col md:flex-row items-center gap-8 md:min-h-[340px]">
+        <a href={pkg.link} className="block"></a>
+        <img
+          src={pkg.imageUrl}
+          alt={pkg.title}
+          class="w-full md:w-[420px] h-80 object-cover rounded-2xl"
+        />
+        <div class="flex-1 flex flex-col justify-center">
+          <h3 class="text-2xl font-bold mb-2 text-blue-900">{pkg.title}</h3>
+  <p class="text-gray-600 mb-1">{pkg.location}</p>
+<p class="text-gray-700 mb-4">{pkg.description}</p>
+{pkg.price && (
+  <div class="flex items-center mb-4">
+    <a
+      href={pkg.link}
+      class="ml-2 group flex items-center"
+      aria-label="Läs mer"
+      style="text-decoration: none;"
+    >
+      
+    </a>    <p class="text-blue-700 font-semibold text-lg flex items-center">
+      {pkg.price}
+      <a
+        href={pkg.link}
+        class="ml-2 group flex items-center"
+        aria-label="Läs mer"
+        style="text-decoration: none;"
+      >
+        <svg
+          class="w-6 h-6 text-blue-600 group-hover:text-blue-800 transition-colors duration-200"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          style="margin-left: 2px;"
+        >
+          <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 8l4 4-4 4" />
+        </svg>
+      </a>
+    </p>
+  </div>
+)}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
- 
 
-  <!-- CallToAction Widget *********** -->
 
-  <CallToAction
-    title="Upplev landet full av möjligheter"
-    subtitle="Vi är inspirerade av Montenegros hisnande skönhet och är dedikerade till att dela vår passion för denna fantastiska destination med dig"
-    actions={[
+  <Prices
+    title="Välj mellan våra färdiga resepaket"
+    subtitle="Några av våra färdiga resepaket"
+    prices={[
       {
-        variant: 'primary',
-        text: 'Kontakta oss',
-        href: 'contact',
+        title: 'Bas',
+        subtitle: 'För mindre grupper',
+        price: 12999,
+        period: 'per person',
+        currency: 'sek', // Lägg till denna rad
+        items: [
+          { description: 'Flyg t/r' },
+          { description: '3 nätter på hotell' },
+          { description: 'Frukost & middag' },
+          { description: 'Transfer & aktiviteter' },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Boka nu',
+          href: '/kontakt',
+        },
+      },
+      {
+        title: 'Standard',
+        subtitle: 'För företag & större grupper',
+        price: 14999,
+        period: 'per person',
+        currency: 'sek', // Lägg till denna rad
+        items: [
+          { description: 'Flyg t/r' },
+          { description: '4 nätter på hotell' },
+          { description: 'Helpension' },
+          { description: 'Konferenspaket & aktiviteter' },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Boka nu',
+          href: '/kontakt',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'Populär',
+      },
+      {
+        title: 'Premium',
+        subtitle: 'Skräddarsytt för företag',
+        price: 19999,
+        period: 'per person',
+        currency: 'sek', // Lägg till denna rad
+        items: [
+          { description: 'Flyg t/r' },
+          { description: '5 nätter på boutiquehotell' },
+          { description: 'Helpension & exklusiva middagar' },
+          { description: 'Unika aktiviteter & privat guide' },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Boka nu',
+          href: '/contact',
+        },
       },
     ]}
   />
+
+    <!-- Booking Form Section -->
+  <section class="py-16 bg-blue-50">
+    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
+      <h2 class="text-2xl font-bold mb-4 text-blue-900 text-center">Intresseanmälan</h2>
+      <form action="https://formspree.io/f/yourid" method="POST" class="space-y-4">
+        <input type="text" name="namn" placeholder="Namn" required class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200" />
+        <input type="email" name="email" placeholder="E-post" required class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200" />
+        <input type="text" name="antal" placeholder="Antal resenärer" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200" />
+        <input type="text" name="datum" placeholder="Önskat resedatum" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200" />
+        <textarea name="önskemål" placeholder="Berätta om era önskemål" rows="4" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200"></textarea>
+        <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition">Skicka intresseanmälan</button>
+      </form>
+      <p class="text-xs text-gray-500 mt-4 text-center">
+        Vi hanterar dina personuppgifter enligt GDPR och hör av oss inom 24 timmar.
+      </p>
+    </div>
+  </section>
 </Layout>

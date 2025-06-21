@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+const metadata = {
+  title: 'Om oss',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center min-h-[50vh] bg-gradient-to-br from-blue-50 to-white text-center px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-blue-900">Om Mediteranobay</h1>
+    <p class="text-lg md:text-2xl mb-6 text-gray-700 max-w-2xl">
+      Vi är passionerade reseentusiaster som vill visa dig det bästa av Montenegro. Vårt team kombinerar lokal expertis med skandinavisk service för att skapa unika och minnesvärda upplevelser för grupper, företag och äventyrslystna resenärer.
+    </p>
+    <a href="/kontakt" class="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition">Kontakta oss</a>
+  </section>
+
+  <!-- Team/Values Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="flex flex-col items-center text-center">
+        <img src="/images/132.png" alt="Team member" class="w-24 h-24 rounded-full mb-4 object-cover shadow" />
+        <h3 class="text-xl font-semibold mb-2">Lokal expertis</h3>
+        <p class="text-gray-600">Vi bor och verkar i Montenegro och har djup kunskap om landets kultur, natur och dolda pärlor.</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <img src="/images/10.jpg" alt="Team member" class="w-24 h-24 rounded-full mb-4 object-cover shadow" />
+        <h3 class="text-xl font-semibold mb-2">Personlig service</h3>
+        <p class="text-gray-600">Vi skräddarsyr varje resa efter era önskemål och finns med er hela vägen – från planering till hemresa.</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <img src="/images/barkanoc2.jpg" alt="Team member" class="w-24 h-24 rounded-full mb-4 object-cover shadow" />
+        <h3 class="text-xl font-semibold mb-2">Trygghet & kvalitet</h3>
+        <p class="text-gray-600">Vi samarbetar endast med noggrant utvalda partners och leverantörer för att garantera högsta kvalitet och säkerhet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission/Story Section -->
+  <section class="py-16 bg-blue-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-blue-900">Vår vision</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        Vi vill inspirera fler att upptäcka Montenegros unika natur, kultur och äventyr. Med hållbarhet och omtanke i fokus skapar vi resor som ger minnen för livet – för både små och stora grupper.
+      </p>
+      <a href="/boka" class="inline-block px-6 py-2 border border-blue-700 text-blue-700 rounded-full font-medium hover:bg-blue-700 hover:text-white transition">Utforska våra resor</a>
+    </div>
+  </section>
+</Layout>

@@ -1,201 +1,251 @@
 ---
-// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/kusten.astro
-import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import TitleBlock from '~/components/TitleBlock.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import DestinationCard from '~/components/DestinationCard.astro';
-
-
-const metadata = {
-  title: 'Kusten',
-};
 ---
 
-<Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    actions={[
-      { text: 'Festivaler', icon:'tabler:sun', href: 'https://www.hercegfest.me/en/festivals/' },
-    ]}
-  >
-    <Fragment slot="title">
-      Upptäck <span class="hidden sm:inline"> </span>  <span class="text-accent dark:text-white highlight">kontrasternas </span> land</span> 
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Upplev nöjen året runt med äventyr för den medvetna, aktiva och ständigt nyfikna. 
-    </Fragment>
-
-    <Fragment slot="image">
-      <!-- Video for larger screens -->
-      <video autoplay muted playsinline loop class="hidden md:block w-full h-auto">
-        <source src="/images/vildamng.mp4" type="video/mp4">
+<Layout metadata={{ title: 'Kusten' }}>
+  <!-- Hero Section -->
+  <section class="relative bg-blue-50 py-20 md:py-32 flex flex-col items-center text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-blue-900 leading-tight">
+      Upptäck <span class="text-accent">kontrasternas</span> land
+    </h1>
+    <p class="text-lg md:text-2xl text-gray-700 max-w-2xl mx-auto mb-8">
+      Upplev nöjen året runt med äventyr för den medvetna, aktiva och ständigt nyfikna.
+    </p>
+    <a href="https://www.hercegfest.me/en/festivals/" class="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition text-lg shadow-lg">
+      Festivaler
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+    <div class="mt-12 w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-lg">
+      <video autoplay muted playsinline loop class="hidden md:block w-full h-[400px] object-cover">
+        <source src="/images/vildamng.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-    
-      <!-- Image for smaller screens -->
-      <img
-        src="/images/paragliding.webp"
-        alt="Montenegro video preview"
-        class="block md:hidden w-full h-auto"
-      />
-    </Fragment>
-  </Hero>
+      <img src="/images/paragliding.webp" alt="Montenegro video preview" class="block md:hidden w-full h-64 object-cover" />
+    </div>
+  </section>
 
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Adriatiska havets juvel"
-    subtitle="Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten till den montenegrinska landsbygden. Ett noggrant utvalt urval av oförglömliga upplevelser, personliga turer och exklusiva gourmetresor. Upptäck regionens kulinariska mästerverk, njut av förstklassiga lokala viner och låt dig förföras av skräddarsydda cocktails som speglar Montenegros unika charm och kultur." 
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- Add space between image and title -->
-  <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-    <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-      <h2 class="text-5xl font-bold">Upptäck kusten</h2>
+  <!-- Features Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-blue-900">Adriatiska havets juvel</h2>
+      <p class="text-lg md:text-xl text-gray-700">
+        Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten till den montenegrinska landsbygden. Ett noggrant utvalt urval av oförglömliga upplevelser, personliga turer och exklusiva gourmetresor. Upptäck regionens kulinariska mästerverk, njut av förstklassiga lokala viner och låt dig förföras av skräddarsydda cocktails som speglar Montenegros unika charm och kultur.
+      </p>
     </div>
-  
-    <div class="relative m-auto max-w-2xl"></div>
-  </div>
-  
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link3">
-        <img src="../images/perast.jpg" alt="Image 3" class="w-full h-auto" />
+<!-- Grid Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+  <!-- Perast Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/perast.jpg" alt="Perast" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">Perast</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        En av Montenegros vackraste småstäder, känd för sin romantiska barockkänsla och kyrköar.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
       </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Perast</h3>
-        <p>Det som tidigare var känt som sjömanscentrum anses nu vara en av de vackraste små kuststäderna i Montenegro. En romantisk och barockkänsla fyller luften i denna charmiga stad med två kyrköar du måste se att åka ut till med båt. När du står vid dess kust och bara tittar ut över havet, kommer du att bli förundrad över naturens underverk. Med mer än 16 kyrkor och fästningar att besöka måste Perast vara ett måste på din lista.</p>
-      </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link3">
-        <img src="../images/blue.jpg" alt="Image 3" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Blue Cave</h3>
-        <p>Ett sant naturunder, Blue Cave förtrollar besökare med sitt magiska blå sken, skapat när solljuset bryts genom det kristallklara vattnet. Känd för sin fängslande ljuseffekt och sina turkosfärgade vatten, är ett besök i denna spektakulära havsgrotta ett måste för alla som utforskar Montenegros kust.</p>
-      </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link3">
-        <img src="../images/ulcinj.jpg" alt="Image 3" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Ulcinj</h3>
-        <p>Ulcinj är en fantastisk central plats för att utforska Montenegros sydkustregion (från Bar till Skadarsjön till Ada Bojana) och delar av Albanien. Regionen Ulcinjs sydkust har några av de mest intressanta äventyrs-, historiska och ekologiska turerna och semesterstrandvistelser i hela Adriatiska havet.</p>
-      </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link3">
-        <img src="../images/svetistefan2.jpg" alt="Image 3" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Sveti Stefan ö</h3>
-        <p>Sveti Stefan är exceptionellt pittoresk. Med sina hus med terrakottatak från så långt tillbaka som 1400-talet, sina klippiga stränder och sin frodiga medelhavsvegetation, är detta utan tvekan stjärnattraktionen på Montenegros kust.</p>
-      </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link3">
-        <img src="../images/budva3.webp" alt="Image 3" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Budva</h3>
-        <p>Budva är för själar som vill ha glädje på dagen och mycket nöje på natten. De fina morgontimmarna kan lätt ägnas åt att utforska den gamla stadens charmiga gator och lata sig i solstolar, medan natten skulle handla om barhoppning och massor av beats att dansa till.</p>
-      </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link3">
-        <img src="../images/kotor.jpg" alt="Image 3" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Kotorbukten</h3>
-        <p>Om Kotor var ett ord skulle det behöva vara ’förtrollande’; att gå runt och genom sina kullerstensgator är som att leva i en saga. Väggarna i dess UNESCO-skyddade gamla stad berättar historier om medeltiden, och det omgivande landskapet är så magiskt som det kan bli. Medan du är där bör du definitivt besöka Perast.</p>
-      </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link2">
-        <img src="../images/mamula.jpg" alt="Image 2" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Forten Mamula</h3>
-        <p>Fästningen Mamula byggdes på den lilla klippiga ön Lastavica nära Herceg Novi. Enligt många experter är denna fästning fortfarande ett mästerverk inom militär arkitektur och imponerar med sin storslagna struktur och fascinerande historia.</p>
-      </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link3">
-        <img src="../images/hercegnovi5.jpg" alt="Image 3" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Herceg Novi</h3>
-        <p>Mycket att utforska, från att gå sin 6 km långa strandpromenad, stanna vid Kanli-Kulas stentorn och upptäcka sin gamla stad, till att klättra uppför Forte Mare och paddla kajak genom den blå grottan.</p>
-      </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link3">
-        <img src="../images/Tivat.webp" alt="Image 3" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Tivat</h3>
-        <p>En helt annan känsla skiljer Tivat från resten av kuststäderna; det som en gång var en enkel plats vid havet har nu blivit en hamn med storslagna yachter och glittriga hus. Tivat har genomgått en massiv makeover och förvandlat det till ett populärt turistmål med en snygg strandpromenad och ett livligt nattliv.</p>
-      </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link3">
-        <img src="../images/bar.jpg" alt="Image 3" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Gamla stan i Bar</h3>
-        <p>Stari Grad is an open-air museum. Here you can see the remains of buildings from ancient times.You can see the remains of the Roman-Gothic cathedral of St. George and two Gothic churches or the remains of the church of St. Nicholas, which was built in the 13th century.</p>
-      </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link1">
-        <img src="../images/st.jpg" alt="Image 1" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">St Nicola ö</h3>
-        <p>Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.</p>
-      </div>
     </div>
   </div>
-
-  <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-    <div class="relative m-auto max-w-5xl">
-      <img src="../images/morecovek.webp" alt="Your Image" class="min-w-full h-auto mb-8 same-size" />
+  <!-- Blue Cave Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/blue.jpg" alt="Blue Cave" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">Blue Cave</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        Magisk havsgrotta med turkost vatten och unikt ljusspel – ett måste på kusten.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
     </div>
   </div>
-
-  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 text-center">Letar du efter fler idéer till din resa?</h2>
-  <p class="text-lg text-center mt-4">Utforska den fantastiska kusten och dess dolda skatter</p> <br>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
-    <DestinationCard 
-   
-      imageURL='vin2.webp' 
-      destination='Vinupplevelser' 
-      title='Vinprovning' 
-      text='Om du älskar vin så behöver du uppleva den största vingården i Europa, Plantaže! Ett oändligt hav av vinrankor (cirka 11,5 miljoner). För en fulländad njutningsupplevelse, unna dig en vinprovningstur och låt dig skämmas bort.'
-    />
-    <DestinationCard 
-     
-      imageURL='muslje.jpg' 
-      destination='Matupplevelser' 
-      title='Matupplevelser' 
-      text='Njut av de finaste kulinariska upplevelserna Montenegro har att erbjuda.'
-    /> 
-    <DestinationCard 
-      
-      imageURL='jedrenje.webp' 
-      destination='Yahting & Segling' 
-      title='Yahting & Segling' 
-      text='Upplev Montenegros kust från vattnet och njut av en dag på en lyxyacht.'
-    />
+  <!-- Ulcinj Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/ulcinj.jpg" alt="Ulcinj" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">Ulcinj</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        Perfekt utgångspunkt för äventyr, historia och stränder på södra kusten.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
   </div>
+  <!-- Sveti Stefan ö Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/svetistefan2.jpg" alt="Sveti Stefan" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">Sveti Stefan ö</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        Ikonisk ö med terrakottatak, klippiga stränder och lyxig atmosfär.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <!-- Budva Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/budva3.webp" alt="Budva" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">Budva</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        Sol, bad, nattliv och charmig gammal stad – Budva har allt för en levande semester.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <!-- Kotorbukten Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/kotorbukten.jpg" alt="Kotorbukten" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">Kotorbukten</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        UNESCO-skyddad fjord, sagolika kullerstensgator och magiska vyer.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <!-- Forten Mamula Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/mamula.jpg" alt="Forten Mamula" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">Forten Mamula</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        Mäktig fästning på ön Lastavica – ett mästerverk inom militär arkitektur.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <!-- Herceg Novi Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/stari-grad3.jpg" alt="Herceg Novi" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">Herceg Novi</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        Upptäck strandpromenaden, forten och den charmiga gamla staden vid havet.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <!-- Tivat Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/Tivat.webp" alt="Tivat" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">Tivat</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        Modern marina, exklusiva restauranger och ett livligt nattliv vid havet.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <!-- Gamla stan i Bar Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/bar.jpg" alt="Gamla stan i Bar" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">Gamla stan i Bar</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        Friluftsmuseum med ruiner, kyrkor och historia från antiken till medeltiden.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <!-- St Nicola ö Card -->
+  <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden">
+    <img src="/images/st.jpg" alt="St Nicola ö" class="w-full md:w-1/2 h-44 object-cover" />
+    <div class="p-5 flex flex-col justify-center">
+      <h3 class="text-xl font-bold mb-1 text-blue-900">St Nicola ö</h3>
+      <p class="text-gray-700 mb-2 text-sm">
+        Populär ö nära Budva – bada, utforska och njut av havet och lugnet.
+      </p>
+      <a href="#" class="inline-flex items-center text-blue-700 font-semibold group text-sm">
+        Läs mer
+        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+      <!-- Lägg till fler kort på samma sätt -->
+      <!-- ... -->
+    </div>
+  </section>
+
+  <!-- Inspiration Section -->
+  <section class="py-20 bg-blue-50">
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-2 text-blue-900">Letar du efter fler idéer till din resa?</h2>
+      <p class="text-lg text-gray-700">Utforska den fantastiska kusten och dess dolda skatter</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center">
+        <img src="/images/vin2.webp" alt="Vinupplevelser" class="w-full h-56 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-blue-900">Vinprovning</h3>
+          <p class="text-gray-700">Om du älskar vin så behöver du uppleva den största vingården i Europa, Plantaže! ...</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center">
+        <img src="/images/muslje.jpg" alt="Matupplevelser" class="w-full h-56 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-blue-900">Matupplevelser</h3>
+          <p class="text-gray-700">Njut av de finaste kulinariska upplevelserna Montenegro har att erbjuda.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center">
+        <img src="/images/jedrenje.webp" alt="Yahting & Segling" class="w-full h-56 object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-blue-900">Yahting & Segling</h3>
+          <p class="text-gray-700">Upplev Montenegros kust från vattnet och njut av en dag på en lyxyacht.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

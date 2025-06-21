@@ -9,11 +9,19 @@ export const headerData = {
           text: 'Företagsresor',
           href: getPermalink('/resor/foretagsresor'),
         },
+       
+         {
+          text: 'Företagsresor',
+          href: getPermalink('/resor/foretagsresor copy'),
+        },
         {
           text: 'Gruppresor',
           href: getPermalink('/resor/gruppresor'),
         },
-      
+       {
+          text: 'Gruppresor',
+          href: getPermalink('/resor/gruppresor copy'),
+        },
         {
           text: 'Sportresor',
           href: getPermalink('/resor/sportresor'),
@@ -44,7 +52,8 @@ export const headerData = {
       text: 'Boka',
       links: [
        
-        {
+       
+      {
           text: 'Resepaket',
           href: getPermalink('/boka'),
         },
@@ -71,10 +80,18 @@ export const headerData = {
         {
           text: 'Inlandet',
           href: getPermalink('/inlandet'),
+        }, 
+        {
+          text: 'Inlandet',
+          href: getPermalink('/inlandet copy'),
         },
         {
           text: 'Aktiviteter',
           href: getPermalink('/aktiviteter'),
+        },
+        {
+          text: 'Aktiviteter',
+          href: getPermalink('/aktiviteter copy'),
         },
         {
           text: 'Hotell',
@@ -97,9 +114,10 @@ export const headerData = {
           text: 'Kontakt',
           href: getPermalink('/contact'), 
         },
-        {
+       
+          {
           text: 'Om oss',
-          href: getPermalink('/om'),
+          href: getPermalink('/om copy'),
         },
         {
           text: 'Reseinfo',

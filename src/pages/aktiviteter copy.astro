@@ -1,0 +1,208 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Aktiviteter',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HERO -->
+  <section class="relative py-24 md:py-36 flex flex-col items-center text-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-yellow-50">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-blue-900 leading-tight drop-shadow-lg">
+      Aktiviteter <span class="text-accent bg-yellow-200 px-2 rounded">Montenegro</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mb-10 font-medium">
+      Upptäck ett brett utbud av aktiviteter i Montenegro – från äventyr i bergen till avkoppling vid havet. Här finns något för alla, oavsett om du söker spänning eller stillhet.
+    </p>
+    <div class="w-full flex justify-center">
+      <img src="/images/zicara.jpeg" alt="Aktiviteter Montenegro" class="w-full max-w-4xl aspect-[16/6] object-cover rounded-3xl shadow-2xl border-4 border-white" />
+    </div>
+    <div class="absolute inset-0 pointer-events-none z-0">
+      <div class="w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30 absolute -top-32 -left-32"></div>
+      <div class="w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-20 absolute -bottom-32 -right-32"></div>
+    </div>
+  </section>
+
+  <!-- Bildgalleri med beskrivningar, vivamedia.se-inspirerad layout -->
+  <section class="py-20 bg-white">
+    
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold mb-12 text-blue-900 text-center">Galleri – Aktiviteter i Montenegro</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+          <!-- Båtutflykter -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/jedrenje.webp" alt="Båtutflykter" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Båtutflykter & kustäventyr</h3>
+            <p class="text-sm text-white opacity-90">Upptäck Montenegros kust med båtutflykter till avlägsna stränder, grottor och öar. Perfekt för både avkoppling och äventyr.</p>
+          </div>
+        </div>
+          <!-- Divlja priroda -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/divljapriroda.jpg" alt="Vild natur" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-yellow-700/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Vild natur & äventyr</h3>
+            <p class="text-sm text-white opacity-90">Vandra genom orörd natur, upptäck gömda dalar och känn friheten i Montenegros vildmark.</p>
+          </div>
+        </div>
+        <!-- Kultur & historia -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/perast2.webp" alt="Kultur & historia" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-  90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-yellow-700/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Kultur & historia</h3>
+            <p class="text-sm text-white opacity-90">Utforska Montenegros rika kulturarv, besök historiska platser och lär dig om landets traditioner och folkkultur.</p  >
+          </div>
+        </div>
+        <!-- Vattensporter -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/kajak.jpg" alt="Vattensporter" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Vattensporter & strandliv</h3>
+            <p class="text-sm text-white opacity-90">Njut av vattensporter som snorkling, dykning, kajakpaddling och vindsurfing längs Montenegros vackra kustlinje. Perfekt för både familjer och äventyrslystna.</p>
+          </div>
+        </div>
+        <!-- Fiske -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/brodovi.jpg" alt="Fiske" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-yellow-700/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Fiske & naturupplevelser</h3>
+            <p class="text-sm text-white opacity-90">Följ med på fiskeutflykter i Montenegros sjöar och floder. Upptäck det rika djurlivet och njut av stillheten i naturen.</p>
+          </div>
+        </div>
+         <!-- Zicara -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/zicara.jpeg" alt="Zicara" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Zicara – Linbana & utsikt</h3>
+            <p class="text-sm text-white opacity-90">Ta linbanan upp i bergen och njut av storslagen utsikt över landskapet. Perfekt för både äventyraren och den som vill ta det lugnt.</p>
+          </div>
+        </div>
+      
+        <!-- Jedrenje -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/jedrenje4.webp" alt="Segling" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Segling & havsäventyr</h3>
+            <p class="text-sm text-white opacity-90">Upplev Adriatiska havet med segling, kajak eller SUP – äventyr och avkoppling i ett.</p>
+          </div>
+        </div>
+       <!-- Vandring & Trekking -->
+    <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+      <img src="/images/hiking.webp" alt="Vandring & Trekking" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+        <h3 class="text-lg font-semibold text-white mb-2">Vandring & Trekking</h3>
+        <p class="text-sm text-white opacity-90">Vandra genom Montenegros spektakulära landskap. Upptäck panoramavyer, frodiga skogar och orörd natur på välmarkerade leder.</p>
+      </div>
+    </div>
+        <!-- Vinprovning -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/vin2.webp" alt="Vinprovning" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Vinprovning & smakupplevelser</h3>
+            <p class="text-sm text-white opacity-90">Besök vingårdar, smaka på lokala viner och njut av Montenegros kulinariska traditioner.</p>
+          </div>
+        </div>
+        <!-- UNESCO -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/unesco1.webp" alt="Kultur & historia" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-yellow-700/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Kultur & historia</h3>
+            <p class="text-sm text-white opacity-90">Utforska världsarv, gamla städer och Montenegros rika historia.</p>
+          </div>
+        </div>
+      
+        <!-- Fiske -->            
+        <!-- Bröd -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/muslje.jpg" alt="Bröd" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-yellow-700/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Lokala smaker</h3>
+            <p class="text-sm text-white opacity-90">Smaka på nybakat bröd och andra lokala delikatesser från små byar och marknader.</p>
+          </div>
+        </div>
+        <!-- Mimoza -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/mimoza.webp" alt="Mimoza" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Festival & tradition</h3>
+            <p class="text-sm text-white opacity-90">Upplev färgstarka festivaler och traditioner som sätter guldkant på resan.</p>
+          </div>
+        </div>
+        <!-- Cykla -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+          <img src="/images/cykla.jpg" alt="Cykla" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-yellow-700/80 to-transparent p-5">
+            <h3 class="text-lg font-semibold text-white mb-2">Cykla i Montenegro</h3>
+            <p class="text-sm text-white opacity-90">Upptäck Montenegro på två hjul – cykla genom vackra landskap, längs kusten eller i bergen. Passar både familjer och äventyrslystna.</p>
+          </div>
+        </div>
+          <!-- Dykning -->
+    <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+      <img src="/images/dyka.jpg" alt="Dykning" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+        <h3 class="text-lg font-semibold text-white mb-2">Dykning</h3>
+        <p class="text-sm text-white opacity-90">Dyk ner i Montenegros undervattensvärld och utforska vrak, grottor och färgstarka rev. Upptäck det fascinerande vraket av ångfartyget Tihany och andra marina äventyr.</p>
+      </div>
+    </div>
+    <!-- Ridning -->
+    <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+      <img src="/images/ridning.jpg" alt="Ridning" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-yellow-700/80 to-transparent p-5">
+        <h3 class="text-lg font-semibold text-white mb-2">Ridning</h3>
+        <p class="text-sm text-white opacity-90">Upplev Montenegros landskap från hästryggen. Följ organiserade ridturer genom byar, dalar och gröna ängar för en oförglömlig naturupplevelse.</p>
+      </div>
+    </div>
+    <!-- Rafting -->
+    <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+      <img src="/images/rafting2.webp" alt="Rafting" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+        <h3 class="text-lg font-semibold text-white mb-2">Rafting</h3>
+        <p class="text-sm text-white opacity-90">Följ med på spännande rafting i Tara-kanjonen, Europas djupaste kanjon. Känn adrenalinet i det kristallklara vattnet genom Durmitor nationalpark.</p>
+      </div>
+    </div>
+    <!-- Skidåkning -->
+    <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+      <img src="/images/kolasinski.jpg" alt="Skidåkning" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-yellow-700/80 to-transparent p-5">
+        <h3 class="text-lg font-semibold text-white mb-2">Skidåkning</h3>
+        <p class="text-sm text-white opacity-90">Njut av snösäkra backar och vackra vyer i Kolašin. Skidåkning, snöskoter och längdskidåkning för hela familjen i Montenegros berg.</p>
+      </div>
+    </div>
+            <!-- Canyoning -->
+    <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+      <img src="/images/kanjon1.webp" alt="Canyoning" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+        <h3 class="text-lg font-semibold text-white mb-2">Canyoning</h3>
+        <p class="text-sm text-white opacity-90">Ge dig ut på canyoning i Montenegros dramatiska kanjoner. Hoppa, simma och klättra genom forsande vatten och vilda raviner.</p>
+      </div>
+    </div>
+    <!-- Paragliding -->
+    <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+      <img src="/images/paragliding.webp" alt="Paragliding" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-yellow-700/80 to-transparent p-5">
+        <h3 class="text-lg font-semibold text-white mb-2">Paragliding</h3>
+        <p class="text-sm text-white opacity-90">Flyg fritt över Montenegros berg och sjöar. Paragliding bjuder på oförglömliga vyer och frihetskänsla för både nybörjare och erfarna.</p>
+      </div>
+    </div>
+    <!-- Flygfiske -->
+    <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+      <img src="/images/flygfiske.webp" alt="Flygfiske" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-900/80 to-transparent p-5">
+        <h3 class="text-lg font-semibold text-white mb-2">Flygfiske</h3>
+        <p class="text-sm text-white opacity-90">Prova flugfiske i Montenegros orörda floder och sjöar. Fiska i kristallklara vatten omgivna av vacker natur och rikt djurliv.</p>
+      </div>
+    </div>
+    <!-- Quad-turer -->
+    <div class="group relative rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition bg-white">
+      <img src="/images/dipovi.jpg" alt="Quad-turer" class="w-full h-64 object-cover rounded-3xl group-hover:brightness-90 transition" />
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-yellow-700/80 to-transparent p-5">
+        <h3 class="text-lg font-semibold text-white mb-2">Quad-turer</h3>
+        <p class="text-sm text-white opacity-90">Utforska Luštica-halvön och Montenegros landsbygd på fyrhjuling. Spännande offroad-turer genom byar, kullar och längs kusten.</p>
+      </div>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+</Layout>

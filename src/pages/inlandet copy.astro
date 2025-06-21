@@ -1,0 +1,125 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ImageCard1 from '~/components/ImageCard1.astro';
+
+const metadata = {
+  title: 'Inlandet',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HERO -->
+  <section class="relative py-24 md:py-40 flex flex-col items-center text-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-yellow-50">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 text-blue-900 leading-tight drop-shadow-lg">
+      Inlandet <span class="text-accent bg-yellow-200 px-2 rounded">Montenegro</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mb-10 font-medium">
+      Upptäck Montenegros dramatiska inland – från mäktiga berg och djupa dalar till små byar och äkta naturupplevelser. Här väntar äventyr, stillhet och genuin kultur.
+    </p>
+    <div class="w-full flex justify-center">
+      <img src="/images/Orjen.jpg" alt="Montenegros inland" class="w-full max-w-4xl aspect-[16/6] object-cover rounded-3xl shadow-2xl border-4 border-white" />
+    </div>
+    <div class="absolute inset-0 pointer-events-none z-0">
+      <div class="w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30 absolute -top-32 -left-32"></div>
+      <div class="w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-20 absolute -bottom-32 -right-32"></div>
+    </div>
+  </section>
+
+  <!-- STOR SEKTION: Nationalparker & Berg -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row-reverse items-center gap-16 px-4">
+      <div class="md:w-1/2 w-full">
+        <img 
+          src="/images/divljapriroda.jpg" 
+          alt="Nationalparker och majestätiska berg" 
+          class="rounded-2xl shadow-2xl w-full aspect-[4/3] object-cover border-4 border-blue-100"
+        />
+      </div>
+      <div class="md:w-1/2 w-full mt-10 md:mt-0">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-blue-900 leading-tight">
+          Storslaget utbud av <span class="text-yellow-500">nationalparker</span> &amp; <span class="text-blue-700">majestätiska berg</span>
+        </h2>
+        <p class="text-xl text-gray-700 mb-6">
+          Upptäck Montenegros unika natur i nationalparker som Durmitor, Biogradska Gora och Skadarsjön. Här väntar dramatiska vyer, djupa dalar och höga toppar – perfekt för vandring, rafting och äventyr i orörd miljö.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 text-lg space-y-2 mb-4">
+          <li>Vandra bland snötäckta toppar och gröna dalar</li>
+          <li>Utforska urskogar och kristallklara sjöar</li>
+          <li>Upplev rikt djurliv och genuin lokal kultur</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION: Vandring & Cykling -->
+  <section class="py-20 bg-blue-50">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 px-4">
+      <div class="md:w-1/2 w-full">
+        <img src="/images/zicara.jpeg" alt="Vandring och cykling" class="rounded-2xl shadow-xl w-full aspect-[4/3] object-cover border-4 border-white" />
+      </div>
+      <div class="md:w-1/2 w-full mt-10 md:mt-0">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-blue-900 leading-tight">Vandring &amp; cykling</h2>
+        <p class="text-xl text-gray-700 mb-4">
+          Följ markerade leder genom orörd natur, över berg och längs sjöar. Perfekt för både nybörjare och erfarna.
+        </p>
+        <p class="text-xl text-gray-700">
+          Inlandet bjuder på storslagna vyer, nationalparker, vandringsleder och små byar där tiden står still. Här hittar du äventyr för alla smaker!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTION: Lokal kultur -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row-reverse items-center gap-16 px-4">
+      <div class="md:w-1/2 w-full">
+        <img src="/images/planina.jpg" alt="Lokal kultur" class="rounded-2xl shadow-xl w-full aspect-[4/3] object-cover border-4 border-blue-100" />
+      </div>
+      <div class="md:w-1/2 w-full mt-10 md:mt-0">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-blue-900 leading-tight">Lokal kultur</h2>
+        <p class="text-xl text-gray-700 mb-4">
+          Besök små byar, smaka på lokala specialiteter och möt människorna som lever nära naturen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips/Utvalda aktiviteter -->
+  <section class="py-20 bg-blue-50">
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <h2 class="text-4xl md:text-5xl font-bold mb-2 text-blue-900">Tips & aktiviteter</h2>
+      <p class="text-xl text-gray-700 font-medium">Här delar vi med oss av fler tips på aktiviteter i Montenegros inland.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+      <ImageCard1
+        imageUrl="/images/Orjen.jpg"
+        title="Orjen – bergsäventyr"
+        link="/inlandet/orjen"
+      />
+      <ImageCard1
+        imageUrl="/images/zicara.jpeg"
+        title="Cykla & vandra"
+        link="/inlandet/aktiviteter"
+      />
+      <ImageCard1
+        imageUrl="/images/unesco1.webp"
+        title="Kultur & historia"
+        link="/inlandet/kultur"
+      />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-white">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-blue-900">Redo för äventyr?</h2>
+      <p class="text-xl text-gray-700 font-medium mb-8">Kontakta oss för ett skräddarsytt förslag eller boka ett färdigt paket!</p>
+      <a href="/contact" class="inline-flex items-center gap-2 px-10 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition text-xl shadow-xl">
+        Kontakta oss
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

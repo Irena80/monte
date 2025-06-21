@@ -1,0 +1,218 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Features from '~/components/widgets/Features.astro';
+import ImageCard1 from '~/components/ImageCard1.astro';
+
+const metadata = {
+  title: 'Gruppresor',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero
+    actions={[
+      { text: 'Boka', icon: 'tabler:run', href: '/boka' },
+    ]}
+    class=""  <!-- Ändrat: ingen bakgrundsfärg -->
+  >
+    <Fragment slot="title">
+      Aktiva <span class="hidden xl:inline"></span>
+      <span class="text-indigo-600 dark:text-white highlight font-extrabold"> gruppresor </span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Upptäck kontrasternas land </span>
+        en äkta skattkista inramad av Adriatiska havets kristallklara vatten och Balkans majestätiska berg.
+      </span>
+    </Fragment>
+    <Fragment slot="image">
+      <video autoplay muted playsinline loop class="hidden md:block w-full h-[420px] object-cover rounded-xl shadow-lg">
+        <source src="/images/vildamng.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <img
+        src="/images/unesco1.webp"
+        alt="Montenegro video preview"
+        class="block md:hidden w-full h-64 object-cover rounded-xl shadow-lg"
+      />
+    </Fragment>
+  </Hero>
+
+  <!-- Features Section -->
+  <Features
+    id="features"
+    title="Utforska äventyrslandet Montenegro"
+    subtitle="Låt oss guida dig till Montenegro – en av Europas mest spännande och mångsidiga destinationer! Välj bland våra färdiga resepaket eller kontakta oss för en skräddarsydd upplevelse – oavsett om ni är en <span class='font-bold'>stor grupp eller ett mindre sällskap</span> ser vi till att hitta det perfekta paketet för just er."
+    class="py-12 bg-white"
+  />
+
+  <!-- Content: Kusten -->
+  <Content
+    image={{
+      src: '~/assets/images/brod.jpg',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+    class="bg-blue-50 rounded-xl shadow-md my-8"
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Upplev kusten</h2>
+      <p>
+        Lilla Montenegro är en äkta skattkista, inramad av Adriatiska havets kristallklara vatten och Balkans majestätiska berg. Längs den nästan 30 mil långa kustlinjen gömmer sig charmiga, okända badorter och välbevarade pärlor som Herceg Novi, Tivat, Kotor, Budva och Bar.
+      </p>
+      <p class="mt-2">
+        Montenegro bär på en rik historia, där varje liten by känns som en tidsresa genom smala gränder, vackra stenhus och lummiga trädgårdar.
+      </p>
+      <p class="mt-2">
+        Resa solo eller med sällskap. Att röra sig på semestern och ha en aktiv resa i grupp innebär hos oss att komma närmare resmålet, den goda maten och uppleva natur och gemenskap.
+      </p>
+      <a href="/kusten" class="inline-flex items-center gap-2 px-0 py-0 mt-4 text-blue-600 hover:underline transition">
+        Läs mer
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent rounded-xl"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content: Berg och land -->
+  <Content
+    image={{
+      src: '~/assets/images/lukavica.webp',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+    class="bg-blue-50 rounded-xl shadow-md my-8"
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Berg och land</h2>
+      <p>
+        Utforska bergstoppar som är 2000 meter höga eller mer, ta dig ner i de utmanande vertikalerna av fantastiska kanjoner, bada i en safirblå grotta gömd av havet, prova traditionellt hantverk, åk på äventyr i urskogen, fest på kačamak i fridfulla katuns, svalka dig i Tara och långt borta på den kända vägen.
+      </p>
+      <p class="mt-2">
+        Så mycket väntar på att utforskas!
+      </p>
+      <a href="/inlandet" class="inline-flex items-center gap-2 px-0 py-0 mt-4 text-blue-600 hover:underline transition">
+        Läs mer
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent rounded-xl"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Unika upplevelser -->
+  <Features
+    id="features-unik"
+    title='Letar du efter en unik upplevelse? <br> Sätt siktet på Montenegro och upplev kontrasternas land!'
+    class="py-12 bg-white"
+  />
+
+  <div class="relative mx-auto max-w-6xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
+    <div class="flex flex-col md:flex-row items-start mb-12 bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="../images/lustica1.JPG" alt="Montenegros häftigaste hotell" class="w-full md:w-1/2 h-64 object-cover md:h-auto" />
+      <div class="mt-4 md:mt-0 md:ml-8 p-6">
+        <h2 class="text-2xl font-bold mb-2">Gastronomisk biltur</h2>
+        <p>
+          Med fyrhjulsdrivna jeepar upptäcker vi Montenegros grönskande landskap med berg och djupa dalar. Längs vägen gör vi olika stopp, där det första blir på en traditionell ”olivolje-kvarn” som har ägts av samma familj sedan 1600-talet. De två andra stoppen är vid en apelsinodling och besök på en vinkällare, där vi självklart får provsmaka och lära oss mer om gårdens druvor. På det sista stoppet får vi provsmaka ’pršut’ som är ett kallskuret kött välkänt för Balkan.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-start mb-12 bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="../images/masline.webp" alt="Olivlundar" class="w-full md:w-1/2 h-64 object-cover md:h-auto" />
+      <div class="mt-4 md:mt-0 md:ml-8 p-6">
+        <h2 class="text-2xl font-bold mb-2">Vandra bland olivlundar</h2>
+        <p>
+          Besök den familjeägda ekologiska olivgården Moric på Luštica-halvön och lär dig allt om olivodling, skörd och hantverksmässiga metoder för olivoljeproduktion. Vandra bland nästan 1 000 olivträd som är över 300 år gamla och njut av hemlagade specialiteter och välkomstdrinkar i den genuina atmosfären på den gamla stenpressen!
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-start mb-12 bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="../images/divljapriroda.jpg" alt="Från sadeln, upptäck Montenegros natursköna charm" class="w-full md:w-1/2 h-64 object-cover md:h-auto" />
+      <div class="mt-4 md:mt-0 md:ml-8 p-6">
+        <h2 class="text-2xl font-bold mb-2">Äventyrliga aktiviteter</h2>
+        <p>
+          Montenegro är ett paradis för den aktiva resenären. Låt då din vilda sida leda dig till att utforska stigar som motorfordon inte kan nå. Prova på cykling, klättring eller varför inte en ridtur. Alternativen är många.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-start mb-12 bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="../images/perast2.webp" alt="Segla och utforska" class="w-full md:w-1/2 h-64 object-cover md:h-auto" />
+      <div class="mt-4 md:mt-0 md:ml-8 p-6">
+        <h2 class="text-2xl font-bold mb-2">Segla och utforska</h2>
+        <p>
+          Under din båttur i Montenegro kan du hoppa över till ön Katič för dykning, utforska fortet på Mamula, eller hitta avskildhet på obebodda Stari Ulcinj. Den gamla staden Herceg Novi från 1300-talet är också väl värd ett besök, liksom stenstranden i Dobrec, som bara är tillgänglig med båt.<br /><br />
+          Från imponerande berg och antika städer till vackra stränder med kristallklart vatten. Unesco har utsett världsarvsplatser i Perast och Kotor. Se till att vandra uppför den branta kullen för att se Kotors imponerande venetianska fästning med fantastisk utsikt över bukten!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Utvalda aktiviteter -->
+  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2 text-center mt-16">Utvalda aktiviteter</h2>
+  <p class="text-lg text-center mb-8">Här delar vi med oss av flera tips på aktiviteter i Montenegro</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 m-4">
+    <ImageCard1
+      imageUrl="../images/Orjen.jpg"
+      title="Inlandet"
+      link="/inlandet"
+    />
+    <ImageCard1
+      imageUrl="../images/zicara.jpeg"
+      title="Aktiviteter"
+      link="/aktiviteter"
+    />
+    <ImageCard1
+      imageUrl="../images/unesco1.webp"
+      title="Kusten"
+      link="/kusten"
+    />
+  </div>
+
+  <!-- Steps2 Widget -->
+  <Steps2
+    title="Välj mellan redan färdiga resepaket eller kontakta oss för en skräddarsydd upplevelse!"
+    subtitle="Låt oss hjälpa dig att skapa en oförglömlig resa!"
+    callToAction={{
+      text: 'Kontakta oss',
+      href: '/contact',
+    }}
+    class="my-16"
+  />
+
+  <style>
+    .highlight {
+      background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+      color: white;
+      padding: 0.1em 0.4em;
+      border-radius: 0.3em;
+    }
+    .shadow-md {
+      box-shadow: 0 4px 24px 0 rgba(60, 72, 88, 0.08);
+    }
+    .rounded-xl {
+      border-radius: 1rem;
+    }
+    .bg-blue-50 {
+      background-color: #eff6ff;
+    }
+    .bg-white {
+      background-color: #fff;
+    }
+    @media (max-width: 768px) {
+      .h-64 {
+        height: 16rem;
+      }
+    }
+  </style>
+</Layout></p>
