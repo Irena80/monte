@@ -179,60 +179,56 @@ const metadata = {
     </Fragment>
   </Content>
   
-   <!-- Paket/Process Section -->
-  <section class="py-16 bg-white">
-    <div class="max-w-3xl mx-auto text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold mb-2 text-blue-900">Så går det till</h2>
-      <p class="text-lg text-gray-700">Vi hjälper dig hela vägen – från planering till hemresa.</p>
-    </div>
-    <div class="max-w-4xl mx-auto">
-      <ol class="space-y-4 text-left">
-        <li class="flex items-start gap-3">
-          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</span>
-          <span>Boka flyg till Dubrovnik eller Tivat</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">2</span>
-          <span>Transfer med buss till ert boende</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">3</span>
-          <span>Boende på 4-stjärnigt hotell</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">4</span>
-          <span>Luncher och middagar ingår</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">5</span>
-          <span>Valbara aktiviteter: segling, zipline, canyoning, kajakpaddling</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">6</span>
-          <span>2 halvdagars konferens</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">7</span>
-          <span>Mediteranobayguider på plats</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">8</span>
-          <span class="font-semibold">Pris från: 12 995 kr</span>
-        </li>
-      </ol>
-    </div>
-    <div class="text-center mt-10">
-      <a href="/boka" class="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition text-lg shadow-lg">
-        Boka offert
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-    </div>
-  </section>
+   
+  <Steps
+  title="En guidad resa från planering till kreativitet"
+  tagline="Reseupplägg"
+  isReversed={true}
+  items={[
+    {
+      title: 'Flyg t/r Dubrovnik eller Tivat',
+      icon: 'tabler:number-1',
+    },
+    {
+      title: 'Transfer med buss',
+      icon: 'tabler:number-2',
+    },
+    {
+      title: 'Boende på 4 stjärnigt hotell',
+      icon: 'tabler:number-3',
+    },
+    {
+      title: 'Luncher och middagar',
+      icon: 'tabler:number-4',
+    },
+    {
+      title: 'Valbar aktivitet: segling, zipline, canyoning, kajakpaddling',
+      icon: 'tabler:number-5',
+    },
+    {
+      title: '2 halvdagars konferens',
+      icon: 'tabler:number-6',
+    },
+    {
+      title: 'Mediteranobayguider på plats',
+      icon: 'tabler:number-7',
+    },
+    {
+      title: 'Pris från: 12 995 Kr',
+      icon: '',
+    },
+  ]}
+  image={{
+   src: '~/assets/images/konferens.png',
+    alt: 'Steps image',
+  }}
+ />
  
 
-  <!-- BlogLatestPost Widget **************** -->
+ 
+
+ 
+<!-- BlogLatestPost Widget **************** -->
 
 <section id="blog" class="py-16 bg-blue-50 relative overflow-hidden">
   <div class="max-w-3xl mx-auto text-center mb-12 relative z-10">
@@ -258,7 +254,7 @@ const metadata = {
         </span>
       </div>
     </a>
-    <a href="/skatt" class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:scale-105 transition">
+    <a href="/skatt"  class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:scale-105 transition">
       <div class="relative w-full">
         <img src="/images/biciklizam.jpg" alt="Äventyr vid kusten" class="w-full h-56 object-cover transition group-hover:scale-110 duration-300" />
         <span class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Äventyr</span>
@@ -304,7 +300,15 @@ const metadata = {
     <div class="w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-20 absolute -bottom-32 -right-32"></div>
   </div>
 </section>
-</Layout>
+  <!-- BlogLatestPost Widget **************** -->
 
- 
+  <BlogLatestPosts
+    id="blog"
+    title="Låt dig inspireras i vår reseblogg"
+    information={`Smaka på Montenegro. Dyk ner i vår resa om Montenegro och låt dig inspireras av inhemska maträtter, pampiga sevärdheter och magnifik historia.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
 </Layout>
