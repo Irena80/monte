@@ -190,12 +190,81 @@ const metadata = {
     ]}
   />
 
-  <!-- HighlightedPosts Widget ******* -->
-  <BlogLatestPosts
-    title="Låt dig inspireras i vår reseblogg"
-    information={`Följ med på en upplevelserik resa
-                `}
-  />
+<!-- BlogLatestPost Widget **************** -->
+
+<section id="blog" class="py-16 bg-blue-50 relative overflow-hidden">
+  <div class="max-w-3xl mx-auto text-center mb-12 relative z-10">
+    <h2 class="text-3xl md:text-4xl font-bold mb-2 text-blue-900">Låt dig inspireras i vår reseblogg</h2>
+    <p class="text-lg text-gray-700">
+      Smaka på Montenegro. Dyk ner i vår resa om Montenegro och låt dig inspireras av inhemska maträtter, pampiga sevärdheter och magnifik historia.
+    </p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative z-10">
+    <a href="/skatt" class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:scale-105 transition">
+      <div class="relative w-full">
+        <img src="/images/muslje.jpg" alt="Mat & Vin i Montenegro" class="w-full h-56 object-cover transition group-hover:scale-110 duration-300" />
+        <span class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Mat & Vin</span>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between w-full">
+        <h3 class="text-lg font-bold mb-2 text-blue-900">Mat & Vin i Montenegro</h3>
+        <p class="text-gray-700 text-sm mb-4">Upptäck Montenegros kulinariska traditioner och vingårdar.</p>
+        <span class="inline-flex items-center text-blue-700 font-semibold group-hover:underline text-sm">
+          Läs mer
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+      </div>
+    </a>
+    <a href="/skatt"  class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:scale-105 transition">
+      <div class="relative w-full">
+        <img src="/images/biciklizam.jpg" alt="Äventyr vid kusten" class="w-full h-56 object-cover transition group-hover:scale-110 duration-300" />
+        <span class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Äventyr</span>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between w-full">
+        <h3 class="text-lg font-bold mb-2 text-blue-900">Äventyr vid kusten</h3>
+        <p class="text-gray-700 text-sm mb-4">Tips om vandring, cykling och aktiviteter längs Adriatiska havet.</p>
+        <span class="inline-flex items-center text-blue-700 font-semibold group-hover:underline text-sm">
+          Läs mer
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+      </div>
+    </a>
+    <a href="/skatt" class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:scale-105 transition">
+      <div class="relative w-full">
+        <img src="/images/Prcanj.jpeg" alt="Kultur & Historia" class="w-full h-56 object-cover transition group-hover:scale-110 duration-300" />
+        <span class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Kultur</span>
+      </div>
+      <div class="p-6 flex-1 flex flex-col justify-between w-full">
+        <h3 class="text-lg font-bold mb-2 text-blue-900">Kultur & Historia</h3>
+        <p class="text-gray-700 text-sm mb-4">Få inspiration om kuststäder, historia och kulturupplevelser.</p>
+        <span class="inline-flex items-center text-blue-700 font-semibold group-hover:underline text-sm">
+          Läs mer
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>
+  <div class="text-center mt-10 relative z-10">
+    <a href="/blog" class="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition text-lg shadow-lg">
+      Till bloggen
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+  <div class="absolute inset-0 pointer-events-none z-0">
+    <div class="w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30 absolute -top-32 -left-32"></div>
+    <div class="w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-20 absolute -bottom-32 -right-32"></div>
+  </div>
+</section>
+
+
+  
 
  
 </Layout>
