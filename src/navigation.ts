@@ -67,10 +67,7 @@ export const headerData = {
           text: 'Kusten',
           href: getPermalink('/kusten'),
         },
-       {
-          text: 'Product',
-          href: getPermalink('/test'),
-        },
+   
        
         {
           text: 'Inlandet',
@@ -102,10 +99,7 @@ export const headerData = {
           text: 'Kontakt',
           href: getPermalink('/contact'), 
         },
-         {
-          text: 'Kontakt',
-          href: getPermalink('/contact copy'), 
-        },
+       
        
           {
           text: 'Om oss',
