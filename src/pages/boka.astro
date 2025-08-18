@@ -11,11 +11,13 @@ const packages = [
   
   {
     title: "Konferensresa till Budva",
+    
     location: "Avresa februari-oktober 2025 | Flyg från Stockholm, Göteborg | 4* hotell",
     description: "Här spenderar ni tre dagar i Budva området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest.",
     price: "Pris från: 12 999 sek",
     imageUrl: "/images/Budva.jpg",
     link: "/budva",
+
   },
   {
     title: "Konferensresa till Herceg Novi",
@@ -119,52 +121,40 @@ const packages = [
 <section class="py-8">
   <div class="max-w-5xl mx-auto flex flex-col gap-12">
     {packages.map((pkg) => (
-      <div class="bg-white rounded-2xl shadow-xl p-8 flex flex-col md:flex-row items-center gap-8 md:min-h-[340px]">
-        <a href={pkg.link} className="block"></a>
+      <a
+        href={pkg.link?.startsWith('/') ? pkg.link : `/${pkg.link || ''}`}
+        class="bg-white rounded-2xl shadow-xl p-8 flex flex-col md:flex-row items-center gap-8 md:min-h-[340px] hover:scale-105 transition group cursor-pointer"
+        style="text-decoration: none;"
+      >
         <img
           src={pkg.imageUrl}
           alt={pkg.title}
-          class="w-full md:w-[420px] h-80 object-cover rounded-2xl"
+          class="w-full md:w-[420px] h-80 object-cover rounded-2xl group-hover:brightness-90 transition"
         />
-        <div class="flex-1 flex flex-col justify-center">
-          <h3 class="text-2xl font-bold mb-2 text-blue-900">{pkg.title}</h3>
-  <p class="text-gray-600 mb-1">{pkg.location}</p>
-<p class="text-gray-700 mb-4">{pkg.description}</p>
-{pkg.price && (
-  <div class="flex items-center mb-4">
-    <a
-      href={pkg.link}
-      class="ml-2 group flex items-center"
-      aria-label="Läs mer"
-      style="text-decoration: none;"
-    >
-      
-    </a>    <p class="text-blue-700 font-semibold text-lg flex items-center">
-      {pkg.price}
-      <a
-        href={pkg.link}
-        class="ml-2 group flex items-center"
-        aria-label="Läs mer"
-        style="text-decoration: none;"
-      >
-        <svg
-          class="w-6 h-6 text-blue-600 group-hover:text-blue-800 transition-colors duration-200"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-          style="margin-left: 2px;"
-        >
-          <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2"/>
-          <path stroke-linecap="round" stroke-linejoin="round" d="M10 8l4 4-4 4" />
-        </svg>
-      </a>
-    </p>
-  </div>
-)}
+        <div class="flex-1 flex flex-col justify-center w-full">
+          <h3 class="text-2xl font-bold mb-2 text-blue-900 group-hover:underline group-active:no-underline">{pkg.title}</h3>
+          <p class="text-gray-600 mb-1">{pkg.location}</p>
+          <p class="text-gray-700 mb-4">{pkg.description}</p>
+          {pkg.price && (
+            <div class="flex items-center mb-4">
+              <p class="text-blue-700 font-semibold text-lg flex items-center">
+                {pkg.price}
+                <svg
+                  class="w-6 h-6 text-blue-600 group-hover:text-blue-800 transition-colors duration-200 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 8l4 4-4 4" />
+                </svg>
+              </p>
+            </div>
+          )}
         </div>
-      </div>
+      </a>
     ))}
   </div>
 </section>

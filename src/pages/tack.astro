@@ -1,0 +1,23 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Tack för din förfrågan | MediteranoBay',
+  description: 'Vi har tagit emot ditt meddelande och återkommer inom kort.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="py-20 px-6 max-w-2xl mx-auto text-center">
+    <h1 class="text-4xl font-bold mb-4">🎉 Tack för din förfrågan!</h1>
+    <p class="text-lg mb-6">
+      Vi har tagit emot ditt meddelande och återkommer till dig inom 1 arbetsdag.
+      <br />
+      Tills dess – kolla gärna in våra upplevelser.
+    </p>
+
+    <a href="/resor/foretagsresor" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+      🔍 Se våra företagsresor
+    </a>
+  </section>
+</Layout>

@@ -7,11 +7,14 @@ import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CTAButton from '~/components/ui/StickyCTA.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 
 const metadata = {
   title: 'Mediteranobay — Aktiva resor för grupper och företag',
-  description: 'Res till Montenegro på företagsevent, kick-off, konferens eller gruppresa. Upptäck en gömd pärla med teambuilding och oförglömliga upplevelser.',
+  description: ' Företags- och gruppresor till Montenegro – Europas mest underskattade pärla. Bygg relationer, idéer och framtid i en miljö som ger plats för något större.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -44,10 +47,20 @@ const metadata = {
 
     <Fragment slot="subtitle">
   
-        <span class="font-semibold">Res till Montenegro</span> på företagsevent, kick-off, konferens eller gruppresa.  <span class="hidden sm:block">Här väntar en gömd pärla som erbjuder den perfekta kombinationen av teambuilding, inspirerande miljöer och oförglömliga upplevelser.</span>
+        <span class="font-semibold">Företags- och gruppresor till Montenegro</span> – Europas mest underskattade pärla.<br />
+      Bygg relationer, idéer och framtid i en miljö som ger plats för något större.  <span class="hidden sm:block"></span>
       </Fragment>
   </Hero>
+   <!-- Features2 Widget ************** -->
 
+ <Features2
+  title="Vi säljer inte resor. Vi skapar rum för utveckling."
+  subtitle="På MediteranoBay designar vi upplevelser för team, nätverk och grupper som söker något mer än ännu en konferens eller gruppresa."
+>
+
+
+</Features2>
+<CTAButton text="Begär offert" link="/kontakt" />
   <!-- Content Widget **************** -->
   <Content
     isReversed
@@ -179,7 +192,22 @@ const metadata = {
       alt: 'Bazen',
     }}
   />
-
+<CallToAction
+  title="Redo att skapa något minnesvärt med ditt team?"
+  description="Låt oss skapa en företagsresa eller gruppupplevelse till Montenegro som ger resultat – och avtryck."
+  actions={[
+    {
+      variant: 'primary',
+      text: '🎯 Begär offert',
+      href: '/contact',
+    },
+    {
+      variant: 'secondary',
+      text: '📄 Se våra upplevelser',
+      href: '/resor/foretagsresor',
+    },
+  ]}
+/>
   <!-- Stats Widget ****************** -->
   <Stats
     stats={[

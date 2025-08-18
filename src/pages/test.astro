@@ -1,0 +1,81 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+---
+
+<Layout metadata={{ title: 'MediteranoBay – Företagsresor till Montenegro' }}>
+  <!-- Hero från test.astro -->
+  <section class="py-16 px-6 text-center max-w-3xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Resor som skapar mening – inte bara minnen</h1>
+    <p class="text-lg md:text-xl mb-8">
+      Företags- och gruppresor till Montenegro – Europas mest underskattade pärla.<br />
+      Bygg relationer, idéer och framtid i en miljö som ger plats för något större.
+    </p>
+    <a href="/corporate" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">
+      🎯 Utforska våra upplevelser
+    </a>
+  </section>
+
+  <!-- Filosofi från test.astro -->
+  <section class="py-12 px-6 max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl font-semibold mb-4">Vi säljer inte resor. Vi skapar rum för utveckling.</h2>
+    <p class="text-lg">
+      På MediteranoBay designar vi upplevelser för team, nätverk och grupper som söker något mer än ännu en konferens eller gruppresa.
+      <br /><br />
+      Här i Montenegro – där havet möter bergen – skapar vi plats för reflektion, beslut, idéer och relationer.
+      Det är ett land som rör något i människor. Vår roll är att göra den upplevelsen möjlig – och minnesvärd.
+    </p>
+  </section>
+
+  <!-- Målgrupper från test.astro -->
+  <section class="bg-gray-100 py-12 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-semibold mb-6">För team som vill mer än bara resa</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+        <div>
+          <h3 class="text-lg font-bold mb-1">👥 Företagsgrupper</h3>
+          <p>Ledningsgrupper, produktteam och startups i tillväxt – ni som vill hitta riktning, energi och idéer tillsammans.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-1">🌿 Nätverk & vänskapsgrupper</h3>
+          <p>Grupper som vill uppleva något annorlunda tillsammans – med mening, rörelse och återhämtning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process från test.astro -->
+  <section class="py-12 px-6 max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl font-semibold mb-4">Hur går det till?</h2>
+    <ol class="list-decimal pl-5 text-left space-y-2 text-lg">
+      <li>📋 Du berättar om din grupp och vad ni behöver</li>
+      <li>🎯 Vi tar fram 1–2 skräddarsydda upplevelseförslag</li>
+      <li>✈️ Ni väljer. Vi planerar och bokar – ni njuter.</li>
+    </ol>
+    <p class="mt-4">Vill du få ett förslag direkt? Testa vår AI-guide eller boka ett samtal.</p>
+    <div class="mt-6 space-x-4">
+      <a href="/corporate" class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">📄 Se företagsresor</a>
+      <a href="#kontakt" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition">📅 Boka samtal</a>
+    </div>
+  </section>
+
+  <!-- Testimonials från test.astro -->
+  <section class="bg-white py-12 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-semibold mb-6">Vad andra säger</h2>
+      <blockquote class="italic text-gray-600">
+        “Det var mer än en resa – det blev ett avstamp för oss som team. Vi pratar fortfarande om de kvällarna i bergen.”
+      </blockquote>
+      <p class="mt-2 font-semibold">– Maria, VD på techbolag</p>
+    </div>
+  </section>
+
+  <!-- Kontakt från test.astro -->
+  <section id="kontakt" class="py-12 px-6 max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl font-semibold mb-4">Redo att skapa något minnesvärt?</h2>
+    <p class="mb-4">
+      Mejla oss på <a href="mailto:hello@mediteranobay.com" class="text-blue-600 underline">hello@mediteranobay.com</a><br />
+      eller boka ett möte direkt via vår <a href="/kontakt" class="text-blue-600 underline">kontaktsektion</a>.
+    </p>
+    <a href="/kontakt" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">📅 Boka samtal</a>
+  </section>
+</Layout>
