@@ -2,7 +2,7 @@
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/index.astro
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-
+import Packages from '~/components/mbay/Packages.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
@@ -12,14 +12,19 @@ import CTAButton from '~/components/ui/StickyCTA.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 
+// Lägg överst i src/pages/index.astro
 const metadata = {
-  title: 'Mediteranobay — Aktiva resor för grupper och företag',
-  description: ' Företags- och gruppresor till Montenegro – Europas mest underskattade pärla. Bygg relationer, idéer och framtid i en miljö som ger plats för något större.',
-  ignoreTitleTemplate: true,
+  title: 'MediteranoBay — Företags- & gruppresor till Montenegro och Balkan',
+  description: 'AI-driven resebyrå som skräddarsyr företags- och gruppresor till Montenegro och utvalda platser i Balkan. Snabb offert, lokal expertis och premiumservice.',
+  url: 'https://www.mediteranobay.com',
+  image: '/og-mediteranobay.jpg', // byt till din OG-bild
 };
 ---
 
+
 <Layout metadata={metadata}>
+
+  
   <!-- Hero Widget ******************* -->
   <Hero
   actions={[
@@ -192,6 +197,20 @@ const metadata = {
       alt: 'Bazen',
     }}
   />
+
+  <Steps
+  title="Njut av sol och bad längs magisk turkosblå kust, utforska storslagen natur på spännande vandringar och uppleva charmen hos pittoreska byar."
+  items={[ /* ...din befintliga data... */ ]}
+  image={{
+    src: '~/assets/images/Irena.jahta.png',
+    alt: 'Bazen',
+  }}
+/>
+
+
+{/* NYTT – lägg precis här */}
+<Packages />
+
 <CallToAction
   title="Redo att skapa något minnesvärt med ditt team?"
   description="Låt oss skapa en företagsresa eller gruppupplevelse till Montenegro som ger resultat – och avtryck."
