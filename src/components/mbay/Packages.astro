@@ -11,19 +11,18 @@ import { travelPackages } from '~/data/packages';
 
     <div class="mt-10 grid gap-8 md:grid-cols-3">
       {travelPackages.slice(0,3).map(p => (
-        <div class="flex flex-col rounded-[34px] border border-slate-200 bg-white shadow-sm overflow-hidden">
-          <img src={p.imageUrl} alt={p.title} class="h-60 w-full object-cover" loading="lazy" />
+        <a href={p.link || '/contact'} aria-label={`Läs mer: ${p.title}`} class="group flex flex-col rounded-[34px] border border-slate-200 bg-white shadow-sm overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/50 transition transform hover:shadow-lg hover:-translate-y-0.5 hover:border-slate-300 active:translate-y-0">
+          <img src={p.imageUrl} alt={p.title} class="h-60 w-full object-cover transition duration-300 group-hover:scale-[1.03]" loading="lazy" />
           <div class="p-8 flex flex-col flex-1">
-            <h3 class="text-xl font-semibold text-slate-900 mb-3 leading-snug">{p.title}</h3>
+            <h3 class="text-xl font-semibold text-slate-900 mb-3 leading-snug group-hover:text-slate-950">{p.title}</h3>
             <p class="text-sm text-slate-600 leading-relaxed mb-6">{p.description}</p>
             {p.price && <p class="text-sm font-semibold text-slate-900 mb-6">{p.price}</p>}
-            <div class="mt-auto">
-              <a href={p.link || '/contact'} class="inline-flex items-center rounded-full bg-slate-900 text-white px-8 py-3 text-sm font-semibold hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400/40 transition">
-                Läs mer
-              </a>
-            </div>
+            <span class="mt-auto inline-flex items-center text-sm font-medium text-slate-400 group-hover:text-slate-500">
+              <svg class="w-4 h-4 mr-1 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              <span class="sr-only">Öppna {p.title}</span>
+            </span>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>
