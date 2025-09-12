@@ -1,98 +1,29 @@
 ---
-/**
- * Exempelpaket – redigera objekten i `packages` för att ändra innehåll.
- * Lägg bilder i /public/images/
- */
-const packages = [
-  {
-    id: 'konferens',
-    title: 'Konferens vid Adriatiska havet',
-    img: {
-      
-      webp: '/images/konferens.webp', // valfritt
-     
-      alt: 'Konferensrum med havsutsikt över Adriatiska havet',
-    },
-    blurb:
-      'Havsnära konferenshotell, teknikpaket, middagar i Kotor och privat transfer.',
-    price: 'Från 8 900 kr / person',
-    ctaHref: '#kontakt',
-    ctaText: 'Begär offert',
-  },
-  {
-    id: 'teambuilding',
-    title: 'Teambuilding i bergen',
-    img: {
-      jpg: '/images/yoga.jpg',
-      
-    },
-    blurb:
-      'Kotor Serpentine, kanjonvandring och lokala gårdar — aktivitet & gemenskap.',
-    price: 'Från 7 500 kr / person',
-    ctaHref: '#kontakt',
-    ctaText: 'Begär offert',
-  },
-  {
-    id: 'kotor-lux',
-    title: 'Lyxweekend i Kotor',
-    img: {
-      jpg: '/images/Tivat.webp',
-    
-    },
-    blurb:
-      'Boutiquehotell, privat båt till Perast & vinprovning — elegant och enkelt.',
-    price: 'Från 10 200 kr / person',
-    ctaHref: '#kontakt',
-    ctaText: 'Begär offert',
-  },
-];
+import { travelPackages } from '~/data/packages';
 ---
 
 <section id="paket" aria-labelledby="paket-title" class="bg-slate-50 py-14">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-  <div class="flex items-end justify-between gap-4">
-  <h2 id="paket-title" class="text-2xl font-bold tracking-tight sm:text-3xl">
-    Upptäck våra reseupplevelser
-  </h2>
-  <a 
-    href="/boka" 
-    class="text-sm font-semibold text-slate-700 underline-offset-4 hover:underline"
-  >
-    Se alla paket
-  </a>
-</div>
+    <div class="flex items-start justify-between gap-4">
+  <h2 id="paket-title" class="text-3xl font-extrabold tracking-tight sm:text-4xl">Upptäck våra reseupplevelser</h2>
+  <a href="/boka" class="text-sm font-semibold text-slate-800 hover:text-slate-900">Se alla paket</a>
+    </div>
 
-    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 place-items-center max-w-7xl mx-auto">
-      {packages.map((p) => (
-        <article
-          class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md"
-          id={`paket-${p.id}`}
-        >
-          <picture>
-            {p.img.avif && <source srcset={p.img.avif} type="image/avif" />}
-            {p.img.webp && <source srcset={p.img.webp} type="image/webp" />}
-            <img
-              src={p.img.jpg}
-              alt={p.img.alt}
-              class="h-44 w-full object-cover transition group-hover:scale-[1.02]"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-
-          <div class="p-5">
-            <h3 class="text-lg font-semibold">{p.title}</h3>
-            <p class="mt-1 line-clamp-2 text-sm text-slate-600">{p.blurb}</p>
-            <p class="mt-3 text-sm font-semibold text-slate-900">{p.price}</p>
-            <a
-              href={p.ctaHref}
-              class="mt-4 inline-flex rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white"
-              aria-label={`${p.ctaText} – ${p.title}`}
-            >
-              {p.ctaText}
-            </a>
+    <div class="mt-10 grid gap-8 md:grid-cols-3">
+      {travelPackages.slice(0,3).map(p => (
+        <div class="flex flex-col rounded-[34px] border border-slate-200 bg-white shadow-sm overflow-hidden">
+          <img src={p.imageUrl} alt={p.title} class="h-60 w-full object-cover" loading="lazy" />
+          <div class="p-8 flex flex-col flex-1">
+            <h3 class="text-xl font-semibold text-slate-900 mb-3 leading-snug">{p.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">{p.description}</p>
+            {p.price && <p class="text-sm font-semibold text-slate-900 mb-6">{p.price}</p>}
+            <div class="mt-auto">
+              <a href={p.link || '/contact'} class="inline-flex items-center rounded-full bg-slate-900 text-white px-8 py-3 text-sm font-semibold hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400/40 transition">
+                Läs mer
+              </a>
+            </div>
           </div>
-        </article>
+        </div>
       ))}
     </div>
   </div>

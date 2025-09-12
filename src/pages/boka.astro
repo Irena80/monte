@@ -2,113 +2,12 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Prices from '~/components/widgets/Pricing.astro';
+import { travelPackages as packages } from '~/data/packages';
 
 const metadata = {
   title: 'Boka din resa',
+  description: 'Boka konferensresa, gruppresa eller sportresa till Montenegro.',
 };
-
-const packages = [
-  
-  {
-    title: "Konferensresa till Budva",
-    
-    location: "Avresa februari-oktober 2025 | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Här spenderar ni tre dagar i Budva området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest.",
-    price: "Pris från: 12 999 sek",
-    imageUrl: "/images/Budva.jpg",
-    link: "/budva",
-
-  },
-  {
-    title: "Konferensresa till Herceg Novi",
-    location: "Avresa februari-oktober 2025 | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Här spenderar ni tre dagar i Herceg Novi området där ni mellan konferenser och teambuildning njuter av salta bad, middagar och fest.",
-    price: "Pris från: 12 900 sek",
-    imageUrl: "/images/stari-grad3.jpg",
-     link: "/hercegnovi", // Lägg till denna rad
-  },
-    {
-    title: "Konferensresa till Tivat",
-    location: "Avresa året runt | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Här spenderar ni tre dagar i Tivat där ni mellan konferenser och teambuildning njuter av den vackra staden.",
-    price: "Pris från: 11 000 sek",
-    imageUrl: "/images/Tivat.webp",
-    link: "tivat", // Lägg till denna rad
-  },
-    {
-    title: "Konferensresa till Kotor",
-    location: "Avresa året runt | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Här spenderar ni tre dagar i Kotor där ni mellan konferenser och teambuildning njuter av den vackra staden.",
-    price: "Pris från: 10 000 sek",
-    imageUrl: "/images/kotorbukten.jpg",
-    link: "kotor", // Lägg till denna rad
-  },
-   {
-    title: "Gruppresor till Montenegro",
-    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
-    price: "Pris från: 14 900 sek",
-    imageUrl: "/images/friends.webp",
-     link: "resor/gruppresor", // Lägg till denna rad
-  },
-   {
-    title: "Sportresor till Montenegro",
-    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Kontakta oss så tar vi fram ett sportarrangemang som passar just er.",
-   price: "Pris från: 16 900 sek",
-    imageUrl: "/images/paragliding.webp",
-     link: "resor/sportresor", // Lägg till denna rad
-  },
-
-   {
-    title: "Höstpaket till Montenegro",
-    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
-    price: "Kontakta oss för pris",
-     imageUrl: "/images/priroda.webp",
-     // Lägg till länk till kontaktformuläret
-     link: "contact", // Lägg till denna rad
-  },
-   {
-    title: "Vårpaket till Montenegro",
-    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
-    price: "Kontakta oss för pris",
-     imageUrl: "/images/spring montenegro.jpg",
-     // Lägg till länk till kontaktformuläret
-     link: "contact", // Lägg till denna rad
-  },
- 
-  
- 
-
-  {
-    title: "Vinterpaket till Montenegro",
-    location: "Avresa november-april | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
-    price: "Kontakta oss för pris",
-    imageUrl: "/images/kolasin2.jpg",
-     link: "contact", // Lägg till denna rad
-  },
- 
-  
- 
-  {
-    title: "Ekologik matupplevelse",
-    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
-    price: "",
-    imageUrl: "/images/ovcepriroda.jpg",
-  },
-  {
-    title: "Skräddarsydda resor",
-    location: "Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell",
-    description: "Hör av er till oss så tar vi fram det bästa resepaket som passar just er.",
-    price: "",
-    imageUrl: "/images/svetistefan2.jpg",
-    link: "contact", // Lägg till denna rad
-  },
-];
 
 ---
 
@@ -168,9 +67,8 @@ const packages = [
       {
         title: 'Bas',
         subtitle: 'För mindre grupper',
-        price: 12999,
-        period: 'per person',
-        currency: 'sek', // Lägg till denna rad
+  price: 12999,
+  period: 'per person',
         items: [
           { description: 'Flyg t/r' },
           { description: '3 nätter på hotell' },
@@ -186,9 +84,8 @@ const packages = [
       {
         title: 'Standard',
         subtitle: 'För företag & större grupper',
-        price: 14999,
-        period: 'per person',
-        currency: 'sek', // Lägg till denna rad
+  price: 14999,
+  period: 'per person',
         items: [
           { description: 'Flyg t/r' },
           { description: '4 nätter på hotell' },
@@ -206,9 +103,8 @@ const packages = [
       {
         title: 'Premium',
         subtitle: 'Skräddarsytt för företag',
-        price: 19999,
-        period: 'per person',
-        currency: 'sek', // Lägg till denna rad
+  price: 19999,
+  period: 'per person',
         items: [
           { description: 'Flyg t/r' },
           { description: '5 nätter på boutiquehotell' },
