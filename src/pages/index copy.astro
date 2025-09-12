@@ -109,18 +109,13 @@ const metadata = {
 
 
 </Features2>
-<div class="container mx-auto">
-  <section class="max-w-7xl mx-auto px-4 py-16 opacity-0 transform translate-y-8 transition-all duration-500 ease-out" 
-    id="reseSection"
-  >
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 ">
 
-      </h2>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-        Upplev landet där du på morgonen kan vandra i bergen och på eftermiddag ta ett dopp i havet.
-      </p>
-    </div>
+<section class="max-w-7xl mx-auto px-4 py-16">
+  <div class="text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Upptäck våra reseupplevelser</h2>
+    <p class="text-gray-600">Upplev landet där du på morgonen kan vandra i bergen och på eftermiddag ta ett dopp i havet.</p>
+  </div>
+
   {/* Företagsresor */}
   <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
     <img 
@@ -255,27 +250,147 @@ const metadata = {
 </section>
 
 
-  <script>
-  function handleScroll() {
-    const section = document.getElementById('reseSection');
-    if (!section) return;
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    title="Upplev landet där du på morgonen kan vandra i bergen och på eftermiddag ta ett dopp i havet."
+    items={[
+      {
+        title: 'Kombinera konferens och äventyr för att förbättra teambuildningen',
+        description:
+          'Segla i den vackra Adriatiska havet med kristallblått vatten, åk linbana över en hissnande kanjon mitt över en forsande flod, kör jeep runt höga berg, prova på extrem canyoning eller bara chilla med en glas lokal vin vid stranden. Montenegro har allt. Sol och vacker natur är i fokus och det är varmt och skönt från slutet av april till oktober.',
+      },
+      {
+        title: 'Upplev Montenegros mångfacitterande skönhet',
+        description:
+          'Här hittar du en del av av historia som ligger på UNESCO:s världsarvslista. Pittoreska montenegrinska landskap, klippiga toppar, gröna skogar, glasklara sjöar och floder, små fiskebyar och charmiga gamla städer.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/barka.png',
+      alt: 'Colorful Image',
+    }}
+  >
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"> Företagsresor</h3>
+    Varje företagsresa är en investering och med genomtänkt innehåll, engagemang och en stor dos kreativitet skapar vi nya upplevelser. 
+    <br> 
+    <a href="resor/gruppresor" class="text-sm text-blue-500">Läs mer</a> <!-- Link instead of button -->
+  </Fragment>
 
-    const sectionTop = section.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (sectionTop < windowHeight * 0.75) {
-      section.classList.remove('opacity-0', 'translate-y-8');
-      section.classList.add('opacity-100', 'translate-y-0');
-    }
-  }
-
-  // Add scroll event listener
-  window.addEventListener('scroll', handleScroll);
-  // Initial check in case section is already in view
-  handleScroll();
-</script>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+ 
 
 
+  <!-- Content Widget **************** -->
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Från gömd natur till de bästa attraktionerna, kulturella utflykter och mysiga restauranger',
+        description: `Sockersöta kloster, vidunderliga berg och sandstränder med kristallklart vatten. Lilla Montenegro rymmer storslagna upplevelser.
+         Utforska medeltidsstäder, vandra i bergen, upplev spa och yoga, ät goda middagar vid stranden i solnedgången. `,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/grupp.jpg',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Gruppresor</h3>
+      Upplev en smakfull resa med vänner. Oavsett gruppstorlek så hittar ni något i utbudet. Stadsvandring, vinprovning eller varför inte uppleva två upplevelser på samma dag. 
+      <br> 
+      <a href="resor/gruppresor" class="text-sm text-blue-500">Läs mer</a> <!-- Link instead of button -->
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Från yogapass till vattensport och vandringsexpeditioner',
+        description:
+          'I morgonsolens värme kan du börja dagen med ett uppfriskande dopp i Adriatiska havets kristallklara vatten, eller paddla längs den natursköna kusten. ',
+      },
+      {
+        title: 'Seglingresor',
+        description:
+          'Upplev Montenegro från vattnet, lär er grunderna i segling och stärk teamkänslan på samma gång. Det är en enorm känsla att skota hem seglet och känna accelerationen. Det är inte heller helt fel att efter en dags hårt arbete lägga till i en skyddad vik, ta en simtur i solnedgången.',
+      },
+      {
+        title: 'Fotbollsläger',
+        description:
+          'Med det härligt varmt klimat året runt är både våren och hösten perfekt tid för träningsläger med lagom temperatur och ett lugnt och behagligt tempo.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/biciklizam.jpg',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Sportresor</h3>
+      Med en imponerande omväxlande natur, fantastiska aktiviteter under varje årstid och sann hållbarhet är Montenegro en helt unik destination att resa till. Vi ses på berget eller i vattnet!
+      <br>
+      <a href="resor/gruppresor" class="text-sm text-blue-500">Läs mer</a> <!-- Link instead of button -->
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+  <Steps
+    title="Njut av sol och bad längs magisk turkosblå kust, utforska storslagen natur på spännande vandringar och uppleva charmen hos pittoreska byar."
+    items={[
+      {
+        title: '270 soldagar om året',
+        description:
+          "Montenegro är känt för sitt behagliga milda klimat, 270 soldagar om året.",
+        icon: 'tabler:sun',
+      },
+      {
+        title: 'Hisnande orörd natur',
+        description:
+          "Trots sin lilla storlek erbjuder Montenegro oändligt med äventyr. Åk till kusten och Budvanska rivieran, upptäck de vita stränderna med stora klippor i bakgrunden, ta en dyktur, åk vattenskidor, vindsurfa eller njut av sol och bad. En båttur ut till de många tillhörande öarna är en härlig upplevelse eller varför inte besöka de magiska Cijevnas vattenfall.",
+        icon: 'tabler:tree',
+      },
+      {
+        title: 'Stort utbud av aktiviteter',
+        description:
+          'Det som gör Montenegro unikt och igenkännbart över hela världen är dess hav, sjöar, kanjoner, berg, och det är just detta som gör det möjligt för alla att hitta det bästa sättet att få en kvalitetsvila i ett litet men stort land. På en dag kan du unna dig ett morgonkaffe på en av de många stränderna i Hercegnovska, Kotor eller Budva rivieran, lunch ombord med fågelsång på sjön Skadar och middag vid brasan på sluttningarna av de magnifika bergen Lovćen, Durmitor eller Biogradska gora.',
+        icon: 'tabler:bike',
+      },
+      {
+        title: 'Upptäck!',
+        icon: 'tabler:backpack',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/Irena.jahta.png',
+      alt: 'Bazen',
+    }}
+  />
+
+  <Steps
+  title="Njut av sol och bad längs magisk turkosblå kust, utforska storslagen natur på spännande vandringar och uppleva charmen hos pittoreska byar."
+  items={[ /* ...din befintliga data... */ ]}
+  image={{
+    src: '~/assets/images/Irena.jahta.png',
+    alt: 'Bazen',
+  }}
+/>
 
 
 {/* NYTT – lägg precis här */}

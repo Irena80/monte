@@ -8,9 +8,9 @@ const packages = [
     id: 'konferens',
     title: 'Konferens vid Adriatiska havet',
     img: {
-      jpg: '/images/paket-konferens.jpg',
-      webp: '/images/paket-1.webp', // valfritt
-      avif: '/images/paket-1.avif', // valfritt
+      
+      webp: '/images/konferens.webp', // valfritt
+     
       alt: 'Konferensrum med havsutsikt över Adriatiska havet',
     },
     blurb:
@@ -50,16 +50,19 @@ const packages = [
 
 <section id="paket" aria-labelledby="paket-title" class="bg-slate-50 py-14">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex items-end justify-between gap-4">
-      <h2 id="paket-title" class="text-2xl font-bold tracking-tight sm:text-3xl">
-        Exempelpaket
-      </h2>
-      <a href="#kontakt" class="text-sm font-semibold text-slate-700 underline-offset-4 hover:underline">
-        Begär skräddarsytt förslag
-      </a>
-    </div>
+  <div class="flex items-end justify-between gap-4">
+  <h2 id="paket-title" class="text-2xl font-bold tracking-tight sm:text-3xl">
+    Upptäck våra reseupplevelser
+  </h2>
+  <a 
+    href="/boka" 
+    class="text-sm font-semibold text-slate-700 underline-offset-4 hover:underline"
+  >
+    Se alla paket
+  </a>
+</div>
 
-    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 place-items-center max-w-7xl mx-auto">
       {packages.map((p) => (
         <article
           class="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md"
