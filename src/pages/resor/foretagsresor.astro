@@ -6,7 +6,6 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
 
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 
 const metadata = {
@@ -19,24 +18,26 @@ const metadata = {
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
-   
     actions={[
-      { variant: 'primary', target: '_blank', text: 'Boka', href: '/boka' },
-    
+      { 
+        variant: 'secondary', 
+        target: '_blank', 
+        text: 'Boka', 
+        href: '/boka', 
+        class: 'border-2 border-black text-black hover:bg-black hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black bg-transparent'
+      },
     ]}
     image={{
     src: '~/assets/images/Pogled terasa HN.png',
     alt: 'AstroWind Hero Image',
   }}
 >
-    <Fragment slot="title">
-       Företagsresor <span class="text-accent dark:text-white highlight"
-        > &Teambuildning</span
-      ><br />
-    </Fragment>
+   <Fragment slot="title">
+     Företagsresor <span class=" text-blue-800 dark:text-white highlight"> &Teambuildning</span><br />
+   </Fragment>
 
     <Fragment slot="subtitle">
-  <span className="block md:hidden">
+  <span class="block md:hidden">
     Dags för nästa äventyr med kollegorna? Flytta kontoret några dagar till varmare breddgrader. Med en härlig och äventyrlig företagsaresa skapar ni sammanhållning, bra relationer och förutsättningar för att nå era mål för året.
   </span>
  
@@ -48,7 +49,7 @@ const metadata = {
     <div class="max-w-3xl mx-auto text-center mb-16">
       <h2 class="text-3xl md:text-5xl font-bold mb-4 text-blue-900">Därför Montenegro</h2>
       <p class="text-lg md:text-xl text-gray-700">
-        Det lilla landet med de stora kontrasterna! Njut av medelhavskust och kristallklart vatten på förmiddagen – och vandra bland bergstoppar på eftermiddagen. Här är avstånden korta och upplevelserna stora.
+        Det lilla landet med de <strong>stora kontrasterna</strong>! Njut av <strong>medelhavskusten</strong> och kristallklart vatten på förmiddagen – och vandra bland <strong>bergstoppar</strong> på eftermiddagen. Här är avstånden korta och upplevelserna stora.
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -224,11 +225,7 @@ const metadata = {
     alt: 'Steps image',
   }}
  />
- 
 
- 
-
- 
 <!-- BlogLatestPost Widget **************** -->
 
 <section id="blog" class="py-16 bg-blue-50 relative overflow-hidden">
@@ -301,5 +298,129 @@ const metadata = {
     <div class="w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-20 absolute -bottom-32 -right-32"></div>
   </div>
 </section>
+
+<!-- Contact / Lead Capture Section (added) -->
+<section id="kontakt" class="relative py-24 bg-[#1F242A] text-white overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none opacity-40">
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-blue-400/10 rounded-full blur-3xl"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-14">
+    <!-- Left copy -->
+    <div class="max-w-xl">
+      <h2 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+        Redo att skapa <br />
+        <span class="text-[#189CFF]">oförglömliga</span><br />
+        <span class="text-[#189CFF]">upplevelser?</span>
+      </h2>
+      <p class="mt-8 text-lg leading-relaxed text-gray-300">
+        Kontakta oss idag för att diskutera er nästa företags- eller
+        gruppresa till Montenegro. Vi hjälper er att skapa en skräddarsydd
+        upplevelse som stärker teamet och skapar bestående minnen.
+      </p>
+
+      <div class="mt-12 space-y-8">
+        <div class="flex items-start gap-5">
+          <div class="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center">
+            <svg class="w-6 h-6 text-[#189CFF]" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-3 8H6a3 3 0 01-3-3V8a3 3 0 013-3h12a3 3 0 013 3v5a3 3 0 01-3 3z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm text-gray-400 mb-1">E-post</p>
+            <p class="font-medium">info@mediteranobay.com</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-5">
+          <div class="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center">
+            <svg class="w-6 h-6 text-[#189CFF]" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h2l3.6 7.59a2 2 0 01.1 1.7l-1.35 3.37A1 1 0 008 19h3m4-14h2l3.6 7.59a2 2 0 01.1 1.7L20 19a1 1 0 01-.92.62H13M16 11a4 4 0 01-8 0" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm text-gray-400 mb-1">Telefon</p>
+            <p class="font-medium">+46 (0)76 588 53 25
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-5">
+          <div class="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center">
+            <svg class="w-6 h-6 text-[#189CFF]" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3zm0 0v8m8-8c0 7-8 11-8 11S4 18 4 11a8 8 0 1116 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm text-gray-400 mb-1">Adress</p>
+            <p class="font-medium">Stockholm, Sverige</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right form -->
+    <div>
+      <form name="foretagsresa-kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="relative rounded-2xl bg-white/5 backdrop-blur-sm p-8 md:p-10 border border-white/10 space-y-6">
+        <input type="hidden" name="form-name" value="foretagsresa-kontakt" />
+        <p class="hidden">
+          <label>Fyll inte i detta: <input name="bot-field" /></label>
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="fornamn" class="block text-sm font-medium mb-2">Förnamn</label>
+            <input id="fornamn" name="fornamn" type="text" placeholder="Ditt förnamn" required class="w-full rounded-md bg-white/5 border border-white/10 focus:border-[#189CFF] focus:ring-2 focus:ring-[#189CFF]/40 px-4 py-3 text-sm placeholder-gray-400 outline-none" />
+          </div>
+          <div>
+            <label for="efternamn" class="block text-sm font-medium mb-2">Efternamn</label>
+            <input id="efternamn" name="efternamn" type="text" placeholder="Ditt efternamn" required class="w-full rounded-md bg-white/5 border border-white/10 focus:border-[#189CFF] focus:ring-2 focus:ring-[#189CFF]/40 px-4 py-3 text-sm placeholder-gray-400 outline-none" />
+          </div>
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium mb-2">E-post</label>
+          <input id="email" name="email" type="email" placeholder="din@email.com" required class="w-full rounded-md bg-white/5 border border-white/10 focus:border-[#189CFF] focus:ring-2 focus:ring-[#189CFF]/40 px-4 py-3 text-sm placeholder-gray-400 outline-none" />
+        </div>
+        <div>
+          <label for="foretag" class="block text-sm font-medium mb-2">Företag</label>
+          <input id="foretag" name="foretag" type="text" placeholder="Ditt företag" class="w-full rounded-md bg-white/5 border border-white/10 focus:border-[#189CFF] focus:ring-2 focus:ring-[#189CFF]/40 px-4 py-3 text-sm placeholder-gray-400 outline-none" />
+        </div>
+        <div>
+          <label for="meddelande" class="block text-sm font-medium mb-2">Meddelande</label>
+          <textarea id="meddelande" name="meddelande" rows="5" placeholder="Berätta om era önskemål för resan..." required class="w-full rounded-md bg-white/5 border border-white/10 focus:border-[#189CFF] focus:ring-2 focus:ring-[#189CFF]/40 px-4 py-3 text-sm placeholder-gray-400 outline-none resize-none"></textarea>
+        </div>
+        <div class="pt-2">
+          <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#189CFF] hover:bg-[#1192F0] text-white font-medium py-5 text-base shadow-lg shadow-black/20 transition">
+            Skicka förfrågan
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        <p id="kontakt-status" class="text-sm font-medium text-green-400"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Netlify AJAX submission for better UX (stays on page)
+  const form = document.forms['foretagsresa-kontakt'];
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = document.getElementById('kontakt-status');
+      const formData = new FormData(form);
+      try {
+        const encoded = new URLSearchParams(Array.from(formData.entries()).map(([k,v]) => [k, v.toString()]));
+        await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: encoded.toString() });
+        if (status) status.textContent = 'Tack! Meddelandet har skickats.';
+        form.reset();
+      } catch {
+        if (status) status.textContent = 'Ett fel uppstod. Försök igen.';
+      }
+    });
+  }
+</script>
+
+
+
 
 </Layout>
