@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Ekologisk matupplevelse i Montenegro – Smaker & hållbarhet',
+  description:
+    'Upptäck Montenegros ekologiska smaker. Lokala gårdar, hantverk och hållbar gastronomi – perfekt som temaresa eller inslag i konferensen.',
+  image: '/images/ovcepriroda.jpg'
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 pt-6 md:pt-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="overflow-hidden rounded-2xl">
+        <img src="/images/ovcepriroda.jpg" alt="Ekologisk matupplevelse – natur och gård" class="w-full h-auto object-cover" loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-8 md:py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-5">
+        Ekologisk matupplevelse – Lokala gårdar och hållbar gastronomi
+      </h1>
+      <p class="text-slate-700 md:text-lg mb-8">
+        Smaka på Montenegro genom lokala gårdar, ost- och charkhantverk samt ekologiska vingårdar. En upplevelse som passar både som egen resa och som temadel i konferensen.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-10">
+        <img src="/images/muslje.jpg" alt="Lokala råvaror från hav och land" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+        <img src="/images/frans.jpg" alt="Gårdsbesök och hantverk" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+        <img src="/images/ovcepriroda.jpg" alt="Ekologisk gård i inlandet" class="rounded-xl aspect-[4/3] object-cover hidden sm:block" loading="lazy" />
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Därför välja ekologisk matupplevelse</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-10">
+        <li>Lokala ekologiska producenter och vingårdar</li>
+        <li>Mat- och dryckesprovningar med storytelling</li>
+        <li>Hållbarhet i fokus</li>
+        <li>Kan kombineras med konferens eller gruppresa</li>
+      </ul>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Exempelupplägg (2–3 dagar)</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-8">
+        <li>Dag 1: Gårdsbesök, ost- och charkprovning</li>
+        <li>Dag 2: Ekologisk vingård och slow-cooking middag</li>
+        <li>Dag 3: Kustens fisk- och skaldjursfokus (valfritt)</li>
+      </ul>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Vanliga frågor</h2>
+      <div class="space-y-6 mb-8">
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Vad kostar paketet?</h3>
+          <p class="text-slate-700">Kontakta oss för offert och upplägg anpassat efter gruppstorlek och datum.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Kan vi anpassa innehållet?</h3>
+          <p class="text-slate-700">Ja, vi skräddarsyr helt efter era önskemål.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Passar detta för företag?</h3>
+          <p class="text-slate-700">Absolut, det är perfekt som temainslag i konferensen eller som egen företagsresa.</p>
+        </div>
+      </div>
+
+      <div class="mt-2">
+        <a href="/kontakt" class="inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white">
+          Begär offert på ekologisk matupplevelse
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,6 +1,8 @@
 ---
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/index.astro
 import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import { headerData } from '~/navigation';
 
 import Packages from '~/components/mbay/Packages.astro';
 
@@ -20,6 +22,10 @@ const metadata = {
 
 
 <Layout metadata={metadata}>
+  <!-- Egen header på startsidan utan RSS & tema-knappar -->
+  <Header slot="header" {...headerData} isSticky />
+
+<!-- Global font laddas numera via huvudlayouten -->
 
 <section class="relative w-full min-h-[520px] sm:min-h-[560px] md:h-[800px] flex items-center justify-center overflow-hidden">
   <img
@@ -35,13 +41,10 @@ const metadata = {
   <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70 md:from-black/60 md:via-black/40 md:to-black/70 z-10"></div>
 
   <div class="relative z-20 w-full flex flex-col items-center justify-center h-full px-4">
-  <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-center">
-        <span class="text-white">Aktiva resor för <span class="text-amber-500">grupper &</span>  <span class="text-amber-500">företag</span></span>
-        <span class="relative inline-block ml-2">
-         
-          <span class="absolute left-0 bottom-1 h-2 w-full bg-amber-400/25 blur-md rounded-md"></span>
-        </span>
-      </h1>
+    <h1 class="hero-heading mb-6">
+      <span class="hero-line1">Aktiva resor</span>
+      <span class="hero-line2">för <span class="hero-accent">grupper</span> & <span class="hero-accent">företag</span></span>
+    </h1>
 
     <!-- Beskrivning (mindre text) -->
   <p class="max-w-3xl mx-auto mb-8 text-center text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
@@ -69,35 +72,49 @@ const metadata = {
     </div>
 
     <!-- Statistik ny stil: rena siffror med separators -->
-    <div class="flex flex-nowrap items-center justify-center gap-x-4 w-full max-w-4xl mt-1 px-1">
+    <div class="flex flex-nowrap items-center justify-center gap-x-6 w-full max-w-4xl mt-1 px-1">
       <div class="flex flex-col items-center min-w-[70px]">
-  <span class="relative text-2xl sm:text-4xl font-extrabold tracking-tight text-amber-500 [text-shadow:0_0_8px_rgba(255,255,255,0.35)] after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-6px] after:w-8 sm:after:w-10 after:h-[2px] after:bg-gradient-to-r after:from-white/0 after:via-white/70 after:to-white/0 after:rounded-full">270</span>
-  <span class="mt-1 flex items-center text-[11px] sm:text-xs font-medium uppercase tracking-wide text-white/80">
+  <span class="hero-stat">270</span>
+  <span class="hero-stat-label mt-1">
           Soldagar/år
         </span>
       </div>
-  <div class="hidden sm:block h-8 w-px bg-white/30"></div>
+  <div class="hidden sm:block h-9 w-px bg-white/40"></div>
   <div class="flex flex-col items-center min-w-[70px]">
-  <span class="relative text-2xl sm:text-4xl font-extrabold tracking-tight text-amber-500 [text-shadow:0_0_8px_rgba(255,255,255,0.35)] after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-6px] after:w-8 sm:after:w-10 after:h-[2px] after:bg-gradient-to-r after:from-white/0 after:via-white/70 after:to-white/0 after:rounded-full">32+</span>
-  <span class="mt-1 flex items-center text-[11px] sm:text-xs font-medium uppercase tracking-wide text-white/80">
+  <span class="hero-stat">32+</span>
+  <span class="hero-stat-label mt-1">
           Aktiviteter
         </span>
       </div>
-  <div class="hidden sm:block h-8 w-px bg-white/30"></div>
+  <div class="hidden sm:block h-9 w-px bg-white/40"></div>
   <div class="flex flex-col items-center min-w-[70px]">
-  <span class="relative text-2xl sm:text-4xl font-extrabold tracking-tight text-amber-500 [text-shadow:0_0_8px_rgba(255,255,255,0.35)] after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-6px] after:w-8 sm:after:w-10 after:h-[2px] after:bg-gradient-to-r after:from-white/0 after:via-white/70 after:to-white/0 after:rounded-full">25+</span>
-  <span class="mt-1 flex items-center text-[11px] sm:text-xs font-medium uppercase tracking-wide text-white/80">
+  <span class="hero-stat">25+</span>
+  <span class="hero-stat-label mt-1">
           Resepaket
         </span>
       </div>
-  <div class="hidden sm:block h-8 w-px bg-white/30"></div>
+  <div class="hidden sm:block h-9 w-px bg-white/40"></div>
   <div class="flex flex-col items-center min-w-[70px]">
-  <span class="relative text-2xl sm:text-4xl font-extrabold tracking-tight text-amber-500 [text-shadow:0_0_8px_rgba(255,255,255,0.35)] after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-6px] after:w-8 sm:after:w-10 after:h-[2px] after:bg-gradient-to-r after:from-white/0 after:via-white/70 after:to-white/0 after:rounded-full">10+</span>
-  <span class="mt-1 flex items-center text-[11px] sm:text-xs font-medium uppercase tracking-wide text-white/80">
+  <span class="hero-stat">10+</span>
+  <span class="hero-stat-label mt-1">
           Hotell
         </span>
       </div>
     </div>
+    <!-- Typografi-stilar för hero -->
+    <style is:global>
+  .hero-heading { font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; @apply text-center font-extrabold tracking-tight text-white; line-height:1.04; letter-spacing:-0.02em; font-size:clamp(2.0rem,6.6vw,5.9rem); }
+      .hero-line1,.hero-line2 { display:block; }
+      .hero-line2 { margin-top:.14em; }
+  .hero-accent { @apply text-amber-300 md:text-amber-400; text-shadow:0 1px 2px rgba(0,0,0,.45); }
+      /* Hero stats: numbers and labels tuned to match heading aesthetics */
+      .hero-stat { position:relative; font-family: var(--font-sans); font-weight:800; letter-spacing:-0.02em; line-height:1; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.45); font-size:clamp(1.6rem,4.6vw,3.4rem); }
+      .hero-stat::after { content:""; position:absolute; left:50%; transform:translateX(-50%); bottom:-6px; height:2px; width:2.25rem; border-radius:9999px; background:linear-gradient(to right, rgba(251,191,36,0), rgba(251,191,36,.85), rgba(251,191,36,0)); }
+      @media (min-width:640px){ .hero-stat::after { width:2.75rem; } }
+      .hero-stat-label { display:flex; align-items:center; justify-content:center; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.85); font-size:clamp(0.6875rem,1vw,0.8125rem); }
+      @media (min-width:768px){ .hero-heading { letter-spacing:-0.028em; } }
+  @media (min-width:1536px){ .hero-heading { font-size:6.3rem; } }
+    </style>
   </div>
 </section>
 
@@ -115,8 +132,8 @@ const metadata = {
    <!-- Titel + ingress (ersätter tidigare centrerade block) -->
     <div class="mb-14 md:mb-20">
       <div class="grid md:grid-cols-12 gap-6 md:gap-8">
-        <h2 class="md:col-span-7 text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-snug md:leading-[1.05]">
-          Vandra i bergen på morgonen ta ett dopp<span class="text-amber-600">  i havet på kvällen</span>
+        <h2 class="md:col-span-7 display-h2 text-slate-900">
+          Vandra i bergen på morgonen ta ett dopp<span class="text-amber-600">  i havet på kvällen.</span>
         </h2>
         <p class="md:col-span-5 text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed md:pt-2 mt-4 md:mt-0">
           Upplev landet där du på morgonen kan vandra i bergen och på eftermiddagen ta ett dopp i havet. Från äventyr i bergen till avkoppling vid Adriatiska havet – vi skräddarsyr upplevelser för grupp och företag.
@@ -141,7 +158,7 @@ const metadata = {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold">Företagsresor</h3>
+  <h3 class="display-h3 text-slate-900">Företagsresor</h3>
       </div>
   <p class="text-gray-600">Äventyrliga företagsresor</p>
   <p class="text-gray-700">
@@ -181,7 +198,7 @@ const metadata = {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold">Gruppresor</h3>
+  <h3 class="display-h3 text-slate-900">Gruppresor</h3>
       </div>
   <p class="text-gray-600">Upplev en smakfull resa med vänner</p>
   <p class="text-gray-700">
@@ -239,7 +256,7 @@ const metadata = {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold">Sportresor</h3>
+  <h3 class="display-h3 text-slate-900">Sportresor</h3>
       </div>
   <p class="text-gray-600">Från yogapass till vattensport</p>
   <p class="text-gray-700">
@@ -307,7 +324,7 @@ const metadata = {
     
 
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="/contact"
+      <a href="/kontakt"
          class="inline-flex items-center justify-center rounded-lg bg-amber-500 hover:bg-amber-500 text-blue-00 font-semibold px-8 py-3 text-sm md:text-base shadow transition">
         🎯 Begär offert
       </a>

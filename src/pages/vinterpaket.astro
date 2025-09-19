@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Vinterpaket till Montenegro – Företagsresor & gruppresor',
+  description:
+    'Planera vinterns konferens- eller gruppresa till Montenegro. Kombinera kustens lugn med bergens snö – skidåkning, wellness och innehållsrika möten.',
+  image: '/images/kolasin2.jpg'
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 pt-6 md:pt-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="overflow-hidden rounded-2xl">
+        <img src="/images/kolasin2.jpg" alt="Vinter i Montenegro – Kolasin och bergen" class="w-full h-auto object-cover" loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-8 md:py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-5">
+        Vinterpaket till Montenegro – Konferens och snöäventyr
+      </h1>
+      <p class="text-slate-700 md:text-lg mb-8">
+        Kombinera stilla kuststäder med snöklädda berg. Skidåkning, wellness och inspirerande möten för teamet – en upplevelse utöver det vanliga.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-10">
+        <img src="/images/bjelasica-1.jpg" alt="Bjelasica – vinterlandskap" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+        <img src="/images/Durmitor.jpg" alt="Durmitor nationalpark vinter" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+        <img src="/images/jezero.jpg" alt="Vinter vid sjö" class="rounded-xl aspect-[4/3] object-cover hidden sm:block" loading="lazy" />
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Därför välja vinterpaket</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-10">
+        <li>Skidåkning och snöaktiviteter i bergen</li>
+        <li>Wellness och varma källor</li>
+        <li>Konferenshotell vid kusten för lugn och fokus</li>
+        <li>Närhet till flygplatserna Tivat och Podgorica</li>
+      </ul>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Program (3 dagar)</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-8">
+        <li>Dag 1: Ankomst, transfer, välkomstmiddag vid havet</li>
+        <li>Dag 2: Konferens + eftermiddag i bergen</li>
+        <li>Dag 3: Skidåkning & wellness, avskedsmiddag</li>
+      </ul>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Vanliga frågor</h2>
+      <div class="space-y-6 mb-8">
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Vad kostar paketet?</h3>
+          <p class="text-slate-700">Kontakta oss för offert och upplägg anpassat efter gruppstorlek och datum.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Var ligger skidorterna?</h3>
+          <p class="text-slate-700">Kolasin och Zabljak är populära med bra snöförhållanden under vintern.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Kan vi anpassa programmet?</h3>
+          <p class="text-slate-700">Ja, vi skräddarsyr helt efter era behov.</p>
+        </div>
+      </div>
+
+      <div class="mt-2">
+        <a href="/kontakt" class="inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white">
+          Begär offert på vinterpaket
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

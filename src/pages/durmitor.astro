@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Teambuilding i Durmitor – Natur och äventyr för företag',
+  description:
+    'För företag som vill stärka laget med aktivitet och naturupplevelser. Durmitor Nationalpark erbjuder rafting, bergsvandringar och unika konferensmöjligheter i en UNESCO-skyddad miljö.',
+  image: '/images/Durmitor.jpg'
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero: stor bild + rubrik -->
+  <section class="px-4 pt-6 md:pt-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="overflow-hidden rounded-2xl">
+        <img src="/images/Durmitor.jpg" alt="Durmitor Nationalpark – berg och natur" class="w-full h-auto object-cover" loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-8 md:py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-5">
+        Teambuilding i Durmitor – Natur och äventyr för företag
+      </h1>
+      <p class="text-slate-700 md:text-lg mb-8">
+        För företag som vill stärka laget med aktivitet och naturupplevelser. Durmitor Nationalpark erbjuder rafting, bergsvandringar och unika konferensmöjligheter i en UNESCO-skyddad miljö.
+      </p>
+
+      <!-- Liten, stilren bildgrid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-10">
+        <img src="/images/durmitor2.jpg" alt="Vandring i Durmitor" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+        <img src="/images/durmitor3.jpg" alt="Berg och sjöar i nationalparken" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+        <img src="/images/jezero.jpg" alt="Glaciärsjö i bergen" class="rounded-xl aspect-[4/3] object-cover hidden sm:block" loading="lazy" />
+      </div>
+
+      <!-- USP -->
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Varför Durmitor</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-10">
+        <li>Hotell & lodger i nationalparken</li>
+        <li>Teambuilding: forsränning, zipline, hiking</li>
+        <li>Tara Canyon – Europas djupaste kanjon</li>
+        <li>Lokal gastronomi med gårdsproducerad mat</li>
+      </ul>
+
+      <!-- Program -->
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Program (3 dagar)</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-8">
+        <li>Dag 1: Ankomst, middag med lokala specialiteter</li>
+        <li>Dag 2: Konferens på morgonen + rafting i Tara-floden</li>
+        <li>Dag 3: Vandring i bergen + avslutande middag</li>
+      </ul>
+
+      <!-- FAQ -->
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Vanliga frågor</h2>
+      <div class="space-y-6 mb-8">
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Vad kostar resan?</h3>
+          <p class="text-slate-700">Från 7 900 SEK per person (3 dagar, helpension).</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Hur tar man sig dit?</h3>
+          <p class="text-slate-700">Transfer från Podgorica (2,5 tim) ingår.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Passar det alla åldrar?</h3>
+          <p class="text-slate-700">Ja, aktiviteter anpassas efter gruppens nivå.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-2">
+        <a href="/kontakt" class="inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white">
+          Begär offert på teambuilding i Durmitor
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

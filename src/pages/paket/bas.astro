@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Bas – Paketdetaljer & offert',
+  description: 'Bas-paketet för mindre grupper. Läs vad som ingår och begär offert.'
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-10">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">Bas</h1>
+      <p class="text-slate-700 md:text-lg mb-6">För mindre grupper som vill resa smart och enkelt – allt det viktigaste ingår.</p>
+
+      <h2 class="text-2xl font-bold mb-3">Detta ingår</h2>
+      <ul class="list-disc pl-6 space-y-1 text-slate-700 mb-8">
+        <li>Flyg tur och retur</li>
+        <li>3 nätter på utvalt hotell</li>
+        <li>Frukost & middag</li>
+        <li>Transfer & aktiviteter enligt program</li>
+      </ul>
+
+      <div class="mt-2">
+        <a href="/kontakt" class="inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white">Begär offert – Bas</a>
+      </div>
+    </div>
+  </section>
+</Layout>

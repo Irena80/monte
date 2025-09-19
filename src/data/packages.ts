@@ -71,7 +71,7 @@ export const travelPackages: TravelPackage[] = [
     description: 'Hör av er till oss så tar vi fram det bästa resepaket som passar just er.',
     price: 'Kontakta oss för pris',
     imageUrl: '/images/priroda.webp',
-    link: '/contact'
+    link: '/hostpaket'
   },
   {
     id: 'varpaket',
@@ -80,7 +80,7 @@ export const travelPackages: TravelPackage[] = [
     description: 'Hör av er till oss så tar vi fram det bästa resepaket som passar just er.',
     price: 'Kontakta oss för pris',
     imageUrl: '/images/spring montenegro.jpg',
-    link: '/contact'
+    link: '/varpaket'
   },
   {
     id: 'vinterpaket',
@@ -89,7 +89,7 @@ export const travelPackages: TravelPackage[] = [
     description: 'Hör av er till oss så tar vi fram det bästa resepaket som passar just er.',
     price: 'Kontakta oss för pris',
     imageUrl: '/images/kolasin2.jpg',
-    link: '/contact'
+    link: '/vinterpaket'
   },
   {
     id: 'ekologisk',
@@ -97,7 +97,8 @@ export const travelPackages: TravelPackage[] = [
     location: 'Avresa året om | Flyg från Stockholm, Göteborg | 4* hotell',
     description: 'Hör av er till oss så tar vi fram det bästa resepaket som passar just er.',
     price: '',
-    imageUrl: '/images/ovcepriroda.jpg'
+    imageUrl: '/images/ovcepriroda.jpg',
+    link: '/ekologisk'
   },
   {
     id: 'skraeddarsydd',
@@ -106,6 +107,15 @@ export const travelPackages: TravelPackage[] = [
     description: 'Hör av er till oss så tar vi fram det bästa resepaket som passar just er.',
     price: '',
     imageUrl: '/images/svetistefan2.jpg',
-    link: '/contact'
+    link: '/kontakt'
+  },
+  {
+    id: 'durmitor',
+    title: 'Teambuilding i Durmitor Nationalpark',
+    location: 'Avresa maj–oktober | Flyg till Podgorica | Lodger & konferens',
+    description: 'Stärk laget i UNESCO-skyddad nationalpark med rafting, vandring och aktiviteter kombinerat med konferens.',
+    price: 'Pris från: 7 900 sek',
+    imageUrl: '/images/Durmitor.jpg',
+    link: '/durmitor'
   }
 ];

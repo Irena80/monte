@@ -10,8 +10,17 @@ import { travelPackages } from '~/data/packages';
     </div>
 
     <div class="mt-10 grid gap-8 md:grid-cols-3">
-      {travelPackages.slice(0,3).map(p => (
-        <a href={p.link || '/contact'} aria-label={`Läs mer: ${p.title}`} class="group flex flex-col rounded-[34px] border border-slate-200 bg-white shadow-sm overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/50 transition transform hover:shadow-lg hover:-translate-y-0.5 hover:border-slate-300 active:translate-y-0">
+      {(() => {
+        // Prioritize showing Durmitor if present, then fill with next items
+        const list = [...travelPackages];
+        const durmitorIndex = list.findIndex(p => p.id === 'durmitor');
+        if (durmitorIndex > -1) {
+          const [durmitor] = list.splice(durmitorIndex, 1);
+          list.unshift(durmitor);
+        }
+        return list.slice(0,3);
+      })().map(p => (
+        <a href={p.link || '/kontakt'} aria-label={`Läs mer: ${p.title}`} class="group flex flex-col rounded-[34px] border border-slate-200 bg-white shadow-sm overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/50 transition transform hover:shadow-lg hover:-translate-y-0.5 hover:border-slate-300 active:translate-y-0">
           <img src={p.imageUrl} alt={p.title} class="h-60 w-full object-cover transition duration-300 group-hover:scale-[1.03]" loading="lazy" />
           <div class="p-8 flex flex-col flex-1">
             <h3 class="text-xl font-semibold text-slate-900 mb-3 leading-snug group-hover:text-slate-950">{p.title}</h3>

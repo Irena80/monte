@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Höstpaket till Montenegro – Företagsresor & gruppresor',
+  description:
+    'Planera höstens konferens- eller gruppresa till Montenegro. Mild temperatur, färgsprakande natur och aktivitetspaket med vandring, vinprovning och kuststäder.',
+  image: '/images/priroda.webp'
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 pt-6 md:pt-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="overflow-hidden rounded-2xl">
+        <img src="/images/priroda.webp" alt="Höst i Montenegro – natur och kust" class="w-full h-auto object-cover" loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-8 md:py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-5">
+        Höstpaket till Montenegro – Konferensresa vid Adriatiska havet
+      </h1>
+      <p class="text-slate-700 md:text-lg mb-8">
+        Hösten i Montenegro bjuder på behagliga temperaturer, lugnare kuststäder och natur i vackra färger. Perfekt för fokus i mötesrummet och laganda utomhus.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-10">
+        <img src="/images/kotorbukten.jpg" alt="Kotorbukten i höstskrud" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+        <img src="/images/paragliding.webp" alt="Aktiviteter och teambuilding" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+        <img src="/images/Prcanj.jpeg" alt="Kuststad nära Kotor" class="rounded-xl aspect-[4/3] object-cover hidden sm:block" loading="lazy" />
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Därför välja höstpaket</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-10">
+        <li>Mildt klimat och färgsprakande natur</li>
+        <li>Havs- och bergsaktiviteter med mindre trängsel</li>
+        <li>Konferenshotell vid kusten och nära flygplatser</li>
+        <li>Vinprovning, vandring och historiska stadsvandringar</li>
+      </ul>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Program (3 dagar)</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-8">
+        <li>Dag 1: Ankomst, transfer, välkomstmiddag vid havet</li>
+        <li>Dag 2: Konferens + eftermiddagstur i Kotor</li>
+        <li>Dag 3: Vandring & vinprovning, avskedsmiddag</li>
+      </ul>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Vanliga frågor</h2>
+      <div class="space-y-6 mb-8">
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Vad kostar paketet?</h3>
+          <p class="text-slate-700">Kontakta oss för offert och upplägg anpassat efter gruppstorlek och datum.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">När är bästa tiden?</h3>
+          <p class="text-slate-700">September–november bjuder på jämnt klimat och mindre trängsel.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Kan vi anpassa programmet?</h3>
+          <p class="text-slate-700">Ja, vi skräddarsyr helt efter era behov.</p>
+        </div>
+      </div>
+
+      <div class="mt-2">
+        <a href="/kontakt" class="inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white">
+          Begär offert på höstpaket
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

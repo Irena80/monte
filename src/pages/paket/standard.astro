@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Standard – Paketdetaljer & offert',
+  description: 'Standardpaketet för företag och större grupper. Läs vad som ingår och begär offert.'
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-10">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">Standard</h1>
+      <p class="text-slate-700 md:text-lg mb-6">Ett komplett paket för företag – välbalanserat mellan möten och upplevelser.</p>
+
+      <h2 class="text-2xl font-bold mb-3">Detta ingår</h2>
+      <ul class="list-disc pl-6 space-y-1 text-slate-700 mb-8">
+        <li>Flyg tur och retur</li>
+        <li>4 nätter på hotell</li>
+        <li>Helpension</li>
+        <li>Konferenspaket & aktiviteter</li>
+      </ul>
+
+      <div class="mt-2">
+        <a href="/kontakt" class="inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white">Begär offert – Standard</a>
+      </div>
+    </div>
+  </section>
+</Layout>

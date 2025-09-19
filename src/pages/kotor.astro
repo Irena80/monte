@@ -1,0 +1,94 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Konferensresa till Kotor Bay – Företagsresor Montenegro',
+  description:
+    'Paket 1 – Konferensresa till Kotor Bay. Företagsresor till Montenegro med 4* hotell, havsnära konferensrum, transfer från Tivat, teambuilding och utflykter till Kotor & Perast.',
+  image: '/images/kotorbukten.jpg'
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero: stor bild + rubrik -->
+  <section class="px-4 pt-6 md:pt-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="overflow-hidden rounded-2xl">
+        <img src="/images/kotorbukten.jpg" alt="Kotor Bay – panorama vid Adriatiska havet" class="w-full h-auto object-cover" loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-8 md:py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-5">
+        Konferensresa till Kotor Bay – Företagsresor vid Adriatiska havet
+      </h1>
+      <p class="text-slate-700 md:text-lg mb-8">
+        MediteranoBay erbjuder företagsresor till Kotor Bay i Montenegro. Här får ni en unik kombination av havsnära konferensmöjligheter, historisk stadsmiljö och inspirerande aktiviteter.
+      </p>
+
+      <!-- Liten, stilren bildgrid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-10">
+        <img src="/images/Budva.jpg" alt="Gamla stan i Budva nära Kotor" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+        <img src="/images/paragliding.webp" alt="Aktiviteter och teambuilding vid kusten" class="rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+        <img src="/images/kajak.webp" alt="Kajak nära Kotor Bay" class="rounded-xl aspect-[4/3] object-cover hidden sm:block" loading="lazy" />
+      </div>
+
+      <!-- USP -->
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Varför Kotor Bay</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-10">
+        <li>4-stjärnigt hotell med konferensrum och havsutsikt</li>
+        <li>20 minuter från Tivat flygplats</li>
+        <li>Teambuilding: segling, vinprovning, vandring i bergen</li>
+        <li>Utflykter till UNESCO-staden Kotor och pittoreska Perast</li>
+      </ul>
+
+      <!-- Program -->
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Program (3 dagar)</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-8">
+        <li>Dag 1: Ankomst, transfer, välkomstmiddag vid vattnet</li>
+        <li>Dag 2: Konferens, eftermiddagstur i Kotor stad</li>
+        <li>Dag 3: Segling & teambuilding, avskedsmiddag</li>
+      </ul>
+
+      <!-- FAQ -->
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">Vanliga frågor</h2>
+      <div class="space-y-6 mb-8">
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Vad kostar resan?</h3>
+          <p class="text-slate-700">Från 8 500 SEK per person (3 dagar, helpension).</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Hur tar man sig dit?</h3>
+          <p class="text-slate-700">Närmaste flygplatser: Tivat (20 min), Podgorica (90 min).</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-1">Kan vi anpassa programmet?</h3>
+          <p class="text-slate-700">Ja, alla resor skräddarsys.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-2">
+        <a href="/kontakt" class="inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white">
+          Begär offert på konferensresa till Kotor Bay
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Vad kostar resan?', acceptedAnswer: { '@type': 'Answer', text: 'Från 8 500 SEK per person (3 dagar, helpension).' } },
+        { '@type': 'Question', name: 'Hur tar man sig dit?', acceptedAnswer: { '@type': 'Answer', text: 'Närmaste flygplatser: Tivat (20 min), Podgorica (90 min).' } },
+        { '@type': 'Question', name: 'Kan vi anpassa programmet?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, alla resor skräddarsys.' } }
+      ]
+    })}
+  </script>
+</Layout>
+
