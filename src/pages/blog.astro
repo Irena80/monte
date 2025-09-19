@@ -1,0 +1,15 @@
+---
+// Legacy redirect from /blog -> /blogg (svenskt slugbyte)
+const target = '/blogg';
+return Astro.redirect(target, 301);
+---
+<html lang="sv">
+  <head>
+    <meta http-equiv="refresh" content={`0; url=${target}`}/>
+    <link rel="canonical" href={target} />
+    <title>Flyttar…</title>
+  </head>
+  <body>
+    <p>Omdirigerar till <a href={target}>Resebloggen</a>…</p>
+  </body>
+</html>

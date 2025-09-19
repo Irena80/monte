@@ -29,5 +29,53 @@ const { metadata } = Astro.props;
   <slot name="footer">
     <Footer {...footerData} />
   </slot>
+  <style is:global>
+    /* Mobile readability improvements */
+    @media (max-width: 640px) {
+      main { padding-left: 0.25rem; padding-right: 0.25rem; }
+      p { line-height: 1.55; }
+      p + p { margin-top: 0.9rem; }
+      h1, h2, h3 { line-height: 1.15; }
+      ul { padding-left: 1.1rem; }
+      li { margin-bottom: 0.55rem; }
+      /* Limit measure for long text blocks */
+      p, li { max-width: 42ch; }
+    }
+    /* Collapsible long paragraph styles */
+    @media (max-width: 640px) {
+      .mb-collapse { position: relative; overflow: hidden; }
+      .mb-collapse[data-collapsed="true"] { max-height: 6.5rem; }
+      .mb-collapse[data-collapsed="true"]::after { content: ""; position: absolute; inset: auto 0 0 0; height: 3rem; background: linear-gradient(to bottom, rgba(255,255,255,0), #fff); }
+      .dark .mb-collapse[data-collapsed="true"]::after { background: linear-gradient(to bottom, rgba(0,0,0,0), #0f172a); }
+      button.mb-readmore { font-size: 0.85rem; font-weight: 600; color: #1d4ed8; display: inline-flex; align-items: center; gap: 4px; margin-top: 0.35rem; }
+    }
+  </style>
+  <script>
+    // Progressive enhancement: collapse long consecutive paragraphs on small screens
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.matchMedia('(min-width: 641px)').matches) return;
+      const MAX_CHARS = 420; // threshold before collapsing
+      const blocks = Array.from(document.querySelectorAll('main p'))
+        .filter(el => ((el as HTMLElement).innerText || el.textContent || '').trim().length > MAX_CHARS);
+      blocks.forEach(p => {
+        // Avoid double processing
+        if (p.closest('a, button, header, footer, form')) return;
+        p.classList.add('mb-collapse');
+        p.setAttribute('data-collapsed','true');
+        const btn = document.createElement('button');
+        btn.type='button';
+        btn.className='mb-readmore';
+        btn.setAttribute('aria-expanded','false');
+        btn.textContent='Läs mer';
+        btn.addEventListener('click', () => {
+          const collapsed = p.getAttribute('data-collapsed')==='true';
+          p.setAttribute('data-collapsed', collapsed ? 'false':'true');
+          btn.textContent = collapsed ? 'Visa mindre' : 'Läs mer';
+          btn.setAttribute('aria-expanded', collapsed ? 'true':'false');
+        });
+        p.after(btn);
+      });
+    });
+  </script>
   
 </Layout>

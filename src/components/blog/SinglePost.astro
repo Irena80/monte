@@ -101,3 +101,17 @@ const { post, url } = Astro.props;
     </div>
   </article>
 </section>
+
+<script type="application/ld+json">{JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  datePublished: post.publishDate?.toISOString?.() || '',
+  dateModified: (post.updateDate || post.publishDate)?.toISOString?.() || '',
+  image: post.image ? [post.image] : [],
+  author: post.author ? { '@type': 'Person', name: post.author } : undefined,
+  keywords: post.tags?.map(t => t.title).join(', '),
+  inLanguage: 'sv',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': Astro.url?.href || '' },
+  description: post.excerpt || ''
+})}</script>

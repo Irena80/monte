@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+import { fetchPosts } from '../../utils/blog';
+import { getPermalink } from '../../utils/permalinks';
+
+const posts = await fetchPosts();
+// aggregate tags
+const tagMap = new Map<string, number>();
+for (const p of posts) {
+  for (const t of p.tags || []) {
+    tagMap.set(t.title, (tagMap.get(t.title) || 0) + 1);
+  }
+}
+const tags = [...tagMap.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+
+const metadata = {
+  title: 'Taggar – Resebloggen Montenegro',
+  description: 'Översikt över alla taggar i resebloggen: aktiviteter, natur, kultur, kuststäder, företagsresor och mer för inspiration.',
+};
+---
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">Taggar</h1>
+    <p class="text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-2xl">Bläddra bland alla ämnen vi skriver om och hitta mer inspiration för resor, aktiviteter och upplevelser i Montenegro.</p>
+    <ul class="flex flex-wrap gap-3">
+      {tags.map(([name,count]) => (
+        <li>
+          <a href={getPermalink(name.toLowerCase(), 'tag')} class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium shadow transition">
+            <span>{name}</span>
+            <span class="bg-white/20 rounded-full px-2 py-0.5 text-[11px] leading-none">{count}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Layout>

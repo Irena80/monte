@@ -149,7 +149,7 @@ export const footerData = {
         { text: 'Aktiviteter', href: '/aktiviteter' },
         { text: 'Kusten', href: '/kusten' },
         { text: 'Inlandet', href: '/inlandet' },
-        { text: 'Blogg', href: '/blog' },
+  { text: 'Blogg', href: '/blogg' },
      
       ],
     },

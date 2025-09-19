@@ -1,12 +1,12 @@
 ---
 publishDate: 2025-02-21T00:00:00Z
 title: Montenegro – En gömd skatt vid Adriatiska havet
-excerpt: Lilla Montenegro är en äkta skattkista- där land möter hav
+excerpt: "Montenegro – liten nation med stora kontraster: fjäll, kuststäder och kristallklart hav för äkta upplevelser."
 image: '~/assets/images/lustica1.JPG'
 tags:
-  - astro
-  - tailwind css
-  - theme
+  - montenegro
+  - adriatiska-havet
+  - kultur
 metadata:
   canonical: https://astrowind.vercel.app/how-to-customize-astrowind-to-your-brand
 ---

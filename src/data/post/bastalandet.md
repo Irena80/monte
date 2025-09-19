@@ -1,13 +1,13 @@
 ---
 publishDate: 2025-02-10T00:00:00Z
 author: John Smith
-title: Störta vingården i Europa
-excerpt: Start your web journey with AstroWind – harness Astro and Tailwind CSS for a stunning site. Explore our guide now.
+title: Största vingården i Europa
+excerpt: Utforska Montenegros vingårdar, kuststäder och berg – inspiration för grupp- och företagsresor med smak av Adriatiska havet.
 image: '~/assets/images/vinogradi.jpg'
-category: Tutorials
+category: Resmål
 tags:
-  - astro
-  - tailwind css
+  - montenegro
+  - företagsresor
 metadata:
   canonical: https://astrowind.vercel.app/get-started-website-with-astro-tailwind-css
 ---

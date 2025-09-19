@@ -2,12 +2,12 @@
 publishDate: 2025-02-10T00:00:00Z
 author: IN
 title: Berättelsen om Herceg Novi
-excerpt: Start your web journey with AstroWind – harness Astro and Tailwind CSS for a stunning site. Explore our guide now.
+excerpt: Herceg Novi – solig kuststad vid Kotorbukten. Historia, palmer, promenader och perfekta lägen för minnesvärda gruppresor.
 image: '~/assets/images/HNbest.webp'
-category: Tutorials
+category: Resmål
 tags:
-  - astro
-  - tailwind css
+  - herceg-novi
+  - kuststad
 metadata:
   canonical: https://astrowind.vercel.app/get-started-website-with-astro-tailwind-css
 ---

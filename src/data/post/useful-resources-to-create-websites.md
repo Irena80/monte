@@ -1,7 +1,7 @@
 ---
 publishDate: 2023-08-09T00:00:00Z
-title: Hisnande natur
-excerpt: Explore vital tools and resources for a sleek website. From design to functionality, our guide elevates your online presence.
+title: Hisnande natur i Montenegro
+excerpt: Dramatiska berg, djupa kanjoner och gröna dalar – naturupplevelser i Montenegro för äventyrslystna grupper.
 image: '~/assets/images/brda.jpg'
 tags:
   - front-end

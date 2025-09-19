@@ -194,18 +194,63 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       const input = overlay?.querySelector('[data-search-input]');
       const resultsEl = overlay?.querySelector('[data-results]');
       const loadingEl = overlay?.querySelector('[data-loading]');
-      let lastFocus = null; let active = false; let abortCtrl = null; let trapHandler = null; let debounceTimer = null;
+  let lastFocus: Element | null = null;
+  let active = false;
+  let trapHandler: ((e: KeyboardEvent) => void) | null = null;
+  let debounceTimer: number | null = null;
 
-      function trapFocus(e){ if(!active || !panel) return; if(e.key!=='Tab') return; const focusables=[...panel.querySelectorAll('a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])')].filter(el=>!el.hasAttribute('disabled')); if(!focusables.length) return; const first=focusables[0]; const last=focusables[focusables.length-1]; if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); } }
+      function trapFocus(e: KeyboardEvent){
+        if(!active || !panel) return;
+        if(e.key!== 'Tab') return;
+        const focusables = [...panel.querySelectorAll<HTMLElement>('a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])')]
+          .filter(el => !el.hasAttribute('disabled'));
+        if(!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length-1];
+        if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+      }
 
-      function open(){ if(!overlay) return; lastFocus=document.activeElement; overlay.classList.remove('hidden'); active=true; document.body.classList.add('overflow-hidden'); setTimeout(()=> input && (input as HTMLInputElement).focus(), 30); trapHandler = (e)=>trapFocus(e); document.addEventListener('keydown', trapHandler, true); }
-      function close(){ if(!overlay) return; overlay.classList.add('hidden'); active=false; document.body.classList.remove('overflow-hidden'); if(lastFocus && (lastFocus as HTMLElement).focus) (lastFocus as HTMLElement).focus(); document.removeEventListener('keydown', trapHandler,true); clearResults(); }
+      function open(){
+        if(!overlay) return;
+        lastFocus=document.activeElement;
+        overlay.classList.remove('hidden');
+        active=true;
+        document.body.classList.add('overflow-hidden');
+        setTimeout(()=> input && (input as HTMLInputElement).focus(), 30);
+        trapHandler = (e)=>trapFocus(e as KeyboardEvent);
+        document.addEventListener('keydown', trapHandler, true);
+      }
+      function close(){
+        if(!overlay) return;
+        overlay.classList.add('hidden');
+        active=false;
+        document.body.classList.remove('overflow-hidden');
+        if(lastFocus && (lastFocus as HTMLElement).focus) (lastFocus as HTMLElement).focus();
+        if(trapHandler) document.removeEventListener('keydown', trapHandler,true);
+        clearResults();
+      }
 
-      function setLoading(state){ if(!loadingEl) return; loadingEl.classList.toggle('hidden', !state); }
-      function clearResults(){ if(resultsEl) resultsEl.innerHTML=''; }
-      async function doSearch(q){ if(!resultsEl) return; clearResults(); if(!q.trim()){ return; } setLoading(true); try { const { search } = await import('/src/utils/searchClient.ts'); const items = await search(q); if(!items.length){ resultsEl.innerHTML='<p class="text-sm text-gray-500">Inga träffar.</p>'; } else { resultsEl.innerHTML = items.map(i=>`<a href="${i.url}" class="block p-3 rounded-lg border border-gray-200 hover:border-brand-400 hover:bg-brand-50 dark:border-gray-700 dark:hover:border-brand-400 transition"><span class="font-semibold">${i.title}</span><br/><span class="text-xs text-gray-600 dark:text-gray-400">${i.excerpt}</span></a>`).join(''); } } catch(err){ resultsEl.innerHTML='<p class="text-sm text-red-500">Fel vid sökning.</p>'; console.error(err); } finally { setLoading(false); } }
+  function setLoading(state:boolean){ if(!loadingEl) return; loadingEl.classList.toggle('hidden', !state); }
+  function clearResults(){ if(resultsEl) resultsEl.innerHTML=''; }
+      async function doSearch(q:string){
+        if(!resultsEl) return;
+        clearResults();
+        if(!q.trim()) return;
+        setLoading(true);
+        try {
+          const { search } = await import('../../utils/searchClient.ts');
+          const items = await search(q);
+            resultsEl.innerHTML = items.length
+              ? items.map(i=>`<a href="${i.url}" class="block p-3 rounded-lg border border-gray-200 hover:border-brand-400 hover:bg-brand-50 dark:border-gray-700 dark:hover:border-brand-400 transition"><span class="font-semibold">${i.title}</span><br/><span class="text-xs text-gray-600 dark:text-gray-400">${i.excerpt}</span></a>`).join('')
+              : '<p class="text-sm text-gray-500">Inga träffar.</p>';
+        } catch(err){
+          if(resultsEl) resultsEl.innerHTML='<p class="text-sm text-red-500">Fel vid sökning.</p>';
+          console.error(err);
+        } finally { setLoading(false); }
+      }
 
-      function onInput(){ const q=(input as HTMLInputElement).value; clearTimeout(debounceTimer); debounceTimer=setTimeout(()=>doSearch(q), 280); }
+  function onInput(){ const q=(input as HTMLInputElement).value; if(debounceTimer) clearTimeout(debounceTimer); debounceTimer=window.setTimeout(()=>doSearch(q), 280); }
 
       openBtns.forEach(b=>b.addEventListener('click', open));
       closeBtn?.addEventListener('click', close);
