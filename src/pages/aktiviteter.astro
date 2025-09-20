@@ -2,9 +2,6 @@
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/aktiviteter.astro
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import Content from '~/components/widgets/Content.astro';
-import ImageCard1 from '~/components/ImageCard1.astro';
-import DestinationCard from '~/components/DestinationCard.astro';
 
 const metadata = {
   title: 'Utforska',
@@ -26,7 +23,7 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Upptäck<span class="hidden sm:inline"> och utforska</span> den vilda <span class="text-accent dark:text-white highlight">Montenegro</span>
+      Upptäck<span class="hidden sm:inline"> och utforska</span> den vilda <span class="text-blue-800 md:text-blue-900 dark:text-white highlight">Montenegro</span>
     </Fragment>
     <Fragment slot="subtitle">
       Upplev nöjen året runt med äventyr för den medvetna, aktiva och ständigt nyfikna.
@@ -50,7 +47,7 @@ const metadata = {
  
 
    <!-- Bildgalleri med beskrivningar, vivamedia.se-inspirerad layout -->
-  <section class="py-20 bg-white">
+  <section data-section="gallery" class="py-20 bg-white">
     
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-bold mb-12 text-blue-1000 text-center">Destination för alla årstider</h2>
@@ -232,7 +229,7 @@ const metadata = {
   </section>
   
   <!-- Booking Form Section -->
-  <section class="py-16 bg-blue-50">
+  <section data-section="interest-form" class="py-16 bg-blue-50">
     <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
       <h2 class="text-2xl font-bold mb-4 text-blue-900 text-center">Intresseanmälan</h2>
       <form action="https://formspree.io/f/yourid" method="POST" class="space-y-4">

@@ -1,30 +1,49 @@
 ---
-const { text = 'Begär offert', link = '/kontakt', ariaLabel = '' } = Astro.props;
+export interface Props {
+  href: string;
+  text?: string;
+  variant?: 'primary' | 'accent' | 'neutral';
+  size?: 'sm' | 'md';
+  widthClass?: string; // e.g. w-[170px]
+  rel?: string;
+  target?: string;
+  iconLeft?: string; // raw HTML (emoji/svg)
+  iconRight?: string;
+  ariaLabel?: string;
+  class?: string;
+}
+
+const {
+  href,
+  text,
+  variant = 'primary',
+  size = 'md',
+  widthClass = '',
+  rel,
+  target,
+  iconLeft,
+  iconRight,
+  ariaLabel,
+  class: extraClass = '',
+} = Astro.props as Props;
+
+const base = 'inline-flex items-center justify-center font-semibold rounded-lg transition shadow px-5 py-2.5 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-offset-2';
+
+const variants: Record<string,string> = {
+  primary: 'bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-500 focus:ring-offset-white dark:focus:ring-offset-slate-900',
+  accent: 'bg-amber-500 hover:bg-amber-500 text-black focus:ring-amber-400 focus:ring-offset-white dark:focus:ring-offset-slate-900',
+  neutral: 'bg-white/10 hover:bg-white/15 text-white backdrop-blur-sm focus:ring-white/40 focus:ring-offset-transparent',
+};
+
+const sizes: Record<string,string> = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-5 py-2.5',
+};
+
+const composed = [base, variants[variant], sizes[size], widthClass, extraClass].filter(Boolean).join(' ');
 ---
-
-<a href={link} class="cta" aria-label={ariaLabel || text}>
-  {text}
+<a href={href} class={composed} {...(rel ? { rel } : {})} {...(target ? { target } : {})} aria-label={ariaLabel || text}>
+  {iconLeft ? <span class="mr-2" set:html={iconLeft} /> : null}
+  <slot>{text}</slot>
+  {iconRight ? <span class="ml-2" set:html={iconRight} /> : null}
 </a>
-
-<style>
-  .cta{
-    display:inline-block;
-    background: var(--brand-cta-bg, #E17A3D);
-    color: var(--brand-cta-text, #fff);
-    font: inherit;                /* tar ditt nuvarande typsnitt */
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: .75rem 1.5rem;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: .2s ease-in-out;
-  }
-  .cta:hover{
-    background: var(--brand-cta-bg-hover, #F18C4F);
-    box-shadow: 0 4px 8px rgba(0,0,0,.2);
-    transform: translateY(-2px);
-  }
-  @media (max-width: 768px){
-    .cta{ font-size: 1rem; padding: .65rem 1.2rem; }
-  }
-</style>

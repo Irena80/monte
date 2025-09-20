@@ -21,7 +21,7 @@ const { metadata } = Astro.props;
     <Announcement />
   </slot>
   <slot name="header">
-    <Header {...headerData} isSticky showRssFeed showToggleTheme />
+  <Header {...headerData} isSticky />
   </slot>
   <main>
     <slot />
@@ -76,6 +76,34 @@ const { metadata } = Astro.props;
         p.after(btn);
       });
     });
+    // Section view tracking using IntersectionObserver
+    (function(){
+      const fired = new Set();
+      function emit(section){
+        const name = section.getAttribute('data-section');
+        if(!name || fired.has(name)) return;
+        fired.add(name);
+        const detail = { type:'section_view', section:name, ts: Date.now() };
+        // Console log for now; replace with analytics push
+        console.log('[track]', detail);
+        // Optional: dataLayer support if present
+        // Push to a global dataLayer array if it exists (Google Tag Manager style)
+        if (window && Array.isArray((window as unknown as { dataLayer?: unknown }).dataLayer)) {
+          (window as unknown as { dataLayer: Array<unknown> }).dataLayer.push(detail);
+        }
+        window.dispatchEvent(new CustomEvent('mbay:section_view',{ detail }));
+      }
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting && e.intersectionRatio >= 0.35){
+            emit(e.target as HTMLElement);
+          }
+        });
+      }, { threshold:[0.1,0.25,0.35,0.5] });
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-section]').forEach(el => observer.observe(el));
+      });
+    })();
   </script>
   
 </Layout>

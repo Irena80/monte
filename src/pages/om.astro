@@ -1,102 +1,109 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import CTAButton from '~/components/ui/CTAButton.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'Om oss – MediteranoBay',
+  description: 'Vi skapar aktiva grupp- och företagsresor till Montenegro med lokal expertis, hållbara val och starkt fokus på upplevelser.',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-
-    image={{
-      src: '~/assets/images/kotorbukten.jpg',
-      alt: 'Caos Image',
-    }}
-  >
-    <Fragment slot="title">
-      Aktiva resor och upplevelser  <br />
-  <span class="text-blue-900 dark:text-white highlight">  för grupper och företag </span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Mediteranobay arrangerar olika upplevelser och äventyrsresor till privatpersoner och företag som önskar inspirerande upplevelseresor. Med hög flexibilitet och professionella lokala guider och vår omfattande lokalkännedom har vi möjlighet att skräddarsy varje resa.
-    </Fragment>
-  </Hero>
+  <section data-section="hero" class="relative w-full min-h-[420px] sm:min-h-[520px] flex items-end overflow-hidden">
+    <picture class="absolute inset-0 w-full h-full">
+      <source srcset="/images/Montenegro-Boats_luka.jpg" type="image/webp" />
+      <img src="/images/Montenegro-Boats_luka.jpg" alt="Båtar i montenegrinsk hamn" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
+    </picture>
+    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-white/10"></div>
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-4 pb-14 sm:pb-20">
+      <h1 class="font-extrabold tracking-tight text-slate-900 text-4xl sm:text-5xl md:text-6xl leading-[1.05]">Om Mediteranobay</h1>
+      <p class="mt-5 max-w-2xl text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed">Vi skapar aktiva och meningsfulla grupp- och företagsresor i Montenegro – med lokal närvaro, hållbara val och upplevelser som bygger relationer.</p>
+    </div>
+  </section>
 
 
   <!-- Features3 Widget ************** -->
 
-  <Features3
-    title="Ambition"
-    subtitle="Idén är enkel – att erbjuda aktiva resor för grupper och företag till den destination vi känner bäst-  Montenegro . Fokus ligger på att skapa unika reseupplevelser som kombinerar den förtrollande vackra montenegrinska kusten med landets orörda vilda natur. Den stora fördelen med Montenegro är dess mångfald – här finns allt inom räckhåll. De korta avstånden gör det möjligt att uppleva både kustens charm och bergens dramatik på en och samma dag. Följ med på en resa som du kommer att minnas länge."
-   
-  />
-
- 
+  <div data-section="ambition" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+    <Features3
+      title="Vår ambition"
+      subtitle="Vi erbjuder aktiva upplevelseresor för grupper och företag till Montenegro – landet där kusten och bergen möts. Vårt mål är att skapa unika reseupplägg som kombinerar den dramatiska naturen, den orörda vildmarken och den historiska kusten – allt inom nära räckhåll."
+    />
+  </div>
+  <!-- Sea Image Divider -->
+  <section data-section="divider-sea" class="relative w-full h-60 sm:h-72 lg:h-[400px] overflow-hidden">
+    <picture class="absolute inset-0 w-full h-full">
+      <source srcset="/images/jedrenje3.webp" type="image/webp" />
+      <img
+        src="/images/jedrenje3.webp"
+        alt="Segelbåt på klart vatten i Montenegro"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="lazy"
+      />
+    </picture>
+    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/5 to-transparent"></div>
+  </section>
+  
 
   <!-- Steps2 Widget ****************** -->
 
-  <Steps2
-    title="Våra värderingar"
-    subtitle="Vår ambition är att förena Skandinavien med Montenegro. Att så många som möjligt ska få upptäcka det bästa med Montenegro och samtidigt skapa oförglömliga upplevelser!"
-    isReversed={true}
-    callToAction={{
-      text: 'Se utbud',
-      href: '/boka',
-    }}
-    items={[
-     
-      {
-        title: 'Hållbart resande',
-        description:
-          'På Mediteranobay tar vi ansvar för turismens påverkan på lokalsamhället genom att i första hand samarbeta med leverantörer och partners med stark lokal förankring. På så sätt stannar en större del av intäkterna från våra resor kvar hos lokalbefolkningen och bidrar till en hållbar och positiv samhällsutveckling. <br> För att ytterligare stärka resans sociala och miljömässiga avtryck erbjuder vi skräddarsydda hållbarhetspaket på plats. Tillsammans kan vi granska ert företags CSR-rapport och ESG-strategier och koppla samman dem med meningsfulla och relevanta projekt i området. ',
-        icon: 'tabler:globe',
-        },
-     
-      {
-        title: 'Närproducerat & lokala leverantörer',
-        description:
-          'Visste du att Montenegro har tilldelats utmärkelsen- världens första ekologiska stat? För oss är det viktigt att i första hand välja lokala leverantörer. Exempelvis väljer vi, där det är möjligt, att arbeta med familjeägda hotell som serverar närproducerade råvaror, ibland t o m odlade och tillverkade i närliggande byn. Vi bokar främst transporter med det lokala bussbolaget, och ibland sker resan till och från aktiviteterna med kommunala färdmedel som lokalbuss och tåg.',
-          icon: 'tabler:award',
-        },
-      {
-        title: 'Möten & upplevelser med Mediteranobay ',
-        description:
-          ' Vi brukar regelbundet tillbringa några månader per år i Montenegro  och därmed har vi djupr kunskap om landet och väljer regelbundet ut nya guldkorn. <br> Detta för att säkerställa att just din resa håller högsta kvalitet. Vi lägger stor vikt vid att ha en personlig kontakt med våra kunder och det är viktigt att du känner dig trygg med att varje liten detalj är planerad och varje behov tillgodosett.',
-        icon: 'tabler:message-star',
-      },
-    ]}
-  />
+  <div data-section="values" class="bg-gradient-to-b from-white to-slate-50/60 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <Steps2
+        title="Våra värderingar"
+        subtitle="Vi vill förena Skandinavien med Montenegro – genom genuina upplevelser som bygger relationer och skapar minnen."
+        isReversed={true}
+        callToAction={{ text: 'Se utbud', href: '/boka' }}
+        items={[
+          {
+            title: 'Hållbart resande',
+            description: 'Vi prioriterar lokala partners så att värdet stannar i regionen och bidrar till positiv utveckling. Vi kan även koppla ert hållbarhets- eller ESG-arbete till lokala initiativ.',
+            icon: 'tabler:globe',
+          },
+          {
+            title: 'Lokala leverantörer',
+            description: 'Familjeägda hotell, närproducerad mat och lokala transporter – vi väljer omsorgsfullt för att stärka kvalitet och autenticitet.',
+            icon: 'tabler:award',
+          },
+          {
+            title: 'Personlig expertis',
+            description: 'Vi vistas själva regelbundet i Montenegro och uppdaterar ständigt vårt urval av aktiviteter och platser – för att varje resa ska kännas genomtänkt och unik.',
+            icon: 'tabler:message-star',
+          },
+        ]}
+      />
+    </div>
+  </div>
 
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
-    title="Hör av dig till oss"
-    tagline="Kontakt"
-    columns={2}
-    items={[
-      {
-        title: 'Chatta med oss',
-        description:
-          'Chatta med oss direkt, eller maila till oss på <a href="mailto:info@mediteranobay.com">info@mediteranobay.com</a>',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Kontakta oss',
-        description:
-          ' Kontakta oss direkt på +46 (0)73- 756 71 96',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
+  <div data-section="cta-final" class="py-20 sm:py-28 relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.06),transparent_60%)]"></div>
+    <div class="absolute inset-0 -z-20 bg-gradient-to-br from-[#0F2742] via-[#193455] to-[#0E2034]"></div>
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">Redo att planera nästa resa?</h2>
+      <p class="mt-5 text-white/85 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">Berätta kort om era mål så återkommer vi med ett första förslag inom 24 timmar.</p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <CTAButton href="/kontakt" variant="accent" widthClass="w-[170px]">Begär offert</CTAButton>
+        <CTAButton href="/kontakt" variant="primary" widthClass="w-[170px]">Kontakt</CTAButton>
+      </div>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-[13px] md:text-sm text-slate-200">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2 5l8 4 12-6-8 14-4-6-8 4z"/></svg>
+          Svar inom 24h
+        </div>
+        <div class="hidden sm:block h-4 w-px bg-slate-500/40"></div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 4h10M6 8h12M6 12h12M6 16h8"/></svg>
+          Kostnadsfri offert
+        </div>
+      </div>
+    </div>
+  </div>
  
 </Layout>

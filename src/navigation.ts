@@ -103,7 +103,7 @@ export const headerData = {
        
           {
           text: 'Om oss',
-          href: getPermalink('/om copy'),
+          href: getPermalink('/om'),
         },
         {
           text: 'Reseinfo',

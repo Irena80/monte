@@ -2,6 +2,7 @@
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/index.astro
 import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
+import CTAButton from '~/components/ui/CTAButton.astro';
 import { headerData } from '~/navigation';
 
 import Packages from '~/components/mbay/Packages.astro';
@@ -27,16 +28,19 @@ const metadata = {
 
 <!-- Global font laddas numera via huvudlayouten -->
 
-<section class="relative w-full min-h-[520px] sm:min-h-[560px] md:h-[800px] flex items-center justify-center overflow-hidden">
-  <img
-    src="/images/petrovac.png"
-    alt="Montenegro coastline with crystal blue Adriatic sea"
-    width="1600"
-    height="900"
-    fetchpriority="high"
-    decoding="async"
-    class="absolute inset-0 w-full h-full object-cover z-0"
-  />
+<section data-section="hero" class="relative w-full min-h-[520px] sm:min-h-[560px] md:h-[800px] flex items-center justify-center overflow-hidden">
+  <picture class="absolute inset-0 w-full h-full z-0">
+    <!-- WebP källa kan läggas till om fil genereras: /images/petrovac.webp -->
+    <img
+      src="/images/petrovac.png"
+      alt="Montenegro coastline with crystal blue Adriatic sea"
+      width="1600"
+      height="900"
+      fetchpriority="high"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+  </picture>
   <!-- Mörkare overlay för bättre kontrast på mobil -->
   <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70 md:from-black/60 md:via-black/40 md:to-black/70 z-10"></div>
 
@@ -54,22 +58,13 @@ const metadata = {
 
     <!-- Knappar: staplas på mobil -->
    <div class="flex flex-col sm:flex-row gap-5 mb-8 w-full max-w-sm">
-    <a href="/resor/foretagsresor"
-      class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-lg bg-white/10 hover:bg-white/15 text-white font-semibold text-sm tracking-wide backdrop-blur-sm transition active:scale-[.98]">
-        <svg class="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 10l1-2 5-2 5 2 5-2 1 2v6l-1 2-5 2-5-2-5 2-1-2z"/>
-        </svg>
-        Företagsresor
-      </a>
-    <a href="/resor/gruppresor"
-      class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-lg bg-white/10 hover:bg-white/15 text-white font-semibold text-sm tracking-wide backdrop-blur-sm transition active:scale-[.98]">
-        <svg class="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="5"/>
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-        </svg>
-        Gruppresor
-      </a>
-    </div>
+     <CTAButton href="/resor/foretagsresor" variant="neutral" size="sm" class="w-full sm:w-auto">
+       <span class="flex items-center"><svg class="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10l1-2 5-2 5 2 5-2 1 2v6l-1 2-5 2-5-2-5 2-1-2z"/></svg>Företagsresor</span>
+     </CTAButton>
+     <CTAButton href="/resor/gruppresor" variant="neutral" size="sm" class="w-full sm:w-auto">
+       <span class="flex items-center"><svg class="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>Gruppresor</span>
+     </CTAButton>
+   </div>
 
     <!-- Statistik ny stil: rena siffror med separators -->
     <!-- Stats: hidden on mobile per request (hide numbers 270, 32, 25, 10 on small screens) -->
@@ -108,7 +103,8 @@ const metadata = {
     </p>
     <!-- Typografi-stilar för hero -->
     <style is:global>
-  .hero-heading { font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; @apply text-center font-extrabold tracking-tight text-white; line-height:1.04; letter-spacing:-0.02em; font-size:clamp(2.0rem,6.6vw,5.9rem); }
+  /* Increased mobile base size for hero heading (större på mobil) */
+  .hero-heading { font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; @apply text-center font-extrabold tracking-tight text-white; line-height:1.04; letter-spacing:-0.02em; font-size:clamp(2.6rem,8.5vw,5.9rem); }
       .hero-line1,.hero-line2 { display:block; }
       .hero-line2 { margin-top:.14em; }
   .hero-accent { @apply text-amber-300 md:text-amber-400; text-shadow:0 1px 2px rgba(0,0,0,.45); }
@@ -125,11 +121,13 @@ const metadata = {
 
    <!-- Features2 Widget ************** -->
 
-<Features2
-  title='Vi säljer inte resor. Vi skapar rum för utveckling. <span class="text-amber-600"></span>'
-  subtitle="På MediteranoBay designar vi upplevelser för team, nätverk och grupper som söker något mer än ännu en konferens eller gruppresa."
->
-</Features2>
+<div data-section="mission">
+  <Features2
+    title='Vi säljer inte resor. Vi skapar rum för utveckling. <span class="text-amber-600"></span>'
+    subtitle="På MediteranoBay designar vi upplevelser för team, nätverk och grupper som söker något mer än ännu en konferens eller gruppresa."
+  >
+  </Features2>
+</div>
 <div class="container mx-auto">
   <section class="max-w-7xl mx-auto px-4 py-16 opacity-0 transform translate-y-8 transition-all duration-500 ease-out" 
     id="reseSection"
@@ -323,10 +321,10 @@ const metadata = {
 
 
 {/* NYTT – lägg precis här */}
-<Packages />
+<div data-section="packages"><Packages /></div>
 
 <!-- CTA Sektion -->
-<section class="relative isolate overflow-hidden">
+<section data-section="cta-final" class="relative isolate overflow-hidden">
   <div class="mx-auto max-w-7xl px-4 py-24 sm:py-32 text-center">
     <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
       Redo att skapa något minnesvärt med ditt team?
@@ -334,14 +332,8 @@ const metadata = {
     
 
     <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
-      <a href="/kontakt"
-         class="w-[170px] inline-flex items-center justify-center rounded-lg bg-amber-500 hover:bg-amber-500 text-blue-00 font-semibold px-5 py-2.5 text-sm md:text-base shadow transition">
-        🎯 Begär offert
-      </a>
-      <a href="/kontakt"
-         class="w-[170px] inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 text-sm md:text-base shadow transition">
-        Kontakt
-      </a>
+      <CTAButton href="/kontakt" variant="accent" widthClass="w-[170px]" iconLeft="🎯">Begär offert</CTAButton>
+      <CTAButton href="/kontakt" variant="primary" widthClass="w-[170px]">Kontakt</CTAButton>
     </div>
 
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-[13px] md:text-sm text-slate-200">
@@ -366,7 +358,7 @@ const metadata = {
   <div class="absolute inset-0 -z-20 bg-gradient-to-br from-[#0F2742] via-[#193455] to-[#0E2034]"></div>
 </section>
 
-<section id="blog" class="py-12 sm:py-16 bg-gradient-to-b from-blue-50 via-white to-white relative overflow-hidden">
+<section id="blog" data-section="blog-teaser" class="py-12 sm:py-16 bg-gradient-to-b from-blue-50 via-white to-white relative overflow-hidden">
   <div class="max-w-5xl mx-auto px-4">
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-3 text-slate-900">
