@@ -42,12 +42,13 @@ const metadata = {
     />
   </picture>
   <!-- Mörkare overlay för bättre kontrast på mobil -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70 md:from-black/60 md:via-black/40 md:to-black/70 z-10"></div>
+  <!-- Overlay åter mörkare för vit textkontrast -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70 md:from-black/60 md:via-black/45 md:to-black/70 z-10"></div>
 
   <div class="relative z-20 w-full flex flex-col items-center justify-center h-full px-4">
     <h1 class="hero-heading mb-6">
       <span class="hero-line1">Aktiva resor</span>
-      <span class="hero-line2">för <span class="hero-accent">grupper</span> & <span class="hero-accent">företag</span></span>
+      <span class="hero-line2">för <span class="hero-accent">grupper & </span>  <span class="hero-accent">företag</span></span>
     </h1>
 
     <!-- Beskrivning (mindre text) -->
@@ -56,15 +57,18 @@ const metadata = {
       <span class="hidden sm:inline"><br />Bygg relationer, idéer och framtid i en miljö som ger plats för något större.</span>
     </p>
 
-    <!-- Knappar: staplas på mobil -->
-   <div class="flex flex-col sm:flex-row gap-5 mb-8 w-full max-w-sm">
-     <CTAButton href="/resor/foretagsresor" variant="neutral" size="sm" class="w-full sm:w-auto">
-       <span class="flex items-center"><svg class="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10l1-2 5-2 5 2 5-2 1 2v6l-1 2-5 2-5-2-5 2-1-2z"/></svg>Företagsresor</span>
-     </CTAButton>
-     <CTAButton href="/resor/gruppresor" variant="neutral" size="sm" class="w-full sm:w-auto">
-       <span class="flex items-center"><svg class="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>Gruppresor</span>
-     </CTAButton>
-   </div>
+    <!-- CTA: Mobil visar endast Boka, desktop visar Företagsresor & Gruppresor -->
+    <div class="w-full mb-8 flex flex-col items-center">
+      <!-- Mobil: Boka -->
+      <div class="w-full max-w-[220px] sm:hidden">
+        <CTAButton href="/boka" variant="accent" size="md" class="w-full justify-center text-base py-4">Boka</CTAButton>
+      </div>
+      <!-- Desktop & tablet: två knappar -->
+  <div class="hidden sm:flex gap-4">
+    <CTAButton href="/resor/foretagsresor" variant="neutral" size="md" class="px-8 py-4 backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/15">Företagsresor</CTAButton>
+	<CTAButton href="/resor/gruppresor" variant="neutral" size="md" class="px-8 py-4 backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/15">Gruppresor</CTAButton>
+  </div>
+    </div>
 
     <!-- Statistik ny stil: rena siffror med separators -->
     <!-- Stats: hidden on mobile per request (hide numbers 270, 32, 25, 10 on small screens) -->
@@ -98,21 +102,25 @@ const metadata = {
       </div>
     </div>
     <!-- Mobile compact summary (visible only <640px) -->
-    <p class="sm:hidden mt-4 text-center text-[0.72rem] font-semibold tracking-wide text-white/80">
+  <p class="sm:hidden mt-4 text-center text-[0.72rem] font-semibold tracking-wide text-white/80">
       270 soldagar • 30+ aktiviteter • 25+ paket • 10+ hotell
     </p>
     <!-- Typografi-stilar för hero -->
-    <style is:global>
+  <style is:global>
   /* Increased mobile base size for hero heading (större på mobil) */
-  .hero-heading { font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; @apply text-center font-extrabold tracking-tight text-white; line-height:1.04; letter-spacing:-0.02em; font-size:clamp(2.6rem,8.5vw,5.9rem); }
+  .hero-heading { font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; @apply text-center font-extrabold tracking-tight text-white; line-height:1.04; letter-spacing:-0.02em; font-size:clamp(2.8rem,8.5vw,5.9rem); text-shadow:0 1px 3px rgba(0,0,0,0.55); }
+  /* Större minsta storlek på små skärmar */
+  @media (max-width: 639px){
+    .hero-heading { font-size: clamp(3.05rem, 10vw, 4.4rem); }
+  }
       .hero-line1,.hero-line2 { display:block; }
       .hero-line2 { margin-top:.14em; }
-  .hero-accent { @apply text-amber-300 md:text-amber-400; text-shadow:0 1px 2px rgba(0,0,0,.45); }
+  .hero-accent { @apply text-amber-300 md:text-amber-600; text-shadow:0 1px 2px rgba(0,0,0,.55); }
       /* Hero stats: numbers and labels tuned to match heading aesthetics */
-      .hero-stat { position:relative; font-family: var(--font-sans); font-weight:800; letter-spacing:-0.02em; line-height:1; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.45); font-size:clamp(1.6rem,4.6vw,3.4rem); }
+  .hero-stat { position:relative; font-family: var(--font-sans); font-weight:800; letter-spacing:-0.02em; line-height:1; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.55); font-size:clamp(1.35rem,3.9vw,2.65rem); }
       .hero-stat::after { content:""; position:absolute; left:50%; transform:translateX(-50%); bottom:-6px; height:2px; width:2.25rem; border-radius:9999px; background:linear-gradient(to right, rgba(251,191,36,0), rgba(251,191,36,.85), rgba(251,191,36,0)); }
       @media (min-width:640px){ .hero-stat::after { width:2.75rem; } }
-      .hero-stat-label { display:flex; align-items:center; justify-content:center; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.85); font-size:clamp(0.6875rem,1vw,0.8125rem); }
+  .hero-stat-label { display:flex; align-items:center; justify-content:center; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.85); font-size:clamp(0.6875rem,1vw,0.8125rem); }
       @media (min-width:768px){ .hero-heading { letter-spacing:-0.028em; } }
   @media (min-width:1536px){ .hero-heading { font-size:6.3rem; } }
     </style>
@@ -322,6 +330,7 @@ const metadata = {
 
 {/* NYTT – lägg precis här */}
 <div data-section="packages"><Packages /></div>
+
 
 <!-- CTA Sektion -->
 <section data-section="cta-final" class="relative isolate overflow-hidden">

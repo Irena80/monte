@@ -2,7 +2,6 @@
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/resor/sportresor.astro
 import Layout from '~/layouts/PageLayout.astro';
 
-import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -48,6 +47,7 @@ const metadata = {
   <Content
     id="about"
     columns={3}
+    classes={{ container: 'sport-icons' }}
     items={[
    
       {
@@ -127,6 +127,7 @@ const metadata = {
   <Content
     id="about"
     columns={3}
+    classes={{ container: 'sport-icons' }}
     items={[
       {
         icon: 'tabler:sailboat',
@@ -224,6 +225,7 @@ const metadata = {
   <Content
     id="about"
     columns={3}
+    classes={{ container: 'sport-icons' }}
     items={[
       {
         icon: 'tabler:trekking',
@@ -339,9 +341,22 @@ const metadata = {
   <Steps2
     title="Välj mellan redan färdiga resepaket eller kontakta oss för en skräddarsydd upplevelse! "
     subtitle="Låt oss hjälpa dig att skapa en oförglömlig resa!"
-    callToAction={{
-      text: 'Kontakta oss',
-      href: '/contact',
-    }}
+    items={[]}
+    callToAction={`<div class='flex flex-col sm:flex-row gap-4 justify-center md:justify-start'>
+      <a href='/contact' class='inline-flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 text-sm font-semibold shadow focus:outline-none focus:ring-2 focus:ring-blue-500/40'>Kontakta oss</a>
+      <a href='/boka' class='inline-flex items-center justify-center rounded-full bg-white text-slate-900 border border-slate-300 px-6 py-3 text-sm font-semibold shadow hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-300/60'>Resepaket</a>
+    </div>`}
   />
 </Layout>
+<style is:global>
+  /* Force 3-column icon grid on mobile for sport sections */
+  @media (max-width: 639px) {
+    .sport-icons .grid.mx-auto { 
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 1rem .75rem; /* tighter gaps for small screens */
+    }
+    .sport-icons .flex.flex-row.max-w-md { flex-direction: column; align-items: center; text-align: center; }
+    .sport-icons .flex.flex-row.max-w-md h3 { font-size: 0.75rem; line-height: 1.05; }
+    .sport-icons .flex.flex-row.max-w-md p { display: none; }
+  }
+</style>

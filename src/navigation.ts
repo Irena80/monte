@@ -113,6 +113,10 @@ export const headerData = {
           text: 'Resevillkor',
           href: getPermalink('/resevillkor'),
         },
+        {
+          text: 'FAQ',
+          href: getPermalink('/faq'),
+        },
        
        
       
@@ -159,6 +163,7 @@ export const footerData = {
       
         { text: 'Om oss', href: '/om' },
         { text: 'Kontakt', href: '/contact' }, 
+        { text: 'FAQ', href: '/faq' }, 
      
  
       ],

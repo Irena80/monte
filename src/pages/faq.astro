@@ -1,0 +1,185 @@
+---
+// Relative import to layout (adjust if alias support is configured)
+import Layout from '../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'FAQ – Vanliga frågor om företags- & gruppresor Montenegro | MediteranoBay',
+  description: 'Svar på vanliga frågor om företagsresor och gruppresor till Montenegro: kostnader, planering, aktiviteter, hållbarhet, logistik och hur AI kan hjälpa planeringen.',
+  canonical: 'https://www.mediteranobay.com/faq'
+};
+
+// FAQ data (structured for both rendering & JSON-LD)
+const faqs: { category: string; q: string; a: string }[] = [
+  { category: 'Planering', q: 'När är bästa tiden för en företagsresa till Montenegro?', a: 'Vår (april–juni) och tidig höst (september–mitten av oktober) ger stabilt väder, färre turister och behagliga temperaturer. Sommaren funkar men blir varmare och mer trafikerad.' },
+  { category: 'Planering', q: 'Hur långt i förväg bör vi boka?', a: 'Ideal: 3–6 månader före avresa för bästa pris och aktivitetstillgång. Mindre grupper kan ibland få ihop något även inom 4–6 veckor.' },
+  { category: 'Kostnader', q: 'Vad kostar ett företagsreseupplägg?', a: 'Ett 3–4 dagars paket med boende på 4★ hotell, måltider, transfer och 1–2 aktiviteter börjar ofta runt 11 000–14 000 SEK per person (exklusive flyg). Vi ger offert baserat på mål, nivå och säsong.' },
+  { category: 'Logistik', q: 'Vilka flygplatser är vanligast?', a: 'Dubrovnik (Kroatien) och Tivat (Montenegro) är vanligast. Tivat är närmast Boka-bukten; Dubrovnik har fler avgångar. Podgorica funkar för inland/nationalparker.' },
+  { category: 'Aktiviteter', q: 'Kan vi kombinera konferens och aktiviteter samma dag?', a: 'Ja. Vanligt upplägg: förmiddag möten – eftermiddag segling, jeep, vandring eller vinprovning. Kortare avstånd gör logistiken smidig.' },
+  { category: 'Aktiviteter', q: 'Vilka teambuilding-aktiviteter är populära?', a: 'Segling i bukten, jeep & bergsnatur, vandring, zipline, kajak, lätt canyoning, kustnära cykelturer samt lokala mat- & vinupplevelser.' },
+  { category: 'Hållbarhet', q: 'Hur arbetar ni med hållbarhet?', a: 'Vi väljer lokala leverantörer, familjeägda hotell, mindre aktörer och rekommenderar aktiviteter med låg påverkan. Vi kan samordna inslag kopplat till ert ESG- eller hållbarhetsarbete.' },
+  { category: 'Mat & Boende', q: 'Hur hanteras specialkost och allergier?', a: 'Vi samlar in kostpreferenser i planeringsfasen och säkerställer att restauranger och hotell levererar alternativ för allergier, vegetariskt, veganskt eller andra behov.' },
+  { category: 'Säkerhet', q: 'Hur tryggt är Montenegro för grupper?', a: 'Generellt tryggt, särskilt i kuststäder. Vi arbetar med erfarna lokala guider, följer väderförhållanden och gör riskavstämningar inför äventyrsaktiviteter.' },
+  { category: 'Teknik & Hybrid', q: 'Fungerar uppkoppling och hybridmöten?', a: 'Ja. De flesta 4★ hotell har stabilt Wi‑Fi. Vi kan ordna extra utrustning (projektor, streaming-stöd) vid behov för hybridpresentationer.' },
+  { category: 'AI & Planering', q: 'Kan AI hjälpa oss planera resan?', a: 'Ja – använd AI för att generera första programförslag, aktivitetssammanställning eller målformulering. Vi förfinar sedan och gör den verklighetsanpassad med lokal logistik.' },
+  { category: 'Gruppstorlek', q: 'Vilken gruppstorlek fungerar bäst?', a: 'Vanligt är 12–40 personer. Mindre grupper får mer flexibilitet. Större (50+) kräver fler boendealternativ och tidigare planering.' },
+  { category: 'Väder', q: 'Vad händer om vädret ändras?', a: 'Vi bygger in “Plan B” för utomhusmoment: alternativa tider, inomhusworkshops eller andra aktiviteter beroende på förhållanden.' }
+];
+
+const categories = Array.from(new Set(faqs.map(f => f.category)));
+
+// JSON-LD generation
+// JSON-LD will be stringified inline to avoid unused variable warnings
+---
+
+<Layout metadata={metadata}>
+  <section class="relative w-full py-16 sm:py-24 bg-gradient-to-b from-white to-slate-50/60">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">FAQ – Vanliga frågor</h1>
+      <p class="text-slate-700 text-base sm:text-lg max-w-2xl leading-relaxed">
+        Här samlar vi återkommande frågor från företag och grupper som planerar resa till Montenegro. Filtrera, utforska och
+        använd AI‑assistentens prompt nedan för att snabbare komma igång med er resebrief.
+      </p>
+
+      <!-- Filter / Search -->
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 sm:items-end">
+        <div class="flex-1">
+          <label for="faq-filter" class="block text-sm font-medium mb-1 text-slate-700">Sök fråga</label>
+          <input id="faq-filter" type="text" placeholder="t.ex. flyg, kostnad, hållbarhet…" class="w-full rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 px-4 py-2.5 text-sm" />
+        </div>
+        <div>
+          <label for="faq-category" class="block text-sm font-medium mb-1 text-slate-700">Kategori</label>
+          <select id="faq-category" class="rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 px-4 py-2.5 text-sm bg-white">
+            <option value="">Alla</option>
+            {categories.map(c => <option value={c}>{c}</option>)}
+          </select>
+        </div>
+      </div>
+
+      <!-- Category Anchor Nav -->
+      <nav class="mt-8 flex flex-wrap gap-2 text-sm" aria-label="FAQ kategorier">
+        {categories.map(c => (
+          <a href={`#cat-${c}`} class="inline-flex items-center rounded-full bg-slate-200/60 hover:bg-slate-300 text-slate-800 px-4 py-1.5 font-medium transition">
+            {c}
+          </a>
+        ))}
+      </nav>
+
+      <!-- FAQ List -->
+      <div id="faq-list" class="mt-12 divide-y divide-slate-200 border-y border-slate-200" data-faq-root>
+        {categories.map(cat => (
+          <div id={`cat-${cat}`} class="py-8 first:pt-0">
+            <h2 class="text-xl font-bold text-slate-900 mb-5 tracking-tight flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-600"></span>{cat}</h2>
+            <div class="space-y-4">
+              {faqs.filter(f => f.category === cat).map(f => (
+                <article class="group rounded-lg border border-transparent hover:border-slate-300 focus-within:border-slate-300 transition bg-white/70 backdrop-blur-sm p-5" data-faq-item data-faq-question={f.q.toLowerCase()} data-faq-category={f.category}>
+                  <h3>
+                    <button class="w-full flex items-start justify-between text-left gap-6" aria-expanded="false" data-accordion>
+                      <span class="font-semibold text-slate-800 leading-snug pr-4">{f.q}</span>
+                      <span class="mt-1 inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-[11px] font-bold transition rotate-0 group-[.open]:rotate-45" data-accordion-icon>+</span>
+                    </button>
+                  </h3>
+                  <div class="hidden pt-3 text-slate-700 text-sm leading-relaxed" data-accordion-panel>{f.a}</div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- AI Prompt Helper -->
+      <div class="mt-20 rounded-2xl border border-slate-200 bg-white/80 backdrop-blur p-8">
+        <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">AI-baserad resebrief</h2>
+        <p class="text-slate-600 text-sm sm:text-base mb-5 max-w-2xl">Använd förslaget nedan i en AI-chatt (t.ex. ChatGPT) för att snabbt få ett första reseupplägg att iterera vidare på.</p>
+        <div class="relative">
+          <textarea id="ai-prompt" rows={6} class="w-full rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/40 text-sm p-4 font-mono leading-relaxed" spellcheck="false">Skapa ett 4-dagars företagsreseprogram i Montenegro för 24 personer (techbolag). Mål: teamkänsla + strategiarbete. Kombinera: 2 halvdagar konferens, 1 dag natur/berg, 1 eftermiddag segling i Boka Bay, lokal mat & vin, hållbara leverantörer. Inkludera: tidslinje per dag, motivationssyfte, logistik (flyg Tivat/Dubrovnik), alternativ aktivitet vid dåligt väder. Returnera i tabellformat.</textarea>
+          <button id="copy-prompt" class="absolute top-2 right-2 inline-flex items-center gap-1 rounded-md bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium px-3 py-1.5 shadow focus:outline-none focus:ring-2 focus:ring-blue-500/40">Kopiera</button>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-24 text-center">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Redo att gå från idé till resa?</h2>
+        <p class="mt-4 text-slate-600 max-w-xl mx-auto text-sm sm:text-base">Skicka en kort brief – vi återkommer med första förslag inom 24 timmar.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/kontakt" class="inline-flex items-center justify-center rounded-full bg-blue-900 text-white px-7 py-3 text-sm font-semibold shadow hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-800/40">Begär offert</a>
+          <a href="/resor/foretagsresor" class="inline-flex items-center justify-center rounded-full bg-white text-slate-900 border border-slate-300 px-7 py-3 text-sm font-semibold shadow hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-300/60">Företagsresor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Wrap in IIFE to avoid leaking vars
+    (() => {
+      // Accordion
+      const items = document.querySelectorAll<HTMLButtonElement>('[data-accordion]');
+      items.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const article = btn.closest('article');
+          if(!article) return;
+          const panel = article.querySelector<HTMLElement>('[data-accordion-panel]');
+          const icon = article.querySelector<HTMLElement>('[data-accordion-icon]');
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          panel?.classList.toggle('hidden');
+          article.classList.toggle('open');
+          icon?.classList.toggle('rotate-45');
+        });
+      });
+
+      // Filter
+      const filterInput = document.getElementById('faq-filter') as HTMLInputElement | null;
+      const catSelect = document.getElementById('faq-category') as HTMLSelectElement | null;
+      const faqArticles = document.querySelectorAll<HTMLElement>('[data-faq-item]');
+
+      function applyFilter(){
+        const q = (filterInput?.value || '').trim().toLowerCase();
+        const cat = (catSelect?.value || '');
+        faqArticles.forEach(el => {
+          const text = el.getAttribute('data-faq-question') || '';
+          const category = el.getAttribute('data-faq-category') || '';
+          const matchText = !q || text.includes(q);
+          const matchCat = !cat || category === cat;
+          el.classList.toggle('hidden', !(matchText && matchCat));
+        });
+      }
+
+      filterInput?.addEventListener('input', applyFilter);
+      catSelect?.addEventListener('change', applyFilter);
+
+      // Copy prompt (uses Clipboard API)
+      const copyBtn = document.getElementById('copy-prompt') as HTMLButtonElement | null;
+      copyBtn?.addEventListener('click', () => {
+        const ta = document.getElementById('ai-prompt') as HTMLTextAreaElement | null;
+        if(!ta) return;
+        const text = ta.value;
+        (navigator.clipboard?.writeText(text) || Promise.reject()).then(() => {
+          if(copyBtn){
+            copyBtn.textContent = 'Kopierad!';
+            setTimeout(()=> { if(copyBtn) copyBtn.textContent = 'Kopiera'; }, 1800);
+          }
+        }).catch(() => {
+          // Fallback
+          try {
+            ta.select();
+            document.execCommand('copy');
+            if(copyBtn){
+              copyBtn.textContent = 'Kopierad!';
+              setTimeout(()=> { if(copyBtn) copyBtn.textContent = 'Kopiera'; }, 1800);
+            }
+          } catch { /* ignore copy fallback errors */ }
+        });
+      });
+    })();
+  </script>
+
+  <script type="application/ld+json">{JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a }
+    }))
+  })}</script>
+</Layout>
