@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import CTAButton from '~/components/ui/CTAButton.astro';
 
 // Removed Hero2 in favor of custom full-bleed hero
 
@@ -232,52 +231,55 @@ const metadata = {
   }}
  />
 
-    <!-- Varför oss sektion repositioned to sit before blog for bättre konverteringslogik -->
-    <section id="varfor-oss" data-section="why-us" class="py-24 bg-white">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="md:flex md:items-start md:gap-12">
-          <div class="md:w-5/12 mb-10 md:mb-0">
-            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-4">
-              Varför oss?
-            </h2>
-            <p class="text-slate-600 text-base md:text-lg leading-relaxed">
-              Vi är den lokala partnern för företag och grupper som vill mer än bara resa. Vi kombinerar naturens kontraster med genomtänkta upplägg för mening, utveckling och gemenskap.
-            </p>
-          </div>
-          <div class="md:w-7/12 grid sm:grid-cols-2 gap-6">
-            <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/60">
-              <h3 class="font-semibold text-slate-900 mb-1">Lokal närvaro</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Insiderkunskap, på plats-koordinering och uppdaterade kontakter året runt.</p>
-            </div>
-            <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/60">
-              <h3 class="font-semibold text-slate-900 mb-1">Snabb offert (24h)</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Tydliga förslag och transparent struktur utan onödiga ledtider.</p>
-            </div>
-            <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/60">
-              <h3 class="font-semibold text-slate-900 mb-1">Kuraterade aktiviteter (32+)</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Testade upplevelser inom natur, kultur, hav, gastronomi och teamutveckling.</p>
-            </div>
-            <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/60">
-              <h3 class="font-semibold text-slate-900 mb-1">Genomtänkt logistik</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Effektiva förflyttningar, rätt tempo och hållbart tänk från start till hemresa.</p>
-            </div>
-            <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/60">
-              <h3 class="font-semibold text-slate-900 mb-1">Skräddarsydda paket</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Flexibla upplägg för ledningsgrupp, kundevent, träningsresa eller nätverk.</p>
-            </div>
-            <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/60">
-              <h3 class="font-semibold text-slate-900 mb-1">Trygghet & service</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">Personlig kontakt, snabb återkoppling och dedikerad koordinering på plats.</p>
-            </div>
-          </div>
-        </div>
-        <div class="mt-10 text-center">
-          <CTAButton href="/boka" variant="primary" size="md" class="px-8 py-4">Begär offert</CTAButton>
+<!-- BlogLatestPost Widget **************** -->
+
+<!-- Varför oss / Value Proposition -->
+<section id="varfor-oss" class="py-24 bg-white border-t border-slate-100">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="md:flex md:items-start md:gap-12">
+      <div class="md:w-5/12 mb-12 md:mb-0">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-5">Varför välja oss?</h2>
+        <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+          Vi finns på plats i Montenegro och arbetar året runt med lokala partners. Vi designar företags- och gruppresor som kombinerar naturens kontraster, tydlig struktur och genuina upplevelser – utan onödig friktion.
+        </p>
+        <ul class="mt-6 space-y-2 text-sm text-slate-600 list-disc pl-5">
+          <li><strong class="text-slate-900">Snabb offert (24h):</strong> Tydlig grundstruktur direkt så ni kan ta beslut.</li>
+          <li><strong class="text-slate-900">Rätt upplevelser:</strong> Kuraterat urval – vi väljer bort det som inte håller.</li>
+          <li><strong class="text-slate-900">Mindre friktion:</strong> Korta avstånd, smart logistik, lokala relationer.</li>
+        </ul>
+        <div class="mt-10">
+          <a href="/boka" class="inline-flex items-center justify-center rounded-full bg-blue-900 text-white px-8 py-3.5 text-sm font-semibold shadow hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-800/40">Begär offert</a>
         </div>
       </div>
-    </section>
-
-<!-- BlogLatestPost Widget **************** -->
+      <div class="md:w-7/12 grid sm:grid-cols-2 gap-6">
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/70">
+          <h3 class="font-semibold text-slate-900 mb-1">Lokal närvaro</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Direkta kontakter med aktivitetsarrangörer, boenden och transporter året runt.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/70">
+          <h3 class="font-semibold text-slate-900 mb-1">Snabb & tydlig offert</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Struktur och kostnadsram snabbt – justeras efter era mål och grupp.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/70">
+          <h3 class="font-semibold text-slate-900 mb-1">Kuraterade aktiviteter (32+)</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Endast testade upplägg: segling, jeep, vandring, kultur, gastronomi & återhämtning.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/70">
+          <h3 class="font-semibold text-slate-900 mb-1">Smart logistik</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Korta avstånd och rätt tempo – mer tid för relationer och innehåll.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/70">
+          <h3 class="font-semibold text-slate-900 mb-1">Skräddarsytt upplägg</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Ledningsgrupp, säljteam, nätverk eller träningsresa – olika mål, olika design.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/70">
+          <h3 class="font-semibold text-slate-900 mb-1">Trygghet & ansvar</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Personlig kontakt, transparent prissättning och koordination på plats.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="blog" class="py-16 bg-blue-50 relative overflow-hidden">
   <div class="max-w-3xl mx-auto text-center mb-12 relative z-10">
@@ -337,7 +339,7 @@ const metadata = {
     </a>
   </div>
   <div class="text-center mt-10 relative z-10">
-  <a href="/blogg" class="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold bg-white text-black hover:bg-slate-100 transition text-base md:text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-black/20">
+  <a href="/blogg" class="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition text-lg shadow-lg">
       Till bloggen
       <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
