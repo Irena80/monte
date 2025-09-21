@@ -46,9 +46,9 @@ const metadata = {
   <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70 md:from-black/60 md:via-black/45 md:to-black/70 z-10"></div>
 
   <div class="relative z-20 w-full flex flex-col items-center justify-center h-full px-4">
-    <h1 class="hero-heading mb-6">
-      <span class="hero-line1">Aktiva resor</span>
-      <span class="hero-line2">för <span class="hero-accent">grupper & </span>  <span class="hero-accent">företag</span></span>
+    <h1 class="hero-heading mb-8">
+      <span class="block">Aktiva resor</span>
+      <span class="block">för <span class="hero-accent">grupper &</span> <span class="hero-accent">företag</span></span>
     </h1>
 
     <!-- Beskrivning (mindre text) -->
@@ -60,8 +60,8 @@ const metadata = {
     <!-- CTA: Mobil visar endast Boka, desktop visar Företagsresor & Gruppresor -->
     <div class="w-full mb-8 flex flex-col items-center">
       <!-- Mobil: Boka -->
-      <div class="w-full max-w-[220px] sm:hidden">
-        <CTAButton href="/boka" variant="accent" size="md" class="w-full justify-center text-base py-4">Boka</CTAButton>
+      <div class="w-full max-w-[260px] sm:hidden">
+        <CTAButton href="/boka" variant="neutral" size="md" class="w-full justify-center text-lg py-5 font-semibold backdrop-blur-sm bg-white/15 hover:bg-white/25 border border-white/25">Boka</CTAButton>
       </div>
       <!-- Desktop & tablet: två knappar -->
   <div class="hidden sm:flex gap-4">
@@ -72,49 +72,17 @@ const metadata = {
 
     <!-- Statistik ny stil: rena siffror med separators -->
     <!-- Stats: hidden on mobile per request (hide numbers 270, 32, 25, 10 on small screens) -->
-    <div class="hidden sm:flex flex-nowrap items-center justify-center gap-x-6 w-full max-w-4xl mt-1 px-1">
-      <div class="flex flex-col items-center min-w-[70px]">
-  <span class="hero-stat">270</span>
-  <span class="hero-stat-label mt-1">
-          Soldagar/år
-        </span>
-      </div>
-  <div class="hidden sm:block h-9 w-px bg-white/40"></div>
-  <div class="flex flex-col items-center min-w-[70px]">
-  <span class="hero-stat">32+</span>
-  <span class="hero-stat-label mt-1">
-          Aktiviteter
-        </span>
-      </div>
-  <div class="hidden sm:block h-9 w-px bg-white/40"></div>
-  <div class="flex flex-col items-center min-w-[70px]">
-  <span class="hero-stat">25+</span>
-  <span class="hero-stat-label mt-1">
-          Resepaket
-        </span>
-      </div>
-  <div class="hidden sm:block h-9 w-px bg-white/40"></div>
-  <div class="flex flex-col items-center min-w-[70px]">
-  <span class="hero-stat">10+</span>
-  <span class="hero-stat-label mt-1">
-          Hotell
-        </span>
-      </div>
-    </div>
-    <!-- Mobile compact summary (visible only <640px) -->
-  <p class="sm:hidden mt-4 text-center text-[0.72rem] font-semibold tracking-wide text-white/80">
-      270 soldagar • 30+ aktiviteter • 25+ paket • 10+ hotell
-    </p>
+    <!-- Stats borttagna på begäran -->
     <!-- Typografi-stilar för hero -->
   <style is:global>
   /* Increased mobile base size for hero heading (större på mobil) */
-  .hero-heading { font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; @apply text-center font-extrabold tracking-tight text-white; line-height:1.04; letter-spacing:-0.02em; font-size:clamp(2.8rem,8.5vw,5.9rem); text-shadow:0 1px 3px rgba(0,0,0,0.55); }
+  .hero-heading { font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; @apply text-center font-extrabold tracking-tight text-white; line-height:1.02; letter-spacing:-0.022em; font-size:clamp(3.2rem,9.5vw,6rem); text-shadow:0 1px 3px rgba(0,0,0,0.6); }
   /* Större minsta storlek på små skärmar */
   @media (max-width: 639px){
-    .hero-heading { font-size: clamp(3.05rem, 10vw, 4.4rem); }
+    .hero-heading { font-size: clamp(3.45rem, 11vw, 4.9rem); }
   }
-      .hero-line1,.hero-line2 { display:block; }
-      .hero-line2 { margin-top:.14em; }
+  /* removed multi-line spans for single-line heading */
+  /* Hero accent removed for minimalist palette */
   .hero-accent { @apply text-amber-300 md:text-amber-600; text-shadow:0 1px 2px rgba(0,0,0,.55); }
       /* Hero stats: numbers and labels tuned to match heading aesthetics */
   .hero-stat { position:relative; font-family: var(--font-sans); font-weight:800; letter-spacing:-0.02em; line-height:1; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.55); font-size:clamp(1.35rem,3.9vw,2.65rem); }
@@ -330,7 +298,6 @@ const metadata = {
 
 {/* NYTT – lägg precis här */}
 <div data-section="packages"><Packages /></div>
-
 
 <!-- CTA Sektion -->
 <section data-section="cta-final" class="relative isolate overflow-hidden">
