@@ -29,21 +29,26 @@ const metadata = {
 <!-- Global font laddas numera via huvudlayouten -->
 
 <section data-section="hero" class="relative w-full min-h-[520px] sm:min-h-[560px] md:h-[800px] flex items-center justify-center overflow-hidden">
-  <picture class="absolute inset-0 w-full h-full z-0">
-    <!-- WebP källa kan läggas till om fil genereras: /images/petrovac.webp -->
-    <img
-      src="/images/petrovac.png"
-      alt="Montenegro coastline with crystal blue Adriatic sea"
-      width="1600"
-      height="900"
-      fetchpriority="high"
-      decoding="async"
+  <!-- Video bakgrund -->
+  <div class="absolute inset-0 w-full h-full z-0">
+    <video
       class="absolute inset-0 w-full h-full object-cover"
-    />
-  </picture>
-  <!-- Mörkare overlay för bättre kontrast på mobil -->
-  <!-- Overlay åter mörkare för vit textkontrast -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70 md:from-black/60 md:via-black/45 md:to-black/70 z-10"></div>
+      src="/videos/vildamng.mp4"
+      autoplay
+      muted
+      playsinline
+      loop
+      poster="/images/petrovac.png"
+    ></video>
+  </div>
+  <!-- Mild overlay för läsbarhet men bibehållen video -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/65 md:from-black/45 md:via-black/30 md:to-black/60 z-10 backdrop-saturate-150"></div>
+  <noscript>
+    <img src="/images/petrovac.png" alt="Montenegro coastline" class="absolute inset-0 w-full h-full object-cover" />
+  </noscript>
+  <style>
+    @media (prefers-reduced-motion: reduce) { video { display:none; } }
+  </style>
 
   <div class="relative z-20 w-full flex flex-col items-center justify-center h-full px-4">
     <h1 class="hero-heading mb-8">
@@ -76,7 +81,7 @@ const metadata = {
     <!-- Typografi-stilar för hero -->
   <style is:global>
   /* Increased mobile base size for hero heading (större på mobil) */
-  .hero-heading { font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; @apply text-center font-extrabold tracking-tight text-white; line-height:1.02; letter-spacing:-0.022em; font-size:clamp(3.2rem,9.5vw,6rem); text-shadow:0 1px 3px rgba(0,0,0,0.6); }
+  .hero-heading { font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; @apply text-center font-extrabold tracking-tight text-white; line-height:1.02; letter-spacing:-0.022em; font-size:clamp(3.15rem,9.3vw,5.95rem); text-shadow:0 4px 18px rgba(0,0,0,0.55),0 2px 6px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.35); }
   /* Större minsta storlek på små skärmar */
   @media (max-width: 639px){
     .hero-heading { font-size: clamp(3.45rem, 11vw, 4.9rem); }
