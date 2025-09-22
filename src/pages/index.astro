@@ -28,99 +28,53 @@ const metadata = {
 
 <!-- Global font laddas numera via huvudlayouten -->
 
-<section data-section="hero" class="relative w-full min-h-[520px] sm:min-h-[560px] md:h-[800px] flex items-center justify-center overflow-hidden">
-  <!-- Video bakgrund -->
-  <div class="absolute inset-0 w-full h-full z-0">
-    <video
-      class="hero-video absolute inset-0 w-full h-full object-cover"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-  disablepictureinpicture
-      aria-hidden="true"
-    >
-      <!-- Först modern WebM (VP9/AV1) om du lägger filen -->
-      <source src="/videos/vildamng.webm" type="video/webm" />
-      <!-- Fallback MP4 (H.264) befintlig -->
-      <source src="/videos/vildamng.mp4" type="video/mp4" />
-    </video>
-    <!-- Fallback image (initialt dold) -->
-    <img src="/images/petrovac.png" alt="Montenegro kust" class="hero-fallback absolute inset-0 w-full h-full object-cover hidden" decoding="async" />
-  </div>
-  <!-- Mild overlay för läsbarhet men bibehållen video -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/65 md:from-black/45 md:via-black/30 md:to-black/60 z-10 backdrop-saturate-150"></div>
+<section data-section="hero" class="relative w-full h-[92vh] min-h-[640px] overflow-hidden">
+  <video class="hero-video absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-hidden="true">
+    <source src="/videos/vildamng.webm" type="video/webm" />
+    <source src="/videos/vildamng.mp4" type="video/mp4" />
+  </video>
+  <img src="/images/petrovac.png" alt="Montenegro kust" class="hero-fallback absolute inset-0 w-full h-full object-cover hidden" decoding="async" />
+  <!-- Horisontell gradient som tunnas ut -->
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.62),rgba(0,0,0,0.38),rgba(0,0,0,0.12),rgba(0,0,0,0))]"></div>
   <style>
     @media (prefers-reduced-motion: reduce) { video { display:none; } }
   </style>
   <script>
-    // Fallback: visa bild om videon inte startar inom 2.5s eller fel uppstår
     (function(){
       const v = document.querySelector('.hero-video');
       const img = document.querySelector('.hero-fallback');
-      if(!v || !img) return;
-      let started = false;
-      function showFallback(){
-        if(started) return;
-        if(!v || !img) return;
-        v.classList.add('hidden');
-        img.classList.remove('hidden');
-      }
-      v.addEventListener('playing', () => { started = true; });
+      if(!v || !img) return; let started=false;
+      function showFallback(){ if(started||!v||!img) return; v.classList.add('hidden'); img.classList.remove('hidden'); }
+      v.addEventListener('playing', ()=>{ started=true; });
       v.addEventListener('error', showFallback, { once:true });
-      // Timeout fallback
-      setTimeout(showFallback, 2500);
+      setTimeout(showFallback,2500);
     })();
   </script>
 
-  <div class="relative z-20 w-full flex flex-col items-center justify-center h-full px-4">
-    <h1 class="hero-heading mb-8">
-      <span class="block">Aktiva resor</span>
-      <span class="block">för <span class="hero-accent">grupper &</span> <span class="hero-accent">företag</span></span>
-    </h1>
-
-    <!-- Beskrivning (mindre text) -->
-  <p class="max-w-3xl mx-auto mb-8 text-center text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-      Företags- och gruppresor till Montenegro — Europas mest underskattade pärla.
-      <span class="hidden sm:inline"><br />Bygg relationer, idéer och framtid i en miljö som ger plats för något större.</span>
-    </p>
-
-    <!-- CTA: Mobil visar endast Boka, desktop visar Företagsresor & Gruppresor -->
-    <div class="w-full mb-8 flex flex-col items-center">
-      <!-- Mobil: Boka -->
-      <div class="w-full max-w-[260px] sm:hidden">
-        <CTAButton href="/boka" variant="neutral" size="md" class="w-full justify-center text-lg py-5 font-semibold backdrop-blur-sm bg-white/15 hover:bg-white/25 border border-white/25">Boka</CTAButton>
+  <!-- Edge-aligned minimal content (desktop) -->
+  <div class="relative h-full flex items-center px-8 lg:px-20 z-10">
+    <div class="max-w-xl hidden md:block">
+      <h1 class="text-white text-6xl font-extrabold leading-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]">
+        Aktiva resor<br />
+        för <span class="text-amber-600">grupper &</span>  <span class="text-amber-600">företag</span>
+      </h1>
+      <p class="mt-6 text-white/95 text-[1.05rem] leading-relaxed max-w-xl font-semibold">
+        Upplev Montenegro – bygg relationer, idéer och framtid i en miljö som ger plats för något större.
+      </p>
+      <div class="mt-8 flex gap-4">
+        <CTAButton href="/resor/foretagsresor" variant="neutral" size="md" class="backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/20">Företagsresor</CTAButton>
+        <CTAButton href="/resor/gruppresor" variant="neutral" size="md" class="backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/20">Gruppresor</CTAButton>
       </div>
-      <!-- Desktop & tablet: två knappar -->
-  <div class="hidden sm:flex gap-4">
-    <CTAButton href="/resor/foretagsresor" variant="neutral" size="md" class="px-8 py-4 backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/15">Företagsresor</CTAButton>
-	<CTAButton href="/resor/gruppresor" variant="neutral" size="md" class="px-8 py-4 backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/15">Gruppresor</CTAButton>
-  </div>
     </div>
-
-    <!-- Statistik ny stil: rena siffror med separators -->
-    <!-- Stats: hidden on mobile per request (hide numbers 270, 32, 25, 10 on small screens) -->
-    <!-- Stats borttagna på begäran -->
-    <!-- Typografi-stilar för hero -->
-  <style is:global>
-  /* Increased mobile base size for hero heading (större på mobil) */
-  .hero-heading { font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; @apply text-center font-extrabold tracking-tight text-white; line-height:1.02; letter-spacing:-0.022em; font-size:clamp(3.15rem,9.3vw,5.95rem); text-shadow:0 4px 18px rgba(0,0,0,0.55),0 2px 6px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.35); }
-  /* Större minsta storlek på små skärmar */
-  @media (max-width: 639px){
-    .hero-heading { font-size: clamp(3.45rem, 11vw, 4.9rem); }
-  }
-  /* removed multi-line spans for single-line heading */
-  /* Hero accent removed for minimalist palette */
-  .hero-accent { @apply text-amber-300 md:text-amber-600; text-shadow:0 1px 2px rgba(0,0,0,.55); }
-      /* Hero stats: numbers and labels tuned to match heading aesthetics */
-  .hero-stat { position:relative; font-family: var(--font-sans); font-weight:800; letter-spacing:-0.02em; line-height:1; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.55); font-size:clamp(1.35rem,3.9vw,2.65rem); }
-      .hero-stat::after { content:""; position:absolute; left:50%; transform:translateX(-50%); bottom:-6px; height:2px; width:2.25rem; border-radius:9999px; background:linear-gradient(to right, rgba(251,191,36,0), rgba(251,191,36,.85), rgba(251,191,36,0)); }
-      @media (min-width:640px){ .hero-stat::after { width:2.75rem; } }
-  .hero-stat-label { display:flex; align-items:center; justify-content:center; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.85); font-size:clamp(0.6875rem,1vw,0.8125rem); }
-      @media (min-width:768px){ .hero-heading { letter-spacing:-0.028em; } }
-  @media (min-width:1536px){ .hero-heading { font-size:6.3rem; } }
-    </style>
+  </div>
+  <!-- Mobil overlay-rubrik längst ner på videon -->
+  <div class="md:hidden absolute inset-x-0 bottom-0 z-10">
+    <div class="px-4 pt-10 pb-8 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
+      <h1 class="text-white text-[2.2rem] leading-tight font-extrabold tracking-tight">
+        Aktiva resor<br />
+        <span class="text-amber-500">för grupper</span> & <span class="text-amber-500">företag</span>
+      </h1>
+    </div>
   </div>
 </section>
 
