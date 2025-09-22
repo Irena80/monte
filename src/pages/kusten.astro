@@ -4,32 +4,36 @@ import Layout from '~/layouts/PageLayout.astro';
 
   
 <Layout metadata={{ title: 'Kusten' }}>
-  <!-- Hero Section -->
-  <section class="relative bg-blue-50 py-20 md:py-32 flex flex-col items-center text-center">
-    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-blue-1000 leading-tight">
-      Upptäck <span class="text-accent">kontrasternas</span> land
-    </h1>
-    <p class="text-lg md:text-2xl text-gray-700 max-w-2xl mx-auto mb-8">
-      Upplev nöjen året runt med äventyr för den medvetna, aktiva och ständigt nyfikna.
-    </p>
-    <a href="/boka" class="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition text-lg shadow-lg">
-      Boka
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
-    </a>
-   <div class="mt-12 w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-lg">
-  <!-- Video för desktop -->
-  <video autoplay muted playsinline loop class="hidden md:block w-full h-[400px] object-cover">
-    <source src="/images/vildamng.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <!-- Video för mobil -->
-  <video autoplay muted playsinline loop class="block md:hidden w-full h-64 object-cover">
-    <source src="/images/vildamng.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-</div>
+  <!-- Hero Section with full-bleed video -->
+  <section class="relative w-full min-h-[520px] sm:min-h-[560px] md:min-h-[640px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="/videos/vildamng.webm" type="video/webm" />
+        <source src="/videos/vildamng.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/65 z-10"></div>
+    <div class="relative z-20 px-4 w-full max-w-4xl text-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]">
+        Upptäck <span class="text-amber-300 md:text-amber-500">kontrasternas</span> land
+      </h1>
+      <p class="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+        Upplev kusten året runt – äventyr, natur och kultur för den aktiva och nyfikna resenären.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="/boka" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold bg-white/15 hover:bg-white/25 text-white backdrop-blur-sm border border-white/20 shadow transition text-lg">
+          Boka
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        </a>
+        <a href="/resor/gruppresor" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/15 shadow transition text-lg">
+          Gruppresor
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+      <style>
+        @media (prefers-reduced-motion: reduce){ section[data-reduced-motion] video { display:none; } }
+      </style>
+    </div>
   </section>
 
   <!-- Features Section -->
@@ -218,7 +222,6 @@ import Layout from '~/layouts/PageLayout.astro';
       </a>
     </div>
   </div>
-</div>
       <!-- Lägg till fler kort på samma sätt -->
       <!-- ... -->
     </div>

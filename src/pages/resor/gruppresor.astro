@@ -30,18 +30,17 @@ const metadata = {
       </span>
     </Fragment>
     <Fragment slot="image">
-      <!-- Video for larger screens -->
-      <video autoplay muted playsinline loop class="hidden md:block w-full h-auto">
-        <source src="/images/vildamng.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    
-      <!-- Image for smaller screens -->
-      <img
-        src="/images/unesco1.webp"
-        alt="Montenegro video preview"
-        class="block md:hidden w-full h-auto"
-      />
+      <!-- Static bild ersätter video -->
+      <picture class="block w-full">
+        <source srcset="/images/Montenegro-Boats_luka.jpg" type="image/jpeg" />
+        <img
+          src="/images/Montenegro-Boats_luka.jpg"
+          alt="Båtar i montenegrinsk hamn"
+          class="w-full h-auto object-cover"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
     </Fragment>
   </Hero>
 
@@ -183,6 +182,12 @@ const metadata = {
       text: 'Kontakta oss',
       href: '/contact',
     }}
+    items={[
+      { title: 'Välj paket', description: 'Utforska våra färdiga upplägg eller börja från ett tomt ramverk.' },
+      { title: 'Anpassa', description: 'Lägg till aktiviteter, logi och måltider efter gruppens mål.' },
+      { title: 'Bekräfta', description: 'Vi säkrar datum, partners och logistik.' },
+      { title: 'Res & upplev', description: 'Vi finns på plats och koordinerar allt för smidig upplevelse.' },
+    ]}
   />
 
 

@@ -32,23 +32,47 @@ const metadata = {
   <!-- Video bakgrund -->
   <div class="absolute inset-0 w-full h-full z-0">
     <video
-      class="absolute inset-0 w-full h-full object-cover"
-      src="/videos/vildamng.mp4"
+      class="hero-video absolute inset-0 w-full h-full object-cover"
       autoplay
       muted
-      playsinline
       loop
-      poster="/images/petrovac.png"
-    ></video>
+      playsinline
+      preload="auto"
+  disablepictureinpicture
+      aria-hidden="true"
+    >
+      <!-- Först modern WebM (VP9/AV1) om du lägger filen -->
+      <source src="/videos/vildamng.webm" type="video/webm" />
+      <!-- Fallback MP4 (H.264) befintlig -->
+      <source src="/videos/vildamng.mp4" type="video/mp4" />
+    </video>
+    <!-- Fallback image (initialt dold) -->
+    <img src="/images/petrovac.png" alt="Montenegro kust" class="hero-fallback absolute inset-0 w-full h-full object-cover hidden" decoding="async" />
   </div>
   <!-- Mild overlay för läsbarhet men bibehållen video -->
   <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/65 md:from-black/45 md:via-black/30 md:to-black/60 z-10 backdrop-saturate-150"></div>
-  <noscript>
-    <img src="/images/petrovac.png" alt="Montenegro coastline" class="absolute inset-0 w-full h-full object-cover" />
-  </noscript>
   <style>
     @media (prefers-reduced-motion: reduce) { video { display:none; } }
   </style>
+  <script>
+    // Fallback: visa bild om videon inte startar inom 2.5s eller fel uppstår
+    (function(){
+      const v = document.querySelector('.hero-video');
+      const img = document.querySelector('.hero-fallback');
+      if(!v || !img) return;
+      let started = false;
+      function showFallback(){
+        if(started) return;
+        if(!v || !img) return;
+        v.classList.add('hidden');
+        img.classList.remove('hidden');
+      }
+      v.addEventListener('playing', () => { started = true; });
+      v.addEventListener('error', showFallback, { once:true });
+      // Timeout fallback
+      setTimeout(showFallback, 2500);
+    })();
+  </script>
 
   <div class="relative z-20 w-full flex flex-col items-center justify-center h-full px-4">
     <h1 class="hero-heading mb-8">
