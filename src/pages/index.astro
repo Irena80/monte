@@ -53,29 +53,21 @@ const metadata = {
 
   <!-- Edge-aligned minimal content (desktop) -->
   <div class="relative h-full flex items-center px-8 lg:px-20 z-10">
-    <div class="max-w-xl hidden md:block">
-      <h1 class="text-white text-6xl font-extrabold leading-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]">
+    <div class="max-w-xl">
+      <h1 class="text-white text-[2.4rem] xs:text-[2.7rem] sm:text-5xl md:text-6xl font-extrabold leading-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]">
         Aktiva resor<br />
         för <span class="text-amber-600">grupper &</span>  <span class="text-amber-600">företag</span>
       </h1>
-      <p class="mt-6 text-white/95 text-[1.05rem] leading-relaxed max-w-xl font-semibold">
+      <p class="mt-5 sm:mt-6 text-white/95 text-base sm:text-[1.05rem] leading-relaxed max-w-xl font-semibold">
         Upplev Montenegro – bygg relationer, idéer och framtid i en miljö som ger plats för något större.
       </p>
-      <div class="mt-8 flex gap-4">
-        <CTAButton href="/resor/foretagsresor" variant="neutral" size="md" class="backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/20">Företagsresor</CTAButton>
-        <CTAButton href="/resor/gruppresor" variant="neutral" size="md" class="backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/20">Gruppresor</CTAButton>
+      <div class="mt-6 sm:mt-8 flex gap-3 sm:gap-4">
+        <CTAButton href="/resor/foretagsresor" variant="neutral" size="sm" class="sm:size-auto backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/20">Företagsresor</CTAButton>
+        <CTAButton href="/resor/gruppresor" variant="neutral" size="sm" class="sm:size-auto backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/20">Gruppresor</CTAButton>
       </div>
     </div>
   </div>
-  <!-- Mobil overlay-rubrik längst ner på videon -->
-  <div class="md:hidden absolute inset-x-0 bottom-0 z-10">
-    <div class="px-4 pt-10 pb-8 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
-      <h1 class="text-white text-[2.2rem] leading-tight font-extrabold tracking-tight">
-        Aktiva resor<br />
-        <span class="text-amber-500">för grupper</span> & <span class="text-amber-500">företag</span>
-      </h1>
-    </div>
-  </div>
+  <!-- Mobil overlay borttagen: samma layout används nu på alla breakpoints -->
 </section>
 
    <!-- Features2 Widget ************** -->
