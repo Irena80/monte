@@ -1,0 +1,37 @@
+---
+export interface Props {
+  href: string;
+  slug?: string;
+  title: string;
+  discount: string;
+  hotel: string;
+  location: string;
+  image: string;
+  alt?: string;
+  class?: string;
+}
+
+const { href, slug, title, discount, hotel, location, image, alt = '', class: className = '' } = Astro.props as Props;
+---
+<a
+  href={href}
+  id={slug}
+  class={`group block focus:outline-none rounded-sm ring-offset-2 ring-offset-white dark:ring-offset-slate-900 focus-visible:ring-2 focus-visible:ring-blue-600/70 transition ${className}`}
+>
+  <div class="overflow-hidden rounded-sm">
+    <img
+      src={image}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      class="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+    />
+  </div>
+  <div class="pt-5">
+    <h3 class="font-serif text-[1.15rem] leading-snug font-normal tracking-wide text-slate-900 dark:text-white group-hover:underline decoration-slate-400/60 underline-offset-4">
+      <span class="block">{title}: <span class="font-semibold">{discount}</span></span>
+    </h3>
+    <p class="mt-3 text-sm font-medium text-slate-700 dark:text-slate-300">{hotel}</p>
+    <p class="text-sm text-slate-500 dark:text-slate-400">{location}</p>
+  </div>
+</a>

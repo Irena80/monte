@@ -1,0 +1,133 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import CTAButton from '~/components/ui/CTAButton.astro';
+
+const metadata = {
+  title: 'Höstlov i Herceg Novi – Grupp & företagsresa',
+  description: 'Fira höstlovet i Herceg Novi på Lazure Hotel & Marina. Hav, kultur och aktivitet med skräddarsydda inslag för grupp eller företag.',
+  image: '/images/lazure.webp',
+  ogImage: '/images/lazure.webp'
+};
+
+const hotel = {
+  name: 'Lazure Hotel & Marina',
+  location: 'Herceg Novi, Montenegro',
+  nights: 4,
+  roomType: 'Dubbelrum (del i dubbel) – uppgradering möjlig',
+  board: 'Frukostbuffé',
+  highlights: [
+    'Historisk miljö vid marinapromenaden',
+    'Spa & inomhuspool – perfekt för höst',
+    'Närhet till gamla stan & båtutflykter'
+  ]
+};
+
+const includedActivities = [
+  { title: 'Välkomstkväll', desc: 'Lokala smaker och genomgång av veckans program.' },
+  { title: 'Båttur i Kotorska bukten', desc: 'Perast, Our Lady of the Rocks och kustpärlor.' },
+  { title: 'Dagstur till Kotor', desc: 'UNESCO–stad, stadsringmur och utsiktsplatser.' },
+  { title: 'Aktiv förmiddag', desc: 'Val mellan lätt vandring på Lustica eller SUP/padel.' },
+  { title: 'Gastronomisk kväll', desc: 'Middag med montenegrinska rätter och vin.' }
+];
+
+const addOns = [
+  'Utflykt till Porto Montenegro & Tivat',
+  'Vindag på Lustica – gårdsbesök & provning',
+  'Zipline/kanjonering i bergen',
+  'Heldag med båt – picnic & bad',
+  'Cykling bland olivlundar'
+];
+
+const flights = [
+  { route: 'Stockholm – Tivat (via hub)', approx: 'Från ca 4–5h total restid' },
+  { route: 'Göteborg/Köpenhamn – Dubrovnik', approx: 'Direkt 2h 30m + transfer ~30–60m' },
+  { route: 'Köpenhamn – Podgorica', approx: 'Via hub, ca 5h total restid' }
+];
+
+const why = [
+  'Behagligt klimat för både aktivitet och stadspromenader',
+  'Färre besökare – bättre prisbild & upplevelse',
+  'Flexibelt upplägg för höstlovsgrupper i olika åldrar',
+  'Säker logistik och lokal närvaro under hela resan'
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 pt-16 pb-10 md:pt-24 md:pb-16">
+      <p class="text-sm uppercase tracking-wide text-amber-600 font-semibold">Erbjudande</p>
+      <h1 class="mt-3 text-3xl md:text-5xl font-serif font-medium text-slate-900 dark:text-white leading-tight">Höstlov i Herceg Novi</h1>
+      <p class="mt-6 text-base md:text-lg max-w-2xl text-slate-600 dark:text-slate-300 leading-relaxed">Njut av höstlovet vid Adriatiska havet. Bas i historiska Lazure Hotel & Marina med spa, hav och närhet till byar, vyer och kultur. Vi anpassar programmet efter gruppens tempo.</p>
+    </div>
+    <div class="max-w-6xl mx-auto px-4">
+      <img src="/images/lazure.webp" alt="Lazure Hotel & Marina i Herceg Novi" class="w-full aspect-[16/7] object-cover rounded-xl shadow" loading="eager" decoding="async" />
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white dark:bg-slate-900">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-5 space-y-8">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-serif font-medium text-slate-900 dark:text-white mb-4">Boende</h2>
+          <div class="p-5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-800/40 backdrop-blur-sm">
+            <h3 class="text-lg font-semibold">{hotel.name}</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">{hotel.location}</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+              <li><strong>Nätter:</strong> {hotel.nights}</li>
+              <li><strong>Rum:</strong> {hotel.roomType}</li>
+              <li><strong>Måltider:</strong> {hotel.board}</li>
+            </ul>
+            <ul class="mt-4 space-y-1 text-sm text-slate-600 dark:text-slate-300">
+              {hotel.highlights.map(h => <li>• {h}</li>)}
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl md:text-3xl font-serif font-medium text-slate-900 dark:text-white mb-4">Varför nu?</h2>
+          <ul class="space-y-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            {why.map(w => <li class="flex gap-2"><span class="text-amber-600">●</span><span>{w}</span></li>)}
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-2xl md:text-3xl font-serif font-medium text-slate-900 dark:text-white mb-4">Flyg & rutter</h2>
+          <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            {flights.map(f => <li><strong>{f.route}</strong> – {f.approx}</li>)}
+          </ul>
+          <p class="mt-3 text-xs text-slate-500 dark:text-slate-400">Exakta flyg & tider bekräftas vid offert. Transfer ordnas enligt behov.</p>
+        </div>
+      </div>
+
+      <div class="md:col-span-7 space-y-12">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-serif font-medium text-slate-900 dark:text-white mb-4">Aktiviteter som ingår</h2>
+          <div class="grid sm:grid-cols-2 gap-6">
+            {includedActivities.map(a => (
+              <div class="p-5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 shadow-sm">
+                <h3 class="font-semibold text-slate-900 dark:text-white text-sm mb-1">{a.title}</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl md:text-3xl font-serif font-medium text-slate-900 dark:text-white mb-4">Populära tillval</h2>
+          <ul class="grid sm:grid-cols-2 gap-3 text-sm text-slate-600 dark:text-slate-300">
+            {addOns.map(o => <li class="flex gap-2"><span class="text-amber-600">+</span><span>{o}</span></li>)}
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl bg-gradient-to-br from-slate-900 to-slate-700 text-white shadow relative overflow-hidden">
+          <div class="relative z-10">
+            <h3 class="text-xl font-semibold mb-2">Redo att få offert?</h3>
+            <p class="text-sm text-slate-200 leading-relaxed max-w-md mb-4">Berätta om era önskemål så återkommer vi inom 24h med prisbild, förslag och alternativa upplägg för höstlovet.</p>
+            <CTAButton href="/kontakt" variant="primary">Kontakta oss</CTAButton>
+          </div>
+          <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_70%_30%,#ffffff33,transparent_60%)]"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

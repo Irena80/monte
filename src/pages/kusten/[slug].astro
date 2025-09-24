@@ -1,0 +1,77 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { getKustDestination, kustDestinations } from '~/data/kustenDestinations';
+
+export async function getStaticPaths() {
+  return kustDestinations.map(d => ({ params: { slug: d.slug } }));
+}
+
+const { slug } = Astro.params;
+const destination = getKustDestination(slug!);
+
+if (!destination) {
+  throw new Error(`Destination not found for slug: ${slug}`);
+}
+
+const canonicalUrl = new URL(`/kusten/${destination.slug}`, Astro.site || '');
+---
+<Layout metadata={{ title: destination.title, description: destination.seo?.description }}>
+  <Fragment slot="head">
+    {Astro.site && <link rel="canonical" href={canonicalUrl.href} />}
+  </Fragment>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <nav class="mb-6 text-sm">
+      <a href="/kusten" class="text-blue-700 hover:underline">← Tillbaka till kusten</a>
+    </nav>
+    <header class="mb-10">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 text-blue-1000">{destination.title}</h1>
+      <p class="text-gray-600 text-lg max-w-2xl">{destination.excerpt}</p>
+    </header>
+    <div class="rounded-2xl overflow-hidden shadow mb-10 relative group">
+      <img src={destination.image} alt={destination.imageAlt} class="w-full h-[420px] md:h-[520px] object-cover" loading="lazy" decoding="async" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+    </div>
+    <div class="prose prose-lg max-w-none prose-headings:font-semibold prose-p:leading-relaxed">
+      {destination.body.map(paragraph => <p>{paragraph}</p>)}
+    </div>
+
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-900">Praktisk information</h2>
+      <ul class="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+        <li class="bg-blue-50 p-4 rounded-lg">Året runt: {destination.title} kan kombineras med andra kustupplevelser.</li>
+        <li class="bg-blue-50 p-4 rounded-lg">Guidad tur: Möjlighet till privat guide (förfrågan vid bokning).</li>
+        <li class="bg-blue-50 p-4 rounded-lg">Transport: Transfer eller hyrbil ordnas på begäran.</li>
+        <li class="bg-blue-50 p-4 rounded-lg">Aktiviteter: Kan kopplas till vin, segling eller vandring.</li>
+      </ul>
+    </section>
+
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-900">Relaterade platser</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {kustDestinations.filter(d => d.slug !== destination.slug).slice(0,3).map(rel => (
+          <a href={`/kusten/${rel.slug}`} class="group block rounded-xl overflow-hidden bg-white shadow hover:shadow-md transition">
+            <div class="relative h-40">
+              <img src={rel.image} alt={rel.imageAlt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+              <h3 class="absolute bottom-2 left-3 right-3 text-white font-semibold text-lg drop-shadow-md">{rel.title}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <div class="mt-20 flex flex-col sm:flex-row gap-4">
+      <a href="/boka" class="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold bg-blue-700 text-white hover:bg-blue-800 transition shadow">Förfrågan / Bokning</a>
+      <a href="/kontakt" class="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold bg-blue-100 text-blue-900 hover:bg-blue-200 transition">Kontakta oss</a>
+    </div>
+  </article>
+
+  <script type="application/ld+json">{JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'TouristDestination',
+    name: destination.title,
+    description: destination.seo?.description || destination.excerpt,
+    image: destination.image,
+    url: canonicalUrl.href
+  })}</script>
+</Layout>

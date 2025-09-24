@@ -1,0 +1,24 @@
+---
+import Layout from '../../../layouts/PageLayout.astro';
+const metadata = { title: 'Klättring & vandring i höst' };
+---
+<Layout metadata={metadata}>
+  <section class="max-w-3xl mx-auto px-4 py-16">
+    <h1 class="text-3xl md:text-5xl font-serif font-medium text-slate-900 dark:text-white">Klättring & vandring i höst</h1>
+    <p class="mt-4 text-slate-600 dark:text-slate-300">Krispig luft, färgsprakande skogar och lagom temperaturer – hösten är perfekt för både toppbestigningar och kustnära leder.</p>
+    <img src="/images/hiking2.jpeg" alt="Höstlig vandring i Montenegro" class="mt-8 w-full rounded-xl object-cover" loading="lazy" />
+    <div class="prose prose-slate dark:prose-invert mt-8">
+      <h2>Förslag på upplägg</h2>
+      <ul>
+        <li>Guidade dagsvandringar på Luštica & Orjen</li>
+        <li>Via ferrata/klätterklippa för alla nivåer</li>
+        <li>Teknikgenomgång och säkerhet</li>
+        <li>Avslut i bastu/spa och gemensam middag</li>
+      </ul>
+      <h2>Praktiskt</h2>
+      <p>Vi anpassar tempo och distans efter gruppens nivå. Utrustning kan hyras på plats.</p>
+      <h2>Intresseanmälan</h2>
+      <p><a href="/kontakt">Kontakta oss</a> för datum och offert.</p>
+    </div>
+  </section>
+</Layout>

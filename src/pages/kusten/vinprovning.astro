@@ -1,0 +1,76 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+const title = 'Vinprovning på kusten';
+const description = 'Upptäck Montenegros kustnära vinupplevelser – från historiska vingårdar till moderna terroirprojekt.';
+---
+<Layout metadata={{ title, description }}>
+  <article class="max-w-5xl mx-auto px-4 py-12">
+    <nav class="mb-6 text-sm"><a href="/kusten" class="text-blue-700 hover:underline">← Tillbaka till kusten</a></nav>
+    <header class="mb-10">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 text-blue-1000">{title}</h1>
+      <p class="text-gray-600 text-lg max-w-2xl">{description}</p>
+    </header>
+    <div class="rounded-2xl overflow-hidden shadow mb-12 relative group">
+      <img src="/images/vin2.webp" alt="Vinprovning kust" class="w-full h-[360px] md:h-[480px] object-cover" loading="lazy" decoding="async" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+    </div>
+    <section class="prose prose-lg max-w-none">
+      <p>Montenegro överraskar många med sin vintradition; trots landets ringa storlek finns en rik variation av mikroklimat längs kusten och i inlandet som formar karaktären på druvorna.</p>
+      <p>Vid kusten kan du kombinera havsutsikt med provningar av lokala sorter som <em>Vranac</em>, <em>Krstač</em> och internationella druvor som fått egen identitet i regionens jord.</p>
+      <h2>Klassiska upplevelser</h2>
+      <ul>
+        <li>Privat vinprovning i solnedgång med lokala tilltugg.</li>
+        <li>Heldagstur som kombinerar kust, olivlundar och boutique-vineri.</li>
+        <li>Båttur följt av vin- & food pairing i närheten av Kotorbukten.</li>
+      </ul>
+      <h2>Säsonger</h2>
+      <p>Våren och hösten är idealiska – mild temperatur och färre besökare. Under högsommaren läggs fokus ofta på kvällsprovningar när ljuset mjuknar.</p>
+      <h2>Kuraterade upplägg</h2>
+      <p>Vi skräddarsyr gärna en rutt där vin möter gastronomi, kultur och natur. Vill du kombinera med segling eller vandring går det utmärkt.</p>
+    </section>
+
+    <section class="mt-14">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-900">Praktiskt</h2>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div class="bg-blue-50 p-4 rounded-lg">Språk: Engelska, lokalt språk. Guide på svenska möjligt vid förfrågan.</div>
+        <div class="bg-blue-50 p-4 rounded-lg">Transport: Privat chaufför eller samordnad transfer.</div>
+        <div class="bg-blue-50 p-4 rounded-lg">Längd: 2–6 timmar beroende på upplägg.</div>
+        <div class="bg-blue-50 p-4 rounded-lg">Tillval: Matparningar, olivoljeprovning, solnedgångstur.</div>
+      </div>
+    </section>
+
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-900">Galleri & stämning</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="relative rounded-xl overflow-hidden group">
+          <img src="/images/vin.webp" alt="Glas med lokalt vin" class="w-full h-56 object-cover group-hover:scale-105 transition" loading="lazy" decoding="async" />
+        </div>
+        <div class="relative rounded-xl overflow-hidden group">
+          <img src="/images/vinogradi.jpg" alt="Vingårdsterrass" class="w-full h-56 object-cover group-hover:scale-105 transition" loading="lazy" decoding="async" />
+        </div>
+        <div class="relative rounded-xl overflow-hidden group">
+          <img src="/images/oliver.jpg" alt="Olivträd och vin" class="w-full h-56 object-cover group-hover:scale-105 transition" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <div class="mt-16 flex flex-col sm:flex-row gap-4">
+      <a href="/boka" class="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold bg-blue-700 text-white hover:bg-blue-800 transition shadow">Förfrågan / Bokning</a>
+      <a href="/kontakt" class="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold bg-blue-100 text-blue-900 hover:bg-blue-200 transition">Kontakta oss</a>
+    </div>
+  </article>
+
+  <script type="application/ld+json">{JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: title,
+    description,
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    eventStatus: 'https://schema.org/EventScheduled',
+    location: {
+      '@type': 'Place',
+      name: 'Montenegro kustregion',
+      address: 'Montenegro'
+    }
+  })}</script>
+</Layout>

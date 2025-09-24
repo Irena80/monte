@@ -276,37 +276,34 @@ const metadata = {
 
 <!-- CTA Sektion -->
 <section data-section="cta-final" class="relative isolate overflow-hidden">
-  <div class="mx-auto max-w-7xl px-4 py-24 sm:py-32 text-center">
-    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+  <div class="mx-auto max-w-5xl px-4 py-24 sm:py-32 text-center">
+    <h2 class="text-3xl md:text-5xl font-semibold md:font-bold tracking-tight text-white leading-tight">
       Redo att skapa något minnesvärt med ditt team?
     </h2>
-    
-
-    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
-      <CTAButton href="/kontakt" variant="accent" widthClass="w-[170px]" iconLeft="🎯">Begär offert</CTAButton>
-      <CTAButton href="/kontakt" variant="primary" widthClass="w-[170px]">Kontakt</CTAButton>
+    <p class="mt-6 text-base md:text-lg text-slate-300 max-w-2xl mx-auto font-normal">
+      Hör av dig så tar vi fram ett förslag anpassat efter era mål, budget och tid. Ingen säljpitch – bara konkret väg framåt.
+    </p>
+    <div class="mt-10 flex justify-center">
+      <CTAButton href="/kontakt" variant="primary" widthClass="w-[190px]">Kontakt</CTAButton>
     </div>
-
-    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-[13px] md:text-sm text-slate-200">
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-5 text-[12px] md:text-sm text-slate-400">
       <div class="flex items-center gap-2">
-        <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2 5l8 4 12-6-8 14-4-6-8 4z"/>
-        </svg>
-        Snabb respons inom 24h
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Svar normalt inom 24h
       </div>
-      <div class="hidden sm:block h-4 w-px bg-slate-500/40"></div>
+      <div class="hidden sm:block h-3 w-px bg-slate-600/40"></div>
       <div class="flex items-center gap-2">
-        <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M8 4h10M6 8h12M6 12h12M6 16h8"/>
-        </svg>
-        Kostnadsfri offert
+        <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 4h10M6 8h12M6 12h12M6 16h8"/></svg>
+        Kostnadsfritt första förslag
       </div>
     </div>
   </div>
-
-  <!-- Gradient bakgrund -->
-  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.06),transparent_60%)]"></div>
+  <!-- Subtle layered background -->
   <div class="absolute inset-0 -z-20 bg-gradient-to-br from-[#0F2742] via-[#193455] to-[#0E2034]"></div>
+  <div class="absolute inset-0 -z-10 opacity-60 [mask-image:radial-gradient(circle_at_center,white,transparent_70%)] bg-[radial-gradient(circle_at_30%_35%,rgba(255,255,255,0.08),transparent_55%),radial-gradient(circle_at_70%_65%,rgba(255,255,255,0.06),transparent_55%)]"></div>
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full bg-gradient-to-tr from-blue-500/10 via-teal-300/5 to-transparent blur-3xl"></div>
+  </div>
 </section>
 
 <section id="blog" data-section="blog-teaser" class="py-12 sm:py-16 bg-gradient-to-b from-blue-50 via-white to-white relative overflow-hidden">

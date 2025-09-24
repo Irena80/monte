@@ -4,13 +4,9 @@
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import Content from '~/components/widgets/Content.astro';
-import TitleBlock from '~/components/TitleBlock.astro';
+// Removed Content/TitleBlock to use index-style custom layout
 
-import { YouTube } from 'astro-embed';
-import ImageCard1 from '~/components/ImageCard1.astro';
 
 
 
@@ -47,22 +43,14 @@ const metadata = {
   <Fragment slot="title">
      <span class="hidden sm:inline">Staden som du längtar till</span>  <span
 
-      class="text-accent dark:text-white highlight">Herceg Novi</span
+      class="text-blue-900">Herceg Novi</span
     > 
   </Fragment>
     <Fragment slot="subtitle">
       Vid en av världens vackraste vikar, Kotorbukten, hittar du Herceg Novi! Solens, grönskans och festivalernas stad. 
     </Fragment>
 
-    <Fragment slot="image">
-      <YouTube id="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
-      <style is:inline>
-        lite-youtube {
-          margin: 0 auto;
-          max-width: 100%;
-        }
-      </style>
-    </Fragment>
+  
   </Hero>
 
   
@@ -82,102 +70,258 @@ const metadata = {
     ]}
   />
 
-
-<Content
-    
-    image={{
-      src: '~/assets/images/hn3.webp',
-      alt: 'Colorful Image',
-    }}
-    
-  >
-
-  <Fragment slot="content">
-    <TitleBlock title="Solens och grönskans stad" style="margin-bottom: 20px;"/>
-    
-    <p style="margin-top: 40px;">Herceg Novi sägs vara en av de vackraste städerna vid Adriatiska havet. Denna urbana oas av grönska och blåa vyer är en idealisk plats för en konferensresa. <br><br> Vackra stränder, medelhavsklimat, parker och trädgårdar med ett brett utbud av exotisk grönska och ett utmärkt gastronomiskt utbud gör denna destination idealisk. <br><br> Varje företagsresa är en investering och med genomtänkt innehåll, engagemang och en stor dos kreativitet skapar vi nya upplevelser.</p>
-  </Fragment>
-
-  
-
-    <Fragment slot="bg">
-     
-    </Fragment>
-    
-  </Content>
-  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2 text-center">Saker att göra i Herceg Novi</h2>
-  
-  <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-    <!-- ComponentLeft -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+  <!-- Intro-block: stor rubrik + text (vänster) och stor bild (höger) -->
+  <div class="relative mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12 mt-8 md:mt-12 lg:mt-16">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <!-- Textkolumn -->
       <div class="order-2 md:order-1">
-        <h2 class="text-2xl font-bold text-blue-600 mb-4">Stadsvandring i gamla stan</h2>
-        <p class="text-gray-700">
-          Det är lätt att förälska sig i Herceg Novi och dess medeltida trånga gränder och pampiga torg som kantas av palats, kyrkor, kloster och charmiga caféer. Vi börjar med att upptäcka Herceg Novi från ovan, med en promenerad på Herceg Novis ringmur, för att sedan strosa längs dess kullerstensbelagda gränder och torg.
+        <h2 class="font-serif uppercase text-slate-900 dark:text-white tracking-tight leading-[0.95] text-[clamp(2.25rem,6vw,5.5rem)]">
+          Solens och grönskans stad
+        </h2>
+        <p class="mt-6 text-gray-700 text-base md:text-lg">
+          Medelhavsklimat, parker och blå vyer. Herceg Novi sägs vara en av Adriatiska havets vackraste kuststäder – en urban oas av grönska och blå vyer, idealisk för både grupp- och konferensresor.
+        </p>
+        <p class="mt-4 text-gray-700 text-base md:text-lg">
+          Stränder, trädgårdar och ett starkt gastronomiskt utbud gör destinationen enkel att anpassa efter syfte och grupp. Med genomtänkt innehåll och lokal närvaro skapar vi minnesvärda upplevelser.
         </p>
       </div>
+      <!-- Bildkolumn -->
       <div class="order-1 md:order-2">
-        <img src="../images/hn.jpg" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-80 object-cover" />
-      </div>
-    </div>
-  
-    <!-- ComponentRight -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
-      <div class="order-1">
-        <img src="../images/jedrenje3.webp" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
-      </div>
-      <div class="order-2">
-        <h2 class="text-2xl font-bold text-blue-600 mb-4">Segling genom Europas sydligaste fjord</h2>
-        <p class="text-gray-700">
-          Glid längs kusten till gömda stränder och charmiga fiskebyar. Simma i det turkosa vattnet i den majestätiska Blue Cave och se solljuset förvandla väggarna till ett hisnande naturskådespel. Besök den förtrollande ön Our Lady of the Rock, utforska en kyrka som är genomsyrad av historia och ett museum som berättar om kärlek, hängivenhet och tradition.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-    <!-- ComponentLeft -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div class="order-2 md:order-1">
-        <h2 class="text-2xl font-bold text-blue-600 mb-4">Middag med havsutsikt</h2>
-        <p class="text-gray-700">
-       Längs Montenegros kust finns en rad förstklassiga restauranger och takterrasser med fantastisk havsutsikt – den perfekta platsen för en avkopplande företagsmiddag eller minnesvärd festkväll. Njut av en oförglömlig middag i en storslagen miljö med panoramavy över Herceg Novi och dess bukt. Kvällen inleds med ett stilfullt cocktailmingel i solnedgången, där kollegorna kan njuta av både atmosfären och varandras sällskap. Därefter serveras en utsökt middag under bar himmel, och vi kan ordna livemusik eller en DJ som sätter stämningen och gör kvällen komplett.
-        </p>
-      </div>
-      <div class="order-1 md:order-2">
-        <img src="../images/verige.jpg" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-80 object-cover" />
-      </div>
-    </div>
-  
-    <!-- ComponentRight -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
-      <div class="order-1">
-        <img src="../images/orjen1.png" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
-      </div>
-      <div class="order-2">
-        <h2 class="text-2xl font-bold text-blue-600 mb-4">Roadtrip till Orjen</h2>
-        <p class="text-gray-700">
-          Intensiv fysisk aktivitet, en adrenalinkick och tid i naturen är något du garanterat får uppleva när du vandrar eller cyklar mountainbike i naturparken Orjen.
-        </p>
-      </div>
-    </div>
-     <!-- ComponentLeft -->
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div class="order-2 md:order-1">
-        <h2 class="text-2xl font-bold text-blue-600 mb-4">Besök vingården Savina Castle</h2>
-        <p class="text-gray-700">
-          Savina vingård bjuder på en panoramautsikt över hela Herceg Novi. Få en guidad rundtur och genomgång av hur vinet produceras på plats. Med en fantastisk miljö med bra viner och mat, vackra omgivningar och väldigt kunnig persona är det här ett perfekt sätt att spendera en eftermiddag på i Herceg Novi.  
-        </p>
-      </div>
-      <div class="order-1 md:order-2">
-        <img src="../images/savina.jpg" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+        <img 
+          src="/images/hn3.webp"
+          alt="Herceg Novi – solens och grönskans stad" 
+          width="1600"
+          height="1200"
+          loading="lazy"
+          decoding="async"
+          class="rounded-2xl w-full h-64 sm:h-80 md:h-[560px] lg:h-[680px] object-cover"
+        />
       </div>
     </div>
   </div>
 
- 
+  
+  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2 text-center mt-12 md:mt-16">Saker att göra i Herceg Novi</h2>
+  
+  <div class="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-10">
+    <!-- Block 1: Stadsvandring i gamla stan -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
+      <img 
+        src="/images/hn.jpg"
+        alt="Stadsvandring i gamla stan" 
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        class="rounded-2xl w-full aspect-[4/3] object-cover"
+      />
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="bg-blue-900 p-2 rounded-lg">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M5 7v10a2 2 0 002 2h10a2 2 0 002-2V7" />
+            </svg>
+          </div>
+          <h3 class="display-h3 text-slate-900">Stadsvandring i gamla stan</h3>
+        </div>
+        <p class="text-gray-600">Medeltida gränder & pampiga torg</p>
+        <p class="text-gray-700">
+          Upptäck Herceg Novis ringmur, strosa på kullerstensgator och genom vackra torg kantade av palats, kyrkor och kloster. Perfekt halvdag för gruppen att landa och lära känna staden.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Guidad tur med lokala highlights</span></li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Caféstopp på charmiga uteserveringar</span></li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Flexibel längd och tempo</span></li>
+        </ul>
+        
+      </div>
+    </div>
 
- 
- 
+    <!-- Block 2: Segling i fjorden -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
+      <div class="space-y-4 order-2 md:order-1">
+        <div class="flex items-center gap-2">
+          <div class="bg-cyan-500 p-2 rounded-lg">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 18l6-6 4 4 8-8" />
+            </svg>
+          </div>
+          <h3 class="display-h3 text-slate-900">Segling genom Europas sydligaste fjord</h3>
+        </div>
+        <p class="text-gray-600">Båtturer, bukter & badstopp</p>
+        <p class="text-gray-700">
+          Glid längs kusten till gömda stränder och fiskebyar. Simma i Blue Cave, besök ön Our Lady of the Rock och njut av vyerna över Kotorbukten.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Privat båt eller större utflykt</span></li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Badstopp och lunch i Perast</span></li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Anpassas efter väder & grupp</span></li>
+        </ul>
+        
+      </div>
+      <img 
+        src="/images/jedrenje3.webp"
+        alt="Segling genom fjorden" 
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        class="rounded-2xl w-full aspect-[4/3] object-cover order-1 md:order-2"
+      />
+    </div>
+  </div>
+  <div class="relative mx-auto max-w-7xl px-4 md:px-6 py-4 md:py-8 lg:py-4">
+    <!-- Block 3: Middag med havsutsikt -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
+      <img 
+        src="/images/verige.jpg"
+        alt="Middag med havsutsikt" 
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        class="rounded-2xl w-full aspect-[4/3] object-cover"
+      />
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="bg-amber-500 p-2 rounded-lg">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3v5h6v-5c0-1.657-1.343-3-3-3z" />
+            </svg>
+          </div>
+          <h3 class="display-h3 text-slate-900">Middag med havsutsikt</h3>
+        </div>
+        <p class="text-gray-600">Takbarer, terrasser & solnedgång</p>
+        <p class="text-gray-700">
+          Avsluta dagen på en takterrass med panoramavy över bukten. Cocktailmingel i solnedgången följt av middag under bar himmel – vi ordnar detaljerna.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Förslag på restauranger & menyer</span></li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>DJ eller livemusik på begäran</span></li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Gruppstorlek från liten till stor</span></li>
+        </ul>
+        
+      </div>
+    </div>
+
+    <!-- Block 4: Roadtrip till Orjen -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
+      <div class="space-y-4 order-2 md:order-1">
+        <div class="flex items-center gap-2">
+          <div class="bg-green-600 p-2 rounded-lg">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l6 6-6 6M21 7l-6 6 6 6" />
+            </svg>
+          </div>
+          <h3 class="display-h3 text-slate-900">Roadtrip till Orjen</h3>
+        </div>
+        <p class="text-gray-600">Vandring & MTB i naturpark</p>
+        <p class="text-gray-700">
+          Upplev serpentinvägar, storslagna vyer och aktiva äventyr. Orjen bjuder på leder för både vandring och mountainbike i varierad terräng.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Rutter för olika nivåer</span></li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Möjlighet till guide & transfer</span></li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Fantastiska fotostopp</span></li>
+        </ul>
+        
+      </div>
+      <img 
+        src="/images/orjen1.png"
+        alt="Roadtrip till Orjen" 
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        class="rounded-2xl w-full aspect-[4/3] object-cover order-1 md:order-2"
+      />
+    </div>
+
+    <!-- Block 5: Besök vingården Savina Castle -->
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <img 
+        src="/images/savina.jpg"
+        alt="Savina vingård" 
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        class="rounded-2xl w-full aspect-[4/3] object-cover"
+      />
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="bg-rose-500 p-2 rounded-lg">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A4 4 0 006 12.03V21h12v-8a4 4 0 00-3.248-3.832z" />
+            </svg>
+          </div>
+          <h3 class="display-h3 text-slate-900">Besök vingården Savina Castle</h3>
+        </div>
+        <p class="text-gray-600">Vin, utsikt & berättelser</p>
+        <p class="text-gray-700">
+          Rundtur och provning med fokus på lokala druvor. Fantastisk miljö med utsikt över Herceg Novi – en perfekt eftermiddag för gruppen.
+        </p>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Guidning av vingården</span></li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Matchande smårätter</span></li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span><span>Nära stad & kust</span></li>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Utvalda aktiviteter – erbjudanden-stil kort -->
+  <section class="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-8 mt-8 md:mt-16">
+    <div class="text-center">
+      <p class="text-[11px] tracking-[0.15em] font-semibold text-amber-600 uppercase">Utvalda aktiviteter</p>
+      <h2 class="mt-2 text-3xl md:text-5xl font-semibold md:font-bold tracking-tight text-slate-900 dark:text-white leading-tight"> Utvalda aktiviteter i Herceg Novi</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-300 text-base md:text-lg">Här delar vi med oss av flera tips på aktiviteter i Montenegro</p>
+    </div>
+    <div class="mt-10 grid gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
+      <!-- Overlay Card 1 -->
+      <a href="/utflykter" class="group relative block rounded-2xl overflow-hidden bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        <img src="/images/HNkula.webp" alt="Fästningarna i Herceg Novi" loading="lazy" decoding="async" class="h-72 sm:h-80 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="text-white text-xl sm:text-2xl font-extrabold leading-tight drop-shadow">Fästningarna i Herceg Novi</h3>
+            <p class="text-white/90 text-sm sm:text-base">Herceg Novi, Montenegro</p>
+          </div>
+          
+        </div>
+      </a>
+
+      <!-- Overlay Card 2 -->
+      <a href="/kusten" class="group relative block rounded-2xl overflow-hidden bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        <img src="/images/perast2.webp" alt="Perast – Boka Kotors pärla" loading="lazy" decoding="async" class="h-72 sm:h-80 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="text-white text-xl sm:text-2xl font-extrabold leading-tight drop-shadow">Bokas gömda juvel– Perast</h3>
+            <p class="text-white/90 text-sm sm:text-base">Perast, Montenegro</p>
+          </div>
+          
+        </div>
+      </a>
+
+      <!-- Overlay Card 3 -->
+      <a href="/kusten" class="group relative block rounded-2xl overflow-hidden bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        <img src="/images/kotor.jpg" alt="Medeltida by i Boka Kotorska" loading="lazy" decoding="async" class="h-72 sm:h-80 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="text-white text-xl sm:text-2xl font-extrabold leading-tight drop-shadow">Vandra genom historien</h3>
+            <p class="text-white/90 text-sm sm:text-base">Kotorbukten UNESCO, Montenegro</p>
+          </div>
+         
+        </div>
+      </a>
+    </div>
+  </section>
+  
+   
 <!-- Steps2 Widget ****************** -->
 
 <Steps2
@@ -210,28 +354,4 @@ const metadata = {
   ]}
 
 />
-
-
-  <!-- Add ImageCards -->
-  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2 text-center">Utvalda aktiviteter</h2>
-  <p class="text-lg text-center mb-8">Här delar vi med oss av flera tips på aktiviteter i Montenegro</p>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-4">
-    <ImageCard1
-      imageUrl="../images/hn6.png"
-      title="Fästningarna i Herceg Novi"
-      link="/utflykter"
-    />
-    <ImageCard1
-      imageUrl="../images/kula.JPG"
-      title="Kultur och historia"
-      link="/utflykter"
-    />
-    <ImageCard1
-      imageUrl="../images/unesco1.webp"
-      title="Vandra genom historien"
-      link="/utflykter"
-    />
-  </div>
-  
-  
 </Layout>

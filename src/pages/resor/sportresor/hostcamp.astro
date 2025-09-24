@@ -1,0 +1,24 @@
+---
+import Layout from '../../../layouts/PageLayout.astro';
+const metadata = { title: 'Höstcamp – yoga & återhämtning' };
+---
+<Layout metadata={metadata}>
+  <section class="max-w-3xl mx-auto px-4 py-16">
+    <h1 class="text-3xl md:text-5xl font-serif font-medium text-slate-900 dark:text-white">Höstcamp – yoga & återhämtning</h1>
+    <p class="mt-4 text-slate-600 dark:text-slate-300">En lugn och fokuserad getaway med dagliga yogapass, andningsövningar och havsbad. Perfekt för lag och grupper som vill varva ner inför vintern.</p>
+    <img src="/images/yoga.jpg" alt="Yoga vid havet" class="mt-8 w-full rounded-xl object-cover" loading="lazy" />
+    <div class="prose prose-slate dark:prose-invert mt-8">
+      <h2>Upplägg</h2>
+      <ul>
+        <li>2 yogapass per dag (vin/yin + morgonflöde)</li>
+        <li>Isbad/andning vid havet</li>
+        <li>Helpension med hälsosam meny</li>
+        <li>Tillgång till spa och promenadstråk</li>
+      </ul>
+      <h2>Boende & plats</h2>
+      <p>Luštica Bay, Montenegro. Havsnära boende och härligt klimat under hösten.</p>
+      <h2>Intresseanmälan</h2>
+      <p><a href="/kontakt">Kontakta oss</a> för prisförslag och datum.</p>
+    </div>
+  </section>
+</Layout>
