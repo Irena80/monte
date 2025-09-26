@@ -19,7 +19,7 @@ metadata:
   openGraph:
     site_name: Mediteranobay travel
     images:
-      - url: '~/assets/images/favicon.ico'
+      - url: '~/assets/images/MB.png'
         width: 1200
         height: 628
     type: website

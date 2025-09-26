@@ -1,10 +1,10 @@
 ---
-import favIcon from '~/assets/favicons/favicon.ico';
-import favIconSvg from '~/assets/favicons/favicon.svg';
-import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
+// Use MediteranoBay logo4.png from the public folder for all icons
 ---
 
-<link rel="shortcut icon" href={favIcon} />
-<link rel="icon" type="image/svg+xml" href={favIconSvg.src} />
-<link rel="mask-icon" href={favIconSvg.src} color="#8D46E7" />
-<link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
+<!-- Favicon for most browsers -->
+<link rel="icon" type="image/png" href="/images/logo4.png" />
+<!-- Shortcut icon legacy support -->
+<link rel="shortcut icon" type="image/png" href="/images/logo4.png" />
+<!-- iOS Home Screen icon -->
+<link rel="apple-touch-icon" href="/images/logo4.png" />
