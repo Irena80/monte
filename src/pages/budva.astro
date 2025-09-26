@@ -1,9 +1,8 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features from '~/components/widgets/Features.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import Stats from '~/components/widgets/Stats.astro';
 
 
 const metadata = {
@@ -31,58 +30,206 @@ const metadata = {
     </Fragment>
   </Hero>
 
- 
-<!-- Features2 Widget ************** -->
+  <!-- Stats Widget ****************** -->
+  <Stats
+    title="Snabb statistik"
+    stats={[
+      { title: 'Soldagar om året', amount: '250+' },
+      { title: 'Strandpromenad', amount: '> 10 km' },
+      { title: 'Antal stränder', amount: '20+' },
+      { title: 'Kust', amount: '35 km' },
+    ]}
+  />
 
-<Features2
-title="En av de äldsta städerna vid Adriatiska havet"
-subtitle="Budva erbjuder något för alla – från avkoppling vid stranden till kulturella utflykter och natursköna äventyr. Staden är känd för sina stränder, sitt pulserande nattliv och sin historiska stadskärna. Under sommarmånaderna ökar antalet besökare hundrafalt, vilket förvandlar staden till en livfull och dynamisk mötesplats. Här är några av våra mest populära aktiviteter." 
-
->
-
-<Fragment slot="bg">
-  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-  
-</Fragment>
-</Features2>
-<Features
-  id="features"
-  title="Utvalda aktiviteter"
->
- 
-</Features>
-
-  <div class="relative mx-auto max-w-6xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/budva3.webp" alt="Montenegros häftigaste hotell" class="w-full md:w-1/2 h-auto object-cover aspect-video" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Upptäck den charmiga Gamla Stan i Budva</h2>
-        <p><br>Budvas mest populära turistnav och en fristad för angelägna historiker, den otroligt vackra Gamla stan är en naturlig utgångspunkt för alla resor, men särskilt för förstagångsbesökare. Gamla stan har anor från medeltiden, vilket placerar Budva bland regionens äldsta städer vid Adriatiska kusten. Varje hörn känns som om det kommer från en saga, med smala gator och stenklädda byggnader som påminner om en mini Dubrovnik.</p>
+  <!-- Intro-block: stor rubrik + text (vänster) och stor bild (höger) -->
+  <div class="relative mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12 mt-8 md:mt-12 lg:mt-16">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <!-- Textkolumn -->
+      <div class="order-2 md:order-1">
+        <h2 class="font-serif uppercase text-slate-900 dark:text-white tracking-tight leading-[0.95] text-[clamp(2.25rem,6vw,5.5rem)]">
+          En av Adriatikens äldsta städer
+        </h2>
+        <p class="mt-6 text-gray-700 text-base md:text-lg">
+          Budva erbjuder något för alla – från avkoppling vid stranden till kulturella utflykter och natursköna äventyr.
+          Staden är känd för sina stränder, sitt pulserande nattliv och sin historiska stadskärna.
+        </p>
+        <p class="mt-4 text-gray-700 text-base md:text-lg">
+          Under sommarmånaderna ökar antalet besökare mångfalt och förvandlar staden till en livfull mötesplats.
+          Här är några av våra mest populära aktiviteter.
+        </p>
       </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/mogren.jpg" alt="Simma i det klara vattnet vid Mogren strand" class="w-full md:w-1/2 h-auto object-cover aspect-video" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Simma i det klara vattnet vid Mogren strand</h2>
-        <p><br>Den spektakulära stranden Mogren ligger undangömd strax väster om Budvas gamla stadsdel. Denna vackra plats har blivit en av Budvas mest populära turistmål tack vare dess glasliknande vatten och imponerande klippomgivningar.</p>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/svetistefan1-1.jpg" alt="Få en glimt av den ikoniska Sveti Stefan" class="w-full md:w-1/2 h-auto object-cover aspect-video" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Få en glimt av den ikoniska Sveti Stefan</h2>
-        <p><br>Mindre än 15 minuter söder om Budva ligger den lyxiga orten Sveti Stefan. Den bildsköna ön utgör dock lyxhotellet Amans ägor och är därför utom räckhåll att utforska för de som inte bor där. Men det kostar naturligtvis inte att beskåda den från de solblekta svagt rosa klapperstensstränderna som ligger utanför.</p>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/lovcen.webp" alt="Besök Lovćen National Park" class="w-full md:w-1/2 h-auto object-cover aspect-video" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Besök Lovćen National Park</h2>
-        <p><br>Besök den otroliga nationalparken Lovćen som är känd för sina bergstoppar, sin historiska mausoleum och den fantastiska utsikten där man kan se över hela landet! Boka en bekväm dagsutflykt med en tur med linbanan, en bilresa på den berömda serpentinvägen, byn Njegusi och en 1-timmes vandringstur i Cetinje för att utforska Cetinje-klostret.</p>
+      <!-- Bildkolumn -->
+      <div class="order-1 md:order-2">
+        <img 
+          src="/images/budva3.webp"
+          alt="Budva – Gamla stan och rivieran" 
+          width="1600"
+          height="1200"
+          loading="lazy"
+          decoding="async"
+          class="rounded-2xl w-full h-64 sm:h-80 md:h-[560px] lg:h-[680px] object-cover"
+        />
       </div>
     </div>
   </div>
-<br> 
+
+  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2 text-center mt-12 md:mt-16">Saker att göra i Budva</h2>
+
+  <div class="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-10">
+    <!-- Block 1: Gamla stan i Budva -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
+      <img 
+        src="/images/budva3.webp"
+        alt="Upptäck den charmiga Gamla stan i Budva" 
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        class="rounded-2xl w-full aspect-[4/3] object-cover"
+      />
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="bg-blue-900 p-2 rounded-lg">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M5 7v10a2 2 0 002 2h10a2 2 0 002-2V7" />
+            </svg>
+          </div>
+          <h3 class="display-h3 text-slate-900">Upptäck den charmiga Gamla stan</h3>
+        </div>
+        <p class="text-gray-600">Medeltida gränder & havsvyer</p>
+        <p class="text-gray-700">
+          Budvas mest populära nav och en fristad för historieälskare. Gamla stan har anor från medeltiden – smala gränder och stenklädda byggnader påminner om en mini-Dubrovnik.
+        </p>
+      </div>
+    </div>
+
+    <!-- Block 2: Mogren strand -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
+      <div class="space-y-4 order-2 md:order-1">
+        <div class="flex items-center gap-2">
+          <div class="bg-cyan-500 p-2 rounded-lg">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 18l6-6 4 4 8-8" />
+            </svg>
+          </div>
+          <h3 class="display-h3 text-slate-900">Simma vid Mogren strand</h3>
+        </div>
+        <p class="text-gray-600">Klarblått vatten & klippor</p>
+        <p class="text-gray-700">
+          Den spektakulära Mogren-stranden ligger undangömd strax väster om Gamla stan. Glasliknande vatten och dramatiska klippor gör den till en favorit.
+        </p>
+      </div>
+      <img 
+        src="/images/mogren.jpg"
+        alt="Mogren strand" 
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        class="rounded-2xl w-full aspect-[4/3] object-cover order-1 md:order-2"
+      />
+    </div>
+
+    <!-- Block 3: Sveti Stefan -->
+    <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
+      <img 
+        src="/images/svetistefan1-1.jpg"
+        alt="Sveti Stefan utsiktsplats" 
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        class="rounded-2xl w-full aspect-[4/3] object-cover"
+      />
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="bg-amber-500 p-2 rounded-lg">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3v5h6v-5c0-1.657-1.343-3-3-3z" />
+            </svg>
+          </div>
+          <h3 class="display-h3 text-slate-900">Utsikt mot ikoniska Sveti Stefan</h3>
+        </div>
+        <p class="text-gray-600">Vykortsvy & solblekta stränder</p>
+        <p class="text-gray-700">
+          Den bildsköna ön är ett landmärke längs Budvas kust. Utsiktsplatserna runt orten bjuder på oförglömliga vyer – perfekta för foto.
+        </p>
+      </div>
+    </div>
+
+    <!-- Block 4: Lovćen National Park -->
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div class="space-y-4 order-2 md:order-1">
+        <div class="flex items-center gap-2">
+          <div class="bg-green-600 p-2 rounded-lg">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7l6 6-6 6M21 7l-6 6 6 6" />
+            </svg>
+          </div>
+          <h3 class="display-h3 text-slate-900">Besök Lovćen National Park</h3>
+        </div>
+        <p class="text-gray-600">Mausoleum & slingrande vägar</p>
+        <p class="text-gray-700">
+          Upplev bergstoppar, historiska platser och vida panoramavyer. Kombinera linbana, serpentinvägar och promenad i Cetinje.
+        </p>
+      </div>
+      <img 
+        src="/images/lovcen.webp"
+        alt="Lovćen National Park" 
+        width="800"
+        height="600"
+        loading="lazy"
+        decoding="async"
+        class="rounded-2xl w-full aspect-[4/3] object-cover order-1 md:order-2"
+      />
+    </div>
+  </div>
+
+  <!-- Utvalda aktiviteter – erbjudanden-stil kort -->
+  <section class="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-8 mt-8 md:mt-16">
+    <div class="text-center">
+      <p class="text-[11px] tracking-[0.15em] font-semibold text-amber-600 uppercase">Utvalda aktiviteter</p>
+      <h2 class="mt-2 text-3xl md:text-5xl font-semibold md:font-bold tracking-tight text-slate-900 dark:text-white leading-tight">Utvalda aktiviteter i Budva</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-300 text-base md:text-lg">Tips på saker att göra i och runt Budva</p>
+    </div>
+    <div class="mt-10 grid gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
+      <!-- Overlay Card 1 -->
+      <a href="/utflykter" class="group relative block rounded-2xl overflow-hidden bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        <img src="/images/Budva.jpg" alt="Gamla stan i Budva" loading="lazy" decoding="async" class="h-72 sm:h-80 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="text-white text-xl sm:text-2xl font-extrabold leading-tight drop-shadow">Gamla stan i Budva</h3>
+            <p class="text-white/90 text-sm sm:text-base">Budva, Montenegro</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Overlay Card 2 -->
+      <a href="/kusten" class="group relative block rounded-2xl overflow-hidden bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        <img src="/images/mogren.jpg" alt="Mogren Beach" loading="lazy" decoding="async" class="h-72 sm:h-80 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="text-white text-xl sm:text-2xl font-extrabold leading-tight drop-shadow">Mogren Beach</h3>
+            <p class="text-white/90 text-sm sm:text-base">Budva Riviera</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Overlay Card 3 -->
+      <a href="/kusten" class="group relative block rounded-2xl overflow-hidden bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        <img src="/images/svetistefan1-1.jpg" alt="Sveti Stefan" loading="lazy" decoding="async" class="h-72 sm:h-80 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="text-white text-xl sm:text-2xl font-extrabold leading-tight drop-shadow">Sveti Stefan – utsikt</h3>
+            <p class="text-white/90 text-sm sm:text-base">Budva Riviera</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
 
   <!-- Steps2 Widget ****************** -->
 
@@ -94,7 +241,6 @@ subtitle="Budva erbjuder något för alla – från avkoppling vid stranden till
       text: 'Boka paketresa',
       href: 'contact',
     }}
-     
     items={[
       {
         title: 'Flyg',

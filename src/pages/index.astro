@@ -29,36 +29,22 @@ const metadata = {
 <!-- Global font laddas numera via huvudlayouten -->
 
 <section data-section="hero" class="relative w-full h-[92vh] min-h-[640px] overflow-hidden">
-  <video class="hero-video absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-hidden="true">
+  <video class="hero-video absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" webkit-playsinline disablepictureinpicture aria-hidden="true">
     <source src="/videos/vildamng.webm" type="video/webm" />
     <source src="/videos/vildamng.mp4" type="video/mp4" />
   </video>
-  <img src="/images/petrovac.png" alt="Montenegro kust" class="hero-fallback absolute inset-0 w-full h-full object-cover hidden" decoding="async" />
   <!-- Horisontell gradient som tunnas ut -->
   <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.62),rgba(0,0,0,0.38),rgba(0,0,0,0.12),rgba(0,0,0,0))]"></div>
-  <style>
-    @media (prefers-reduced-motion: reduce) { video { display:none; } }
-  </style>
-  <script>
-    (function(){
-      const v = document.querySelector('.hero-video');
-      const img = document.querySelector('.hero-fallback');
-      if(!v || !img) return; let started=false;
-      function showFallback(){ if(started||!v||!img) return; v.classList.add('hidden'); img.classList.remove('hidden'); }
-      v.addEventListener('playing', ()=>{ started=true; });
-      v.addEventListener('error', showFallback, { once:true });
-      setTimeout(showFallback,2500);
-    })();
-  </script>
+  
 
   <!-- Edge-aligned minimal content (desktop) -->
   <div class="relative h-full flex items-center px-8 lg:px-20 z-10">
-    <div class="max-w-xl">
-      <h1 class="text-white text-[2.4rem] xs:text-[2.7rem] sm:text-5xl md:text-6xl font-extrabold leading-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]">
+    <div class="max-w-xl lg:max-w-3xl xl:max-w-4xl">
+      <h1 class="text-white text-[2rem] xs:text-[2.4rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-[0.96] drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]">
         Aktiva resor<br />
         för <span class="text-amber-600">grupper &</span>  <span class="text-amber-600">företag</span>
       </h1>
-      <p class="mt-5 sm:mt-6 text-white/95 text-base sm:text-[1.05rem] leading-relaxed max-w-xl font-semibold">
+      <p class="mt-5 sm:mt-6 text-white/95 text-[1.05rem] sm:text-lg md:text-xl leading-relaxed max-w-xl font-semibold">
         Upplev Montenegro – bygg relationer, idéer och framtid i en miljö som ger plats för något större.
       </p>
       <div class="mt-6 sm:mt-8 flex gap-3 sm:gap-4">
@@ -92,7 +78,7 @@ const metadata = {
         </h2>
         <!-- Short mobile tagline -->
         <h2 class="md:col-span-7 display-h2 text-slate-900 sm:hidden leading-tight">
-          <span class="text-amber-600">Bergen</span> på morgonen. <span class="text-amber-600">Havet</span> på kvällen.
+          <span class="text-amber-600">Berg</span> på morgonen <span class="text-amber-600">Havet</span> på kvällen
         </h2>
         <p class="md:col-span-5 text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed md:pt-2 mt-4 md:mt-0">
           Upplev landet där du på morgonen kan vandra i bergen och på eftermiddagen ta ett dopp i havet. Från äventyr i bergen till avkoppling vid Adriatiska havet – vi skräddarsyr upplevelser för grupp och företag.

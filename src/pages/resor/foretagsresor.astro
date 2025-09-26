@@ -15,30 +15,35 @@ const metadata = {
 <Layout metadata={metadata}>
   
 
-  <!-- Custom Full-Bleed Hero (matches Om-sidan stil) -->
-  <section data-section="hero" class="relative w-full min-h-[460px] sm:min-h-[560px] lg:min-h-[640px] flex items-end overflow-hidden">
-    <picture class="absolute inset-0 w-full h-full">
-      <source srcset="/images/Montenegro-Boats_luka.jpg" type="image/webp" />
-      <img src="/images/Montenegro-Boats_luka.jpg" alt="Båtar i montenegrinsk hamn" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
-    </picture>
-  <!-- Reduced overlay opacity for more visible image -->
-  <div class="absolute inset-0 bg-gradient-to-t from-white/95 via-white/75 to-white/20"></div>
-    <div class="relative z-10 w-full max-w-6xl mx-auto px-4 pb-14 sm:pb-20">
-      <h1 class="font-extrabold tracking-tight text-slate-900 text-4xl sm:text-5xl md:text-6xl leading-[1.05]">
-        Företagsresor & Teambuilding
+  <!-- Header: centered title + subtitle + outlined CTA, then large image (no overlay) -->
+  <section data-section="hero" class="pt-16 sm:pt-20 md:pt-24">
+    <div class="w-full max-w-6xl mx-auto px-4 text-center">
+      <h1 class="font-extrabold tracking-tight text-slate-900 text-4xl sm:text-5xl md:text6xl leading-tight">
+        Företagsresor  <span class="text-blue-900"> & teambuilding</span>
       </h1>
-      <p class="mt-5 max-w-2xl text-base sm:text-lg md:text-xl text-slate-700 leading-relaxed">
-        Dags för nästa äventyr med kollegorna? Flytta kontoret några dagar till varmare breddgrader. Vi skapar aktiva och relationsbyggande företagsresor i Montenegro som kombinerar konferens, natur och upplevelser.
+      <p class="mt-4 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
+         Dags för nästa äventyr med kollegorna? Flytta kontoret några dagar till varmare breddgrader. Vi skapar aktiva och relationsbyggande företagsresor i Montenegro som kombinerar konferens, natur och upplevelser.
       </p>
       <div class="mt-8">
-        <a href="/kontakt" class="inline-flex items-center justify-center rounded-full bg-blue-900 text-white px-8 py-3.5 text-sm font-semibold shadow hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-800/40">Begär offert</a>
+        <a href="#kontakt" class="inline-flex items-center justify-center rounded-full bg-blue-900 text-white px-8 py-3.5 text-sm md:text-base font-semibold shadow hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-800/40">
+          Begär offert
+        </a>
+      </div>
+      <div class="mt-10 sm:mt-12">
+        <img
+          src="/images/Montenegro-Boats_luka.jpg"
+          alt="Båtar i montenegrinsk hamn"
+          loading="eager"
+          decoding="async"
+          class="rounded-2xl w-full h-64 sm:h-80 md:h-[560px] lg:h-[640px] object-cover"
+        />
       </div>
     </div>
   </section>
  <!-- USP/Features Section (refined layout) -->
   <section class="py-20 sm:py-24 bg-gradient-to-b from-white to-slate-50/60">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="mb-14 md:mb-20 max-w-4xl">
+  <div class="mb-14 md:mb-20 max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-6">
           Därför Montenegro
         </h2>
@@ -244,7 +249,7 @@ const metadata = {
         </p>
         <ul class="mt-6 space-y-2 text-sm text-slate-600 list-disc pl-5">
           <li><strong class="text-slate-900">Snabb offert (24h):</strong> Tydlig grundstruktur direkt så ni kan ta beslut.</li>
-          <li><strong class="text-slate-900">Rätt upplevelser:</strong> Kuraterat urval – vi väljer bort det som inte håller.</li>
+          <li><strong class="text-slate-900">Rätt upplevelser:</strong> Utvalt urval – vi väljer bort det som inte håller.</li>
           <li><strong class="text-slate-900">Mindre friktion:</strong> Korta avstånd, smart logistik, lokala relationer.</li>
         </ul>
         <!-- Begär offert knapp borttagen enligt önskemål -->
@@ -259,7 +264,7 @@ const metadata = {
           <p class="text-sm text-slate-600 leading-relaxed">Struktur och kostnadsram snabbt – justeras efter era mål och grupp.</p>
         </div>
         <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/70">
-          <h3 class="font-semibold text-slate-900 mb-1">Kuraterade aktiviteter (32+)</h3>
+          <h3 class="font-semibold text-slate-900 mb-1">Utvalda aktiviteter (32+)</h3>
           <p class="text-sm text-slate-600 leading-relaxed">Endast testade upplägg: segling, jeep, vandring, kultur, gastronomi & återhämtning.</p>
         </div>
         <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/70">
