@@ -10,14 +10,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Mediteranobay travel
-    template: '%s — AstroWind'
+    default: MediteranoBay
+    template: '%s — MediteranoBay'
   description: "\U0001F680 Aktiva resor för grupper och företag. Upptäck den vilda Montenegro."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Mediteranobay travel
+    site_name: MediteranoBay
     images:
       - url: '~/assets/images/MB.png'
         width: 1200
@@ -67,7 +67,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-    id: 'G-7JZNBLDK5X' # Replace with your actual Measurement ID
+      id: 'G-7JZNBLDK5X' # Replace with your actual Measurement ID
    
 
 ui:
