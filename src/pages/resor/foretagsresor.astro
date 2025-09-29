@@ -18,18 +18,18 @@ const metadata = {
   <!-- Header: centered title + subtitle + outlined CTA, then large image (no overlay) -->
   <section data-section="hero" class="pt-16 sm:pt-20 md:pt-24">
     <div class="w-full max-w-6xl mx-auto px-4 text-center">
-      <h1 class="font-extrabold tracking-tight text-slate-900 text-4xl sm:text-5xl md:text6xl leading-tight">
-        Företagsresor  <span class="text-blue-900"> & teambuilding</span>
+      <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-slate-900 dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+        Företagsresor <span class="hidden xl:inline"></span> <span class="text-blue-900 dark:text-white highlight">& teambuilding</span>
       </h1>
-      <p class="mt-4 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
+      <p class="mt-4 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
          Dags för nästa äventyr med kollegorna? Flytta kontoret några dagar till varmare breddgrader. Vi skapar aktiva och relationsbyggande företagsresor i Montenegro som kombinerar konferens, natur och upplevelser.
       </p>
-      <div class="mt-8">
+      <div class="mt-8 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
         <a href="#kontakt" class="inline-flex items-center justify-center rounded-full bg-blue-900 text-white px-8 py-3.5 text-sm md:text-base font-semibold shadow hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-800/40">
           Begär offert
         </a>
       </div>
-      <div class="mt-10 sm:mt-12">
+      <div class="mt-10 sm:mt-12 intersect-once intercept-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
         <img
           src="/images/Montenegro-Boats_luka.jpg"
           alt="Båtar i montenegrinsk hamn"
@@ -43,7 +43,7 @@ const metadata = {
  <!-- USP/Features Section (refined layout) -->
   <section class="py-20 sm:py-24 bg-gradient-to-b from-white to-slate-50/60">
     <div class="max-w-6xl mx-auto px-4">
-  <div class="mb-14 md:mb-20 max-w-4xl mx-auto text-center">
+  <div class="mb-14 md:mb-20 max-w-4xl mx-auto text-center intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
         <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-6">
           Därför Montenegro
         </h2>
@@ -51,7 +51,7 @@ const metadata = {
           Det lilla landet med de <strong>stora kontrasterna</strong> – där du kan bada i det kristallklara <strong>Medelhavet</strong> på förmiddagen och vandra bland <strong>dramatiska bergstoppar</strong> på eftermiddagen. Korta avstånd. Stora upplevelser.
         </p>
       </div>
-      <div class="grid gap-8 md:grid-cols-2">
+      <div class="grid gap-8 md:grid-cols-2 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
         <div class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white/90 backdrop-blur-sm p-8 flex items-start gap-5 shadow-sm hover:shadow-lg transition">
           <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-blue-600/10 text-blue-700 flex items-center justify-center ring-1 ring-inset ring-blue-600/15">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M3 12l2-2 7-7 7 7 2 2v8a1 1 0 01-1 1h-5v-5a2 2 0 00-2-2h-2a2 2 0 00-2 2v5H4a1 1 0 01-1-1v-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -85,6 +85,7 @@ const metadata = {
     title="Urval av några upplevelser"
     subtitle="Här presenterar vi ett urval av några av våra populäraste upplevelser som vi arrangerar för företagsgrupper i  Montenegro.  Intresserad av något helt annat? Kontakta oss gärna och berätta om era önskemål."
     isReversed
+    classes={{ container: 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade' }}
     items={[
       {
         title: 'Kust- och bergsupplevelse på en dag',
@@ -114,6 +115,7 @@ const metadata = {
   
   <Content
     isAfterContent={true}
+    classes={{ container: 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade' }}
     items={[
       {
         title: 'Upplev Gamla Stan',
@@ -142,6 +144,7 @@ const metadata = {
   <Content
     isReversed
     isAfterContent={true}
+    classes={{ container: 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade' }}
     items={[
       {
         title: 'Utforska den orörda skönheten',
@@ -168,6 +171,7 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
+    classes={{ container: 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade' }}
     items={[
       {
         title: 'Upplev den vilda naturen',
@@ -193,6 +197,7 @@ const metadata = {
   
    
   <Steps
+  classes={{ container: 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade' }}
   title="En guidad resa från planering till kreativitet"
   tagline="Reseupplägg"
   isReversed={true}
@@ -241,7 +246,7 @@ const metadata = {
 <!-- Varför oss / Value Proposition -->
 <section id="varfor-oss" class="py-24 bg-white border-t border-slate-100">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="md:flex md:items-start md:gap-12">
+    <div class="md:flex md:items-start md:gap-12 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
       <div class="md:w-5/12 mb-12 md:mb-0">
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-5">Varför välja oss?</h2>
         <p class="text-slate-600 text-base md:text-lg leading-relaxed">
@@ -285,13 +290,13 @@ const metadata = {
 </section>
 
 <section id="blog" class="py-16 bg-blue-50 relative overflow-hidden">
-  <div class="max-w-3xl mx-auto text-center mb-12 relative z-10">
+  <div class="max-w-3xl mx-auto text-center mb-12 relative z-10 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
   <h2 class="text-3xl md:text-4xl font-bold mb-2 text-black">Låt dig inspireras i vår reseblogg</h2>
     <p class="text-lg text-gray-700">
       Smaka på Montenegro. Dyk ner i vår resa om Montenegro och låt dig inspireras av inhemska maträtter, pampiga sevärdheter och magnifik historia.
     </p>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative z-10">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative z-10 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
     <a href="/skatt" class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:scale-105 transition">
       <div class="relative w-full">
         <img src="/images/muslje.jpg" alt="Mat & Vin i Montenegro" class="w-full h-56 object-cover transition group-hover:scale-110 duration-300" />
@@ -361,7 +366,7 @@ const metadata = {
     <div class="absolute -top-32 -left-32 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
     <div class="absolute -bottom-32 -right-32 w-[28rem] h-[28rem] bg-blue-400/10 rounded-full blur-3xl"></div>
   </div>
-  <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-14">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-14 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
     <!-- Left copy -->
     <div class="max-w-xl">
       <h2 class="text-4xl md:text-5xl font-bold leading-tight tracking-tight">

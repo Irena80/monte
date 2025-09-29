@@ -8,7 +8,7 @@ import Steps from '~/components/widgets/Steps.astro';
 
 import Content from '~/components/widgets/Content.astro';
 
-import FlexCard from '~/components/FlexCard.astro';
+import OfferCard from '~/components/OfferCard.astro';
 
 
 const metadata = {
@@ -16,24 +16,91 @@ const metadata = {
 };
 
 
+// Inlandet – erbjudanden (3 kort)
+const offers = [
+  {
+    slug: 'durmitor-adventure',
+    title: 'DURMITOR TEAMBULDING',
+    discount: 'Äventyr',
+    hotel: 'Nationalpark Durmitor',
+    location: 'Žabljak, Montenegro',
+    image: '/images/Durmitor.jpg',
+    alt: 'Durmitor berg och sjö',
+    href: '/durmitor'
+  },
+  {
+    slug: 'kolasin-vinter',
+    title: 'VINTER I KOLAŠIN',
+    discount: 'Skidåkning',
+    hotel: 'Kolašin Ski Resort',
+    location: 'Kolašin, Montenegro',
+    image: '/images/kolasin.jpg',
+    alt: 'Kolašin vinterlandskap',
+    href: '/kontakt'
+  },
+  {
+    slug: 'tara-aventyr',
+    title: 'TARA ÄVENTYR',
+    discount: 'Rafting',
+    hotel: 'Tara River Canyon',
+    location: 'Tara, Montenegro',
+    image: '/images/tara.webp',
+    alt: 'Tara äventyr i kanjonen',
+    href: '/tara'
+  }
+];
+
+
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <Hero
+    actions={[
+      { text: 'Boka', icon: 'tabler:run', href: '/boka' },
+    ]}
     image={{
       src: '~/assets/images/priroda.webp',
       alt: 'Caos Image',
     }}
   >
-    <Fragment slot="title">
+      <Fragment slot="title">
   Året runt<span class="hidden sm:inline"> </span> <span class="text-blue-900 dark:text-white highlight">äventyr</span>
     </Fragment>
     <Fragment slot="subtitle">
       Låt oss guida dig till Montenegros bästa pärlor - en av Europas mest spännande och mångsidiga destination! Upplev landets bäst bevarade skidhemlighet, djupdyk i Europas sista orörda vildmark och njut av en aktiv semester. 
     </Fragment>
   </Hero>
-
+  
+  <!-- Inlandet Erbjudanden: matchar Gruppresor-upplägg -->
+  <section id="erbjudanden" class="py-20 md:py-24 bg-white dark:bg-slate-900">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <p class="text-sm uppercase tracking-wide text-amber-600 font-semibold">Inlandets höjdpunkter</p>
+          <h2 class="mt-2 text-3xl md:text-5xl font-serif font-medium text-slate-900 dark:text-white leading-tight">Några av våra erbjudanden</h2>
+          <p class="mt-5 max-w-2xl text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">Durmitor, Kolašin och Tara – ikoniska platser för aktiv natur, vinteräventyr och storslagna kanjoner.</p>
+        </div>
+        <div>
+          <a href="/resor" class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-6 py-3 text-sm font-semibold tracking-wide hover:bg-slate-700 dark:hover:bg-slate-200 transition shadow">Se alla resepaket <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10">
+        {offers.map(o => (
+          <OfferCard
+            href={o.href}
+            slug={o.slug}
+            title={o.title}
+            discount={o.discount}
+            hotel={o.hotel}
+            location={o.location}
+            image={o.image}
+            alt={o.alt}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
   <!-- Content Widget **************** -->
   <Content
     isReversed={true}
@@ -118,7 +185,7 @@ const metadata = {
  <Fragment slot="content">
    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Canyoning</h3>
    
- </Fragment>''
+ </Fragment>
 
 
 </Content>
@@ -128,34 +195,53 @@ const metadata = {
   
 
    <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2 text-center">Salig utbud av nationalparker</h2>
-  
+ 
  
   
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
-    <FlexCard
-  imageUrl= "../images/hrid.jpg"
-    title="Hrid sjön"
-    description="Hrid-sjön ligger i ett spektakulärt landskap som kännetecknas av höga tallar, blekta trädstammar och intressanta klippformationer. Omsluten av den intensiva doften av tallarna kan naturälskare och de som söker lugn och ro finna en plats för avkoppling och drömmar."
-  />
-  <FlexCard
-    imageUrl= "../images/buka.jpg"
-    title="Bukumirsko-sjön"
-    description="Bukumirsko-sjön är en av Montenegros legendariska sjöar. Den är omgiven av berg och ligger på en höjd av 1443 meter över havet. Här kan du bada, slå upp ett läger på stranden bredvid vasskogen och njuta av bergen, det natursköna landskapet ovanför samt lyssna på sjöns berättelser hela natten.."
-  />
-  <FlexCard
-    imageUrl= "../images/piva .jpg"
-    title="Piva-sjön"
-    description="Piva-sjön (Pivsko jezero) är en konstgjord sjö belägen i Plužine kommun, i den nordvästra delen av Montenegro. Piva-landskapet präglas av täta skogar, kalkstensplatåer och spektakulära kanjoner formade av floderna Tara, Piva, Komarnica och Sušica."
-  />
-  <FlexCard
-    imageUrl= "../images/lipa.jpg"
-    title="Lipa grottan"
-    description="Strax utanför kungliga huvudstaden Cetinje ligger Lipa-grottan, ett av de största grottsystemen i Montenegro och det första som öppnats för turister. Dess trånga gångar och stora salar sträcker sig mer än 2,5 km under marken, från byn Lipa in i bergen längs Adriatiska kusten."
-  />
-</div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 m-2">
+    <!-- Hrid sjön -->
+    <a href="/resor" class="group relative block rounded-2xl overflow-hidden shadow ring-1 ring-slate-200/70 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <img src="/images/hrid.jpg" alt="Hrid sjön" loading="lazy" decoding="async" class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute inset-x-0 bottom-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 transition-all duration-300">
+        <h3 class="text-white text-lg font-bold">Hrid sjön</h3>
+        <p class="text-white/90 text-sm mt-1">Hrid-sjön ligger i ett spektakulärt landskap med höga tallar, blekta stammar och spännande klippformationer. En stilla plats för avkoppling.</p>
+      </div>
+    </a>
+
+    <!-- Bukumirsko-sjön -->
+    <a href="/resor" class="group relative block rounded-2xl overflow-hidden shadow ring-1 ring-slate-200/70 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <img src="/images/buka.jpg" alt="Bukumirsko-sjön" loading="lazy" decoding="async" class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute inset-x-0 bottom-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 transition-all duration-300">
+        <h3 class="text-white text-lg font-bold">Bukumirsko-sjön</h3>
+        <p class="text-white/90 text-sm mt-1">Legendarisk bergssjö på 1443 m höjd. Bada, slå läger vid vassen och njut av det natursköna landskapet.</p>
+      </div>
+    </a>
+
+    <!-- Piva-sjön (filnamn med mellanslag) -->
+    <a href="/resor" class="group relative block rounded-2xl overflow-hidden shadow ring-1 ring-slate-200/70 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <img src="/images/piva%20.jpg" alt="Piva-sjön" loading="lazy" decoding="async" class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute inset-x-0 bottom-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 transition-all duration-300">
+        <h3 class="text-white text-lg font-bold">Piva-sjön</h3>
+        <p class="text-white/90 text-sm mt-1">Konstgjord sjö omgiven av skogar och kalkstensplatåer, med kanjoner formade av Tara, Piva, Komarnica och Sušica.</p>
+      </div>
+    </a>
+
+    <!-- Lipa grottan -->
+    <a href="/resor" class="group relative block rounded-2xl overflow-hidden shadow ring-1 ring-slate-200/70 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <img src="/images/lipa.jpg" alt="Lipa grottan" loading="lazy" decoding="async" class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute inset-x-0 bottom-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 transition-all duration-300">
+        <h3 class="text-white text-lg font-bold">Lipa grottan</h3>
+        <p class="text-white/90 text-sm mt-1">Ett av Montenegros största grottsystem nära Cetinje – salonger och gångar över 2,5 km under jord.</p>
+      </div>
+    </a>
+  </div>
    <!-- Add space between image and title -->
   
-  </div>
+  
   <br>
   <br>
   
@@ -163,67 +249,56 @@ const metadata = {
  
  
   
-  
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-2">
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link1">
-        <img src="../images/Durmitor.jpg" alt="Image 1" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Durmitor</h3>
-        <p>Om du älskar storslagen natur får du absolut inte missa Durmitor nationalpark, en av Europas mest imponerande! Belägen i den norra delen av landet och listad som ett UNESCO-världsarv, omfamnas parken av floden Tara, som är hem till Tara-kanjonen – världens näst djupaste kanjon.
-    </p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 m-2">
+    <!-- Durmitor -->
+    <a href="/resor" class="group relative block rounded-2xl overflow-hidden shadow ring-1 ring-slate-200/70 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <img src="/images/Durmitor.jpg" alt="Durmitor" loading="lazy" decoding="async" class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute inset-x-0 bottom-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 transition-all duration-300">
+        <h3 class="text-white text-lg font-bold">Durmitor</h3>
+        <p class="text-white/90 text-sm mt-1">UNESCO-listad nationalpark i norr, omsluten av floden Tara och dess världsberömda kanjon.</p>
       </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link1">
-        <img src="../images/skadar3.jpg" alt="Image 1" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Skadarsjön</h3>
-        <p>Med två tredjedelar av sjön tillhörande Montenegro och resten Albanien är Skadar-sjön den största sjön på Balkan. Känd för sin otroliga fågelrikedom är Skadar en favoritdestination för naturälskare som trivs i vildmarkens harmoni. Skadar nationalpark är hem för några av de sällsyntaste växt- och djurarterna, samt 18 historiska monument. Här möts du av en fascinerande blandning av flytande näckrosor, branta berg och ökloster.
-    </p>
+    </a>
+
+    <!-- Tara äventyr -->
+    <a href="/tara" class="group relative block rounded-2xl overflow-hidden shadow ring-1 ring-slate-200/70 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <img src="/images/tara.webp" alt="Tara äventyr" loading="lazy" decoding="async" class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute inset-x-0 bottom-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 transition-all duration-300">
+        <h3 class="text-white text-lg font-bold">Tara äventyr</h3>
+        <p class="text-white/90 text-sm mt-1">Rafting, zipline och storslagna vyer i Europas djupaste kanjon.</p>
       </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link1">
-        <img src="../images/lovcen.webp" alt="Image 1" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Lovćen</h3>
-        <p>Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.
-    </p>
+    </a>
+
+    <!-- Lovćen -->
+    <a href="/resor" class="group relative block rounded-2xl overflow-hidden shadow ring-1 ring-slate-200/70 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <img src="/images/lovcen.webp" alt="Lovćen" loading="lazy" decoding="async" class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute inset-x-0 bottom-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 transition-all duration-300">
+        <h3 class="text-white text-lg font-bold">Lovćen</h3>
+        <p class="text-white/90 text-sm mt-1">Ikoniska vyer över Boka-bukten och Njegoš-mausoleet – Montenegros symboliska hjärta.</p>
       </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link1">
-        <img src="../images/biograd.jpg" alt="Image 1" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Biogradska Gora</h3>
-        <p>Den attraktiva ön Sveti Nikola, populärt kallad Hawaii, nära Budva är en av de främsta sevärdheterna på Budva-rivieran. En dagsutflykt till ön erbjuder dig möjligheten att simma i kristallklart vatten, utforska dolda platser eller helt enkelt njuta av havet, lugnet och den medelhavska atmosfären.
-    </p>
+    </a>
+
+    <!-- Biogradska Gora -->
+    <a href="/resor" class="group relative block rounded-2xl overflow-hidden shadow ring-1 ring-slate-200/70 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <img src="/images/biograd.jpg" alt="Biogradska Gora" loading="lazy" decoding="async" class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute inset-x-0 bottom-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 transition-all duration-300">
+        <h3 class="text-white text-lg font-bold">Biogradska Gora</h3>
+        <p class="text-white/90 text-sm mt-1">Urtida skogar, stilla sjöar och gröna somrar i nationalparken nära Kolašin.</p>
       </div>
-    </div>
-    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
-      <a href="https://example.com/link1">
-        <img src="../images/prokletije3.jpg" alt="Image 1" class="w-full h-auto" />
-      </a>
-      <div class="p-4">
-        <h3 class="text-xl font-bold mt-4">Prokletije</h3>
-        <p>I den sydöstra delen av landet, nära gränsen till Kosovo och Albanien, hittar du en av Montenegros mest avlägsna men hisnande naturscenerier. Här finns höga berg, djupa dalar och glaciärsjöar. Montenegros högsta topp – Zla Kolata (2534 meter) – ligger i Prokletije nationalpark.
-    </p>
+    </a>
+
+    <!-- Prokletije -->
+    <a href="/resor" class="group relative block rounded-2xl overflow-hidden shadow ring-1 ring-slate-200/70 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <img src="/images/prokletije3.jpg" alt="Prokletije" loading="lazy" decoding="async" class="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"></div>
+      <div class="absolute inset-x-0 bottom-0 p-5 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 transition-all duration-300">
+        <h3 class="text-white text-lg font-bold">Prokletije</h3>
+        <p class="text-white/90 text-sm mt-1">Höga toppar, djupa dalar och glaciärsjöar – hem för Montenegros högsta topp Zla Kolata.</p>
       </div>
-    </div>
-  
-  
-   
-   
-   
-   
-   
-   
-    
+    </a>
   </div>
  <!-- Steps Widget ****************** -->
 

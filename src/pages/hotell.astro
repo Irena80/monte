@@ -6,6 +6,8 @@ import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import ImageCard1 from '~/components/ImageCard1.astro';
+import Header from '~/components/widgets/Header.astro';
+import { headerData } from '~/navigation';
 
 const metadata = {
   title: 'Utbud av bästa hotell',
@@ -13,6 +15,14 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <!-- Override header to remove default Download action -->
+  <Fragment slot="header">
+    <Header
+      links={headerData?.links[2] ? [headerData.links[2]] : undefined}
+      actions={[]}
+      position="right"
+    />
+  </Fragment>
   
   <!-- Hero2 Widget ******************* -->
 
