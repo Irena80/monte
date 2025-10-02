@@ -29,7 +29,28 @@ const metadata = {
 <!-- Global font laddas numera via huvudlayouten -->
 
 <section data-section="hero" class="relative w-full h-[92vh] min-h-[640px] overflow-hidden">
-  <video class="hero-video absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" webkit-playsinline disablepictureinpicture aria-hidden="true">
+  <!-- Base-layer fallback image (visible if video fails or motion-reduce) -->
+  <img
+    src="/images/petrovac.png"
+    alt="Petrovac, Montenegro – kustlandskap"
+    class="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+    decoding="async"
+  />
+
+  <video 
+    class="hero-video absolute inset-0 w-full h-full object-cover hidden sm:block motion-reduce:hidden"
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    preload="auto" 
+    webkit-playsinline 
+    disablepictureinpicture 
+    poster="/images/petrovac.png"
+    onerror="this.style.display='none'"
+    aria-hidden="true"
+  >
     <source src="/videos/vildamng.webm" type="video/webm" />
     <source src="/videos/vildamng.mp4" type="video/mp4" />
   </video>
@@ -270,7 +291,7 @@ const metadata = {
       Hör av dig så tar vi fram ett förslag anpassat efter era mål, budget och tid. Ingen säljpitch – bara konkret väg framåt.
     </p>
     <div class="mt-10 flex justify-center">
-      <CTAButton href="/kontakt" variant="primary" widthClass="w-[190px]">Kontakt</CTAButton>
+  <CTAButton href="/contact" variant="primary" widthClass="w-[190px]">Kontakt</CTAButton>
     </div>
     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-5 text-[12px] md:text-sm text-slate-400">
       <div class="flex items-center gap-2">

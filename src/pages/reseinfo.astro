@@ -3,17 +3,14 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+ 
 import Features from '~/components/widgets/Features.astro';
-import Stats from '~/components/widgets/Stats.astro';
+ 
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Brands from '~/components/widgets/Brands.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
+ 
 
-
-import { YouTube } from 'astro-embed';
+ 
 
 const metadata = {
   title: 'Reseinfo',
@@ -172,12 +169,12 @@ Anvädbar info <span class="hidden sm:inline"></span>  om <span
         },
       },
       {
-        title: 'Email',
+        title: 'E-post',
         icon: 'tabler:mail',
         callToAction: {
           target: '_blank',
-          text: 'Skriv till oss',
-          href: '/',
+          text: 'info@mediteranobay.com',
+          href: 'mailto:info@mediteranobay.com',
           variant: 'link',
         },
       },

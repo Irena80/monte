@@ -1,14 +1,11 @@
 ---
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/index.astro
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Packages from '~/components/mbay/Packages.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import CTAButton from '~/components/ui/StickyCTA.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 
@@ -398,7 +395,7 @@ const metadata = {
 
 <CallToAction
   title="Redo att skapa något minnesvärt med ditt team?"
-  description="Låt oss skapa en företagsresa eller gruppupplevelse till Montenegro som ger resultat – och avtryck."
+  subtitle="Låt oss skapa en företagsresa eller gruppupplevelse till Montenegro som ger resultat – och avtryck."
   actions={[
     {
       variant: 'primary',

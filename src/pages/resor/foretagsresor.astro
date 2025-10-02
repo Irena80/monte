@@ -75,6 +75,62 @@ const metadata = {
       </div>
     </div>
   </section>
+  
+  <!-- Paketerbjudanden (teaser grid, like screenshot) -->
+  <section id="paket" class="py-20 md:py-24 bg-white dark:bg-slate-900">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <p class="text-sm uppercase tracking-wide text-amber-600 font-semibold">Aktuella kampanjer</p>
+          <h2 class="mt-2 text-3xl md:text-5xl font-serif font-medium text-slate-900 dark:text-white leading-tight">Några av våra erbjudanden</h2>
+          <p class="mt-5 max-w-2xl text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">Exklusivt utvalda hotell & upplevelser för företagsresor. Perfekt för grupper som vill kombinera kvalitet, läge och minnesvärd service.</p>
+        </div>
+        <div>
+          <a href="/boka" class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-6 py-3 text-sm font-semibold tracking-wide hover:bg-slate-700 dark:hover:bg-slate-200 transition shadow">Se alla resepaket <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <!-- Kotor Bay card -->
+        <a href="/erbjudanden/konferensresa-kotor-bay" class="group block rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400/40">
+          <div class="relative w-full aspect-[16/10] overflow-hidden">
+            <img src="/images/boka-bay-lustica.jpg" alt="Kotor Bay" class="absolute inset-0 w-full h-full object-cover transition group-hover:scale-105 duration-300" loading="lazy" decoding="async" />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg md:text-xl font-semibold tracking-tight text-slate-900 dark:text-white">KONFERENSRESA TILL KOTOR</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">4★ hotell med konferensrum</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm">Kotorbukten, Montenegro</p>
+          </div>
+        </a>
+
+        <!-- Budva card -->
+  <a href="/erbjudanden/foretagsresa-budva" class="group block rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400/40">
+          <div class="relative w-full aspect-[16/10] overflow-hidden">
+            <img src="/images/budva1.jpg" alt="Hotel Budva" class="absolute inset-0 w-full h-full object-cover transition group-hover:scale-105 duration-300" loading="lazy" decoding="async" />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg md:text-xl font-semibold tracking-tight text-slate-900 dark:text-white">FÖRETAGSRESA TILL BUDVA</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">5★ hotell & moderna möteslokaler</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm">Budva, Montenegro</p>
+          </div>
+        </a>
+
+        <!-- Durmitor card -->
+  <a href="/erbjudanden/teambuilding-durmitor" class="group block rounded-2xl overflow-hidden bg-white dark:bg-slate-800 shadow hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400/40">
+          <div class="relative w-full aspect-[16/10] overflow-hidden">
+            <img src="/images/Durmitor.jpg" alt="Durmitor nationalpark" class="absolute inset-0 w-full h-full object-cover transition group-hover:scale-105 duration-300" loading="lazy" decoding="async" />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg md:text-xl font-semibold tracking-tight text-slate-900 dark:text-white">TEAMBUILDING I DURMITOR</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm mt-1">Rafting, zipline & bergsvandringar</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm">Zabljak, Montenegro</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Features Widget ************** -->
 
   
@@ -389,7 +445,7 @@ const metadata = {
           </div>
           <div>
             <p class="text-sm text-gray-400 mb-1">E-post</p>
-            <p class="font-medium">info@mediteranobay.com</p>
+            <a href="mailto:info@mediteranobay.com" class="font-medium underline underline-offset-2">info@mediteranobay.com</a>
           </div>
         </div>
         <div class="flex items-start gap-5">
@@ -400,8 +456,14 @@ const metadata = {
           </div>
           <div>
             <p class="text-sm text-gray-400 mb-1">Telefon</p>
-            <p class="font-medium">+46 (0)76 588 53 25
-            </p>
+            <div class="flex items-center gap-3">
+              <a href="tel:+46765885325" class="font-medium underline underline-offset-2">+46 76 588 53 25</a>
+              <a href="https://wa.me/46765885325" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-500 text-white hover:bg-green-600 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M3 21l1.65-3.8a9 9 0 111.6 1.6L3 21z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
         <div class="flex items-start gap-5">

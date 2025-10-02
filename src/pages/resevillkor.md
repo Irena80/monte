@@ -108,7 +108,7 @@ MediteranoBay Travel HB hanterar personuppgifter i enlighet med vid var tid gäl
 ## Kontakta oss
 
 Om ni har ytterligare funderingar slå en signal till oss
-- By email: info@mediteranobay.com
+- By email: <a href="mailto:info@mediteranobay.com">info@mediteranobay.com</a>
 - Kontakt: 070-XXX
 
 Org.nr: 969795-7091

@@ -46,14 +46,52 @@ const {
             <div class="mt-0.5">
               {title && <h3 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</h3>}
               {description && (
-                <p
-                  class={twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description)}
-                  set:html={description}
-                />
+                <div class={twMerge(`${title ? 'mt-3' : ''} text-muted flex items-center gap-2 flex-wrap`, descriptionClass, itemClasses?.description)}>
+                  <Fragment set:html={description} />
+                  {typeof description === 'string' && description.includes('tel:') && (() => {
+                    const m = description.match(/tel:([^"'\s]+)/);
+                    const phoneDigits = m && m[1] ? m[1].replace(/\D/g, '') : '';
+                    const wa = phoneDigits ? `https://wa.me/${phoneDigits}` : '';
+                    return wa ? (
+                      <a
+                        href={wa}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp"
+                        class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white hover:bg-green-600 transition"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                          <path d="M3 21l1.65-3.8a9 9 0 111.6 1.6L3 21z" />
+                        </svg>
+                      </a>
+                    ) : null;
+                  })()}
+                </div>
               )}
               {callToAction && (
                 <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
-                  <Button variant="link" {...callToAction} />
+                  <div class="flex items-center gap-2">
+                    <Button variant="link" {...callToAction} />
+                    {(() => {
+                      const hrefStr = callToAction?.href ? String(callToAction.href) : '';
+                      if (!hrefStr.startsWith('tel:')) return null;
+                      const phoneDigits = hrefStr.replace('tel:', '').replace(/\D/g, '');
+                      const wa = phoneDigits ? `https://wa.me/${phoneDigits}` : '';
+                      return wa ? (
+                        <a
+                          href={wa}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="WhatsApp"
+                          class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white hover:bg-green-600 transition"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                            <path d="M3 21l1.65-3.8a9 9 0 111.6 1.6L3 21z" />
+                          </svg>
+                        </a>
+                      ) : null;
+                    })()}
+                  </div>
                 </div>
               )}
             </div>

@@ -83,4 +83,4 @@ I sydost, vid gränsen mot Albanien och Kosovo, reser sig Prokletije – även k
 
 Vi hjälper gärna till att skräddarsy en naturfokuserad grupp- eller företagsresa – från vandringar och rafting på [Tara](/tara) till lugna dagar vid Skadarsjön. Berätta om era mål och önskemål, så sätter vi ihop ett förslag.
 
-→ [Kontakta oss](/kontakt)
+→ [Kontakta oss](/contact)

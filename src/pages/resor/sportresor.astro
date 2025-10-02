@@ -313,7 +313,7 @@ const metadata = {
         </p>
       </div>
       <div class="flex md:pt-4">
-        <a href="/kontakt" class="inline-flex items-center rounded-full bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-8 h-12 text-sm font-medium shadow-sm hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900 transition">
+        <a href="/contact" class="inline-flex items-center rounded-full bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-8 h-12 text-sm font-medium shadow-sm hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900 transition">
           Resepaket
           <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </a>
@@ -415,11 +415,24 @@ const metadata = {
   /* Force 3-column icon grid on mobile for sport sections */
   @media (max-width: 639px) {
     .sport-icons .grid.mx-auto { 
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 1rem .75rem; /* tighter gaps for small screens */
+      /* Use 2 columns on very small screens to avoid cramping */
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 1rem 1rem;
     }
     .sport-icons .flex.flex-row.max-w-md { flex-direction: column; align-items: center; text-align: center; }
     .sport-icons .flex.flex-row.max-w-md h3 { font-size: 0.75rem; line-height: 1.05; }
     .sport-icons .flex.flex-row.max-w-md p { display: none; }
+
+    /* Ensure text stacks above image and avoid overlap on mobile */
+    .sport-icons .md\:flex > :first-child { position: relative; z-index: 10; }
+    .sport-icons .md\:flex > :last-child { position: relative; z-index: 0; margin-top: 1rem; }
+    .sport-icons img { display: block; max-width: 100%; height: auto; }
   }
+
+  /* Prevent icon/text overlap in sport icon lists (all viewports) */
+  .sport-icons .flex.flex-row.max-w-md { align-items: center; gap: 0.5rem; }
+  .sport-icons .flex.flex-row.max-w-md > div:first-child { flex: 0 0 2rem; display: flex; justify-content: center; }
+  .sport-icons .flex.flex-row.max-w-md svg { display: block; }
+  .sport-icons .flex.flex-row.max-w-md h3,
+  .sport-icons .flex.flex-row.max-w-md p { margin-left: 0; }
 </style>

@@ -5,6 +5,7 @@ import Footer from '~/components/widgets/Footer.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
 
 import { headerData, footerData } from '~/navigation';
+import { getDefaultPageMeta } from '~/utils/seo';
 
 import type { MetaData } from '~/types';
 
@@ -13,10 +14,12 @@ export interface Props {
 }
 
 const { metadata } = Astro.props;
+const defaults = getDefaultPageMeta(new URL(Astro.url).pathname || '/');
+const resolvedMeta = { ...defaults, ...(metadata || {}) };
 
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={resolvedMeta}>
   <slot name="announcement">
     <Announcement />
   </slot>

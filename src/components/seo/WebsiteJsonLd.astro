@@ -1,0 +1,18 @@
+---
+const BASE = 'https://mediteranobay.com';
+const website = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'MediteranoBay',
+  url: BASE,
+  inLanguage: 'sv',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${BASE}/search?q={search_term_string}`,
+    'query-input': 'required name=search_term_string'
+  }
+};
+// no-op reference to avoid unused var diagnostics
+void website['@type'];
+---
+<script type="application/ld+json">{JSON.stringify(website)}</script>

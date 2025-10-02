@@ -45,7 +45,23 @@ const {
           )}
           <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
           {description && (
-            <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
+            <div class={twMerge('text-muted mt-2 flex items-center gap-2 flex-wrap', descriptionClass, itemClasses?.description)}>
+              <Fragment set:html={description} />
+              {typeof description === 'string' && description.includes('tel:') && (
+                <a
+                  href={description.match(/tel:\+?\d+/)?.[0]?.replace('tel:', 'https://wa.me/') || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white hover:bg-green-600 transition"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                    <path d="M3 21l1.65-3.8a9 9 0 111.6 1.6L3 21z" />
+                    <path d="M16.5 17.5a7 7 0 10-9-9" opacity="0" />
+                  </svg>
+                </a>
+              )}
+            </div>
           )}
           {callToAction && (
             <div class="mt-2">

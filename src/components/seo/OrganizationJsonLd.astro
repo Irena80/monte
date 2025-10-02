@@ -1,0 +1,16 @@
+---
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'MediteranoBay',
+  url: 'https://mediteranobay.com',
+  logo: 'https://mediteranobay.com/images/logo4.png',
+  sameAs: [
+    'https://www.instagram.com/mediteranobay_travel/'
+  ]
+};
+// no-op reference to avoid unused var diagnostics
+void org['@type'];
+---
+
+<script type="application/ld+json">{JSON.stringify(org)}</script>
