@@ -15,7 +15,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 // Lägg överst i src/pages/index.astro
 const metadata = {
   title: 'MediteranoBay — Företags- & gruppresor till Montenegro och Balkan',
-  description: 'AI-driven resebyrå som skräddarsyr företags- och gruppresor till Montenegro och utvalda platser i Balkan. Snabb offert, lokal expertis och premiumservice.',
+  description: 'Företags- & gruppresor till Montenegro och utvalda platser på Balkan— smarta, personliga och lokala. Snabb offert, lokal expertis och premiumservice.',
   url: 'https://www.mediteranobay.com',
   image: '/og-mediteranobay.jpg', // byt till din OG-bild
 };
@@ -29,61 +29,69 @@ const metadata = {
 <!-- Global font laddas numera via huvudlayouten -->
 
 <section data-section="hero" class="relative w-full h-[92vh] min-h-[640px] overflow-hidden">
-  <!-- Base-layer fallback image (visible if video fails or motion-reduce) -->
+  <!-- Static background image -->
   <img
-    src="/images/petrovac.png"
-    alt="Petrovac, Montenegro – kustlandskap"
+    src="/images/jedrenje3.webp"
+    alt="Montenegros kust och klart vatten"
     class="absolute inset-0 w-full h-full object-cover"
     loading="eager"
     decoding="async"
   />
 
-  <video 
-    class="hero-video absolute inset-0 w-full h-full object-cover hidden sm:block motion-reduce:hidden"
-    autoplay 
-    muted 
-    loop 
-    playsinline 
-    preload="auto" 
-    webkit-playsinline 
-    disablepictureinpicture 
-    poster="/images/petrovac.png"
-    onerror="this.style.display='none'"
-    aria-hidden="true"
-  >
-    <source src="/videos/vildamng.webm" type="video/webm" />
-    <source src="/videos/vildamng.mp4" type="video/mp4" />
-  </video>
-  <!-- Horisontell gradient som tunnas ut -->
-  <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.62),rgba(0,0,0,0.38),rgba(0,0,0,0.12),rgba(0,0,0,0))]"></div>
-  
+  <!-- Dark overlay for readability -->
+  <div class="absolute inset-0 bg-black/50"></div>
 
-  <!-- Edge-aligned minimal content (desktop) -->
-  <div class="relative h-full flex items-center px-8 lg:px-20 z-10">
-    <div class="max-w-xl lg:max-w-3xl xl:max-w-4xl">
-      <h1 class="text-white text-[2rem] xs:text-[2.4rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-[0.96] drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]">
-        Aktiva resor<br />
-        för <span class="text-amber-600">grupper &</span>  <span class="text-amber-600">företag</span>
+  <!-- Centered content -->
+  <div class="relative h-full flex items-center justify-center px-6 z-10">
+    <div class="w-full max-w-4xl text-center">
+      <p class="uppercase tracking-[0.22em] text-white/80 text-[10px] sm:text-xs mb-3">Premiumreseupplevelser</p>
+      <h1 class="text-white text-[2.2rem] xs:text-[2.6rem] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]">
+        Aktiva resor för <br />
+        <span class="text-amber-500">grupper och företag</span>
       </h1>
-      <p class="mt-5 sm:mt-6 text-white/95 text-[1.05rem] sm:text-lg md:text-xl leading-relaxed max-w-xl font-semibold">
-        Upplev Montenegro – bygg relationer, idéer och framtid i en miljö som ger plats för något större.
+      <p class="mt-4 text-white/85 text-[0.95rem] sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+        Upptäck Europas dolda pärla med skräddarsydda företags och gruppäventyr. Där bergstoppar möter orörda kustlinjer.
       </p>
-      <div class="mt-6 sm:mt-8 flex gap-3 sm:gap-4">
-        <CTAButton href="/resor/foretagsresor" variant="neutral" size="sm" class="sm:size-auto backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/20">Företagsresor</CTAButton>
-        <CTAButton href="/resor/gruppresor" variant="neutral" size="sm" class="sm:size-auto backdrop-blur-sm bg-white/10 hover:bg-white/15 border border-white/20">Gruppresor</CTAButton>
+      <div class="mt-7 flex items-center justify-center gap-3 sm:gap-4">
+        <CTAButton href="/resor/gruppresor" variant="accent" class="px-5">Se resepaket</CTAButton>
+        <a href="/videos/vildamng.mp4" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-white/95 ring-1 ring-white/35 hover:bg-white/10 transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+          Ta del av upplevelser
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="mt-10 flex items-center justify-center gap-8 sm:gap-12 text-white/90 text-xs sm:text-sm uppercase tracking-[0.12em]">
+        <div class="text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-500">270+</div>
+          <div class="mt-1 text-white/70">Soldagar om året</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-500">101+</div>
+          <div class="mt-1 text-white/70">Upplevelser</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-500">50+</div>
+          <div class="mt-1 text-white/70">Aktiviteter</div>
+        </div>
       </div>
     </div>
   </div>
-  <!-- Mobil overlay borttagen: samma layout används nu på alla breakpoints -->
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-[10px] tracking-[0.35em]">SCROLLA</div>
 </section>
+
+
+
+
 
    <!-- Features2 Widget ************** -->
 
 <div data-section="mission">
   <Features2
     title='Vi säljer inte resor. Vi skapar rum för utveckling. <span class="text-amber-600"></span>'
-    subtitle="På MediteranoBay designar vi upplevelser för team, nätverk och grupper som söker något mer än ännu en konferens eller gruppresa."
-  >
+    subtitle="På MediteranoBay designar vi upplevelser för team, nätverk och grupper som söker något mer- mellan berg och hav, möten och äventyr."
   </Features2>
 </div>
 <div class="container mx-auto">
@@ -281,37 +289,93 @@ const metadata = {
 {/* NYTT – lägg precis här */}
 <div data-section="packages"><Packages /></div>
 
-<!-- CTA Sektion -->
-<section data-section="cta-final" class="relative isolate overflow-hidden">
-  <div class="mx-auto max-w-5xl px-4 py-24 sm:py-32 text-center">
-    <h2 class="text-3xl md:text-5xl font-semibold md:font-bold tracking-tight text-white leading-tight">
-      Redo att skapa något minnesvärt med ditt team?
-    </h2>
-    <p class="mt-6 text-base md:text-lg text-slate-300 max-w-2xl mx-auto font-normal">
-      Hör av dig så tar vi fram ett förslag anpassat efter era mål, budget och tid. Ingen säljpitch – bara konkret väg framåt.
+<!-- UNESCO Section -->
+<section data-section="unesco" class="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24">
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_25%_0%,rgba(125,211,252,0.55),rgba(15,39,66,0.95))]"></div>
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">Upptäck Montenegros UNESCO‑världsarv</h2>
+    <p class="mt-4 sm:mt-5 text-white/85 text-base sm:text-lg leading-relaxed max-w-4xl mx-auto">
+      Upplev delar av historien som finns på UNESCOs världsarvslista. Utforska Montenegros pittoreska landskap, klippiga bergstoppar, gröna skogar,
+      kristallklara sjöar och floder, små fiskebyar och charmiga gamla städer.
     </p>
-    <div class="mt-10 flex justify-center">
-  <CTAButton href="/contact" variant="primary" widthClass="w-[190px]">Kontakt</CTAButton>
-    </div>
-    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-5 text-[12px] md:text-sm text-slate-400">
-      <div class="flex items-center gap-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Svar normalt inom 24h
+
+    <!-- Feature icons -->
+    <div class="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+      <!-- UNESCO Heritage -->
+      <div class="flex flex-col items-center">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-amber-400 flex items-center justify-center shadow ring-1 ring-white/30">
+          <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="12,2 15,8.5 22,9.3 17,14 18.5,21 12,17.8 5.5,21 7,14 2,9.3 9,8.5" />
+          </svg>
+        </div>
+        <div class="mt-4 font-extrabold text-white">UNESCO‑världsarv</div>
+        <div class="mt-1 text-white/80 text-sm">Historiska platser och kulturarv</div>
       </div>
-      <div class="hidden sm:block h-3 w-px bg-slate-600/40"></div>
-      <div class="flex items-center gap-2">
-        <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 4h10M6 8h12M6 12h12M6 16h8"/></svg>
-        Kostnadsfritt första förslag
+
+      <!-- Group Experiences -->
+      <div class="flex flex-col items-center">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-amber-400 flex items-center justify-center shadow ring-1 ring-white/30">
+          <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <div class="mt-4 font-extrabold text-white">Gruppupplevelser</div>
+        <div class="mt-1 text-white/80 text-sm">Skräddarsytt för team och organisationer</div>
+      </div>
+
+      <!-- Year-Round -->
+      <div class="flex flex-col items-center">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-amber-400 flex items-center justify-center shadow ring-1 ring-white/30">
+          <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+            <path stroke-linecap="round" d="M16 3v4M8 3v4M3 11h18"></path>
+          </svg>
+        </div>
+        <div class="mt-4 font-extrabold text-white">Året runt</div>
+        <div class="mt-1 text-white/80 text-sm">Perfekt klimat april till oktober</div>
+      </div>
+
+      <!-- Premium Service -->
+      <div class="flex flex-col items-center">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-amber-400 flex items-center justify-center shadow ring-1 ring-white/30">
+          <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5"></path>
+          </svg>
+        </div>
+        <div class="mt-4 font-extrabold text-white">Premiumservice</div>
+        <div class="mt-1 text-white/80 text-sm">Boende och mat i toppklass</div>
       </div>
     </div>
-  </div>
-  <!-- Subtle layered background -->
-  <div class="absolute inset-0 -z-20 bg-gradient-to-br from-[#0F2742] via-[#193455] to-[#0E2034]"></div>
-  <div class="absolute inset-0 -z-10 opacity-60 [mask-image:radial-gradient(circle_at_center,white,transparent_70%)] bg-[radial-gradient(circle_at_30%_35%,rgba(255,255,255,0.08),transparent_55%),radial-gradient(circle_at_70%_65%,rgba(255,255,255,0.06),transparent_55%)]"></div>
-  <div class="pointer-events-none absolute inset-0 -z-10">
-    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full bg-gradient-to-tr from-blue-500/10 via-teal-300/5 to-transparent blur-3xl"></div>
+
+    <div class="mt-10 sm:mt-12">
+      <CTAButton href="/aktiviteter" variant="accent" class="rounded-full px-5">Utforska</CTAButton>
+    </div>
   </div>
 </section>
+
+<!-- CTA Card: Ready to create your experience? -->
+<section data-section="cta-card" class="py-10 sm:py-14">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="rounded-xl sm:rounded-2xl bg-[radial-gradient(circle_at_20%_20%,rgba(32,64,96,0.85),rgba(6,24,44,0.95))] text-white shadow-xl ring-1 ring-white/10 px-6 py-10 sm:px-10 sm:py-12">
+      <div class="text-center">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">Redo att skapa din Montenegro‑upplevelse?</h3>
+        <p class="mt-3 text-white/85 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">Låt oss designa ett skräddarsytt äventyr som matchar era förväntningar. Kontakta vårt team för att börja planera er resa.</p>
+        <div class="mt-6 flex items-center justify-center gap-3 sm:gap-4">
+          <CTAButton href="/boka" variant="accent" class="px-5">Se resepaket</CTAButton>
+          <a href="/contact" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-white/95 ring-1 ring-white/25 hover:bg-white/10 transition">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-.586 1.414l-1.12 1.12a14 14 0 0 0 6.172 6.172l1.12-1.12A2 2 0 0 1 16 12h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-.25C11.495 18 6 12.505 6 6.25V6a1 1 0 0 0-1-1H5a2 2 0 0 1-2-2Z" />
+            </svg>
+            Kontakta oss
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
 
 <section id="blog" data-section="blog-teaser" class="py-12 sm:py-16 bg-gradient-to-b from-blue-50 via-white to-white relative overflow-hidden">
   <div class="max-w-5xl mx-auto px-4">

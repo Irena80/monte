@@ -3,9 +3,9 @@
  * Props:
  * - text: knapptext
  * - link: länk till kontakt/offer
- * - hideOn: array av paths där knappen INTE ska synas (t.ex. ['/kontakt'])
+ * - hideOn: array av paths där knappen INTE ska synas (t.ex. ['/contact'])
  */
-const { text = 'Begär offert', link = '/kontakt', hideOn = [] } = Astro.props;
+const { text = 'Begär offert', link = '/contact', hideOn = [] } = Astro.props;
 const currentPath = Astro.url.pathname || '/';
 const shouldShow = !hideOn.includes(currentPath);
 ---

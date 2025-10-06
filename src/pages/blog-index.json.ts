@@ -34,6 +34,17 @@ const extras: Array<Item> = [
   { url: '/aktiviteter', title: 'Aktiviteter', excerpt: 'Sport, äventyr och upplevelser för grupper.' },
   { url: '/reseinfo', title: 'Reseinfo', excerpt: 'Praktisk information inför resan.' },
   { url: '/resevillkor', title: 'Resevillkor', excerpt: 'Villkor och viktig information.' },
+  // Experience landing pages
+  { url: '/yahting', title: 'Yachting i Montenegro', excerpt: 'Seglingsresor i Adriatiska havet – från sunset tours till heldag i Blue Cave och privat katamaran.' },
+  { url: '/yahting/events', title: '8 skäl att segla i Montenegro', excerpt: 'Åtta skäl för segling i Montenegro: rutter, vindar, öar, städer, läge och värde.' },
+  { url: '/upplevelser/tva-upplevelser-pa-en-dag', title: 'Två upplevelser på en dag', excerpt: 'Kombinera hav och berg samma dag: förmiddag till havs, eftermiddag i bergen. Perfekt för företagsgrupper.' },
+  // Offer pages
+  { url: '/erbjudanden/konferensresa-kotor-bay', title: 'Konferensresa Kotor Bay', excerpt: 'Konferensresa till Kotor med boende, program, och skräddarsytt upplägg.' },
+  { url: '/erbjudanden/foretagsresa-budva', title: 'Företagsresa Budva', excerpt: 'Sensommar i Budva – hotell, aktiviteter och gastronomi.' },
+  { url: '/erbjudanden/teambuilding-durmitor', title: 'Teambuilding Durmitor', excerpt: 'Teambuilding i Durmitor nationalpark med aktiviteter och konferens.' },
+  { url: '/erbjudanden/hostlov-herceg-novi', title: 'Höstlov Herceg Novi', excerpt: 'Höstlovserbjudande med Lazure Hotel & Marina, aktiviteter och utflykter.' },
+  { url: '/erbjudanden/sensommar-budva', title: 'Sensommar Budva', excerpt: 'Sensommarpaket i Budva med boende på Hotel Budva och utvalda aktiviteter.' },
+  { url: '/erbjudanden/jullov-tivat', title: 'Jullov Tivat', excerpt: 'Fira jul i Tivat – boende, aktiviteter och skräddarsytt program.' },
 ];
 
 export const GET: APIRoute = async () => {

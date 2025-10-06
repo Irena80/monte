@@ -1,5 +1,9 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/index.html" }
+  ],
+  "redirects": [
+    { "source": "/kontakt", "destination": "/contact", "permanent": true },
+    { "source": "/kontakt/:path*", "destination": "/contact", "permanent": true }
   ]
 }

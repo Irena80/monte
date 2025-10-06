@@ -107,7 +107,7 @@ export const travelPackages: TravelPackage[] = [
     description: 'Hör av er till oss så tar vi fram det bästa resepaket som passar just er.',
     price: '',
     imageUrl: '/images/svetistefan2.jpg',
-    link: '/kontakt'
+  link: '/contact'
   },
   {
     id: 'durmitor',

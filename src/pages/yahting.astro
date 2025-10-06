@@ -2,22 +2,13 @@
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/hercegnovi.astro
 
 import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import Content from '~/components/widgets/Content.astro';
-import TitleBlock from '~/components/TitleBlock.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import { YouTube } from 'astro-embed';
-import ImageCard1 from '~/components/ImageCard1.astro';
-
-
-
-
-const metadata = {
-  title: 'About us',
-};
+ 
+ 
+ 
+ const metadata = {
+   title: 'Yachting i Montenegro',
+ };
 ---
 
 <Layout metadata={metadata}>
@@ -25,19 +16,8 @@ const metadata = {
 
   <Hero
   
-  actions={[
-    {
-      variant: 'primary',
-      text: 'Yahting Club',
-      href: 'https://www.hercegfest.me/en/festivals/',
-      target: '_blank',
-      icon: 'tabler:sun',
-    },
-
-  ]}
+ 
    
-   
-  
     
     image={{
       src: '~/assets/images/jedrenje.webp',
@@ -54,13 +34,25 @@ const metadata = {
        Upptäck en av världens vackraste vikar, segla i skärgården, besök grannlandet Kroatien eller varför inte segla över till Italien.
     </Fragment>
 
+    <Fragment slot="actions">
+      <a
+        href="/yahting/events"
+        class="inline-flex items-center justify-center rounded-full bg-blue-900 text-white px-6 py-3 text-sm font-semibold shadow hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-800/40"
+      >
+        8 skäl att segla i Montenegro
+      </a>
+    </Fragment>
+
     
   </Hero>
 
 
 
 
-  <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2 text-center">Utvalda seglingsresor</h2>
+  <div class="max-w-6xl mx-auto px-4 mt-8 text-center">
+    <p class="text-sm uppercase tracking-wide text-amber-600 font-semibold">Populära upplägg</p>
+    <h2 class="mt-2 text-3xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2">Utvalda seglingsresor och paket</h2>
+  </div>
   
   <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
     <!-- ComponentLeft -->
@@ -81,7 +73,7 @@ const metadata = {
       </div>
       
       <div class="order-1 md:order-2">
-        <img src="../images/jedrenje.jpg" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+        <img src="/images/jedrenje.jpg" alt="Segling i Kotorbukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
       </div>
     </div>
    
@@ -89,7 +81,7 @@ const metadata = {
     <!-- ComponentRight -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
       <div class="order-1">
-        <img src="../images/jedrenje3.webp" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+        <img src="/images/jedrenje3.webp" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
       </div>
       <div class="order-2">
         <h2 class="text-2xl font-bold text-blue-600 mb-4">Heldag till Blue Cave & Lustica</h2>
@@ -123,13 +115,13 @@ const metadata = {
           </div>
       </div>
       <div class="order-1 md:order-2">
-        <img src="../images/jedrenje4.webp" alt="Gamla Stan" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+        <img src="/images/jedrenje4.webp" alt="Privat katamaran i Adriatiska havet" class="rounded-lg shadow-lg w-full h-80 object-cover" />
       </div>
     </div>
    <!-- ComponentRight -->
    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
     <div class="order-1">
-      <img src="../images/jedrenje3.webp" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
+      <img src="/images/jedrenje3.webp" alt="Utforska den pittoreska bukten" class="rounded-lg shadow-lg w-full h-80 object-cover" />
     </div>
     <div class="order-2">
       <h2 class="text-2xl font-bold text-blue-600 mb-4">Teambuilding på havet</h2>
@@ -149,44 +141,87 @@ const metadata = {
     
   </div>
 
+  <!-- Process: Så här går en seglingsresa till -->
+  <section id="process" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-200/70 dark:border-slate-700/40">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-12 gap-12">
+      <!-- Left Intro -->
+      <div class="lg:col-span-6">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-medium text-slate-900 dark:text-white leading-tight tracking-tight">
+          Så här går en seglingsresa till
+        </h2>
+        <p class="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
+          Smidigt, tryggt och socialt. Perfekt för både nybörjare och vana seglare.
+        </p>
+        <div class="mt-10">
+          <a href="/contact" class="inline-flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-4 shadow focus:outline-none focus:ring-2 focus:ring-blue-600 transition">Kontakta oss</a>
+        </div>
+      </div>
+      <!-- Steps Right -->
+      <div class="lg:col-span-6 grid sm:grid-cols-2 gap-y-12 gap-x-10">
+        <div class="relative pl-0">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-700 dark:text-blue-300 text-2xl font-semibold">1</div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Samling i marina</h3>
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300 max-w-xs">Genomgång, säkerhet och rutt.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative pl-0">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-700 dark:text-blue-300 text-2xl font-semibold">2</div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Avgång</h3>
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300 max-w-xs">Låt vinden visa vägen till nya upplevelser längs Adriatiska kusten.
+</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative pl-0">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-700 dark:text-blue-300 text-2xl font-semibold">3</div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Badstopp & snorkel</h3>
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300 max-w-xs">Tid för bad och upplevelser.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative pl-0">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-700 dark:text-blue-300 text-2xl font-semibold">4</div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Lunch</h3>
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300 max-w-xs">Ombord eller strandrestaurang.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative pl-0">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-700 dark:text-blue-300 text-2xl font-semibold">5</div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Eftermiddagstur</h3>
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300 max-w-xs">Sol, vyer och musik i lugnt tempo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative pl-0">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-700 dark:text-blue-300 text-2xl font-semibold">6</div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Tillbaka till marina</h3>
+              <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300 max-w-xs">Avslut och möjlighet till gemensam middag.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+ 
+ 
  
 
  
- 
-<!-- Steps2 Widget ****************** -->
-
-<Steps2
-  title="Företagssegling i Montenegro"
-  subtitle="Ta företagskulturen till nya höjder med vår teambuilding- och konferenssegling, en konferensresa utöver det vanliga. Mellan historiska städer och vackra öar, med en fantastisk utsikt över fjordarna och bergen, erbjuder vi en unik upplevelse för ditt team."
-  isReversed={true}
-  callToAction={{
-    text: 'Kontakta oss',
-    href: 'contact',
-  }}
    
-  items={[
-    {
-      title: 'Målet med resan',
-      description: 'Målet med resan är att motivera och uppmuntra kollegorna i en stimulerande miljö. Deltagarna ställs inför olika utmaningar/uppdrag, där det i vissa fall finns ett tävlingsmoment. Uppdragen vävs naturligt in i seglingen så att deltagarna gemensamt får uppleva destinationen och få ett mervärde.',
-      icon: 'tabler:plane',
-    },
-    {
-      title: 'Resans längd',
-      description:
-        'Resdagar - 4 dagar, 3 nätter (lördag – tisdag, andra dagar på förfrågan). Skräddarsytt program utifrån kundens önskemål som innefattar måltider, aktiviteter, konferenspass etc..',
-      icon: 'tabler:message-star',
-    },
-    {
-      title: 'Boende',
-      description:
-        'Deltagarna bor ombord på bekväma segelbåtar/katamaraner utifrån gruppens önskemål.',
-      icon: 'tabler:award',
-    },
-  ]}
-
-/>
-
-
-  
-  
-</Layout>
+   
+ </Layout>
