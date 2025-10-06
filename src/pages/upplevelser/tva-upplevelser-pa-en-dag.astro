@@ -86,29 +86,30 @@ const metadata = {
       <script>
         const gallery = document.getElementById('gallery');
         const dialogEl = document.getElementById('lightbox');
-        if (gallery && dialogEl && dialogEl instanceof HTMLDialogElement) {
+        if (gallery && dialogEl instanceof HTMLDialogElement) {
           const img = dialogEl.querySelector('img');
           const closeBtn = dialogEl.querySelector('button');
-          if (!img || !closeBtn) return;
-          gallery.addEventListener('click', (e) => {
-            const target = e.target;
-            if (!(target instanceof HTMLImageElement)) return;
-            const full = target.getAttribute('data-full') || target.src;
-            const alt = target.getAttribute('alt') || '';
-            img.src = full;
-            img.alt = alt;
-            dialogEl.showModal();
-          });
-          const close = () => dialogEl.close();
-          closeBtn.addEventListener('click', close);
-          dialogEl.addEventListener('click', (e) => {
-            const rect = img.getBoundingClientRect();
-            const inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
-            if (!inside) close();
-          });
-          window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && dialogEl.open) dialogEl.close();
-          });
+          if (img && closeBtn) {
+            gallery.addEventListener('click', (e) => {
+              const target = e.target;
+              if (!(target instanceof HTMLImageElement)) return;
+              const full = target.getAttribute('data-full') || target.src;
+              const alt = target.getAttribute('alt') || '';
+              img.src = full;
+              img.alt = alt;
+              dialogEl.showModal();
+            });
+            const close = () => dialogEl.close();
+            closeBtn.addEventListener('click', close);
+            dialogEl.addEventListener('click', (e) => {
+              const rect = img.getBoundingClientRect();
+              const inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+              if (!inside) close();
+            });
+            window.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape' && dialogEl.open) dialogEl.close();
+            });
+          }
         }
       </script>
     </div>
