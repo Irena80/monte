@@ -9,6 +9,11 @@ const metadata = {
   description: 'Boka konferensresa, gruppresa eller sportresa till Montenegro.',
 };
 
+// Back-link support: prefer ?from= query; fallback to Företagsresor
+const url = Astro.url;
+const fromParam = url.searchParams.get('from');
+const defaultBackHref = '/resor/foretagsresor';
+const backHref = fromParam && fromParam.startsWith('/') ? fromParam : defaultBackHref;
 ---
 
 <Layout metadata={metadata}>
@@ -16,6 +21,14 @@ const metadata = {
     title="Vi sammanför Montenegro med Skandinavien"
     subtitle="Välj mellan salig utbud av redan paketerade helhetsupplevelser eller hör av er så tar vi fram skräddarsydda paket utifrån era behov."
   />
+
+  <!-- Explicit back navigation within the site -->
+  <nav class="max-w-5xl mx-auto px-4 -mt-3 mb-2">
+    <a id="back-link" href={backHref} class="inline-flex items-center gap-1 text-sm text-blue-700 hover:text-blue-900">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      <span>Tillbaka</span>
+    </a>
+  </nav>
 
 <section class="py-6 sm:py-8">
   <div class="max-w-5xl mx-auto flex flex-col gap-10 sm:gap-12">
@@ -142,3 +155,23 @@ const metadata = {
     </div>
   </section>
 </Layout>
+
+<!-- Enhance back link with same-origin referrer when no ?from is present -->
+<script>
+  (function () {
+    try {
+      const el = document.getElementById('back-link');
+      if (!(el instanceof HTMLAnchorElement)) return;
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('from')) return; // query param takes precedence
+      const ref = document.referrer;
+      if (!ref) return;
+      const refUrl = new URL(ref);
+      if (refUrl.origin === window.location.origin) {
+        el.href = refUrl.pathname + refUrl.search + refUrl.hash;
+      }
+    } catch {
+      // noop
+    }
+  })();
+</script>
