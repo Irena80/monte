@@ -1,0 +1,166 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Kulturpaket – Belgrad',
+  description: '5 dagar / 4 nätter i Belgrad med museer, historiska platser och kulinariska upplevelser.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="relative isolate">
+    <img src="/images/serbien-belgrad.jpeg" alt="Kulturpaket Belgrad" class="h-[46vh] w-full object-cover" loading="eager" decoding="async" />
+    <div class="absolute inset-0 bg-slate-900/60"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-5xl mx-auto px-4">
+        <h1 class="text-white text-4xl md:text-5xl font-extrabold">Kulturpaket</h1>
+        <p class="mt-2 text-white/90">5 dagar / 4 nätter</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Inkluderat i paketet -->
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="text-lg font-semibold text-slate-900 flex items-center gap-2">
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 text-slate-900 text-sm">✓</span>
+            Inkluderat i paketet
+          </h3>
+          <ul class="mt-4 space-y-3 text-slate-700">
+            {[
+              '6 nätter på boutique‑hotell',
+              'Daglig frukost',
+              'Besök på 8 museer och gallerier',
+              'Privat konsttour med lokal expert',
+              'Besök på Nikola Tesla Museum',
+              'Opera‑ eller teaterföreställning',
+              'Traditionell musikkväll i Skadarlija',
+              'Kulinarisk matgångskurs',
+              'Alla transfers och entréavgifter',
+            ].map((item) => (
+              <li class="flex gap-3"><span class="mt-1 h-4 w-4 rounded-full bg-amber-400 inline-block"></span><span>{item}</span></li>
+            ))}
+          </ul>
+        </div>
+        <!-- Kulturinformation -->
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="text-lg font-semibold text-slate-900 flex items-center gap-2">
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-lg border border-amber-300 bg-amber-50 text-amber-700 text-sm">🎭</span>
+            Kulturinformation
+          </h3>
+          <div class="mt-4 space-y-5 text-slate-700">
+            <div>
+              <p class="text-sm uppercase tracking-wide text-slate-500">Gruppstorlek</p>
+              <p>Minst 2, max 12 personer</p>
+            </div>
+            <div>
+              <p class="text-sm uppercase tracking-wide text-slate-500">Konstfokus</p>
+              <p>Från nyklassisk konst till modern samtidskonst</p>
+            </div>
+            <div>
+              <p class="text-sm uppercase tracking-wide text-slate-500">Musikupplevelser</p>
+              <p>Klassisk musik, traditionell folklore och jazz</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kulturella höjdpunkter -->
+      <div class="mt-8 md:mt-10 rounded-2xl border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-900">Kulturella höjdpunkter</h3>
+        <div class="mt-4 grid sm:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="mx-auto w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center">
+              <Icon name="tabler:palette" class="w-6 h-6" />
+            </div>
+            <p class="mt-3 font-semibold">Konstmuseer</p>
+            <p class="text-sm text-slate-600">Besök Nationalgalleriet, Museum of Contemporary Art, och privata gallerier i Savamala</p>
+          </div>
+          <div>
+            <div class="mx-auto w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center">
+              <Icon name="tabler:music" class="w-6 h-6" />
+            </div>
+            <p class="mt-3 font-semibold">Musikscen</p>
+            <p class="text-sm text-slate-600">Opera på Nationalteatern; jazz på Bitf Art Café; traditionell musik i Skadarlija</p>
+          </div>
+          <div>
+            <div class="mx-auto w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center">
+              <Icon name="tabler:building" class="w-6 h-6" />
+            </div>
+            <p class="mt-3 font-semibold">Historiska platser</p>
+            <p class="text-sm text-slate-600">Kalemegdan fästning, S:t Sava‑templet, och den bohemiska Skadarlija‑gatan</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dag för dag-program -->
+      <div class="mt-8 md:mt-10 rounded-2xl border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-900">Dag för dag‑program</h3>
+        <ol class="mt-6 space-y-6 text-slate-700">
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">1</span>
+            <div>
+              <p class="font-semibold">Dag 1 – Ankomst & Orientering</p>
+              <p class="mt-1">Ankomst och incheckning. Orienteringspromenad genom gamla stan med kvällsmiddag i Skadarlija.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">2</span>
+            <div>
+              <p class="font-semibold">Dag 2 – Historiska Belgrad</p>
+              <p class="mt-1">Kalemegdan fästning, Militärmuseet, och S:t Savas tempel. Eftermiddag på Nationalgalleriet.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">3</span>
+            <div>
+              <p class="font-semibold">Dag 3 – Modern konst & innovation</p>
+              <p class="mt-1">Museum of Contemporary Art, Nikola Tesla Museum, och gallerier i Savamala‑distriktet.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">4</span>
+            <div>
+              <p class="font-semibold">Dag 4 – Musik & teater</p>
+              <p class="mt-1">Privat tour bakom kulisserna på Nationalteatern. Kvällsföreställning (opera eller balett).</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">5</span>
+            <div>
+              <p class="font-semibold">Dag 5 – Kulinarisk kultur</p>
+              <p class="mt-1">Besök på Zeleni Venac‑marknaden följt av matlagningskurs. Eftermiddag fri för shopping och egen utforskning.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">6</span>
+            <div>
+              <p class="font-semibold">Dag 6 – Hemliga Belgrad</p>
+              <p class="mt-1">Privat tour med lokal konsthistoriker till mindre kända gallerier och ateljéer. Jazz på kvällen.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">7</span>
+            <div>
+              <p class="font-semibold">Dag 7 – Avslutning</p>
+              <p class="mt-1">Sista minuten shopping och besök på favoritplatser. Transfer till flygplatsen.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Callout CTA -->
+      <div class="mt-8 md:mt-10 rounded-2xl bg-amber-400/90 p-6 md:p-8 text-center text-slate-900">
+        <h3 class="text-2xl md:text-3xl font-extrabold">Upptäck Belgrads kulturskatter</h3>
+        <p class="mt-2">Kontakta oss för att boka detta omfattande kulturpaket</p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a href="/contact?utm_source=paket_kultur&utm_medium=cta" class="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 font-semibold px-5 py-2.5 shadow hover:bg-slate-50">Kontakta oss</a>
+          <a href="/belgrad" class="inline-flex items-center justify-center rounded-xl border border-slate-900/20 bg-white/60 text-slate-900 font-semibold px-5 py-2.5 hover:bg-white">Tillbaka till Belgrad</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

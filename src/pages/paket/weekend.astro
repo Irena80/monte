@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Weekendpaket – Belgrad',
+  description: '3 dagar / 2 nätter i Belgrad med boende, guidning och utvalda upplevelser.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="relative isolate">
+    <img src="/images/serbien-belgrad.jpeg" alt="Belgrad weekend" class="h-[46vh] w-full object-cover" loading="eager" decoding="async" />
+    <div class="absolute inset-0 bg-slate-900/60"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-5xl mx-auto px-4">
+        <h1 class="text-white text-4xl md:text-5xl font-extrabold">Weekendpaket</h1>
+        <p class="mt-2 text-white/90">3 dagar / 2 nätter</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Info cards row -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Inkluderat i paketet -->
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="text-lg font-semibold text-slate-900 flex items-center gap-2">
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 text-slate-900 text-sm">✓</span>
+            Inkluderat i paketet
+          </h3>
+          <ul class="mt-4 space-y-3 text-slate-700">
+            {[
+              '2 nätter på 4‑stjärnigt hotell',
+              'Frukost alla dagar',
+              'Guidad stadsrundtur (3 timmar)',
+              'Välkomstmiddag med traditionell mat',
+              'Flygtransfer till/från flygplats',
+              'Resguide och karta',
+            ].map((item) => (
+              <li class="flex gap-3"><span class="mt-1 h-4 w-4 rounded-full bg-amber-400 inline-block"></span><span>{item}</span></li>
+            ))}
+          </ul>
+        </div>
+        <!-- Reseinformation -->
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Reseinformation</h3>
+          <div class="mt-4 space-y-4 text-slate-700">
+            <div>
+              <p class="text-sm uppercase tracking-wide text-slate-500">Gruppstorlek</p>
+              <p>Minst 2 personer</p>
+            </div>
+            <div>
+              <p class="text-sm uppercase tracking-wide text-slate-500">Tillgängliga datum</p>
+              <p>Året runt, fredagar till söndagar</p>
+            </div>
+            <div>
+              <p class="text-sm uppercase tracking-wide text-slate-500">Avresa från</p>
+              <p>Stockholm Arlanda</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detaljerat program -->
+      <div class="mt-8 md:mt-10 rounded-2xl border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-900">Detaljerat program</h3>
+        <ol class="mt-6 space-y-6 text-slate-700">
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">1</span>
+            <div>
+              <p class="font-semibold">Dag 1 – Fredag: Ankomst</p>
+              <p class="mt-1">Ankomst till Belgrad, transfer till hotell. Fri eftermiddag att utforska på egen hand. På kvällen samlas vi för en välkomstmiddag på en traditionell serbisk restaurang i Skadarlija-distriktet.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">2</span>
+            <div>
+              <p class="font-semibold">Dag 2 – Lördag: Stadstour</p>
+              <p class="mt-1">Efter frukost startar vår guidade rundtur genom Belgrads historia. Vi besöker Kalemegdan‑fästningen, går längs Knez Mihailova‑gatan, och ser de viktigaste sevärdheterna. Eftermiddagen är fri för shopping och egna upptäckter.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">3</span>
+            <div>
+              <p class="font-semibold">Dag 3 – Söndag: Avresa</p>
+              <p class="mt-1">Frukost på hotellet och tid för sista minuten shopping. Transfer till flygplatsen för hemresa.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Callout CTA -->
+      <div class="mt-8 md:mt-10 rounded-2xl bg-amber-400/90 p-6 md:p-8 text-center text-slate-900">
+        <h3 class="text-2xl md:text-3xl font-extrabold">Redo att boka?</h3>
+        <p class="mt-2">Kontakta oss för att boka ditt weekendpaket eller för mer information</p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a href="/contact?utm_source=paket_weekend&utm_medium=cta" class="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 font-semibold px-5 py-2.5 shadow hover:bg-slate-50">Kontakta oss</a>
+          <a href="/belgrad" class="inline-flex items-center justify-center rounded-xl border border-slate-900/20 bg-white/60 text-slate-900 font-semibold px-5 py-2.5 hover:bg-white">Tillbaka till Belgrad</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

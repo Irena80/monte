@@ -1,0 +1,281 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Resor till Jahorina – enkelt, prisvärt och skräddarsytt',
+  description: 'Modern skidort nära Sarajevo. Vi hjälper grupper och företag med boende, transfer, liftkort, guide och paket.',
+};
+// UTM for on-page CTAs inspired by the provided mockup
+const UTM = '?utm_source=traveltojahorina&utm_medium=referral&utm_campaign=';
+---
+
+<Layout metadata={metadata}>
+  <!-- Full-bleed hero matching the mockup -->
+  <section class="relative isolate">
+    <img src="/images/jahorinahero.jpeg" alt="Jahorina skidområde" class="h-[60vh] w-full object-cover" loading="eager" decoding="async" />
+    <div class="absolute inset-0 bg-slate-900/55"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h1 class="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">Jahorina – De Olympiska Bergen</h1>
+  <p class="mt-3 text-white/90 text-lg md:text-xl font-semibold">Skidåkning i världsklass där OS-historien möter modern lyx</p>
+        <a href={'/boka?from=/resor/jahorina'} class="mt-6 inline-flex rounded-xl bg-amber-400 text-black px-6 py-3 font-semibold shadow hover:bg-amber-300">Boka din vinterupplevelse</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Centered info block with trophy icon -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <Icon name="tabler:trophy" class="mx-auto h-12 w-12 text-amber-400" />
+      <h2 class="mt-4 text-3xl md:text-4xl font-bold text-slate-900">Vinter-OS 1984 i Sarajevo</h2>
+  <p class="mt-4 text-slate-700 text-lg md:text-xl leading-relaxed">Jahorina var värd för de alpina damgrenarna under vinter-OS 1984. Idag kan du åka på samma backar som olympiska medaljörer, med modern utrustning och faciliteter i toppklass.</p>
+    </div>
+  </section>
+
+  <!-- Boende & Faciliteter + CTA aside -->
+  <section class="py-10 md:py-14 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-8 items-start">
+      <!-- Left: cards -->
+      <div class="md:col-span-8">
+        <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 mb-5">Boende & Faciliteter</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {[
+            { title: 'Hotel Termag', subtitle: 'Spa & Wellness vid backen', img: '/images/jahorina4.jpeg', utm: 'termag_learn' },
+            { title: 'Olympic Slopes', subtitle: 'Historiska OS-backarna från 1984', img: '/images/jahorina5.jpg', utm: 'slopes_learn' },
+          ].map((card) => (
+            <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <img src={card.img} alt={card.title} class="h-52 w-full object-cover" loading="lazy" decoding="async" />
+              <div class="p-5">
+                <h3 class="text-lg font-semibold text-slate-900">{card.title}</h3>
+                <p class="mt-1 text-slate-600 text-sm">{card.subtitle}</p>
+                <a href={'/contact' + UTM + card.utm} class="mt-3 inline-block text-sm font-semibold text-slate-700 hover:underline">Läs mer »</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: CTA aside -->
+      <aside class="md:col-span-4 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+        <h3 class="text-xl font-bold text-slate-900">Planera er gruppresa hit</h3>
+        <p class="mt-2 text-slate-700">Vi skräddarsyr skidresor för företag och grupper med allt från logi till skidskola.</p>
+        <a href={'/contact' + UTM + 'lodging_cta'} class="mt-5 inline-flex items-center justify-center rounded-xl bg-amber-400 text-black font-semibold px-5 py-2.5 shadow hover:bg-amber-300">Begär offert</a>
+        <p class="mt-2 text-xs text-slate-500">Specialpriser för 15+ personer</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Stats strip -->
+  <section class="py-4 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid sm:grid-cols-3 gap-4">
+      {[
+        { value: '48km', label: 'Totalt pistlängd' },
+        { value: '20+', label: 'Skidbackar' },
+        { value: '1916m', label: 'Högsta punkt' },
+      ].map((s) => (
+        <div class="rounded-2xl bg-slate-100 px-6 py-5 shadow-sm">
+          <div class="text-2xl md:text-3xl font-extrabold text-slate-900">{s.value}</div>
+          <div class="text-slate-500 text-sm">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Features row -->
+  <section class="py-14 bg-white">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-2xl md:text-3xl font-semibold text-slate-900">Allt för din vinterupplevelse</h3>
+      <div class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          { icon: 'tabler:mountain', label: '45km Pister', color: 'bg-blue-900 text-white' },
+          { icon: 'tabler:snowflake', label: 'Skidskola & Guides', color: 'bg-blue-900 text-white' },
+          { icon: 'tabler:trophy', label: 'Olympisk Historia', color: 'bg-amber-400 text-black' },
+          { icon: 'tabler:coffee', label: 'Après-ski', color: 'bg-blue-900 text-white' },
+        ].map((f) => (
+          <div class="flex flex-col items-center">
+            <div class={`h-16 w-16 rounded-full flex items-center justify-center ${f.color}`}>
+              <Icon name={f.icon} class="h-8 w-8" />
+            </div>
+            <p class="mt-3 font-semibold text-slate-900">{f.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Après-ski hero block -->
+  <section class="relative isolate">
+    <img src="/images/afterski.jpeg" alt="Après-ski och kulinariska upplevelser" class="h-[58vh] w-full object-cover" loading="lazy" decoding="async" />
+    <div class="absolute inset-0 bg-slate-900/60"></div>
+    <div class="absolute inset-0">
+      <div class="max-w-6xl mx-auto h-full px-4 flex items-center">
+        <div class="max-w-xl">
+          <h3 class="text-white text-4xl md:text-5xl font-extrabold leading-tight">Après-ski & kulinariska upplevelser</h3>
+          <p class="mt-3 text-white/90">Efter en dag i backarna väntar mysiga fjällstugor, lokal mat och varm atmosfär.</p>
+          <a href={'/contact' + UTM + 'apres_restaurants'} class="mt-6 inline-flex rounded-xl bg-amber-400 text-black px-5 py-2.5 font-semibold shadow hover:bg-amber-300">Se restauranger</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Praktisk info -->
+  <section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-2xl md:text-3xl font-semibold text-slate-900">Praktisk info om Jahorina</h3>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h4 class="font-bold text-slate-900">Säsong</h4>
+          <p class="mt-2 text-slate-700">Skidsäsongen varar från december till april med bästa snöförhållanden januari–mars.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h4 class="font-bold text-slate-900">Resan hit</h4>
+          <p class="mt-2 text-slate-700">Endast 30 km från Sarajevo. Vi ordnar transfer från flygplatsen direkt till din logi.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h4 class="font-bold text-slate-900">För alla nivåer</h4>
+          <p class="mt-2 text-slate-700">Backar för både nybörjare och experter. Professionella instruktörer finns tillgängliga.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+ 
+  <!-- Våra paket (grid 3x2) -->
+  <section id="packages" class="py-20 md:py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <p class="text-sm uppercase tracking-wide text-amber-600 font-semibold">Paket för grupper</p>
+          <h2 class="mt-2 text-3xl md:text-5xl font-serif font-medium text-slate-900 leading-tight">Utvalda paket i Jahorina</h2>
+          <p class="mt-4 max-w-2xl text-slate-600 text-base md:text-lg">Välj ett färdigt upplägg eller be om skräddarsydd lösning – vi svarar inom 48 timmar.</p>
+        </div>
+        <div>
+          <a href={'/contact' + UTM + 'packages_header'} class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-6 py-3 text-sm font-semibold tracking-wide hover:bg-slate-700 transition shadow">Begär offert</a>
+        </div>
+      </div>
+
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { title: 'Företag & konferens på snö', desc: 'Mötesrum nära backen + aktiviteter på berget.', img: '/images/jahorina7.jpg', utm: 'package_corporate' },
+          { title: 'Familjeveckan', desc: 'Boende nära backe, skidskola och smidig hyrutrustning.', img: '/images/jahorina8.jpg', utm: 'package_family' },
+          { title: 'Weekend med vänner', desc: '3 nätter, skidpass och after-ski – maximal tid i backen.', img: '/images/jahorina5.jpg', utm: 'package_weekend' },
+          { title: 'Säsongsstart (dec–jan)', desc: 'Bästa pris och mindre köer.', img: '/images/jahorina9.jpg', utm: 'package_early' },
+          { title: 'Skräddarsytt', desc: 'Vi anpassar efter budget, nivå och mål.', img: '/images/jahorina4.jpeg', utm: 'package_custom' },
+          { title: 'City + Ski (Sarajevo)', desc: 'Kombinera pister med mat & kultur i Sarajevo.', img: '/images/jahorinaski.jpg', utm: 'package_cityski' },
+        ].map((card) => (
+          <article class="group overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <img src={card.img} alt={card.title} class="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform" loading="lazy" decoding="async" />
+            <div class="p-5">
+              <h3 class="text-lg font-semibold">{card.title}</h3>
+              <p class="mt-1 text-slate-600 text-sm">{card.desc}</p>
+              <div class="mt-4 flex justify-start items-center">
+                <a href={'/contact' + UTM + card.utm} class="rounded-xl px-4 py-2 text-sm font-semibold bg-orange-500 text-white hover:bg-orange-600">Begär offert</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+ 
+
+
+
+ 
+ <!-- Varför Jahorina – 10 skäl -->
+  <section id="varfor" class="py-20 md:py-24 bg-white dark:bg-slate-900 border-t border-slate-200/70 dark:border-slate-700/40">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-10 text-center">
+        <p class="text-sm uppercase tracking-wide text-amber-600 font-semibold">Varför Jahorina</p>
+        <h2 class="mt-2 text-3xl md:text-5xl font-serif font-medium text-slate-900 dark:text-white leading-tight">Bättre gruppresa på OS-berget</h2>
+        <p class="mt-5 max-w-3xl mx-auto text-slate-600 dark:text-slate-300 text-base md:text-lg">Här är tio konkreta skäl som gör Jahorina smartare än många alpbyar – särskilt för grupper och företag.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-y-10 gap-x-10">
+        {[
+          { num: '1', title: 'Mer för pengarna', desc: 'Lägre prisnivå på boende, liftkort, mat & dryck → samma budget räcker längre (bättre standard eller fler aktiviteter).' },
+          { num: '2', title: 'Kortare köer & lugnare backar', desc: 'Mindre trängsel än många alpbyar, särskilt högsäsongsveckor → fler åk per dag, bättre gruppflyt.' },
+          { num: '3', title: 'City + Ski i samma resa', desc: 'Kombinera skidåkning med Sarajevo (30–40 min transfer): kultur, mat, historiska stopp, teambuilding i stadsmiljö.' },
+          { num: '4', title: 'Nysatsad anläggning', desc: 'Moderna liftar, breda pister, utbyggd snöproduktion och kvällsskidåkning – ovanligt bra pris/prestanda.' },
+          { num: '5', title: 'Smidigt för grupper & företag', desc: 'Kompakt berg → korta avstånd mellan boende, lift och mötesrum; lättare logistik för 10–100+ personer.' },
+          { num: '6', title: 'Skräddarsytt och personligt', desc: 'Färre mellanhänder, nära relationer med lokala aktörer → snabbare ja/nej på förfrågningar, flexibel anpassning.' },
+          { num: '7', title: 'Unik upplevelseprofil', desc: 'Balkan-gästfrihet, grillkök och after-ski till humana priser; Olympisk historia ger extra storytelling.' },
+          { num: '8', title: 'Bästa tidiga/lata säsongsfönster', desc: 'Bra värde december–januari och mars när Alperna ofta är dyrast; fler datum tillgängliga för grupper.' },
+          { num: '9', title: 'Trygg fakturering via Sverige', desc: 'Offert, avtal och betalning via MediteranoBay (svensk part) → enklare inköp, lägre upplevd risk.' },
+          { num: '10', title: 'Aktiviteter utöver skidåkning', desc: 'Snöskovandring, skotersafari, olympisk bobbana (sight), vin- & matupplevelser i och runt Sarajevo.' },
+        ].map((it) => (
+          <div class="relative pl-0">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-14 h-14 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-700 dark:text-blue-300 text-xl font-semibold">{it.num}</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{it.title}</h3>
+                <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300">{it.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Prisindikator</h3>
+          <ul class="mt-3 text-slate-700 dark:text-slate-300 space-y-2">
+            <li><strong>Weekend</strong> (3 nätter) fr. 3 900–5 500 SEK/person exkl. flyg</li>
+            <li><strong>Vecka</strong> (7 nätter) fr. 6 900–9 900 SEK/person exkl. flyg</li>
+            <li class="text-sm text-slate-600 dark:text-slate-400">Exakt pris beror på period, boende och tillval. Begär offert för snabb kalkyl inom 48 h.</li>
+          </ul>
+        </div>
+        <div class="flex md:justify-end items-end">
+          <a href={'/contact' + UTM + 'why_section'} class="inline-flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-4 shadow focus:outline-none focus:ring-2 focus:ring-blue-600 transition">Få en snabb offert (48 h)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Storytelling (kort version) -->
+  <section id="story" class="py-16 sm:py-20 bg-slate-50">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-semibold">Bergen där olympiska drömmar lever vidare</h2>
+      <p class="mt-4 text-slate-700 max-w-3xl mx-auto">
+        Jahorina bar OS-ljuset 1984 – idag möter du breda pister, moderna liftar och kvällsskidåkning.
+        Här får du Alpkänsla utan Alpköer, äkta gästfrihet och prisnivåer som ger mer upplevelse för pengarna.
+        Kombinera skiddagarna med kväll i Sarajevo – bara 30–40 min bort.
+      </p>
+      <blockquote class="mt-6 text-xl font-medium text-slate-900">“Mer skidåkning, mindre kö. Mer upplevelse, mindre logistik.”</blockquote>
+      <a href={'/contact' + UTM + 'story_section'} class="mt-8 inline-flex rounded-2xl bg-orange-500 text-white px-6 py-3 font-semibold hover:bg-orange-600">Upptäck Jahorina</a>
+    </div>
+  </section>
+</Layout>
+
+<!-- Sticky CTA like in mockup -->
+<div id="sticky-cta" class="fixed bottom-4 inset-x-0 px-4 sm:px-6 lg:px-8 opacity-0 pointer-events-none transition-opacity">
+  <div class="mx-auto max-w-7xl">
+    <div class="rounded-2xl bg-slate-900 text-white px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 shadow-xl">
+      <p class="text-sm">Redo att få ett förslag? Vi återkommer med offert inom 48 timmar.</p>
+      <a href={'/contact' + UTM + 'sticky'} class="inline-flex justify-center rounded-xl bg-orange-500 px-4 py-2 text-sm font-semibold hover:bg-orange-600">Begär offert hos MediteranoBay</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    try {
+      const stickyEl = document.getElementById('sticky-cta');
+      if (!(stickyEl instanceof HTMLElement)) return;
+      const onScroll = () => {
+        if (window.scrollY > 600) {
+          stickyEl.classList.remove('opacity-0', 'pointer-events-none');
+          stickyEl.classList.add('opacity-100');
+        } else {
+          stickyEl.classList.add('opacity-0', 'pointer-events-none');
+          stickyEl.classList.remove('opacity-100');
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+    } catch {
+      /* noop: sticky CTA is progressive enhancement */
+    }
+  })();
+</script>

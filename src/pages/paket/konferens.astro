@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Konferenspaket – Belgrad',
+  description: '4 dagar / 3 nätter med konferenslokaler, helpension och teambuilding i Belgrad.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="relative isolate">
+    <img src="/images/serbien-belgrad.jpeg" alt="Konferenspaket Belgrad" class="h-[46vh] w-full object-cover" loading="eager" decoding="async" />
+    <div class="absolute inset-0 bg-slate-900/60"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-5xl mx-auto px-4">
+        <h1 class="text-white text-4xl md:text-5xl font-extrabold">Konferenspaket</h1>
+        <p class="mt-2 text-white/90">4 dagar / 3 nätter</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Övre två informationskort -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Inkluderat i paketet -->
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="text-lg font-semibold text-slate-900 flex items-center gap-2">
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 text-slate-900 text-sm">✓</span>
+            Inkluderat i paketet
+          </h3>
+          <ul class="mt-4 space-y-3 text-slate-700">
+            {[
+              '3 nätter på 4‑stjärnigt hotell',
+              'Alla måltider inkluderade',
+              'Konferenslokal med full utrustning',
+              'High‑speed WiFi och teknisk support',
+              'Teambuilding‑aktivitet',
+              'Båttur på Donau',
+              'Avslutande galamiddag',
+              'Alla transfers',
+            ].map((item) => (
+              <li class="flex gap-3"><span class="mt-1 h-4 w-4 rounded-full bg-amber-400 inline-block"></span><span>{item}</span></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Konferensinformation -->
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h3 class="text-lg font-semibold text-slate-900 flex items-center gap-2">
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-lg border border-amber-300 bg-amber-50 text-amber-700 text-sm">📋</span>
+            Konferensinformation
+          </h3>
+          <div class="mt-4 space-y-5 text-slate-700">
+            <div>
+              <p class="text-sm uppercase tracking-wide text-slate-500">Gruppstorlek</p>
+              <p>10–50 personer</p>
+            </div>
+            <div>
+              <p class="text-sm uppercase tracking-wide text-slate-500">Teknisk utrustning</p>
+              <p>Projektor, whiteboard, ljudsystem, videokonferens</p>
+            </div>
+            <div>
+              <p class="text-sm uppercase tracking-wide text-slate-500">Catering</p>
+              <p>Kaffepauser, lunch och middag varje dag</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Varför välja Belgrad -->
+      <div class="mt-8 md:mt-10 rounded-2xl border border-amber-300 bg-amber-50 p-6">
+        <h3 class="text-lg font-semibold text-slate-900">Varför välja Belgrad för er konferens?</h3>
+        <div class="mt-4 grid sm:grid-cols-2 gap-6 text-slate-800">
+          <div>
+            <p class="font-semibold">Kostnadseffektivt</p>
+            <p class="text-sm mt-1">Få mer för pengarna jämfört med andra europeiska städer. Högkvalitativa hotell och möteslokaler till konkurrenskraftiga priser.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Inspirerande miljö</p>
+            <p class="text-sm mt-1">En stad som kombinerar historia och modernitet. Perfekt för att skapa engagemang och nya perspektiv.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Närhet & tillgänglighet</p>
+            <p class="text-sm mt-1">Direktflyg från Stockholm. Centralt läge i Europa gör det enkelt för deltagare från olika länder.</p>
+          </div>
+          <div>
+            <p class="font-semibold">Teambuilding‑möjligheter</p>
+            <p class="text-sm mt-1">Rika kulturella upplevelser och aktiviteter som stärker sammanhållningen i teamet.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exempel på program -->
+      <div class="mt-8 md:mt-10 rounded-2xl border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-900">Exempel på program</h3>
+        <ol class="mt-6 space-y-6 text-slate-700">
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">1</span>
+            <div>
+              <p class="font-semibold">Dag 1 – Måndag: Ankomst & Kickoff</p>
+              <p class="mt-1">Ankomst på eftermiddagen, incheckning på hotellet. Kvällens kickoff‑middag med presentation av veckans program.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">2</span>
+            <div>
+              <p class="font-semibold">Dag 2–4: Konferensdagar</p>
+              <p class="mt-1">Heldagar i konferenslokalen med schemalagda sessioner. Inkluderar kaffepauser, luncher och middagar. Dag 3 inkluderar en teambuilding‑aktivitet på eftermiddagen.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-amber-400 text-slate-900 font-bold">3</span>
+            <div>
+              <p class="font-semibold">Dag 5 – Fredag: Avslutning</p>
+              <p class="mt-1">Avslutande session på förmiddagen. Båttur på Donau på eftermiddagen med avslutande galamiddag. Transfer till flygplatsen för kvällsflyg.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Callout CTA -->
+      <div class="mt-8 md:mt-10 rounded-2xl bg-amber-400/90 p-6 md:p-8 text-center text-slate-900">
+        <h3 class="text-2xl md:text-3xl font-extrabold">Boka er konferens idag</h3>
+        <p class="mt-2">Kontakta oss för en skräddarsydd offert anpassad efter era behov</p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a href="/contact?utm_source=paket_konferens&utm_medium=cta" class="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 font-semibold px-5 py-2.5 shadow hover:bg-slate-50">Begär offert</a>
+          <a href="/belgrad" class="inline-flex items-center justify-center rounded-xl border border-slate-900/20 bg-white/60 text-slate-900 font-semibold px-5 py-2.5 hover:bg-white">Tillbaka till Belgrad</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

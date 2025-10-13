@@ -9,6 +9,10 @@ export const headerData = {
           text: 'Företagsresor',
           href: getPermalink('/resor/foretagsresor'),
         },
+        {
+          text: 'Jahorina',
+          href: getPermalink('/resor/jahorina'),
+        },
       
         {
           text: 'Gruppresor',

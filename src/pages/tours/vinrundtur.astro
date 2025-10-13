@@ -1,0 +1,105 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Vinrundtur i Vojvodina – Sremski Karlovci & Novi Sad',
+  description: 'Upptäck Vojvodinas vingårdar: vinprovningar i Sremski Karlovci och besök i Novi Sad med Petrovaradin‑fästningen.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <section class="relative isolate">
+    <img src="/images/vojvodina.jpg" alt="Vingårdar i Vojvodina" class="h-[46vh] w-full object-cover" loading="eager" decoding="async" />
+    <div class="absolute inset-0 bg-slate-900/55"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-5xl mx-auto px-4">
+        <h1 class="text-white text-4xl md:text-5xl font-extrabold">Vinrundtur i Vojvodina</h1>
+        <p class="mt-2 text-white/90">Sremski Karlovci & Novi Sad – dagstur från Belgrad</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-10 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold text-slate-900">Smaker från Donaus sluttningar</h2>
+          <p class="mt-3 text-slate-700">Vojvodina är Serbiens vincentrum. I de historiska småstäderna Sremski Karlovci och Novi Sad kombineras traditionella vinkällare från 1700‑talet med moderna familjevingårdar. Turen passar både grupper och företag som vill ha en avkopplande dag med kultur och smak.</p>
+          <ul class="mt-4 space-y-2 text-slate-700">
+            <li class="flex gap-2"><Icon name="tabler:circle-check" class="mt-1 w-5 h-5 text-emerald-600" /> Två vinprovningar (4–6 viner per stopp)</li>
+            <li class="flex gap-2"><Icon name="tabler:circle-check" class="mt-1 w-5 h-5 text-emerald-600" /> Lunch på lokal konoba eller gårdsrestaurang</li>
+            <li class="flex gap-2"><Icon name="tabler:circle-check" class="mt-1 w-5 h-5 text-emerald-600" /> Guidning i Sremski Karlovci samt Novi Sad</li>
+            <li class="flex gap-2"><Icon name="tabler:circle-check" class="mt-1 w-5 h-5 text-emerald-600" /> Privat buss & transfer t/r Belgrad</li>
+          </ul>
+        </div>
+        <aside class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+          <h3 class="text-lg font-semibold text-slate-900">Praktisk info</h3>
+          <div class="mt-3 space-y-3 text-slate-700">
+            <p><span class="font-semibold">Längd:</span> ca 9–10 timmar</p>
+            <p><span class="font-semibold">Säsong:</span> Året runt</p>
+            <p><span class="font-semibold">Gruppstorlek:</span> 6–40 personer</p>
+            <p><span class="font-semibold">Avstånd:</span> ca 1 h 15 min från Belgrad</p>
+          </div>
+          <div class="mt-6">
+            <a href="/contact?utm_source=vinrundtur&utm_medium=cta" class="inline-flex items-center justify-center rounded-xl bg-amber-400 text-black font-semibold px-5 py-2.5 shadow hover:bg-amber-300">Begär offert</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wineries grid -->
+  <section class="py-6 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-xl md:text-2xl font-semibold text-slate-900">Vingårdar vi samarbetar med</h3>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { name: 'Kovačević Winery', img: '/images/vinogradi.jpg', desc: 'Modern familjevingård känd för sina cuvéer och mousserande viner.' },
+          { name: 'Bermet Karlovci Cellar', img: '/images/vin.webp', desc: 'Traditionell dessertvinsspecialist med historiska källare.' },
+          { name: 'Živanović Winery', img: '/images/vin2.webp', desc: 'Biodling + vin – husets bermet och honungsviner är favoriter.' },
+          { name: 'Vinarija Zvonko Bogdan', img: '/images/vojvodina.jpg', desc: 'Elegant anläggning nära Palićsjön med prisbelönta viner.' },
+          { name: 'Kiš Winery', img: '/images/landscape.webp', desc: 'Familjevineri berömt för sin Bermet och lokala druvor.' },
+          { name: 'Probus Winery', img: '/images/priroda.webp', desc: 'Mindre producent med fokus på kvalitet och hantverk.' },
+        ].map((w) => (
+          <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <img src={w.img} alt={w.name} class="h-44 w-full object-cover" loading="lazy" decoding="async" />
+            <div class="p-5">
+              <h4 class="text-lg font-semibold text-slate-900">{w.name}</h4>
+              <p class="mt-2 text-sm text-slate-700">{w.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Itinerary -->
+  <section class="py-6 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-xl md:text-2xl font-semibold text-slate-900">Dagens upplägg</h3>
+      <ol class="mt-4 space-y-4 text-slate-700">
+        <li><span class="font-semibold">08:00</span> – Avfärd från Belgrad</li>
+        <li><span class="font-semibold">09:30</span> – Sremski Karlovci: första vinprovningen i 1700‑talskällare</li>
+        <li><span class="font-semibold">12:00</span> – Lunch på gårdsrestaurang</li>
+        <li><span class="font-semibold">13:30</span> – Novi Sad: promenad och Petrovaradin‑fästningen</li>
+        <li><span class="font-semibold">15:00</span> – Andra vinprovningen på familjevingård</li>
+        <li><span class="font-semibold">16:30</span> – Avfärd mot Belgrad</li>
+        <li><span class="font-semibold">18:00</span> – Ankomst Belgrad</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-10 bg-amber-50 border-y border-amber-200">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900">Intresserad av en skräddarsydd vinrundtur?</h3>
+      <p class="mt-2 text-slate-700">Vi anpassar antal stopp, lunch, och logistik efter er grupp.</p>
+      <div class="mt-6">
+        <a href="/contact?utm_source=vinrundtur&utm_medium=cta_bottom" class="inline-flex items-center justify-center rounded-xl bg-slate-900 text-white font-semibold px-6 py-3 shadow hover:bg-slate-800">Begär offert</a>
+      </div>
+    </div>
+  </section>
+</Layout>
