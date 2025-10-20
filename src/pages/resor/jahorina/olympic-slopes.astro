@@ -9,7 +9,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="relative isolate">
-    <img src="/images/jahorina5.jpg" alt="Olympic Slopes på Jahorina" class="h-[45vh] w-full object-cover" loading="eager" decoding="async" />
+  <img src="/images/jahorina1.jpg" alt="Olympic Slopes på Jahorina" class="h-[45vh] w-full object-cover" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080" sizes="100vw" />
     <div class="absolute inset-0 bg-slate-900/55"></div>
     <div class="absolute inset-0 flex items-center">
       <div class="max-w-5xl mx-auto px-4">
@@ -59,10 +59,10 @@ const metadata = {
             '/images/jahorinaski.jpg',
             '/images/jahorina4.jpeg',
             '/images/jahorina8.jpg',
-            '/images/jahorina9.jpg',
+            '/images/jahorina7.jpg',
           ].map((src) => (
             <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <img src={src} alt="Jahorina" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
+              <img src={src} alt="Jahorina" class="h-56 w-full object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             </figure>
           ))}
         </div>

@@ -5,13 +5,7 @@ import { Icon } from 'astro-icon/components';
 const metadata = {
   title: 'Resor till Jahorina – enkelt, prisvärt och skräddarsytt',
   description: 'Modern skidort nära Sarajevo. Vi hjälper grupper och företag med boende, transfer, liftkort, guide och paket.',
-  openGraph: {
-    type: 'website',
-    images: [
-      { url: '/images/jahorinahero.jpeg', width: 1200, height: 628 },
-    ],
-  },
-  twitter: { cardType: 'summary_large_image' },
+
 };
 // UTM for on-page CTAs inspired by the provided mockup
 const UTM = '?utm_source=traveltojahorina&utm_medium=referral&utm_campaign=';
@@ -20,7 +14,7 @@ const UTM = '?utm_source=traveltojahorina&utm_medium=referral&utm_campaign=';
 <Layout metadata={metadata}>
   <!-- Full-bleed hero matching the mockup -->
   <section class="relative isolate">
-    <img src="/images/jahorinahero.jpeg" alt="Jahorina skidområde" class="h-[60vh] w-full object-cover" loading="eager" decoding="async" />
+  <img src="/images/jahorinahero.jpeg" alt="Jahorina skidområde" class="h-[60vh] w-full object-cover" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080" sizes="100vw" />
     <div class="absolute inset-0 bg-slate-900/55"></div>
     <div class="absolute inset-0 flex items-center">
       <div class="max-w-5xl mx-auto px-4 text-center">
@@ -52,7 +46,7 @@ const UTM = '?utm_source=traveltojahorina&utm_medium=referral&utm_campaign=';
             { title: 'De legendariska olympiska bergen', subtitle: 'Historiska OS-backarna från 1984', img: '/images/jahorina5.jpg', url: '/resor/jahorina/olympic-slopes' },
           ].map((card) => (
             <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <img src={card.img} alt={card.title} class="h-52 w-full object-cover" loading="lazy" decoding="async" />
+              <img src={card.img} alt={card.title} class="h-52 w-full object-cover" loading="lazy" decoding="async" width="1200" height="800" />
               <div class="p-5">
                 <h3 class="text-lg font-semibold text-slate-900">{card.title}</h3>
                 <p class="mt-1 text-slate-600 text-sm">{card.subtitle}</p>
@@ -113,7 +107,7 @@ const UTM = '?utm_source=traveltojahorina&utm_medium=referral&utm_campaign=';
 
   <!-- Après-ski hero block -->
   <section class="relative isolate">
-    <img src="/images/afterski.jpeg" alt="Après-ski och kulinariska upplevelser" class="h-[58vh] w-full object-cover" loading="lazy" decoding="async" />
+  <img src="/images/afterski.jpeg" alt="Après-ski och kulinariska upplevelser" class="h-[58vh] w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" sizes="100vw" />
     <div class="absolute inset-0 bg-slate-900/60"></div>
     <div class="absolute inset-0">
       <div class="max-w-6xl mx-auto h-full px-4 flex items-center">
@@ -167,12 +161,12 @@ const UTM = '?utm_source=traveltojahorina&utm_medium=referral&utm_campaign=';
           { title: 'Företag & konferens på snö', desc: 'Mötesrum nära backen + aktiviteter på berget.', img: '/images/jahorina7.jpg', utm: 'package_corporate' },
           { title: 'Familjeveckan', desc: 'Boende nära backe, skidskola och smidig hyrutrustning.', img: '/images/jahorina8.jpg', utm: 'package_family' },
           { title: 'Weekend med vänner', desc: '3 nätter, skidpass och after-ski – maximal tid i backen.', img: '/images/jahorina5.jpg', utm: 'package_weekend' },
-          { title: 'Säsongsstart (dec–jan)', desc: 'Bästa pris och mindre köer.', img: '/images/jahorina9.jpg', utm: 'package_early' },
+          { title: 'Säsongsstart (dec–jan)', desc: 'Bästa pris och mindre köer.', img: '/images/jahorina3.jpeg', utm: 'package_early' },
           { title: 'Skräddarsytt', desc: 'Vi anpassar efter budget, nivå och mål.', img: '/images/jahorina4.jpeg', utm: 'package_custom' },
           { title: 'City + Ski (Sarajevo)', desc: 'Kombinera pister med mat & kultur i Sarajevo.', img: '/images/jahorinaski.jpg', utm: 'package_cityski' },
         ].map((card) => (
           <article class="group overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <img src={card.img} alt={card.title} class="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform" loading="lazy" decoding="async" />
+            <img src={card.img} alt={card.title} class="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-5">
               <h3 class="text-lg font-semibold">{card.title}</h3>
               <p class="mt-1 text-slate-600 text-sm">{card.desc}</p>

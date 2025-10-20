@@ -9,7 +9,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="relative isolate">
-    <img src="/images/jahorinahero.jpeg" alt="Hotell i Jahorina" class="h-[40vh] w-full object-cover" loading="eager" decoding="async" />
+  <img src="/images/jahorinahero.jpeg" alt="Hotell i Jahorina" class="h-[40vh] w-full object-cover" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080" sizes="100vw" />
     <div class="absolute inset-0 bg-slate-900/60"></div>
     <div class="absolute inset-0 flex items-center">
       <div class="max-w-5xl mx-auto px-4">
@@ -54,7 +54,7 @@ const metadata = {
           bullets: ['Prisvärt alternativ', 'Stor lobby/bar', 'Utsikt över bergen']
         }].map((h) => (
           <article id={h.id} class="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-            <img src={h.img} alt={h.title} class="h-72 w-full object-cover" loading="lazy" decoding="async" />
+            <img src={h.img} alt={h.title} class="h-72 w-full object-cover" loading="lazy" decoding="async" width="1200" height="800" />
             <div class="p-6">
               <h2 class="text-2xl font-semibold text-slate-900">{h.title}</h2>
               <ul class="mt-3 list-disc list-inside text-slate-700 space-y-1">
