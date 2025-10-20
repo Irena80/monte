@@ -21,16 +21,9 @@ let selectedImage = images[0]; // Default to the first image
   <!-- Thumbnails -->
   <div class="thumbnails grid grid-cols-4 gap-4">
     {images.map((image) => (
-      <button
-        class="thumbnail border-2 border-transparent hover:border-indigo-500 rounded-lg"
-        onClick={() => (selectedImage = image)}
-      >
-        <img
-          src={image.src}
-          alt={image.alt}
-          class="w-full h-24 object-cover rounded-lg"
-        />
-      </button>
+      <a class="thumbnail border-2 border-transparent hover:border-indigo-500 rounded-lg" href={image.src}>
+        <img src={image.src} alt={image.alt} class="w-full h-24 object-cover rounded-lg" />
+      </a>
     ))}
   </div>
 </div>

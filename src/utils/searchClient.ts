@@ -26,7 +26,8 @@ export async function search(q: string): Promise<SearchItem[]> {
   const items = await loadIndex();
   // Try fuse for fuzziness if loaded
   if (!fuse && (await maybeLoadFuse())) {
-    fuse = new (window as any).Fuse(items, { keys: ['title', 'excerpt'], threshold: 0.4, ignoreLocation: true });
+    const Fuse = (await import('fuse.js')).default as any;
+    fuse = new Fuse(items, { keys: ['title', 'excerpt'], threshold: 0.4, ignoreLocation: true });
   }
   if (fuse) {
     return fuse.search(q).slice(0, 12).map((r: any) => r.item);
@@ -35,10 +36,9 @@ export async function search(q: string): Promise<SearchItem[]> {
 }
 
 async function maybeLoadFuse(): Promise<boolean> {
-  if ((window as any).Fuse) return true;
   try {
-    await import('https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js');
-    return !!(window as any).Fuse;
+    await import('fuse.js');
+    return true;
   } catch {
     return false;
   }

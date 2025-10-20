@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Astro check (re-run)",
+			"type": "shell",
+			"command": "npm run check:astro"
+		},
+		{
+			"label": "Astro check (re-run 2)",
+			"type": "shell",
+			"command": "npm run check:astro"
+		}
+	]
+}
