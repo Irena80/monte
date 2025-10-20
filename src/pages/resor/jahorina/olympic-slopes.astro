@@ -1,0 +1,72 @@
+---
+import Layout from '../../../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Olympic Slopes – Jahorina 1984',
+  description: 'Utforska de historiska OS-backarna på Jahorina: fakta, bästa nedfarterna och tips för dagens skidåkare.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="relative isolate">
+    <img src="/images/jahorina5.jpg" alt="Olympic Slopes på Jahorina" class="h-[45vh] w-full object-cover" loading="eager" decoding="async" />
+    <div class="absolute inset-0 bg-slate-900/55"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-5xl mx-auto px-4">
+        <h1 class="text-white text-4xl md:text-5xl font-extrabold">Olympic Slopes – Jahorina</h1>
+        <p class="mt-3 text-white/90 text-lg">Åk där OS-historien skrevs 1984 – moderniserade liftar och välpreparerade pister.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="md:col-span-2 space-y-4 text-slate-700 leading-relaxed">
+          <p>
+            Under vinter-OS i Sarajevo 1984 hölls de alpina damgrenarna på Jahorina. Idag är backarna
+            moderniserade med snökanoner och kvällsbelysning, men terrängen bär fortfarande den klassiska karaktären
+            som gjorde berget berömt.
+          </p>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Totalt ca 45–48 km pister, gott om röda/blåa nedfarter</li>
+            <li>Kvällsskidåkning på utvalda backar</li>
+            <li>Snabba stolliftar och gondol – kortare köer än många alpbyar</li>
+            <li>Nära Sarajevo – kombinera city & ski</li>
+          </ul>
+
+          <h2 class="text-2xl font-semibold text-slate-900 mt-6">Våra tips</h2>
+          <ol class="list-decimal list-inside space-y-2">
+            <li>Starta tidigt för orörd pist och minimal kö.</li>
+            <li>Testa kvällsskidåkningen – annan känsla, mjukare ljus.</li>
+            <li>Planera en dagsutflykt till Sarajevo för mat och kultur.</li>
+          </ol>
+        </article>
+
+        <aside class="md:col-span-1 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Offert & upplägg</h3>
+          <p class="mt-2 text-sm text-slate-700">Vi bygger paket med boende, liftkort, skidskola och transfer.</p>
+          <a href="/contact?utm_source=jahorina&utm_medium=referral&utm_campaign=olympic_slopes" class="mt-4 inline-flex items-center justify-center rounded-xl bg-amber-400 text-black font-semibold px-4 py-2 shadow hover:bg-amber-300">Begär offert</a>
+        </aside>
+      </div>
+
+      <div class="mt-10">
+        <h2 class="text-2xl font-semibold text-slate-900">Bildgalleri</h2>
+        <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            '/images/jahorina5.jpg',
+            '/images/jahorina7.jpg',
+            '/images/jahorinaski.jpg',
+            '/images/jahorina4.jpeg',
+            '/images/jahorina8.jpg',
+            '/images/jahorina9.jpg',
+          ].map((src) => (
+            <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <img src={src} alt="Jahorina" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
+            </figure>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

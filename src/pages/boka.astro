@@ -9,11 +9,7 @@ const metadata = {
   description: 'Boka konferensresa, gruppresa eller sportresa till Montenegro.',
 };
 
-// Back-link support: prefer ?from= query; fallback to Företagsresor
-const url = Astro.url;
-const fromParam = url.searchParams.get('from');
-const defaultBackHref = '/resor/foretagsresor';
-const backHref = fromParam && fromParam.startsWith('/') ? fromParam : defaultBackHref;
+// Removed back-link support and variables
 ---
 
 <Layout metadata={metadata}>
@@ -22,13 +18,7 @@ const backHref = fromParam && fromParam.startsWith('/') ? fromParam : defaultBac
     subtitle="Välj mellan salig utbud av redan paketerade helhetsupplevelser eller hör av er så tar vi fram skräddarsydda paket utifrån era behov."
   />
 
-  <!-- Explicit back navigation within the site -->
-  <nav class="max-w-5xl mx-auto px-4 -mt-3 mb-2">
-    <a id="back-link" href={backHref} class="inline-flex items-center gap-1 text-sm text-blue-700 hover:text-blue-900">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-      <span>Tillbaka</span>
-    </a>
-  </nav>
+  <!-- Back link removed per request -->
 
 <section class="py-6 sm:py-8">
   <div class="max-w-5xl mx-auto flex flex-col gap-10 sm:gap-12">
@@ -156,22 +146,28 @@ const backHref = fromParam && fromParam.startsWith('/') ? fromParam : defaultBac
   </section>
 </Layout>
 
-<!-- Enhance back link with same-origin referrer when no ?from is present -->
+<!-- Ensure browser back goes to index if user arrived from outside the site or with no referrer -->
 <script>
   (function () {
     try {
-      const el = document.getElementById('back-link');
-      if (!(el instanceof HTMLAnchorElement)) return;
       const params = new URLSearchParams(window.location.search);
-      if (params.has('from')) return; // query param takes precedence
+      // If a specific internal origin is provided via ?from=, keep default back behavior
+      if (params.has('from')) return;
       const ref = document.referrer;
-      if (!ref) return;
-      const refUrl = new URL(ref);
-      if (refUrl.origin === window.location.origin) {
-        el.href = refUrl.pathname + refUrl.search + refUrl.hash;
+      let sameOrigin = false;
+      if (ref) {
+        try { sameOrigin = new URL(ref).origin === window.location.origin; } catch { /* ignore parse errors */ }
+      }
+      if (!sameOrigin) {
+        // Create a history entry so back triggers popstate; then route to home
+        history.pushState({ redirectBackToHome: true }, '', window.location.href);
+        window.addEventListener('popstate', function () {
+          window.location.href = '/';
+        });
       }
     } catch {
       // noop
     }
   })();
-</script>
+  </script>
+<!-- Back-link script removed -->

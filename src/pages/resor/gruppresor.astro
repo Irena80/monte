@@ -259,3 +259,27 @@ const offers = [
     }
   }
 </style>
+
+<script>
+  (function () {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      // If an explicit internal origin is provided via ?from=, keep default behavior
+      if (params.has('from')) return;
+      const ref = document.referrer;
+      let sameOrigin = false;
+      if (ref) {
+        try { sameOrigin = new URL(ref).origin === window.location.origin; } catch { /* ignore parse errors */ }
+      }
+      if (!sameOrigin) {
+        // Ensure that pressing the browser back button returns to index instead of leaving the site
+        history.pushState({ redirectBackToHome: true }, '', window.location.href);
+        window.addEventListener('popstate', function () {
+          window.location.href = '/';
+        });
+      }
+    } catch {
+      // noop
+    }
+  })();
+</script>

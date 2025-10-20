@@ -5,6 +5,13 @@ import { Icon } from 'astro-icon/components';
 const metadata = {
   title: 'Resor till Jahorina – enkelt, prisvärt och skräddarsytt',
   description: 'Modern skidort nära Sarajevo. Vi hjälper grupper och företag med boende, transfer, liftkort, guide och paket.',
+  openGraph: {
+    type: 'website',
+    images: [
+      { url: '/images/jahorinahero.jpeg', width: 1200, height: 628 },
+    ],
+  },
+  twitter: { cardType: 'summary_large_image' },
 };
 // UTM for on-page CTAs inspired by the provided mockup
 const UTM = '?utm_source=traveltojahorina&utm_medium=referral&utm_campaign=';
@@ -41,15 +48,15 @@ const UTM = '?utm_source=traveltojahorina&utm_medium=referral&utm_campaign=';
         <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 mb-5">Boende & Faciliteter</h2>
         <div class="grid sm:grid-cols-2 gap-6">
           {[
-            { title: 'Hotel Termag', subtitle: 'Spa & Wellness vid backen', img: '/images/jahorina4.jpeg', utm: 'termag_learn' },
-            { title: 'Olympic Slopes', subtitle: 'Historiska OS-backarna från 1984', img: '/images/jahorina5.jpg', utm: 'slopes_learn' },
+            { title: 'Utvalda hotell', subtitle: 'Spa & Wellness vid backen', img: '/images/jahorina4.jpeg', url: '/resor/jahorina/hotell' },
+            { title: 'De legendariska olympiska bergen', subtitle: 'Historiska OS-backarna från 1984', img: '/images/jahorina5.jpg', url: '/resor/jahorina/olympic-slopes' },
           ].map((card) => (
             <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
               <img src={card.img} alt={card.title} class="h-52 w-full object-cover" loading="lazy" decoding="async" />
               <div class="p-5">
                 <h3 class="text-lg font-semibold text-slate-900">{card.title}</h3>
                 <p class="mt-1 text-slate-600 text-sm">{card.subtitle}</p>
-                <a href={'/contact' + UTM + card.utm} class="mt-3 inline-block text-sm font-semibold text-slate-700 hover:underline">Läs mer »</a>
+                <a href={card.url} class="mt-3 inline-block text-sm font-semibold text-slate-700 hover:underline">Läs mer »</a>
               </div>
             </article>
           ))}

@@ -9,10 +9,7 @@ export const headerData = {
           text: 'Företagsresor',
           href: getPermalink('/resor/foretagsresor'),
         },
-        {
-          text: 'Jahorina',
-          href: getPermalink('/resor/jahorina'),
-        },
+      
       
         {
           text: 'Gruppresor',
@@ -34,8 +31,12 @@ export const headerData = {
        
         
         {
-          text: 'Andra destionationer',
+          text: 'Utvalt Belgrad',
           href: getPermalink('/belgrad'),
+        },
+          {
+          text: ' Utvalt Jahorina',
+          href: getPermalink('/resor/jahorina'),
         },
       
       

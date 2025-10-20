@@ -1,0 +1,78 @@
+---
+import Layout from '../../../layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Utvalda hotell i Jahorina – våra tips',
+  description: 'Våra rekommenderade hotell i Jahorina: lägenheter, ski-in/ski-out och spa – alla nära backarna.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="relative isolate">
+    <img src="/images/jahorinahero.jpeg" alt="Hotell i Jahorina" class="h-[40vh] w-full object-cover" loading="eager" decoding="async" />
+    <div class="absolute inset-0 bg-slate-900/60"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-5xl mx-auto px-4">
+        <h1 class="text-white text-4xl md:text-5xl font-extrabold">Utvalda hotell i Jahorina</h1>
+        <p class="mt-3 text-white/90 text-lg">Boenden vi gärna arbetar med – bra lägen, standard och service.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <nav class="flex flex-wrap gap-3 text-sm">
+        <a href="#lavina" class="text-blue-700 hover:underline">Hotel Lavina</a>
+        <span class="text-slate-400">•</span>
+        <a href="#vucko" class="text-blue-700 hover:underline">Aparthotel Vučko</a>
+        <span class="text-slate-400">•</span>
+        <a href="#rajska" class="text-blue-700 hover:underline">Rajska Dolina Resort</a>
+        <span class="text-slate-400">•</span>
+        <a href="#bistrica" class="text-blue-700 hover:underline">Hotel Bistrica</a>
+      </nav>
+
+      <div class="mt-8 grid gap-8">
+        {[{
+          id: 'lavina',
+          title: 'Hotel Lavina',
+          img: '/images/jahorina1.jpg',
+          bullets: ['4★ med spa & inomhuspool', '200–300 m till gondol', 'Bra frukost och restaurang']
+        },{
+          id: 'vucko',
+          title: 'Aparthotel Vučko',
+          img: '/images/jahorina2.jpeg',
+          bullets: ['Rymliga lägenheter', 'Wellness & gym', 'Populärt för familjer och grupper']
+        },{
+          id: 'rajska',
+          title: 'Rajska Dolina Resort',
+          img: '/images/jahorina3.jpeg',
+          bullets: ['Ski-in/ski-out-läge', 'Traditionell fjällkänsla', 'Restaurang & bastu']
+        },{
+          id: 'bistrica',
+          title: 'Hotel Bistrica',
+          img: '/images/jahorina7.jpg',
+          bullets: ['Prisvärt alternativ', 'Stor lobby/bar', 'Utsikt över bergen']
+        }].map((h) => (
+          <article id={h.id} class="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+            <img src={h.img} alt={h.title} class="h-72 w-full object-cover" loading="lazy" decoding="async" />
+            <div class="p-6">
+              <h2 class="text-2xl font-semibold text-slate-900">{h.title}</h2>
+              <ul class="mt-3 list-disc list-inside text-slate-700 space-y-1">
+                {h.bullets.map((b) => (<li>{b}</li>))}
+              </ul>
+              <div class="mt-4 flex gap-3">
+                <a href="/contact?utm_source=jahorina_hotels&utm_medium=referral&utm_campaign=hotel_inquiry" class="rounded-xl bg-amber-400 text-black px-4 py-2 text-sm font-semibold hover:bg-amber-300">Begär offert</a>
+                <a href="/resor/jahorina" class="rounded-xl bg-slate-100 text-slate-800 px-4 py-2 text-sm font-semibold hover:bg-slate-200">Tillbaka till Jahorina</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-10 rounded-2xl bg-slate-50 border border-slate-200 p-6">
+        <h3 class="text-lg font-semibold text-slate-900">Tips</h3>
+        <p class="mt-2 text-slate-700">Reser ni 12 personer eller fler? Vi har ofta bättre grupppriser via våra lokala partners. Berätta datum, antal och önskad standard så återkommer vi med förslag inom 48 timmar.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
