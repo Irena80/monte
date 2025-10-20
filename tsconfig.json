@@ -9,5 +9,10 @@
     }
   },
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist/"]
+  "exclude": [
+    "dist/",
+    "src/pages/**/_*",
+    "src/pages/**/** copy.astro",
+    "src/pages/**/copy/**"
+  ]
 }

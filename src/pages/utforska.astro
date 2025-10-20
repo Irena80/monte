@@ -1,19 +1,12 @@
 ---
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/utforska.astro
 import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
 import TitleBlock from '~/components/TitleBlock.astro';
-import ComponentLeft from '~/components/widgets/ComponentLeft.astro';
-import ComponentRight from '~/components/widgets/ComponentRight.astro';
 import DestinationCard from '~/components/DestinationCard.astro';
-import FeatureItem from '~/components/FeatureItem.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import FlexCard from '~/components/FlexCard.astro';
 const metadata = {
   title: 'Utforska',
@@ -108,7 +101,10 @@ image={{ src: '~/assets/images/petrovac.png', alt: 'AstroWind Hero Image' }}
 
   <!-- Add space between image and title -->
 <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-  <br><TitleBlock title="Upptäck kusten" class="mb-8"/>
+  <br>
+  <div class="mb-8">
+    <TitleBlock title="Upptäck kusten" />
+  </div>
  <br> 
 
  <div class="relative m-auto max-w-5xl">
@@ -262,7 +258,10 @@ image={{ src: '~/assets/images/petrovac.png', alt: 'AstroWind Hero Image' }}
   </div>
 
   <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-    <br><TitleBlock title="Upptäck kusten" class="mb-8"/>
+    <br>
+    <div class="mb-8">
+      <TitleBlock title="Upptäck kusten" />
+    </div>
    <br> 
   
    <div class="relative m-auto max-w-5xl">
