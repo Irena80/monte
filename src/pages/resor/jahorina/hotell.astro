@@ -13,7 +13,7 @@ const metadata = {
     <div class="absolute inset-0 bg-slate-900/60"></div>
     <div class="absolute inset-0 flex items-center">
       <div class="max-w-5xl mx-auto px-4">
-        <h1 class="text-white text-4xl md:text-5xl font-extrabold">Utvalda hotell i Jahorina</h1>
+        <h1 class="text-white text-4xl md:text-5xl font-extrabold">De bästa hotellenpå Jahorina</h1>
         <p class="mt-3 text-white/90 text-lg">Boenden vi gärna arbetar med – bra lägen, standard och service.</p>
       </div>
     </div>
@@ -31,38 +31,62 @@ const metadata = {
         <a href="#bistrica" class="text-blue-700 hover:underline">Hotel Bistrica</a>
       </nav>
 
-      <div class="mt-8 grid gap-8">
+  <div class="mt-8 grid gap-10">
         {[{
           id: 'lavina',
-          title: 'Hotel Lavina',
-          img: '/images/jahorina1.jpg',
-          bullets: ['4★ med spa & inomhuspool', '200–300 m till gondol', 'Bra frukost och restaurang']
-        },{
-          id: 'vucko',
-          title: 'Aparthotel Vučko',
-          img: '/images/jahorina2.jpeg',
-          bullets: ['Rymliga lägenheter', 'Wellness & gym', 'Populärt för familjer och grupper']
-        },{
-          id: 'rajska',
-          title: 'Rajska Dolina Resort',
-          img: '/images/jahorina3.jpeg',
-          bullets: ['Ski-in/ski-out-läge', 'Traditionell fjällkänsla', 'Restaurang & bastu']
+          title: 'Hotel Poljice',
+          stars: 4,
+          popular: true,
+          img: '/images/poljice.webp',
+          amenities: ['Gratis WiFi', 'Restaurang', 'Spa & Pool']
         },{
           id: 'bistrica',
-          title: 'Hotel Bistrica',
-          img: '/images/jahorina7.jpg',
-          bullets: ['Prisvärt alternativ', 'Stor lobby/bar', 'Utsikt över bergen']
+          title: 'Hotel Termag',
+          stars: 5,
+          popular: false,
+          img: '/images/termag2.jpg',
+          amenities: ['Gratis WiFi', 'Restaurang', 'Bar & Lounge']
+        },{
+          id: 'vucko',
+          title: 'Hotel Vučko',
+          stars: 4,
+          popular: false,
+          img: '/images/vucko5.jpg',
+          amenities: ['Gratis WiFi', 'Kokvrå', 'Kafé']
         }].map((h) => (
-          <article id={h.id} class="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-            <img src={h.img} alt={h.title} class="h-72 w-full object-cover" loading="lazy" decoding="async" width="1200" height="800" />
-            <div class="p-6">
-              <h2 class="text-2xl font-semibold text-slate-900">{h.title}</h2>
-              <ul class="mt-3 list-disc list-inside text-slate-700 space-y-1">
-                {h.bullets.map((b) => (<li>{b}</li>))}
-              </ul>
-              <div class="mt-4 flex gap-3">
-                <a href="/contact?utm_source=jahorina_hotels&utm_medium=referral&utm_campaign=hotel_inquiry" class="rounded-xl bg-amber-400 text-black px-4 py-2 text-sm font-semibold hover:bg-amber-300">Begär offert</a>
-                <a href="/resor/jahorina" class="rounded-xl bg-slate-100 text-slate-800 px-4 py-2 text-sm font-semibold hover:bg-slate-200">Tillbaka till Jahorina</a>
+          <article id={h.id} class="rounded-3xl border border-slate-200 ring-1 ring-slate-200/60 bg-white shadow-lg overflow-hidden">
+            <div class="md:flex md:items-stretch">
+              <div class="md:w-3/5 relative">
+                {h.popular && (
+                  <div class="absolute left-3 top-3 z-10">
+                    <span class="inline-block rounded-full bg-amber-400 text-slate-900 text-xs font-semibold px-3 py-1 shadow">Mest populärt</span>
+                  </div>
+                )}
+                <img src={h.img} alt={h.title} class="h-72 w-full md:h-[22rem] object-cover md:rounded-l-3xl" loading="lazy" decoding="async" width="1200" height="800" />
+              </div>
+              <div class="md:w-2/5 flex flex-col">
+                <div class="p-8 grow">
+                  <h2 class="text-3xl font-semibold text-slate-900 flex items-center gap-2">
+                    {h.title}
+                    <span class="ml-1 text-amber-400 text-lg" aria-label={`Betyg ${h.stars} av 5`}>
+                      {'★★★★★'.slice(0, h.stars)}<span class="text-slate-300">{'★★★★★'.slice(h.stars)}</span>
+                    </span>
+                  </h2>
+                  <p class="mt-3 text-slate-600 text-base">Lyxigt spa- och wellnesshotell med direktåtkomst till backarna. Moderna rum och lägenheter – nära gondolen.</p>
+                  <div class="mt-5 grid grid-cols-2 gap-x-8 gap-y-3 text-slate-700 text-sm">
+                    {h.amenities.map((a) => (
+                      <div class="flex items-center gap-2">
+                        <span class="inline-block h-2 w-2 rounded-full bg-slate-300"></span>
+                        <span>{a}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div class="border-t border-slate-200 p-8 flex items-center justify-end">
+                  <a href={`/boka?utm_source=jahorina_hotell&utm_medium=referral&utm_campaign=book_now&hotel=${encodeURIComponent(h.title)}`} class="rounded-full bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold px-6 py-3 shadow">
+                    Boka nu
+                  </a>
+                </div>
               </div>
             </div>
           </article>
@@ -70,8 +94,11 @@ const metadata = {
       </div>
 
       <div class="mt-10 rounded-2xl bg-slate-50 border border-slate-200 p-6">
-        <h3 class="text-lg font-semibold text-slate-900">Tips</h3>
-        <p class="mt-2 text-slate-700">Reser ni 12 personer eller fler? Vi har ofta bättre grupppriser via våra lokala partners. Berätta datum, antal och önskad standard så återkommer vi med förslag inom 48 timmar.</p>
+        <h3 class="text-2xl font-bold text-slate-900 text-center">Behöver du hjälp att välja?</h3>
+        <p class="mt-2 text-slate-700 text-center max-w-2xl mx-auto">Våra reseexperter hjälper dig hitta det perfekta boendet för er grupp eller företag. Berätta datum, antal och önskad standard så återkommer vi med ett förslag.</p>
+        <div class="mt-5 flex justify-center">
+          <a href="/contact?utm_source=jahorina_hotell&utm_medium=referral&utm_campaign=help_choose" class="rounded-full bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold px-5 py-2.5 shadow">Kontakta oss</a>
+        </div>
       </div>
     </div>
   </section>
