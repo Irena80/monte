@@ -11,18 +11,34 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Full-bleed hero matching Företagsresor -->
+  <section data-section="hero" class="relative w-full h-[70vh] min-h-[560px] overflow-hidden">
+    <!-- Background image -->
+    <img
+      src="/images/Irena.jahta.png"
+      alt="Irena på jahta"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <!-- Dark overlay for readability -->
+    <div class="absolute inset-0 bg-black/35"></div>
+    <!-- Bottom fade to white -->
+    <div class="absolute inset-x-0 bottom-0 h-56 sm:h-64 bg-gradient-to-b from-transparent to-white"></div>
 
-  <section data-section="hero" class="relative w-full min-h-[420px] sm:min-h-[520px] flex items-end overflow-hidden">
-    <picture class="absolute inset-0 w-full h-full">
-      <source srcset="/images/Irena.jahta.png" type="image/png" />
-      <img src="/images/Irena.jahta.png" alt="Irena på jahta" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
-    </picture>
-    <!-- Full-image dark overlay for readability -->
-  <div class="absolute inset-0 bg-black/30"></div>
-  <div class="relative z-10 w-full max-w-6xl mx-auto px-4 pb-14 sm:pb-20">
-      <h1 class="font-extrabold tracking-tight text-white text-4xl sm:text-5xl md:text-6xl leading-[1.05]">Om Mediteranobay</h1>
-  <p class="mt-4 text-base sm:text-lg md:text-xl text-white/95 drop-shadow leading-relaxed max-w-2xl">Vi skapar aktiva och meningsfulla grupp- och företagsresor i Montenegro – med lokal närvaro, hållbara val och upplevelser som bygger relationer.</p>
+    <!-- Centered content -->
+    <div class="relative h-full flex items-center justify-center px-6 z-10">
+      <div class="w-full max-w-3xl text-center">
+        <h1 class="text-white text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] drop-shadow-[0_6px_22px_rgba(0,0,0,0.55)]">Om MediteranoBay</h1>
+        <p class="mt-3 text-white/90 text-[0.95rem] sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+          Vi skapar aktiva och meningsfulla grupp- och företagsresor i Montenegro – med lokal närvaro, hållbara val och upplevelser som bygger relationer.
+        </p>
+        <div class="mt-6 flex items-center justify-center">
+          <a href="/contact" class="inline-flex items-center rounded bg-slate-900/90 hover:bg-slate-900 text-white px-5 py-2.5 text-sm font-semibold shadow focus:outline-none focus:ring-2 focus:ring-white/40">
+            Kontakta oss
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -35,8 +51,8 @@ const metadata = {
       subtitle="Vi erbjuder aktiva upplevelseresor för grupper och företag till Montenegro – landet där kusten och bergen möts. Vårt mål är att skapa unika reseupplägg som kombinerar den dramatiska naturen, den orörda vildmarken och den historiska kusten – allt inom nära räckhåll."
     />
   </div>
-  <!-- Sea Image Divider -->
-  <section data-section="divider-sea" class="relative w-full h-60 sm:h-72 lg:h-[400px] overflow-hidden">
+  <!-- Sea Image Divider (larger for visibility) -->
+  <section data-section="divider-sea" class="relative w-full h-72 sm:h-96 lg:h-[520px] overflow-hidden">
     <picture class="absolute inset-0 w-full h-full">
       <source srcset="/images/jedrenje3.webp" type="image/webp" />
       <img

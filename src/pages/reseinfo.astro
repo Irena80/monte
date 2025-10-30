@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
  
 import Features from '~/components/widgets/Features.astro';
@@ -18,37 +17,39 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Full-bleed hero matching Företagsresor -->
+  <section data-section="hero" class="relative w-full h-[70vh] min-h-[560px] overflow-hidden">
+    <!-- Background image -->
+    <img
+      src="/images/Tivat.webp"
+      alt="Tivat och Montenegros kust"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <!-- Dark overlay for readability -->
+    <div class="absolute inset-0 bg-black/35"></div>
+    <!-- Bottom fade to white -->
+    <div class="absolute inset-x-0 bottom-0 h-56 sm:h-64 bg-gradient-to-b from-transparent to-white"></div>
 
-  <Hero
-    tagline="Reseinfo"
-    actions={[
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Kontakta oss',
-        href: 'contact',
-        icon: 'tabler:phone',
-      },
-      
-    ]}
-    image={{
-      src: '/images/Tivat.webp',
-      alt: 'Caos Image',
-    }}
-  >
-    <Fragment slot="title">
-Anvädbar info <span class="hidden sm:inline"></span>  om <span
-  class="text-blue-900 dark:text-white highlight">Montenegro</span
-      >
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Här framgår  <span class="font-semibold">relevant information</span> inför din resa.
-    </Fragment>
-
-  
-  </Hero>
+    <!-- Centered content -->
+    <div class="relative h-full flex items-center justify-center px-6 z-10">
+      <div class="w-full max-w-3xl text-center">
+        <h1 class="text-white text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] drop-shadow-[0_6px_22px_rgba(0,0,0,0.55)]">
+          Reseinfo om <br />
+          <span class="text-white">Montenegro</span>
+        </h1>
+        <p class="mt-3 text-white/90 text-[0.95rem] sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+          Användbar information inför din resa: klimat, flyg, praktiska tips och mer.
+        </p>
+        <div class="mt-6 flex items-center justify-center">
+          <a href="/contact" class="inline-flex items-center rounded bg-slate-900/90 hover:bg-slate-900 text-white px-5 py-2.5 text-sm font-semibold shadow focus:outline-none focus:ring-2 focus:ring-white/40">
+            Kontakta oss
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 

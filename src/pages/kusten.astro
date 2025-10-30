@@ -5,35 +5,42 @@ import { kustDestinations } from '~/data/kustenDestinations';
 
   
 <Layout metadata={{ title: 'Kusten' }}>
-  <!-- Hero Section with full-bleed video -->
-  <section class="relative w-full min-h-[520px] sm:min-h-[560px] md:min-h-[640px] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-        <source src="/videos/vildamng.webm" type="video/webm" />
-        <source src="/videos/vildamng.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/65 z-10"></div>
-    <div class="relative z-20 px-4 w-full max-w-4xl text-center">
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]">
-        Upptäck <span class="text-amber-300 md:text-amber-500">kontrasternas</span> land
-      </h1>
-      <p class="text-lg md:text-2xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-        Upplev kusten året runt – äventyr, natur och kultur för den aktiva och nyfikna resenären.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="/boka" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold bg-white/15 hover:bg-white/25 text-white backdrop-blur-sm border border-white/20 shadow transition text-lg">
-          Boka
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-        </a>
-        <a href="/resor/gruppresor" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/15 shadow transition text-lg">
-          Gruppresor
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-        </a>
+  <!-- Hero Section matching Aktiviteter: full-bleed video, overlay, white bottom gradient, centered text -->
+  <section data-section="hero" class="relative w-full h-[70vh] min-h-[560px] overflow-hidden">
+    <!-- Background video -->
+    <video
+      class="absolute inset-0 w-full h-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/images/hero-image.png"
+      aria-hidden="true"
+    >
+      <source src="/videos/vildamng.webm" type="video/webm" />
+      <source src="/videos/vildamng.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <!-- Dark overlay for readability -->
+    <div class="absolute inset-0 bg-black/35"></div>
+    <!-- Bottom fade to white -->
+    <div class="absolute inset-x-0 bottom-0 h-56 sm:h-64 bg-gradient-to-b from-transparent to-white"></div>
+
+    <!-- Centered content -->
+    <div class="relative h-full flex items-center justify-center px-6 z-10">
+      <div class="w-full max-w-3xl text-center">
+        <h1 class="text-white text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] drop-shadow-[0_6px_22px_rgba(0,0,0,0.55)]">
+          Kusten i Montenegro
+        </h1>
+        <p class="mt-3 text-white/90 text-[0.95rem] sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+          Året runt‑upplevelser vid Adriatiska havet – segling, stränder, kultur och kulinariska pärlor.
+        </p>
+        <div class="mt-6 flex items-center justify-center gap-3">
+          <a href="/boka" class="inline-flex items-center rounded bg-slate-900/90 hover:bg-slate-900 text-white px-5 py-2.5 text-sm font-semibold shadow focus:outline-none focus:ring-2 focus:ring-white/40">Se resepaket</a>
+          <a href="/contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded text-white/95 ring-1 ring-white/35 hover:bg-white/10 transition text-sm font-semibold">Kontakta oss</a>
+        </div>
       </div>
-      <style>
-        @media (prefers-reduced-motion: reduce){ section[data-reduced-motion] video { display:none; } }
-      </style>
     </div>
   </section>
 
