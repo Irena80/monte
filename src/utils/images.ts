@@ -3,9 +3,23 @@ import type { ImageMetadata } from 'astro';
 import type { OpenGraph } from '@astrolib/seo';
 
 const load = async function () {
-  let images: Record<string, () => Promise<unknown>> | undefined = undefined;
+  // Use a static literal glob (Vite requires literals) and normalize keys
+  // Eager import ensures metadata is available at render time (avoids dynamic import edge-cases)
+  let images: Record<string, ImageMetadata> = {};
   try {
-    images = import.meta.glob('~/assets/images/**/*.{jpeg,jpg,png,tiff,webp,gif,svg,JPEG,JPG,PNG,TIFF,WEBP,GIF,SVG}');
+    const base = import.meta.glob(
+      '/src/assets/images/**/*.{jpeg,jpg,png,tiff,webp,gif,svg,JPEG,JPG,PNG,TIFF,WEBP,GIF,SVG}',
+      { eager: true, import: 'default' }
+    ) as Record<string, ImageMetadata>;
+
+    const normalized: Record<string, ImageMetadata> = {};
+    Object.entries(base).forEach(([key, meta]) => {
+      normalized[key] = meta;
+      // Also support alias-form lookups using '~/assets/images/...'
+      const aliasKey = key.replace('/src/', '~/');
+      normalized[aliasKey] = meta;
+    });
+    images = normalized;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     // continue regardless of error
@@ -13,7 +27,7 @@ const load = async function () {
   return images;
 };
 
-let _images: Record<string, () => Promise<unknown>> | undefined = undefined;
+let _images: Record<string, ImageMetadata> | undefined = undefined;
 
 /** */
 export const fetchLocalImages = async () => {
@@ -41,11 +55,17 @@ export const findImage = async (
   }
 
   const images = await fetchLocalImages();
+  // Primary key resolution (alias -> absolute src path)
   const key = imagePath.replace('~/', '/src/');
+  // Fallback in case glob keys retained alias-form
+  const altKey = imagePath;
 
-  return images && typeof images[key] === 'function'
-    ? ((await images[key]()) as { default: ImageMetadata })['default']
-    : null;
+  if (images) {
+    const meta = images[key] || images[altKey];
+    if (meta) return meta;
+  }
+
+  return null;
 };
 
 /** */

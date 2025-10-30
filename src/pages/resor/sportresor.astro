@@ -2,10 +2,7 @@
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/resor/sportresor.astro
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 
 const metadata = {
   title: 'Sportresor',
@@ -14,26 +11,35 @@ const metadata = {
 
 <Layout metadata={metadata}>
  
-  
-  <!-- Hero2 Widget ******************* -->
-  <Hero
-    tagline="Aktiva sportresor i Montenegro"
-    image={{
-      src: '~/assets/images/zipline.webp',
-      alt: 'Caos Image',
-    }}
-    actions={[
-      { text: 'Kontakta oss', icon: 'tabler:run', href: '/contact' },
-    ]}
-  >
-    <Fragment slot="title">
-      Sportresor<span class="hidden sm:inline"> </span> <span class="text-accent dark:text-white highlight"></span>
-    </Fragment>
+  <!-- Full-bleed hero like Företagsresor -->
+  <section data-section="hero" class="relative w-full h-[86vh] min-h-[640px] overflow-hidden">
+    <img
+      src="/images/zipline.webp"
+      alt="Aktiva sportresor i Montenegro"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent to-white"></div>
 
-    <Fragment slot="subtitle">
-      Intresserad av fotbollsläger eller spela tennis i solen med klubben? Är ni ett gäng spelare som spelar och är intresserade av att åka på sportresa tillsammans. Spela på förmiddagen, ta ett dopp på eftermiddagen och ät gott på kvällen. 
-    </Fragment>
-  </Hero>
+    <div class="relative h-full flex items-center justify-center px-6 z-10">
+      <div class="w-full max-w-3xl text-center">
+        <h1 class="text-white text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] drop-shadow-[0_6px_22px_rgba(0,0,0,0.55)]">
+          Sportresor till <br />
+          <span class="text-white">Montenegro</span>
+        </h1>
+        <p class="mt-3 text-white/90 text-[0.95rem] sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+          Aktiva resor för lag, klubbar och grupper året runt – kombinera träning, natur och hav
+        </p>
+        <div class="mt-6 flex items-center justify-center">
+          <a href="#kampanjer" class="inline-flex items-center rounded bg-slate-900/90 hover:bg-slate-900 text-white px-5 py-2.5 text-sm font-semibold shadow focus:outline-none focus:ring-2 focus:ring-white/40">
+            Se sportpaket
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Content Widget **************** -->
   <Content
@@ -102,7 +108,7 @@ const metadata = {
       
     ]}
     image={{
-      src: '~/assets/images/cykla.jpg',
+      src: '/images/cykla.jpg',
       alt: 'Colorful Image',
       loading: 'eager',
     }}
@@ -204,7 +210,7 @@ const metadata = {
     
     ]}
     image={{
-      src: '~/assets/images/sailing.jpg',
+      src: '/images/sailing.jpg',
       alt: 'Colorful Image',
       loading: 'eager',
     }}
@@ -277,7 +283,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: '~/assets/images/klättring.jpg',
+      src: '/images/klättring.jpg',
       alt: 'Colorful Image',
       loading: 'eager',
     }}
@@ -303,113 +309,115 @@ const metadata = {
   </Content>
 
   <!-- Aktuella kampanjer / Erbjudanden för sportresor -->
-  <section class="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-8 mt-8 md:mt-20">
-    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
-      <div class="max-w-2xl">
-        <p class="text-[11px] tracking-[0.15em] font-semibold text-amber-600 mb-3 uppercase">Aktuella kampanjer</p>
-  <h2 class="text-3xl md:text-5xl font-semibold md:font-bold tracking-tight text-slate-900 dark:text-white leading-tight">Sportresor för alla årstider</h2>
-        <p class="mt-4 text-slate-600 dark:text-slate-300 text-base md:text-lg max-w-xl">
-          Exklusivt utvalda träningsanläggningar & upplevelser med tidsbegränsade rabatter. Perfekt för lag och grupper som vill kombinera kvalitet, klimat och professionella faciliteter.
-        </p>
-      </div>
-      <div class="flex md:pt-4">
-        <a href="/contact" class="inline-flex items-center rounded-full bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-8 h-12 text-sm font-medium shadow-sm hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900 transition">
-          Resepaket
-          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+  <section id="kampanjer" class="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-8 mt-8 md:mt-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-[11px] tracking-[0.15em] font-semibold text-amber-600 mb-3 uppercase">Aktuella kampanjer</p>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">Sportresor för alla årstider</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-300 text-base md:text-lg">
+        Exklusivt utvalda träningsanläggningar & upplevelser med tidsbegränsade rabatter. Perfekt för lag och grupper som vill kombinera kvalitet, klimat och professionella faciliteter.
+      </p>
     </div>
-    <div class="mt-12 grid gap-10 md:gap-14 md:grid-cols-2 xl:grid-cols-3">
-      <!-- Offer Card 1 -->
-      <a href="/resor/sportresor/hostcamp" class="group flex flex-col focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-xl">
-        <div class="aspect-[16/11] w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-200/60 dark:ring-slate-700/70">
-          <img src="/images/yoga.jpg" alt="Yoga vid havet under höstcamp" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"/>
+
+    <div class="mt-12 grid gap-8 md:gap-10 md:grid-cols-2 xl:grid-cols-3">
+      <!-- Card 1: Höstcamp -->
+      <div class="rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-sm">
+        <div class="aspect-[16/10] w-full overflow-hidden bg-slate-100">
+          <img src="/images/yoga.jpg" alt="Yoga vid havet under höstcamp" loading="lazy" class="h-full w-full object-cover"/>
         </div>
-        <div class="mt-5 flex-1 flex flex-col">
-          <h3 class="text-sm font-semibold tracking-wider text-slate-900 dark:text-white leading-5">
-            HÖSTCAMP: yoga & återhämtning
-          </h3>
-          <p class="mt-3 text-[13px] leading-5 text-slate-700 dark:text-slate-300">
-            Luštica Bay <br/> Montenegro
-          </p>
+        <div class="p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Höstcamp: Yoga & Återhämtning</h3>
+          <p class="mt-1 text-sm text-slate-500">Luštica Bay, Montenegro</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>7 dagars yogaprogram</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Meditation vid havet</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Hälsosam mat</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Spa-behandlingar</li>
+          </ul>
+          <div class="mt-6">
+            <a href="/resor/sportresor/hostcamp" class="inline-flex w-full items-center justify-center rounded bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 text-sm font-semibold">Läs mer</a>
+          </div>
         </div>
-      </a>
-      <!-- Offer Card 2 -->
-      <a href="/resor/sportresor/klattring-vandring-host" class="group flex flex-col focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-xl">
-        <div class="aspect-[16/11] w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-200/60 dark:ring-slate-700/70">
-          <img src="/images/hiking2.jpeg" alt="Höstlig vandring i bergen" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"/>
+      </div>
+
+      <!-- Card 2: Klättring & Vandring -->
+      <div class="rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-sm">
+        <div class="aspect-[16/10] w-full overflow-hidden bg-slate-100">
+          <img src="/images/klättring.jpg" alt="Höstlig vandring i bergen" loading="lazy" class="h-full w-full object-cover"/>
         </div>
-        <div class="mt-5 flex-1 flex flex-col">
-          <h3 class="text-sm font-semibold tracking-wider text-slate-900 dark:text-white leading-5">
-            Klättring & vandring i höst
-          </h3>
-          <p class="mt-3 text-[13px] leading-5 text-slate-700 dark:text-slate-300">
-            Durmitor & Luštica <br/> Montenegro
-          </p>
+        <div class="p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Klättring & Vandring i Höst</h3>
+          <p class="mt-1 text-sm text-slate-500">Durmitor & Luštica, Montenegro</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Guidad klättring</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Vandringsturer</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Camping i naturen</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Fotograferingssafari</li>
+          </ul>
+          <div class="mt-6">
+            <a href="/resor/sportresor/klattring-vandring-host" class="inline-flex w-full items-center justify-center rounded bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 text-sm font-semibold">Läs mer</a>
+          </div>
         </div>
-      </a>
-      <!-- Offer Card 3 -->
-      <a href="/resor/sportresor/gruppaktivitet" class="group flex flex-col focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-xl">
-        <div class="aspect-[16/11] w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-200/60 dark:ring-slate-700/70">
-          <img src="/images/dipovi.jpg" alt="Gruppaktivitet och gemenskap vid havet" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"/>
+      </div>
+
+      <!-- Card 3: Gruppaktivitet vid Havet -->
+      <div class="rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200 shadow-sm">
+        <div class="aspect-[16/10] w-full overflow-hidden bg-slate-100">
+          <img src="/images/dipovi.jpg" alt="Gruppaktivitet och gemenskap vid havet" loading="lazy" class="h-full w-full object-cover"/>
         </div>
-        <div class="mt-5 flex-1 flex flex-col">
-          <h3 class="text-sm font-semibold tracking-wider text-slate-900 dark:text-white leading-5">
-            Gruppaktivitet vid havet
-          </h3>
-          <p class="mt-3 text-[13px] leading-5 text-slate-700 dark:text-slate-300">
-            Budva & Kotorbukten <br/> Montenegro
-          </p>
+        <div class="p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Gruppaktivitet vid havet</h3>
+          <p class="mt-1 text-sm text-slate-500">Budva & Kotorbukten, Montenegro</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Teambuilding aktiviteter</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Vattensporter</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>BBQ på stranden</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Båttur i bukten</li>
+          </ul>
+          <div class="mt-6">
+            <a href="/resor/sportresor/gruppaktivitet" class="inline-flex w-full items-center justify-center rounded bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 text-sm font-semibold">Läs mer</a>
+          </div>
         </div>
-      </a>
+      </div>
     </div>
   </section>
 
-  <!-- Steps Widget ****************** -->
-  <Steps
-    id="resume"
-    title="Fem bästa vandringsleder på Luštica"
-    items={[
-      {
-        title: 'GORNJI KLINCI – OBOSNIK',
-        description: `Längd: 4.1 km| Tid: 1:20 | Upplev: Högsta toppen av Luštica halvön`,
-        icon: 'tabler:mountain',
-      },
-      {
-        title: 'RADOVIĆI – BABUNCI – TIĆI ŽANJICE',
-        description: `Längd: 12.3 km| Tid: 3:15 | Upplev: Historisk vandringsled, olivlundar, Žanjice-stranden`,
-        icon: 'tabler:mountain',
-      },
-      {
-        title: 'KRAŠIĆI – Mr. KRAŠIĆI – GOŠIĆI',
-        description: `Längd: 3.7 km| Tid: 1:45 | Upplev: Den gamla byn Krašići, den gamla gångstigen, den stora gamla cisternen och S:t Nikolaus kyrkan.`,
-        icon: 'tabler:mountain',
-      },
-      {
-        title: 'SOLILA – GRABOVAC',
-        description: `Längd: 4.2 km| Tid: 1:30 | Upplev: Tivat Solia, österrikisk-ungerska fästning Grabovac`,
-        icon: 'tabler:mountain',
-      },
-      {
-        title: 'LUŠTICA GOLF AREA',
-        description: `Längd: 6 km| Tid: 1:20 | Upplev: Magnifik utsikt över Kotorbukten`,
-        icon: 'tabler:mountain',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-    
-  />
+  <!-- Vandringsleder (custom stacked cards to match screenshot) -->
+  <section class="relative mx-auto max-w-4xl px-4 md:px-6 lg:px-8 py-12 md:py-16">
+    <h2 class="text-center text-2xl md:text-3xl font-bold text-slate-900">Fem bästa vandringsleder på Luštica</h2>
+    <div class="mt-8 space-y-5">
+      {[
+        { title: 'GORNJI KLINCI – OBOSNIK', length: '4.1 km', time: '1:20', exp: 'Högsta toppen av Luštica halvön' },
+        { title: 'RADOVIĆI – BABUNCI – TIĆI ŽANJICE', length: '12.3 km', time: '3:15', exp: 'Historisk vandringsled, olivlundar, Žanjice-stranden' },
+        { title: 'KRAŠIĆI – Mr. KRAŠIĆI – GOŠIĆI', length: '3.7 km', time: '1:45', exp: 'Den gamla byn Krašići, gamla gångstigen, den stora gamla cisternen och S:t Nikolaus kyrkan.' },
+        { title: 'SOLILA – GRABOVAC', length: '4.2 km', time: '1:30', exp: 'Tivat Solia, österrikisk-ungerska fästning Grabovac' },
+        { title: 'LUŠTICA GOLF AREA', length: '6 km', time: '1:20', exp: 'Magnifik utsikt över Kotorbukten' },
+      ].map((it) => (
+        <div class="rounded-xl border border-slate-200 bg-white p-5 md:p-6 shadow-sm">
+          <div class="text-sm md:text-base font-semibold tracking-wide text-slate-900">{it.title}</div>
+          <div class="mt-2 text-xs md:text-sm text-slate-600">
+            <span>Längd: {it.length}</span>
+            <span class="mx-2">|</span>
+            <span>Tid: {it.time}</span>
+          </div>
+          <div class="mt-2 text-xs md:text-sm text-slate-600">
+            <span class="font-semibold text-slate-700">Upplev:</span> {it.exp}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
 
-  <!-- Steps2 Widget ****************** -->
-  <Steps2
-    title="Välj mellan redan färdiga resepaket eller kontakta oss för en skräddarsydd upplevelse! "
-    subtitle="Låt oss hjälpa dig att skapa en oförglömlig resa!"
-    items={[]}
-    callToAction={`<div class='flex flex-col sm:flex-row gap-4 justify-center md:justify-start'>
-      <a href='/contact' class='inline-flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 text-sm font-semibold shadow focus:outline-none focus:ring-2 focus:ring-blue-500/40'>Kontakta oss</a>
-      <a href='/boka' class='inline-flex items-center justify-center rounded-full bg-white text-slate-900 border border-slate-300 px-6 py-3 text-sm font-semibold shadow hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-300/60'>Resepaket</a>
-    </div>`}
-  />
+  <!-- CTA band to match screenshot -->
+  <section class="mt-16 md:mt-24 bg-slate-100">
+    <div class="max-w-4xl mx-auto px-4 py-16 text-center">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Välj mellan redan färdiga resepaket eller kontakta oss för en skräddarsydd upplevelse!</h2>
+      <p class="mt-3 text-sm md:text-base text-slate-600">Låt oss hjälpa dig att skapa en oförglömlig resa!</p>
+      <div class="mt-6 flex items-center justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center justify-center rounded bg-slate-900 text-white px-6 py-3 text-sm font-semibold hover:bg-slate-800">Kontakta oss</a>
+        <a href="/boka" class="inline-flex items-center justify-center rounded bg-white text-slate-900 border border-slate-300 px-6 py-3 text-sm font-semibold hover:bg-slate-50">Resepaket</a>
+      </div>
+    </div>
+  </section>
 </Layout>
 <style is:global>
   /* Force 3-column icon grid on mobile for sport sections */

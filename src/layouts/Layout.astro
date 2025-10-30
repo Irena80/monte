@@ -14,8 +14,9 @@ import BasicScripts from '~/components/common/BasicScripts.astro';
 import OrganizationJsonLd from '~/components/seo/OrganizationJsonLd.astro';
 import WebsiteJsonLd from '~/components/seo/WebsiteJsonLd.astro';
 
-// Comment the line below to disable View Transitions
-import { ClientRouter } from 'astro:transitions';
+// View Transitions temporarily disabled due to
+// Vite import error: virtual:astro:adapter-config/client
+// import { ClientRouter } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
 
@@ -56,8 +57,8 @@ const { language, textDirection } = I18N;
       .display-h3 { font-family: var(--font-sans); font-weight:800; line-height:1.07; letter-spacing:-0.015em; font-size: clamp(1.35rem, 2.4vw, 2.25rem); }
     </style>
 
-    <!-- Comment the line below to disable View Transitions -->
-    <ClientRouter fallback="swap" />
+  <!-- View Transitions disabled: re-enable by uncommenting ClientRouter import and usage -->
+  <!-- <ClientRouter fallback="swap" /> -->
 
   <!-- Google Tag Manager -->
   <script src="/gtm.js" is:inline></script>

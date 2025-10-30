@@ -1,10 +1,6 @@
 ---
 // filepath: /Users/irena80/Documents/GitHub/monte/src/pages/resor/gruppresor.astro
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import ImageCard1 from '~/components/ImageCard1.astro';
 import OfferCard from '~/components/OfferCard.astro';
 
 const metadata = {
@@ -46,36 +42,98 @@ const offers = [
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero2 Widget ******************* -->
-  <Hero
-    
-    actions={[
-      { text: 'Boka', icon: 'tabler:run', href: '/boka' },
-    ]}
-  >
-    <Fragment slot="title">
-      Aktiva <span class="hidden xl:inline"></span> <span class="text-blue-900 dark:text-white highlight"> gruppresor </span>
-    </Fragment>
+  <!-- Hero: full-bleed yacht image with overlay like the screenshot -->
+  <section data-section="hero" class="relative w-full h-[86vh] min-h-[640px] overflow-hidden">
+    <img
+      src="/images/sailing.jpg"
+      alt="Yacht på Adriatiska havet"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-black/25"></div>
+    <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent to-white"></div>
 
-    <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">Upptäck kontrasternas land </span> en äkta skattkista inramad av Adriatiska havets kristallklara vatten och Balkans majestätiska berg.
-      </span>
-    </Fragment>
-    <Fragment slot="image">
-      <!-- Static bild ersätter video -->
-      <picture class="block w-full">
-        <source srcset="/images/Montenegro-Boats_luka.jpg" type="image/jpeg" />
-        <img
-          src="/images/Montenegro-Boats_luka.jpg"
-          alt="Båtar i montenegrinsk hamn"
-          class="w-full h-auto object-cover"
-          loading="eager"
-          decoding="async"
-        />
-      </picture>
-    </Fragment>
-  </Hero>
+    <div class="relative h-full flex items-center justify-center px-6 z-10 text-center">
+      <div class="w-full max-w-3xl">
+        <h1 class="text-white text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] drop-shadow-[0_6px_22px_rgba(0,0,0,0.55)]">
+          Gruppresor till <br />
+          <span class="text-white">Montenegro</span>
+        </h1>
+        <p class="mt-4 text-white/95 text-[1.05rem] sm:text-lg md:text-xl leading-snug font-semibold max-w-3xl mx-auto">
+          Upplev Adriatiska havets pärla tillsammans med dina vänner, familj eller grupp
+        </p>
+        <div class="mt-6 flex items-center justify-center">
+          <a href="#erbjudanden" class="inline-flex items-center rounded bg-slate-900/90 hover:bg-slate-900 text-white px-5 py-2.5 text-sm font-semibold shadow focus:outline-none focus:ring-2 focus:ring-white/40">
+            Se alla gruppresor
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Varför resa i grupp: section under hero -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-10 md:mb-14">
+        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">Varför resa i grupp till Montenegro?</h2>
+        <p class="mt-2 text-sm md:text-base text-slate-600">Skapa minnen för livet tillsammans med de du älskar</p>
+      </div>
+
+      <div class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <!-- Dela upplevelser -->
+        <div class="text-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow transition">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-blue-900 ring-1 ring-inset ring-blue-200">
+            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="9" cy="8" r="3"/>
+              <circle cx="17" cy="9" r="2.5"/>
+              <path d="M3 19c0-3.2 3.4-5 6-5s6 1.8 6 5"/>
+              <path d="M14.5 14.5c2.7 0 5.5 1.5 5.5 4.5"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900">Dela upplevelser</h3>
+          <p class="mt-2 text-xs text-slate-600 leading-relaxed">Fantastiska minnen blir ännu<br/>bättre när de delas med nära<br/>och kära</p>
+        </div>
+
+        <!-- Stärk banden -->
+        <div class="text-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow transition">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-blue-900 ring-1 ring-inset ring-blue-200">
+            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 21s-7-4.5-9.5-8A5.5 5.5 0 1112 7a5.5 5.5 0 119.5 6c-2.5 3.5-9.5 8-9.5 8z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900">Stärk banden</h3>
+          <p class="mt-2 text-xs text-slate-600 leading-relaxed">Gemensamma äventyr skapar<br/>starkare relationer</p>
+        </div>
+
+        <!-- Oförglömliga minnen -->
+        <div class="text-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow transition">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-blue-900 ring-1 ring-inset ring-blue-200">
+            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="6" width="18" height="14" rx="2"/>
+              <circle cx="12" cy="13" r="3.5"/>
+              <path d="M8 6l2-3h4l2 3"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900">Oförglömliga minnen</h3>
+          <p class="mt-2 text-xs text-slate-600 leading-relaxed">Upplev spektakulära platser<br/>och äventyr tillsammans</p>
+        </div>
+
+        <!-- Bekvämt & enkelt -->
+        <div class="text-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow transition">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-blue-900 ring-1 ring-inset ring-blue-200">
+            <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 21s6-6.5 6-11a6 6 0 10-12 0c0 4.5 6 11 6 11z"/>
+              <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900">Bekvämt & enkelt</h3>
+          <p class="mt-2 text-xs text-slate-600 leading-relaxed">Vi ordnar allt så ni kan fokusera<br/>på att ha kul</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Lyxiga erbjudanden först -->
   <section id="erbjudanden" class="py-20 md:py-24 bg-white dark:bg-slate-900">
@@ -107,158 +165,283 @@ const offers = [
     </div>
   </section>
 
-  <!-- Process: Ny layout -->
-  <section id="process" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-200/70 dark:border-slate-700/40">
-    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-12 gap-12">
-      <!-- Left Intro -->
-      <div class="lg:col-span-6">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-medium text-slate-900 dark:text-white leading-tight tracking-tight">Välj mellan redan färdiga
-          <span class="block">resepaket eller kontakta oss för</span>
-          <span class="block">en skräddarsydd upplevelse!</span>
-        </h2>
-        <p class="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">Låt oss hjälpa dig att skapa en oförglömlig resa!</p>
-        <div class="mt-10">
-          <a href="/contact" class="inline-flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-4 shadow focus:outline-none focus:ring-2 focus:ring-blue-600 transition">Kontakta oss</a>
-        </div>
-      </div>
-      <!-- Steps Right -->
-      <div class="lg:col-span-6 grid sm:grid-cols-2 gap-y-12 gap-x-10">
-        {[
-          { num: '1', title: 'Välj paket', desc: 'Utforska våra färdiga upplägg eller hör av dig för att skapa en skräddarsydd lösning.' },
-          { num: '2', title: 'Anpassa', desc: 'Lägg till aktiviteter, logi och måltider efter gruppens mål.' },
-          { num: '3', title: 'Bekräfta', desc: 'Vi säkrar datum, partners och logistik.' },
-          { num: '4', title: 'Res & upplev', desc: 'Vi finns på plats och koordinerar allt för smidig upplevelse.' }
-        ].map(step => (
-          <div class="relative pl-0">
-            <div class="flex items-start gap-4">
-              <div class="flex-shrink-0 w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-700 dark:text-blue-300 text-2xl font-semibold">{step.num}</div>
-              <div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{step.title}</h3>
-                <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300 max-w-xs">{step.desc}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+ 
 
   <!-- Destination / Inspiration blocks -->
   <section id="destinationer" class="py-20 md:py-24 bg-white dark:bg-slate-900">
     <div class="max-w-6xl mx-auto px-4 space-y-24">
       <div class="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
         <div class="md:col-span-5 order-2 md:order-1">
-          <h2 class="text-3xl md:text-4xl font-serif font-medium text-slate-900 dark:text-white mb-5">Upplev kusten</h2>
-          <div class="prose prose-slate dark:prose-invert max-w-none text-base leading-relaxed">
-            <p>Lilla Montenegro är en äkta skattkista, inramad av Adriatiska havets kristallklara vatten och Balkans berg. Längs den nästan 30 mil långa kustlinjen gömmer sig pärlor som Herceg Novi, Tivat, Kotor, Budva och Bar.</p>
-            <p>Historia i varje gränd – stenhus, planteringar och hamnar där kultur och modern livsstil möts.</p>
-            <p>Aktiva dagar och sociala kvällar: vandring, båtutflykter, gastronomi och avkoppling i samma region.</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-medium text-slate-900 dark:text-white mb-3">Upplev kusten</h2>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed">Historiska städer, kristallklart vatten och mysiga hamnar – perfekt för grupper som vill kombinera bad, mat och kultur.</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Strosa i Kotor & Budva – UNESCO-miljöer med charm i varje gränd</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Båtutflykter till vikar, stränder och små öar</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Gastronomi vid havet – färsk fisk, oliver och lokala viner</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kvällsliv & strandpromenader för alla smaker</span></li>
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/kusten" class="inline-flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-3 shadow">Utforska kusten</a>
+            <a href="#grupppaket" class="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-6 py-3 shadow">Se paket</a>
           </div>
-          <a href="/kusten" class="inline-flex items-center gap-2 mt-6 text-blue-700 dark:text-blue-300 font-medium hover:underline">Läs mer <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
         </div>
         <div class="md:col-span-7 order-1 md:order-2">
-          <img src="/images/brod.jpg" alt="Kustupplevelser Montenegro" class="w-full aspect-[4/3] md:aspect-[16/10] rounded-xl object-cover shadow" loading="lazy" decoding="async" />
+          <div class="relative">
+            <img src="/images/brod.jpg" alt="Kustupplevelser Montenegro" class="w-full aspect-[4/3] md:aspect-[16/10] rounded-xl object-cover shadow" loading="lazy" decoding="async" />
+            <span class="absolute top-3 left-3 rounded-full bg-white/90 text-slate-900 text-xs font-semibold px-3 py-1 shadow">Kusten</span>
+          </div>
         </div>
       </div>
 
       <div class="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
         <div class="md:col-span-7">
-          <img src="/images/lukavica.webp" alt="Montenegrinska berg" class="w-full aspect-[4/3] md:aspect-[16/10] rounded-xl object-cover shadow" loading="lazy" decoding="async" />
+          <div class="relative">
+            <img src="/images/lukavica.webp" alt="Montenegrinska berg" class="w-full aspect-[4/3] md:aspect-[16/10] rounded-xl object-cover shadow" loading="lazy" decoding="async" />
+            <span class="absolute top-3 left-3 rounded-full bg-white/90 text-slate-900 text-xs font-semibold px-3 py-1 shadow">Bergen</span>
+          </div>
         </div>
         <div class="md:col-span-5">
-          <h2 class="text-3xl md:text-4xl font-serif font-medium text-slate-900 dark:text-white mb-5">Berg och land</h2>
-          <div class="prose prose-slate dark:prose-invert max-w-none text-base leading-relaxed">
-            <p>Utforska toppar över 2000 meter, dramatiska kanjoner och gömda grottor. Åk längs serpentinvägar och känn hur landskapet skiftar på korta avstånd.</p>
-            <p>Traditionellt hantverk, katuns, lokala rätter och stilla skogar – autentiska inslag som bygger minnen.</p>
-            <p>Perfekt mix för grupper som vill ha äventyr på dagen och social kvalitetstid på kvällen.</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-medium text-slate-900 dark:text-white mb-3">Berg och land</h2>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed">Äventyr i storslagna landskap – från canyoner och toppar till stilla skogar och byliv.</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Vandring i nationalparker och panoramautsikter</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rafting i Tara-floden & zipline över canyoner</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jeepsafari, grottor och dolda smultronställen</span></li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lokala byar (katuns), traditioner och matupplevelser</span></li>
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="/inlandet" class="inline-flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-3 shadow">Utforska inlandet</a>
+            <a href="#grupppaket" class="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-6 py-3 shadow">Se paket</a>
           </div>
-          <a href="/inlandet" class="inline-flex items-center gap-2 mt-6 text-blue-700 dark:text-blue-300 font-medium hover:underline">Läs mer <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="relative mx-auto max-w-6xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-    <!-- Intro block återinsatt före Gastronomisk biltur -->
-    <div class="mb-12 md:mb-16 text-center md:text-left">
-      <h2 class="text-3xl md:text-4xl font-serif font-medium text-slate-900 dark:text-white leading-snug">
-        Letar du efter en unik upplevelse?
-      </h2>
-      <p class="mt-4 text-lg md:text-xl text-slate-600 dark:text-slate-300 font-light">
-        Sätt siktet på Montenegro och upplev kontrasternas land!
-      </p>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-10">
-      <img src="../images/lustica1.JPG" alt="Montenegros häftigaste hotell" class="w-full md:w-1/2 h-[300px] md:h-[360px] object-cover rounded-xl shadow" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Gastronimsk biltur</h2>
-        <p> <br>Med fyrhjulsdrivna jeepar upptäcker vi Montenegros grönskande landskap med berg och djupa dalar. Längs vägen gör vi  olika stopp, där det första blir på en traditionell ”olivolje-kvarn” som har ägts av samma familj sedan 1600-talet. De två andra stoppen är vid en apelsinodling och besök på en vinkällare, där vi självklart får provsmaka och lära oss mer om gårdens druvor. På det sista stoppet får vi provsmaka ’pršut’ som är ett kallskuret kött välkänt för Balkan.</p>
+   <!-- Grupppaket: pricing grid (moved below destinationer) -->
+  <section id="grupppaket" class="py-20 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-10 md:mb-14">
+        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">Grupppaket</h2>
+        <p class="mt-2 text-sm md:text-base text-slate-600">Paket anpassade för grupper om minst 8 personer</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <!-- Kust & Kultur -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+          <div class="flex items-center gap-2 text-slate-900 font-semibold">
+            <span>🏝️</span>
+            <span>Kust & Kultur</span>
+          </div>
+          <div class="mt-3">
+            <div class="text-slate-900 font-extrabold text-xl">Från 8 900 kr</div>
+            <div class="text-xs text-slate-500">per person</div>
+          </div>
+          <ul class="mt-5 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Flyg tur & retur</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Hotell 4*, 5 nätter</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Frukost dagligen</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Båtutflykt hel dag</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Guidad tur i Kotor & Budva</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Flygplats transfers</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Svensktalande guide</li>
+          </ul>
+          <div class="mt-6">
+            <a href="/boka" class="block w-full text-center rounded bg-slate-900 text-white px-4 py-2.5 text-sm font-semibold hover:bg-slate-800">Boka paket</a>
+          </div>
+        </div>
+
+        <!-- Äventyr & Action (highlight) -->
+        <div class="relative rounded-2xl border-2 border-blue-600 bg-white p-6 md:p-8 shadow-sm">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 inline-block rounded-full bg-blue-600 text-white text-xs font-semibold px-3 py-1">Populärast</span>
+          <div class="flex items-center gap-2 text-slate-900 font-semibold">
+            <span>⛰️</span>
+            <span>Äventyr & Action</span>
+          </div>
+          <div class="mt-3">
+            <div class="text-slate-900 font-extrabold text-xl">Från 11 900 kr</div>
+            <div class="text-xs text-slate-500">per person</div>
+          </div>
+          <ul class="mt-5 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Flyg tur & retur</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Hotell 4*, 6 nätter</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Halvpension</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Rafting i Tara-floden</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Zip-line äventyr</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Båtutflykt & snorkling</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Jeepsafari i bergen</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>All transport inkluderad</li>
+          </ul>
+          <div class="mt-6">
+            <a href="/boka" class="block w-full text-center rounded bg-blue-600 text-white px-4 py-2.5 text-sm font-semibold hover:bg-blue-700">Boka paket</a>
+          </div>
+        </div>
+
+        <!-- Premium All-Inclusive -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+          <div class="flex items-center gap-2 text-slate-900 font-semibold">
+            <span>💎</span>
+            <span>Premium All‑Inclusive</span>
+          </div>
+          <div class="mt-3">
+            <div class="text-slate-900 font-extrabold text-xl">Från 16 900 kr</div>
+            <div class="text-xs text-slate-500">per person</div>
+          </div>
+          <ul class="mt-5 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Flyg tur & retur</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Lyxhotell 5*, 7 nätter</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Helpension + dryck</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Privat yatcharter 2 dagar</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>3 äventursaktiviteter efter val</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Spa & wellness</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Gourmet‑middag på restaurang</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Personlig reseledare</li>
+          </ul>
+          <div class="mt-6">
+            <a href="/boka" class="block w-full text-center rounded bg-slate-900 text-white px-4 py-2.5 text-sm font-semibold hover:bg-slate-800">Boka paket</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="flex flex-col md:flex-row items-start mb-10">
-      <img src="../images/masline.webp"  class="w-full md:w-1/2 h-[300px] md:h-[360px] object-cover rounded-xl shadow" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Vandra bland olivlundar</h2>
-        <p>  <br>Besök den familjeägda ekologiska olivgården Moric på Luštica-halvön och lär dig allt om olivodling, skörd och hantverksmässiga metoder för olivoljeproduktion. Vandra bland nästan 1 000 olivträd som är över 300 år gamla och njut av hemlagade specialiteter och välkomstdrinkar i den genuina atmosfären på den gamla stenpressen!</p>
+  </section>
+
+  <!-- Testimonials (moved below destinationer) -->
+  <section id="gastrecensioner" class="py-12 md:py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-center text-2xl md:text-3xl font-bold text-slate-900">Vad säger våra gäster?</h3>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <!-- Card 1 -->
+        <figure class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex gap-1 text-amber-500" aria-label="5 av 5 stjärnor">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <blockquote class="mt-3 text-sm text-slate-700">"En otrolig resa! Perfekt organisation och fantastiska upplevelser. Vår grupp hade årets resa till Montenegro!"</blockquote>
+          <figcaption class="mt-4 text-xs text-slate-500">
+            <div class="font-semibold text-slate-900">Emma & vännerna</div>
+            <div>Stockholm</div>
+          </figcaption>
+        </figure>
+        <!-- Card 2 -->
+        <figure class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex gap-1 text-amber-500" aria-label="5 av 5 stjärnor">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <blockquote class="mt-3 text-sm text-slate-700">"Bästa gruppupplevelsen någonsin! Yachtutflykten och raftingen var höjdpunkter. Kan varmt rekommendera!"</blockquote>
+          <figcaption class="mt-4 text-xs text-slate-500">
+            <div class="font-semibold text-slate-900">Anders & familjen</div>
+            <div>Göteborg</div>
+          </figcaption>
+        </figure>
+        <!-- Card 3 -->
+        <figure class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex gap-1 text-amber-500" aria-label="5 av 5 stjärnor">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <blockquote class="mt-3 text-sm text-slate-700">"Montenegro överträffade alla förväntningar. Vacker natur, fantastisk mat och minnen för livet. Tack för allt!"</blockquote>
+          <figcaption class="mt-4 text-xs text-slate-500">
+            <div class="font-semibold text-slate-900">Maria & tjejgänget</div>
+            <div>Malmö</div>
+          </figcaption>
+        </figure>
       </div>
     </div>
-    <div class="flex flex-col md:flex-row items-start mb-10">
-      <img src="../images/divljapriroda.jpg" alt="Från sadeln, upptäck Montenegros natursköna charm" class="w-full md:w-1/2 h-[300px] md:h-[360px] object-cover rounded-xl shadow" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Äventyrliga aktiviteter </h2>
-        <p> <br> Montenegro är ett paradis för den aktiva resenären. Låt då din vilda sida leda dig till att utforska stigar som motorfordon inte kan nå. Prova på cykling, klättring eller varför inte en ridtur. Alternativen är många.</p>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-4">
-      <img src="../images/perast2.webp"  class="w-full md:w-1/2 h-[300px] md:h-[360px] object-cover rounded-xl shadow" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Segla och utforska </h2>
-        <p>  <br>Under din båttur i Montenegro kan du hoppa över till ön Katič för dykning, utforska fortet på Mamula, eller hitta avskildhet på obebodda Stari Ulcinj. Den gamla staden Herceg Novi från 1300-talet är också väl värd ett besök, liksom stenstranden i Dobrec, som bara är tillgänglig med båt. <br>  <br> Från imponerande berg och antika städer till vackra stränder med kristallklart vatten. Unesco har utsett världsarvsplatser i Perast och Kotor. Se till att vandra uppför den branta kullen för att se Kotors imponerande venetianska fästning med fantastisk utsikt över bukten!</p>
-      </div>
-    </div>
+  </section>
   
-  </div>
-<br>
+  <section id="unika-upplevelser" class="relative mx-auto max-w-6xl px-4 md:px-3 py-16 md:py-20 text-default">
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="text-3xl md:text-4xl font-serif font-medium text-slate-900 dark:text-white leading-snug">Letar du efter en unik upplevelse?</h2>
+      <p class="mt-3 text-base md:text-lg text-slate-600 dark:text-slate-300">Upptäck Montenegros bästa sidor – välj mellan mat & kultur, natur, äventyr eller hav & båtliv.</p>
+    </div>
+
+    <div class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <!-- Card 1: Gastronomisk biltur -->
+      <article class="group rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition">
+        <div class="relative aspect-[4/3]">
+          <img src="/images/lustica1.JPG" alt="Gastronomisk biltur i Montenegro" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          <span class="absolute top-3 left-3 rounded-full bg-white/90 text-slate-900 text-xs font-semibold px-3 py-1 shadow">Mat & kultur</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold text-slate-900">Gastronomisk biltur</h3>
+          <p class="mt-2 text-sm text-slate-600">Jeep-tur med besök på olivkvarn, fruktodling och vinkällare med provsmakning.</p>
+          <ul class="mt-3 space-y-1 text-xs text-slate-700">
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Smaker från lokala producenter</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Guider som kan området</li>
+          </ul>
+          <div class="mt-4">
+            <a href="#grupppaket" class="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold px-4 py-2">Se paket</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Olivlundar -->
+      <article class="group rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition">
+        <div class="relative aspect-[4/3]">
+          <img src="/images/masline.webp" alt="Vandra bland olivlundar" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          <span class="absolute top-3 left-3 rounded-full bg-white/90 text-slate-900 text-xs font-semibold px-3 py-1 shadow">Natur & vandring</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold text-slate-900">Vandra bland olivlundar</h3>
+          <p class="mt-2 text-sm text-slate-600">Besök familjeägda gårdar på Luštica-halvön och lär dig om olivodling och traditioner.</p>
+          <ul class="mt-3 space-y-1 text-xs text-slate-700">
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Upp till 300-åriga olivträd</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Hemlagade specialiteter</li>
+          </ul>
+          <div class="mt-4">
+            <a href="#grupppaket" class="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold px-4 py-2">Se paket</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Äventyr -->
+      <article class="group rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition">
+        <div class="relative aspect-[4/3]">
+          <img src="/images/divljapriroda.jpg" alt="Äventyrliga aktiviteter i Montenegro" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          <span class="absolute top-3 left-3 rounded-full bg-white/90 text-slate-900 text-xs font-semibold px-3 py-1 shadow">Äventyr</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold text-slate-900">Äventyrliga aktiviteter</h3>
+          <p class="mt-2 text-sm text-slate-600">Cykling, klättring, ridning – upplev naturen på nära håll bortom vägarna.</p>
+          <ul class="mt-3 space-y-1 text-xs text-slate-700">
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Passar både nybörjare och erfarna</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Säkerhetsfokus och lokala guider</li>
+          </ul>
+          <div class="mt-4">
+            <a href="#grupppaket" class="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold px-4 py-2">Se paket</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Hav & båtliv -->
+      <article class="group rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition">
+        <div class="relative aspect-[4/3]">
+          <img src="/images/perast2.webp" alt="Segla och utforska kustens pärlor" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          <span class="absolute top-3 left-3 rounded-full bg-white/90 text-slate-900 text-xs font-semibold px-3 py-1 shadow">Hav & båtliv</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-semibold text-slate-900">Segla och utforska</h3>
+          <p class="mt-2 text-sm text-slate-600">Dyk vid öar, besök fästningar och hitta avskilda stränder med kristallklart vatten.</p>
+          <ul class="mt-3 space-y-1 text-xs text-slate-700">
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Heldags båtutflykter och snorkling</li>
+            <li class="flex gap-2"><svg class="w-4 h-4 text-green-600 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Se Perast & Kotor från vattnet</li>
+          </ul>
+          <div class="mt-4">
+            <a href="#grupppaket" class="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold px-4 py-2">Se paket</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-10 flex items-center justify-center gap-3">
+      <a href="#grupppaket" class="inline-flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-3 shadow">Se alla grupppaket</a>
+      <a href="/kontakt" class="inline-flex items-center justify-center rounded-full bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-6 py-3 shadow">Kontakta oss</a>
+    </div>
+  </section>
   
 
 
 
 
-<style>
-  .component-left,
-  .component-right {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  .component-left img,
-  .component-right img {
-    width: 50%;
-    height: auto;
-  }
-  .component-left .content,
-  .component-right .content {
-    padding: 1rem;
-    width: 50%;
-  }
-
-  @media (max-width: 768px) {
-    .component-left,
-    .component-right {
-      flex-direction: column;
-    }
-    .component-left img,
-    .component-right img {
-      width: 100%;
-    }
-    .component-left .content,
-    .component-right .content {
-      width: 100%;
-      padding: 1rem 0;
-    }
-  }
-</style>
+ 
 
 <script>
   (function () {

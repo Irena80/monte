@@ -46,8 +46,13 @@ if (
   (_image.startsWith('http://') || _image.startsWith('https://')) &&
   isUnpicCompatible(_image)
 ) {
+  // Remote image via Unpic CDN transformation
   image = await getImagesOptimized(_image, props, unpicOptimizer);
+} else if (typeof _image === 'string' && _image.startsWith('/')) {
+  // Public folder image: render as-is, no Astro assets optimization
+  image = await getImagesOptimized(_image, props, async () => []);
 } else if (_image) {
+  // Local imported asset metadata (ImageMetadata)
   image = await getImagesOptimized(_image, props, astroAsseetsOptimizer);
 }
 ---
