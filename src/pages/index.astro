@@ -44,14 +44,25 @@ const metadata = {
 <!-- Global font laddas numera via huvudlayouten -->
 
 <section data-section="hero" class="relative w-full h-[92vh] min-h-[640px] overflow-hidden">
-  <!-- Static background image -->
+  <!-- Background media: image on mobile, video on tablet/desktop -->
   <img
     src="/images/mnghero.jpeg"
     alt="Montenegros kust och klart vatten"
-    class="absolute inset-0 w-full h-full object-cover"
+    class="absolute inset-0 w-full h-full object-cover sm:hidden"
     loading="eager"
     decoding="async"
   />
+
+  <video
+    class="absolute inset-0 w-full h-full object-cover hidden sm:block"
+    src="/videos/vildamng.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    aria-hidden="true"
+    poster="/images/mnghero.jpeg"
+  ></video>
 
   <!-- Dark overlay for readability -->
   <div class="absolute inset-0 bg-black/50"></div>
