@@ -97,14 +97,9 @@ export const headerData = {
     },
   
     {
-      text: 'Kontakt',
+      text: 'Om oss',
       links: [
-      
-        {
-          text: 'Kontakt',
-          href: getPermalink('/contact'), 
-        },
-       
+  
        
           {
           text: 'Om oss',

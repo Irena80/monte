@@ -88,7 +88,7 @@ const menuLinks = Array.isArray(links)
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"
+        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-base md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"
       >
     <li class="md:hidden px-4 py-2">
   <a href="/contact" class="inline-flex items-center rounded-full bg-blue-600 hover:bg-blue-700 text-white font-medium text-base px-7 py-2 transition-colors w-full justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 dark:focus:ring-offset-gray-900 dark:bg-blue-600 dark:hover:bg-blue-700">Kontakt</a>
@@ -100,12 +100,14 @@ const menuLinks = Array.isArray(links)
                 <>
                   <button
                     type="button"
-                    class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                    aria-expanded="false"
+                    data-accordion-trigger
+                    class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center justify-between w-full md:w-auto md:inline-flex whitespace-nowrap"
                   >
-                    {text}{' '}
-                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
+                    <span>{text}</span>
+                    <Icon name="tabler:chevron-down" data-chevron class="w-3.5 h-3.5 ml-1 rtl:ml-0 rtl:mr-1 transition-transform duration-200" />
                   </button>
-                  <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                  <ul class="dropdown-menu hidden md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a
@@ -195,6 +197,47 @@ const menuLinks = Array.isArray(links)
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Mobile accordion: only show headings on small screens
+      const mq = window.matchMedia('(max-width: 767px)');
+      function isMobile(){ return mq.matches; }
+      function resetAccordions(){
+        document.querySelectorAll('#header nav .dropdown > button[data-accordion-trigger]').forEach((btn)=>{
+          btn.setAttribute('aria-expanded','false');
+          const menu = (btn).nextElementSibling;
+          if(menu) menu.classList.add('hidden');
+          const icon = (btn).querySelector('[data-chevron]');
+          if(icon) icon.classList.remove('rotate-180');
+        });
+      }
+      function setupAccordion(){
+        const triggers = Array.from(document.querySelectorAll('#header nav .dropdown > button[data-accordion-trigger]'));
+        triggers.forEach((btn)=>{
+          btn.addEventListener('click', (e)=>{
+            if(!isMobile()) return;
+            e.stopPropagation();
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            // close siblings
+            triggers.forEach((b)=>{
+              if(b!==btn){
+                b.setAttribute('aria-expanded','false');
+                const m = (b).nextElementSibling;
+                if(m) m.classList.add('hidden');
+                const ic = (b).querySelector('[data-chevron]');
+                if(ic) ic.classList.remove('rotate-180');
+              }
+            });
+            // toggle current
+            btn.setAttribute('aria-expanded', String(!expanded));
+            const menu = (btn).nextElementSibling;
+            if(menu){ menu.classList.toggle('hidden', expanded); }
+            const icon = (btn).querySelector('[data-chevron]');
+            if(icon) icon.classList.toggle('rotate-180', !expanded);
+          });
+        });
+      }
+      setupAccordion();
+      const burger = document.querySelector('[data-aw-toggle-menu]');
+      if(burger){ burger.addEventListener('click', ()=>{ if(isMobile()) resetAccordions(); }); }
       const openBtns = document.querySelectorAll('[data-open-search]');
       const overlay = document.getElementById('searchOverlay');
       const panel = overlay?.querySelector('[role="dialog"]');

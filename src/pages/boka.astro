@@ -123,27 +123,7 @@ const metadata = {
     ]}
   />
 
-    <!-- Booking Form Section -->
-  <section class="py-12 sm:py-16 bg-blue-50">
-    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-8">
-      <h2 class="text-xl sm:text-2xl font-bold mb-4 text-blue-900 text-center leading-snug">Intresseanmälan</h2>
-      <form 
-        action="https://formspree.io/f/xovlzkgz" 
-        method="POST" 
-        class="space-y-4"
-      >
-        <input type="hidden" name="_redirect" value="https://www.mediteranobay.com/tack" />
-        <input type="hidden" name="_subject" value="Intresseanmälan via Boka-sidan" />
-        <input type="text" name="namn" placeholder="Namn" required class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200 text-sm sm:text-base" />
-        <input type="email" name="email" placeholder="E-post" required class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200 text-sm sm:text-base" />
-        <input type="text" name="antal" placeholder="Antal resenärer" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200 text-sm sm:text-base" />
-        <input type="text" name="datum" placeholder="Önskat resedatum" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200 text-sm sm:text-base" />
-        <textarea name="önskemål" placeholder="Berätta om era önskemål" rows="4" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-200 text-sm sm:text-base"></textarea>
-        <button type="submit" class="w-full px-5 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition text-sm sm:text-base">Skicka intresseanmälan</button>
-      </form>
-      <p class="text-[10px] sm:text-xs text-gray-500 mt-4 text-center leading-snug">Vi hanterar dina personuppgifter enligt GDPR och hör av oss inom 24 timmar.</p>
-    </div>
-  </section>
+   
 </Layout>
 
 <!-- Ensure browser back goes to index if user arrived from outside the site or with no referrer -->
