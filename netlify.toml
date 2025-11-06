@@ -19,3 +19,9 @@
   to = "/contact"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/sondag-montenegro-dold-parla"
+  to = "/montenegro-dold-parla"
+  status = 301
+  force = true

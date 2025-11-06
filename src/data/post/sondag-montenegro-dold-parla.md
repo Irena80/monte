@@ -1,6 +1,7 @@
 ---
 publishDate: 2025-11-02T09:00:00Z
 updateDate: 2025-11-02T09:00:00Z
+draft: true
 title: "Montenegro – Adriatiska havets dolda pärla"
 excerpt: "Kompakt land med storslagen natur: fjälltoppar, fjordliknande vikar och soliga stränder. Här följer en översikt över varför Montenegro förtjänar en plats på din reselista – året runt."
 image: "~/assets/images/more.JPG"
