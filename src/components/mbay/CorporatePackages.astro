@@ -1,0 +1,100 @@
+---
+const packages = [
+  {
+    name: "Executive Escape",
+    subtitle: "Ledningsgruppens retreat",
+    duration: "3 dagar / 2 nätter",
+    group: "8–20 personer",
+    price: "Från 2 000 € per person",
+    description:
+      "En skräddarsydd retreat med premiumboende, strategimöten, lokala matupplevelser och aktiviteter i Montenegros spektakulära natur.",
+    includes: [
+      "Boutiquehotell och frukost",
+      "Konferenslokal",
+      "Transfers",
+      "En utvald lokal upplevelse",
+      "Personlig resekoordinering",
+    ],
+  },
+  {
+    name: "Team & Culture Retreat",
+    subtitle: "För team som vill utvecklas tillsammans",
+    duration: "4 dagar / 3 nätter",
+    group: "10–25 personer",
+    price: "Från 2 500 € per person",
+    description:
+      "En kombination av samarbete, kultur och gemensamma upplevelser som stärker teamet och skapar minnen.",
+    includes: [
+      "Boende och frukost",
+      "Teamaktivitet",
+      "Lokala matupplevelser",
+      "Transfers enligt program",
+      "Personlig resekoordinering",
+    ],
+  },
+  {
+    name: "Premium Company Offsite",
+    subtitle: "En exklusiv företagsupplevelse",
+    duration: "4 dagar / 3 nätter",
+    group: "8–20 personer",
+    price: "Pris enligt offert",
+    description:
+      "Ett exklusivt upplägg med utvalt boende, privata upplevelser och ett program anpassat efter företagets mål och budget.",
+    includes: [
+      "Handplockat premiumboende",
+      "Privata aktiviteter",
+      "Restauranger och måltider enligt offert",
+      "Transfers enligt program",
+      "Personlig koordinering",
+    ],
+  },
+];
+---
+
+<section id="corporate-packages" class="bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest text-amber-600">
+        Företagsresor till Montenegro
+      </p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        Företagsretreats som skapar resultat
+      </h2>
+      <p class="mt-5 text-lg leading-8 text-slate-600">
+        Vi samordnar boende, möten, transporter och lokala upplevelser i ett
+        genomtänkt upplägg – med en personlig kontakt genom hela resan.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-8 lg:grid-cols-3">
+      {packages.map((pkg) => (
+        <article class="flex flex-col rounded-2xl border border-slate-200 p-7 shadow-sm">
+          <p class="text-sm font-semibold text-amber-600">{pkg.subtitle}</p>
+          <h3 class="mt-3 text-2xl font-bold text-slate-900">{pkg.name}</h3>
+          <p class="mt-3 text-sm text-slate-600">{pkg.duration} · {pkg.group}</p>
+          <p class="mt-6 text-xl font-bold text-slate-900">{pkg.price}</p>
+          <p class="mt-4 leading-7 text-slate-600">{pkg.description}</p>
+          <ul class="mt-6 space-y-3">
+            {pkg.includes.map((item) => (
+              <li class="flex gap-3 text-sm text-slate-700">
+                <span class="text-amber-600">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="/kontakt"
+            class="mt-8 inline-flex justify-center rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-700"
+          >
+            Begär offert
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-8 text-center text-sm text-slate-500">
+      Priserna är preliminära riktpriser och bekräftas efter offert.
+      Slutpris beror på datum, gruppstorlek, boende och innehåll.
+    </p>
+  </div>
+</section>
