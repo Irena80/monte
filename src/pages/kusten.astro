@@ -1,105 +1,172 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+// Kusten – moderniserad med MBLayout (innehåll och data oförändrat)
+import MBLayout from '../layouts/MBLayout.astro';
 import { kustDestinations } from '~/data/kustenDestinations';
 ---
 
-  
-<Layout metadata={{ title: 'Kusten' }}>
-  <!-- Hero Section matching Aktiviteter: full-bleed video, overlay, white bottom gradient, centered text -->
-  <section data-section="hero" class="relative w-full h-[70vh] min-h-[560px] overflow-hidden">
-    <!-- Background video -->
-    <video
-      class="absolute inset-0 w-full h-full object-cover"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="/images/hero-image.png"
-      aria-hidden="true"
-    >
-      <source src="/videos/vildamng.webm" type="video/webm" />
-      <source src="/videos/vildamng.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <!-- Dark overlay for readability -->
-    <div class="absolute inset-0 bg-black/35"></div>
-    <!-- Bottom fade to white -->
-    <div class="absolute inset-x-0 bottom-0 h-56 sm:h-64 bg-gradient-to-b from-transparent to-white"></div>
+<MBLayout
+  title="Kusten i Montenegro — MediteranoBay"
+  description="Adriatiska havets juvel – segling, stränder, kultur och kulinariska pärlor längs Montenegros kust."
+  ogImage="/images/kotorbukten.jpg"
+  ogUrl="https://mediteranobay.com/kusten"
+  activeNav="montenegro"
+>
 
-    <!-- Centered content -->
-    <div class="relative h-full flex items-center justify-center px-6 z-10">
-      <div class="w-full max-w-3xl text-center">
-        <h1 class="text-white text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] drop-shadow-[0_6px_22px_rgba(0,0,0,0.55)]">
-          Kusten i Montenegro
-        </h1>
-        <p class="mt-3 text-white/90 text-[0.95rem] sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-          Året runt‑upplevelser vid Adriatiska havet – segling, stränder, kultur och kulinariska pärlor.
-        </p>
-        <div class="mt-6 flex items-center justify-center gap-3">
-          <a href="/boka" class="inline-flex items-center rounded bg-slate-900/90 hover:bg-slate-900 text-white px-5 py-2.5 text-sm font-semibold shadow focus:outline-none focus:ring-2 focus:ring-white/40">Se resepaket</a>
-          <a href="/contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded text-white/95 ring-1 ring-white/35 hover:bg-white/10 transition text-sm font-semibold">Kontakta oss</a>
-        </div>
-      </div>
+<Fragment slot="head">
+<style is:global>
+  /* ===== DESTINATION CARDS ===== */
+  .kst-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .kst-card { background: #fff; border-radius: 6px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; box-shadow: 0 2px 16px rgba(13,34,53,0.07); transition: box-shadow 0.3s; }
+  .kst-card:hover { box-shadow: 0 8px 28px rgba(13,34,53,0.13); }
+  .kst-img-wrap { overflow: hidden; flex-shrink: 0; }
+  .kst-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; transition: transform 0.55s ease; }
+  .kst-card:hover .kst-img { transform: scale(1.04); }
+  .kst-body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+  .kst-title { font-size: 16px; font-weight: 800; color: #0d2235; margin-bottom: 8px; line-height: 1.2; letter-spacing: -0.01em; }
+  .kst-excerpt { font-size: 13px; color: #6b7280; line-height: 1.7; flex: 1; margin-bottom: 16px; }
+  .kst-link { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase; transition: gap 0.2s; }
+  .kst-card:hover .kst-link { gap: 10px; }
+
+  /* ===== INSPIRATION CARDS ===== */
+  .kst-insp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+  .kst-insp-card { position: relative; border-radius: 6px; overflow: hidden; display: block; text-decoration: none; }
+  .kst-insp-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.5s ease; }
+  .kst-insp-card:hover img { transform: scale(1.04); }
+  .kst-insp-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,30,46,0.78) 0%, transparent 55%); }
+  .kst-insp-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 22px; }
+  .kst-insp-title { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .kst-insp-desc { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+
+  @media (max-width: 1023px) {
+    .kst-grid { grid-template-columns: repeat(2,1fr); }
+    .kst-insp-grid { grid-template-columns: repeat(2,1fr); }
+  }
+  @media (max-width: 767px) {
+    .kst-grid { grid-template-columns: 1fr; }
+    .kst-insp-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</Fragment>
+
+<!-- ===== HERO (video) ===== -->
+<section class="hero" aria-labelledby="hero-h1">
+  <video class="hero-img" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+    <source src="/videos/vildamng.webm" type="video/webm" />
+    <source src="/videos/vildamng.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-scroll" aria-hidden="true"><div class="hero-scroll-line"></div></div>
+  <div class="hero-content">
+    <div class="hero-kicker fade-up">Montenegro</div>
+    <h1 id="hero-h1" class="hero-title fade-up delay-1">
+      Kusten i<br />Montenegro.
+    </h1>
+    <p class="hero-sub fade-up delay-2">
+      Adriatiska havets juvel – segling, stränder, kultur och kulinariska pärlor. Året runt-upplevelser mellan hav och berg.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;" class="fade-up delay-3">
+      <a href="/upplevelser" class="btn-gold">
+        SE UPPLEVELSER
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="#kontakt" style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,0.5);color:#fff;font-weight:700;font-size:12px;letter-spacing:0.08em;padding:13px 24px;border-radius:4px;text-decoration:none;text-transform:uppercase;">
+        Kontakta oss
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Features Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-3xl mx-auto text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold mb-4 text-blue-1000">Adriatiska havets juvel</h2>
-      <p class="text-lg md:text-xl text-gray-700">
-        Låt oss ta dig med på en upptäcktsresa, från Adriatiska kusten till den montenegrinska landsbygden. Ett noggrant utvalt urval av oförglömliga upplevelser, personliga turer och exklusiva gourmetresor. Upptäck regionens kulinariska mästerverk, njut av förstklassiga lokala viner och låt dig förföras av skräddarsydda cocktails som speglar Montenegros unika charm och kultur.
+<!-- ===== INTRO ===== -->
+<section class="pg-section pg-section-white">
+  <div class="pg-inner" style="text-align:center;max-width:800px;">
+    <div class="fade-up">
+      <div class="pg-kicker">Adriatiska havets juvel</div>
+      <h2 class="pg-h2 pg-h2-center">Kustens pärlor, ett besök i taget.</h2>
+      <p class="pg-body" style="max-width:640px;margin:0 auto 0;">
+        Låt oss ta dig med på en upptäcktsresa längs Adriatiska kusten. Noggrant utvalda destinationer, oförglömliga upplevelser och skräddarsydda turer som speglar Montenegros unika charm och kultur.
       </p>
     </div>
-<!-- Grid Cards -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-  {kustDestinations.map(d => (
-    <div class="flex flex-col md:flex-row bg-blue-50 rounded-xl shadow-md overflow-hidden" data-destination={d.slug}>
-      <img src={d.image} alt={d.imageAlt} class="w-full md:w-1/2 h-80 object-cover" loading="lazy" decoding="async" />
-      <div class="p-5 flex flex-col justify-center">
-        <h3 class="text-xl font-bold mb-1 text-blue-900">{d.title}</h3>
-        <p class="text-gray-700 mb-2 text-sm">{d.excerpt}</p>
-        <a href={`/kusten/${d.slug}`} class="inline-flex items-center text-blue-700 font-semibold group text-sm">
-          Läs mer
-          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  ))}
-</div>
-  </section>
+  </div>
+</section>
 
-  <!-- Inspiration Section -->
-  <section class="py-20 bg-blue-50">
-    <div class="max-w-3xl mx-auto text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold mb-2 text-blue-900">Letar du efter fler idéer till din resa?</h2>
-      <p class="text-lg text-gray-700">Utforska den fantastiska kusten och dess dolda skatter</p>
+<!-- ===== DESTINATION CARDS ===== -->
+<section class="pg-section pg-section-cream" style="padding-top:0;">
+  <div class="pg-inner">
+    <div class="kst-grid">
+      {kustDestinations.map(d => (
+        <a href={`/kusten/${d.slug}`} class="kst-card fade-up">
+          <div class="kst-img-wrap">
+            <img class="kst-img" src={d.image} alt={d.imageAlt} loading="lazy" />
+          </div>
+          <div class="kst-body">
+            <h3 class="kst-title">{d.title}</h3>
+            <p class="kst-excerpt">{d.excerpt}</p>
+            <span class="kst-link">
+              Läs mer
+              <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </div>
+        </a>
+      ))}
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <a href="/kusten/vinprovning" class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:shadow-xl transition">
-        <img src="/images/vin2.webp" alt="Vinupplevelser" class="w-full h-56 object-cover group-hover:scale-[1.02] transition" loading="lazy" decoding="async" />
-        <div class="p-6 w-full">
-          <h3 class="text-xl font-bold mb-2 text-blue-900 flex items-center gap-2">Vinprovning <svg class="w-4 h-4 text-blue-700 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></h3>
-          <p class="text-gray-700">Kustnära vingårdar, lokala druvor och utvalda pairing-upplevelser.</p>
+  </div>
+</section>
+
+<!-- ===== INSPIRATION ===== -->
+<section class="pg-section pg-section-white">
+  <div class="pg-inner">
+    <div class="fade-up" style="text-align:center;margin-bottom:48px;">
+      <div class="pg-kicker">Letar du efter fler idéer?</div>
+      <h2 class="pg-h2 pg-h2-center">Utforska kustens dolda skatter.</h2>
+    </div>
+    <div class="kst-insp-grid fade-up delay-1">
+
+      <a href="/kusten/vinprovning" class="kst-insp-card">
+        <img src="/images/vin2.webp" alt="Vinprovning" loading="lazy" />
+        <div class="kst-insp-overlay"></div>
+        <div class="kst-insp-body">
+          <div class="kst-insp-title">Vinprovning</div>
+          <div class="kst-insp-desc">Kustnära vingårdar, lokala druvor och utvalda pairing-upplevelser.</div>
         </div>
       </a>
-      <a href="/kusten/matupplevelser" class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:shadow-xl transition">
-        <img src="/images/muslje.jpg" alt="Matupplevelser" class="w-full h-56 object-cover group-hover:scale-[1.02] transition" loading="lazy" decoding="async" />
-        <div class="p-6 w-full">
-          <h3 class="text-xl font-bold mb-2 text-blue-900 flex items-center gap-2">Matupplevelser <svg class="w-4 h-4 text-blue-700 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></h3>
-          <p class="text-gray-700">Smaka kustens råvaror – fisk, olivolja, ost och moderna tolkningar.</p>
+
+      <a href="/kusten/matupplevelser" class="kst-insp-card">
+        <img src="/images/muslje.jpg" alt="Matupplevelser" loading="lazy" />
+        <div class="kst-insp-overlay"></div>
+        <div class="kst-insp-body">
+          <div class="kst-insp-title">Matupplevelser</div>
+          <div class="kst-insp-desc">Smaka kustens råvaror – fisk, olivolja, ost och moderna tolkningar.</div>
         </div>
       </a>
-      <a href="/kusten/yahting" class="group bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:shadow-xl transition">
-        <img src="/images/jedrenje.webp" alt="Yahting & Segling" class="w-full h-56 object-cover group-hover:scale-[1.02] transition" loading="lazy" decoding="async" />
-        <div class="p-6 w-full">
-          <h3 class="text-xl font-bold mb-2 text-blue-900 flex items-center gap-2">Yahting & Segling <svg class="w-4 h-4 text-blue-700 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></h3>
-          <p class="text-gray-700">Upplev Montenegros kust från vattnet och njut av en dag på en lyxyacht.</p>
+
+      <a href="/kusten/yahting" class="kst-insp-card">
+        <img src="/images/jedrenje.webp" alt="Yahting och Segling" loading="lazy" />
+        <div class="kst-insp-overlay"></div>
+        <div class="kst-insp-body">
+          <div class="kst-insp-title">Yahting &amp; Segling</div>
+          <div class="kst-insp-desc">Upplev Montenegros kust från vattnet och njut av en dag på en lyxyacht.</div>
         </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-banner" id="kontakt">
+  <img class="cta-banner-bg" src="/images/kotorbukten.jpg" alt="" aria-hidden="true" loading="lazy" />
+  <div class="cta-banner-inner" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px;">
+    <div>
+      <h2 class="cta-banner-title fade-up">Låt oss visa er<br />det bästa av kusten.</h2>
+      <p class="cta-banner-desc fade-up delay-1">Boka ett kostnadsfritt möte så berättar vi mer och skapar ett förslag anpassat för er grupp.</p>
+    </div>
+    <div class="fade-up delay-2" style="flex-shrink:0;">
+      <a href="/kontakt" class="btn-gold">
+        BOKA ETT MÖTE
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
     </div>
-  </section>
-</Layout>
+  </div>
+</section>
+
+</MBLayout>

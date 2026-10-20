@@ -1,228 +1,210 @@
 ---
-// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/hotell.astro
-import Layout from '~/layouts/LandingLayout.astro';
-
-import CallToAction from '~/components/widgets/CallToAction.astro';
-
-import ImageCard1 from '~/components/ImageCard1.astro';
-import Header from '~/components/widgets/Header.astro';
-import { headerData } from '~/navigation';
-
-const metadata = {
-  title: 'Utbud av bästa hotell',
-};
+// Hotell – moderniserad med MBLayout (innehåll oförändrat)
+import MBLayout from '../layouts/MBLayout.astro';
 ---
 
-<Layout metadata={metadata}>
-  <!-- Override header to remove default Download action -->
-  <Fragment slot="header">
-    <Header
-      links={headerData?.links[2] ? [headerData.links[2]] : undefined}
-      actions={[]}
-      position="right"
-    />
-  </Fragment>
-  
-  <!-- Custom full-bleed hero to match Företagsresor -->
-  <section data-section="hero" class="relative w-full h-[70vh] min-h-[560px] overflow-hidden">
-    <!-- Background image -->
-    <img
-      src="/images/mamula2.jpg"
-      alt="Hotell vid Adriatiska kusten"
-      class="absolute inset-0 w-full h-full object-cover"
-      loading="eager"
-      decoding="async"
-    />
-    <!-- Dark overlay for readability -->
-    <div class="absolute inset-0 bg-black/35"></div>
-    <!-- Bottom fade to white -->
-    <div class="absolute inset-x-0 bottom-0 h-56 sm:h-64 bg-gradient-to-b from-transparent to-white"></div>
+<MBLayout
+  title="Utbud av bästa hotell — MediteranoBay"
+  description="Handplockade boenden för grupper och företag – kvalitet, läge och service i toppklass."
+  ogImage="/images/mamula2.jpg"
+  ogUrl="https://mediteranobay.com/hotell"
+  activeNav=""
+>
 
-    <!-- Centered content -->
-    <div class="relative h-full flex items-center justify-center px-6 z-10">
-      <div class="w-full max-w-3xl text-center">
-        <h1 class="text-white text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] drop-shadow-[0_6px_22px_rgba(0,0,0,0.55)]">
-          Vårt urval av <br />
-          <span class="text-white">hotell</span>
-        </h1>
-        <p class="mt-3 text-white/90 text-[0.95rem] sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-          Handplockade boenden för grupper och företag – kvalitet, läge och service i toppklass.
-        </p>
-        <div class="mt-6 flex items-center justify-center">
-          <a href="/contact" class="inline-flex items-center rounded bg-slate-900/90 hover:bg-slate-900 text-white px-5 py-2.5 text-sm font-semibold shadow focus:outline-none focus:ring-2 focus:ring-white/40">
-            Kontakta oss om hotell
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <div class="relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/mamulahotel1.webp" alt="Montenegros häftigaste hotell" class="w-full md:w-1/2 h-auto" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Montenegros häftigaste hotell – ett historiskt fort på öde ö *****</h2>
-        <p> <br>Så fort man stiger i land på ön Mamula i Montenegro känner man historiens vingslag. Upplevelsen att bo i en utsökt restaurerad fästning från 1800-talet, belägen på sin egen ö vid inloppet till en av världens vackraste havsvikar är skäl nog att resa hit. <br> <br> Till Mamula Island Hotel kommer gäster även för den utsökta maten, atmosfären och för att känna historiens vingslag. Det börjar redan då du byter ditt bagage mot ett glas champagne på motorbåten på väg ut till ön. Framför dig tornar fortet upp sig med sina rundade väggar som står i kontrast till de steniga klipporna intill.</p>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/lazure.webp" alt="Lazure hotel & marina *****" class="w-full md:w-1/2 h-auto" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Lazure hotel & marina *****</h2>
-        <p> <br> Med utsikt över Kotorbukten erbjuder Lazure Hotel & Marina lyxigt boende, endast 2 km från Herceg Novi. Kliv in i ett klassiskt men moderniserat hotell, där de 300 år gamla väggarna har bevittnat Montenegros stora historiska händelser. Resorten har egen strand, egen pool och egen marina! <br> <br>När det kommer till fler bekvämligheter så finns två restauranger, en säsongsöppen strandbar samt en lobbybar. Väldisponibla konferensanläggningar finns att tillgå även för team och företagsbehov.</p>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/chedi2.jpg" alt="Lazure hotel & marina *****" class="w-full md:w-1/2 h-auto" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">The Chedi Luštica Bay *****</h2>
-        <p> <br> Där det mjuka azurblå havet möter de majestätiska bergen hittar du The Chedi Luštica Bay – ett lyxigt femstjärnigt hotell i Montenegro. Beläget vid den magnifika montenegrinska kusten, 16 km från Tivat, välkomnar The Chedi Luštica Bay sina gäster att koppla av i en miljö av äkta, andningsbar lyx. Denna exklusiva tillflyktsort, medlem i The Leading Hotels of The World, erbjuder 111 exceptionellt eleganta rum och sviter, två restauranger, två barer, flexibla möteslokaler, en privat strand, ett asiatiskt inspirerat spa, inomhuspool och en infinitypool utomhus.
-          Från kulinarisk hantverksskicklighet till genomtänkta bekvämligheter – The Chedi Luštica Bay levererar allt du kan förvänta dig av ett av Montenegros mest exklusiva lyxhotell, förverkligat med genuin gästfrihet och felfri service  </p>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/palmon.jpg" alt="Lazure hotel & marina *****" class="w-full md:w-1/2 h-auto" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Hotel and Spa Palmon Bay ****</h2>
-        <p> <br> Palmon Bay Spa 4* är ett nytt och modernt hotell beläget i Igalo, precis vid havet. Hotellet har 163 rum, varav många med havsutsikt. Alla luftkonditionerade rum har en möblerad balkong med utsikt över inloppet till Boka Kotorska-bukten.  <br>Gäster kan njuta av mat och dryck i någon av hotellets restauranger och barer som serverar internationell och lokal mat. <br> <br> Spa- och wellnesscentret erbjuder finsk och infraröd bastu, bubbelpool, hamam och ett fitnesscenter. Olika massagebehandlingar kan bokas på Palmon Bay Hotel & Spa.</p>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/ib.jpg" alt="Iberostar hotell med privat strand****" class="w-full md:w-1/2 h-auto" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Iberostar hotell med privat strand****</h2>
-        <p> <br>Detta hotell, med direkt, privat tillgång till stranden, ligger 26 kilometer från Dubrovniks flygplats och nära de största turiststäderna Kotor, Perast och Herceg Novi.<br> <br>Njut av lokal gastronomi och medelhavsmat och missa inte den oförglömliga utsikten från Rooftop Bar och Beach Snack Bar med utsikt över havet. Upptäck Montenegros unika mysterium!</p>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/hotel-budva.jpg" alt="Hotel Budva****" class="w-full md:w-1/2 h-auto" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Hotel Budva****</h2>
-        <p> <br> Hotel Budva ligger i centrala Budva, precis vid strandpromenaden och bara några steg från sandstranden och småbåtshamnen i Slovenska. Här finns en restaurang, bar och ett hälsocenter. Konferensanläggning med integrerad, toppmodern ljud- och videoutrustning. </p>
-      </div>
-    </div>
-    <div class="flex flex-col md:flex-row items-start mb-8">
-      <img src="../images/splendid.jpg" alt="Hotel Budva****" class="w-full md:w-1/2 h-auto" />
-      <div class="mt-4 md:mt-0 md:ml-8">
-        <h2 class="text-2xl font-bold">Splendig Konferens & Spa *****</h2>
-        <p> <br>Det lyxiga 5-stjärniga hotellet Splendid ligger på en lång sandstrand i hjärtat av Bečići, bara 2 km från Budvas gamla stadskärna. Här finns ett magnifikt spa med uppvärmda inomhuspooler, bastur, bubbelpooler och ångbad med Swarovski-kristaller. Den privata sandstranden har parasoller och solstolar. Du kan också koppla av vid poolen, där det serveras drinkar och snacks hela dagen. På hotellet kan du också besöka det stora och moderna Casino Royale.
-        <br> <br> Hotellet har en stor och modern konferenslokal med kapacitet för upp till 1000 personer. Det finns också flera mindre mötesrum för upp till 200 personer. Konferenslokalerna är utrustade med den senaste tekniken och erbjuder en perfekt miljö för affärsmöten, seminarier och konferenser.</p>
-      </div>
-    </div>
-  </div>
+<Fragment slot="head">
+<style is:global>
+  /* ===== HOTEL ROWS ===== */
+  .htl-list { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+  .htl-row { display: grid; grid-template-columns: 1fr 1fr; min-height: 340px; border-bottom: 1px solid #f0f0f0; }
+  .htl-row:last-child { border-bottom: none; }
+  .htl-img-wrap { overflow: hidden; position: relative; }
+  .htl-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+  .htl-row:hover .htl-img { transform: scale(1.02); }
+  .htl-body { padding: 52px 64px; display: flex; flex-direction: column; justify-content: center; background: #fff; }
+  .htl-stars { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+  .htl-title { font-size: clamp(1.3rem, 2vw, 1.7rem); font-weight: 800; color: #0d2235; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
+  .htl-desc { font-size: 14px; color: #6b7280; line-height: 1.8; }
 
-  <div class="text-center relative mx-auto max-w-7xl px-4 md:px-3 py-12 md:py-16 lg:py-10 text-default">
-    <h2 class="text-4xl font-bold">Spektakulära resort</h2>
-  </div>
-<!-- Add Image Cards in the same row -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-4">
-  <ImageCard1 
-    link="https://www.portomontenegro.com/" 
-    imageUrl="../images/portotivat.jpg" 
-    title="Porto Montenegro" 
-  />
-  <ImageCard1 
-    link="https://portonovi.com/en/blog/ultimate-guide-europes-first-oneonly-oneonly-portonovi-resort?_gl=1*1814xz6*_up*MQ..*_gs*MQ..&gclid=CjwKCAiAzvC9BhADEiwAEhtlN0b_KILkzVMpHyy5cWHYs8oyz2mZvUxYba6wbo-BCfeQpt7j9_pi5xoC4rwQAvD_BwE" 
-    imageUrl="../images/onlyportonovi.webp" 
-    title="One & Only Portonovi " 
-  />
-  <ImageCard1 
-    link="/boka" 
-    imageUrl="../images/morecovek.webp" 
-    title="Luštica Resort" 
-  />
-</div>
-  
- 
-  <CallToAction
-    title="“At the birth of our planet, the most beautiful encounter between the land and the sea must have happened at the coast of Montenegro. When the pearls of nature were sown, handfuls of them were cast on this soil.” "
-    subtitle="Lord Byron"
-  />
-</Layout>
+  /* ===== RESORT CARDS (bottom grid) ===== */
+  .htl-resorts { padding: 88px 32px; background: #f8f6f1; }
+  .htl-resorts-inner { max-width: 1280px; margin: 0 auto; }
+  .htl-resort-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 48px; }
+  .htl-resort-card { position: relative; overflow: hidden; border-radius: 6px; display: block; text-decoration: none; }
+  .htl-resort-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.5s ease; }
+  .htl-resort-card:hover img { transform: scale(1.04); }
+  .htl-resort-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,30,46,0.75) 0%, transparent 55%); }
+  .htl-resort-title { position: absolute; bottom: 20px; left: 22px; font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.01em; }
 
-<style>
-  .flex {
-    display: flex;
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1023px) {
+    .htl-body { padding: 40px 40px; }
+    .htl-resort-grid { grid-template-columns: 1fr 1fr; }
   }
-  .items-start {
-    align-items: flex-start;
-  }
-  .ml-8 {
-    margin-left: 2rem;
-  }
-  .mb-8 {
-    margin-bottom: 2rem;
-  }
-  .hotel-image {
-    width: 300px; /* Set a fixed width */
-    height: 200px; /* Set a fixed height */
-    object-fit: cover; /* Ensure the image covers the area */
-  }
-  .image-card {
-    position: relative;
-    overflow: hidden;
-    height: 300px; /* Set a fixed height for the card */
-  }
-  .image-card img {
-    width: 100%;
-    height: 100%; /* Ensure the image covers the card area */
-    object-fit: cover; /* Ensure the image covers the area */
-  }
-  .image-card-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
-  .simple-image-card {
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-  }
-  .simple-image-card img {
-    width: 100%;
-    height: auto; /* Use the same height as image card */
-    object-fit: cover; /* Ensure the image covers the area */
-  }
-  .simple-image-card-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    font-size: 1.25rem; /* Adjust the font size */
-    font-weight: bold; /* Make the font bold */
-    text-align: center;
-  }
-  .title-block {
-    font-size: 1.5rem; /* Adjust the font size */
-  }
-
-  @media (max-width: 768px) {
-    .flex {
-      flex-direction: column;
-    }
-    .ml-8 {
-      margin-left: 0;
-      margin-top: 1rem;
-    }
-    .grid-cols-3 {
-      grid-template-columns: 1fr; /* Make the grid single column on small screens */
-    }
-    .image-card {
-      height: 200px; /* Adjust the height for mobile */
-    }
-    .title-block {
-      font-size: 1.25rem; /* Adjust the font size for mobile */
-    }
-    .call-to-action {
-      font-size: 0.875rem; /* Adjust the font size for mobile */
-    }
+  @media (max-width: 767px) {
+    .htl-row { grid-template-columns: 1fr; }
+    .htl-img-wrap { min-height: 260px; }
+    .htl-body { padding: 36px 24px; }
+    .htl-resorts { padding: 64px 24px; }
+    .htl-resort-grid { grid-template-columns: 1fr; }
   }
 </style>
+</Fragment>
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-labelledby="hero-h1">
+  <img class="hero-img" src="/images/mamula2.jpg" alt="Hotell vid Adriatiska kusten" />
+  <div class="hero-overlay"></div>
+  <div class="hero-scroll" aria-hidden="true"><div class="hero-scroll-line"></div></div>
+  <div class="hero-content">
+    <div class="hero-kicker fade-up">Utvalda hotell</div>
+    <h1 id="hero-h1" class="hero-title fade-up delay-1">
+      Vårt urval av<br />hotell.
+    </h1>
+    <p class="hero-sub fade-up delay-2">
+      Handplockade boenden för grupper och företag – kvalitet, läge och service i toppklass.
+    </p>
+    <a href="#kontakt" class="btn-gold fade-up delay-3">
+      KONTAKTA OSS OM HOTELL
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ===== HOTEL LISTINGS ===== -->
+<section class="pg-section pg-section-white" style="padding-bottom:0;">
+  <div class="htl-list fade-up">
+
+    <!-- 1. Mamula Island Hotel -->
+    <div class="htl-row">
+      <div class="htl-img-wrap">
+        <img class="htl-img" src="/images/mamulahotel1.webp" alt="Mamula Island Hotel" loading="lazy" />
+      </div>
+      <div class="htl-body">
+        <div class="htl-stars">★★★★★</div>
+        <h2 class="htl-title">Montenegros häftigaste hotell – ett historiskt fort på öde ö</h2>
+        <p class="htl-desc">Så fort man stiger i land på ön Mamula i Montenegro känner man historiens vingslag. Upplevelsen att bo i en utsökt restaurerad fästning från 1800-talet, belägen på sin egen ö vid inloppet till en av världens vackraste havsvikar är skäl nog att resa hit. Till Mamula Island Hotel kommer gäster även för den utsökta maten, atmosfären och för att känna historiens vingslag. Det börjar redan då du byter ditt bagage mot ett glas champagne på motorbåten på väg ut till ön.</p>
+      </div>
+    </div>
+
+    <!-- 2. Lazure -->
+    <div class="htl-row">
+      <div class="htl-body">
+        <div class="htl-stars">★★★★★</div>
+        <h2 class="htl-title">Lazure Hotel &amp; Marina</h2>
+        <p class="htl-desc">Med utsikt över Kotorbukten erbjuder Lazure Hotel &amp; Marina lyxigt boende, endast 2 km från Herceg Novi. Kliv in i ett klassiskt men moderniserat hotell, där de 300 år gamla väggarna har bevittnat Montenegros stora historiska händelser. Resorten har egen strand, egen pool och egen marina. När det kommer till fler bekvämligheter så finns två restauranger, en säsongsöppen strandbar samt en lobbybar. Väldisponibla konferensanläggningar finns att tillgå även för team och företagsbehov.</p>
+      </div>
+      <div class="htl-img-wrap">
+        <img class="htl-img" src="/images/lazure.webp" alt="Lazure Hotel & Marina" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- 3. The Chedi -->
+    <div class="htl-row">
+      <div class="htl-img-wrap">
+        <img class="htl-img" src="/images/chedi2.jpg" alt="The Chedi Luštica Bay" loading="lazy" />
+      </div>
+      <div class="htl-body">
+        <div class="htl-stars">★★★★★ · The Leading Hotels of the World</div>
+        <h2 class="htl-title">The Chedi Luštica Bay</h2>
+        <p class="htl-desc">Där det mjuka azurblå havet möter de majestätiska bergen hittar du The Chedi Luštica Bay – ett lyxigt femstjärnigt hotell i Montenegro. Beläget vid den magnifika montenegrinska kusten, 16 km från Tivat, erbjuder The Chedi 111 exceptionellt eleganta rum och sviter, två restauranger, två barer, flexibla möteslokaler, en privat strand, ett asiatiskt inspirerat spa, inomhuspool och en infinitypool utomhus.</p>
+      </div>
+    </div>
+
+    <!-- 4. Palmon Bay -->
+    <div class="htl-row">
+      <div class="htl-body">
+        <div class="htl-stars">★★★★</div>
+        <h2 class="htl-title">Hotel and Spa Palmon Bay</h2>
+        <p class="htl-desc">Palmon Bay Spa 4* är ett nytt och modernt hotell beläget i Igalo, precis vid havet. Hotellet har 163 rum, varav många med havsutsikt. Alla luftkonditionerade rum har en möblerad balkong med utsikt över inloppet till Boka Kotorska-bukten. Gäster kan njuta av mat och dryck i någon av hotellets restauranger. Spa- och wellnesscentret erbjuder finsk och infraröd bastu, bubbelpool, hamam och ett fitnesscenter.</p>
+      </div>
+      <div class="htl-img-wrap">
+        <img class="htl-img" src="/images/palmon.jpg" alt="Hotel and Spa Palmon Bay" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- 5. Iberostar -->
+    <div class="htl-row">
+      <div class="htl-img-wrap">
+        <img class="htl-img" src="/images/ib.jpg" alt="Iberostar hotell med privat strand" loading="lazy" />
+      </div>
+      <div class="htl-body">
+        <div class="htl-stars">★★★★ · Privat strand</div>
+        <h2 class="htl-title">Iberostar hotell med privat strand</h2>
+        <p class="htl-desc">Med direkt, privat tillgång till stranden, 26 km från Dubrovniks flygplats och nära Kotor, Perast och Herceg Novi. Njut av lokal gastronomi och medelhavsmat och missa inte den oförglömliga utsikten från Rooftop Bar och Beach Snack Bar med utsikt över havet. Upptäck Montenegros unika mysterium!</p>
+      </div>
+    </div>
+
+    <!-- 6. Hotel Budva -->
+    <div class="htl-row">
+      <div class="htl-body">
+        <div class="htl-stars">★★★★</div>
+        <h2 class="htl-title">Hotel Budva</h2>
+        <p class="htl-desc">Hotel Budva ligger i centrala Budva, precis vid strandpromenaden och bara några steg från sandstranden och småbåtshamnen i Slovenska. Här finns en restaurang, bar och ett hälsocenter. Konferensanläggning med integrerad, toppmodern ljud- och videoutrustning.</p>
+      </div>
+      <div class="htl-img-wrap">
+        <img class="htl-img" src="/images/hotel-budva.jpg" alt="Hotel Budva" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- 7. Splendid -->
+    <div class="htl-row">
+      <div class="htl-img-wrap">
+        <img class="htl-img" src="/images/splendid.jpg" alt="Splendid Konferens & Spa" loading="lazy" />
+      </div>
+      <div class="htl-body">
+        <div class="htl-stars">★★★★★ · Konferens & Spa</div>
+        <h2 class="htl-title">Splendid Konferens &amp; Spa</h2>
+        <p class="htl-desc">Det lyxiga 5-stjärniga hotellet Splendid ligger på en lång sandstrand i hjärtat av Bečići, bara 2 km från Budvas gamla stadskärna. Magnifikt spa med uppvärmda inomhuspooler, bastur, bubbelpooler och ångbad med Swarovski-kristaller. Stor konferenslokal med kapacitet för upp till 1&nbsp;000 personer och flera mötesrum för upp till 200 personer.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SPEKTAKULÄRA RESORT ===== -->
+<section class="htl-resorts">
+  <div class="htl-resorts-inner">
+    <div class="fade-up">
+      <div class="pg-kicker">Spektakulära resort</div>
+      <h2 class="pg-h2">Exklusiva resorts<br />längs kusten.</h2>
+    </div>
+    <div class="htl-resort-grid fade-up delay-1">
+
+      <a href="https://www.portomontenegro.com/" target="_blank" rel="noopener noreferrer" class="htl-resort-card">
+        <img src="/images/portotivat.jpg" alt="Porto Montenegro" loading="lazy" />
+        <div class="htl-resort-overlay"></div>
+        <span class="htl-resort-title">Porto Montenegro</span>
+      </a>
+
+      <a href="https://portonovi.com/" target="_blank" rel="noopener noreferrer" class="htl-resort-card">
+        <img src="/images/onlyportonovi.webp" alt="One & Only Portonovi" loading="lazy" />
+        <div class="htl-resort-overlay"></div>
+        <span class="htl-resort-title">One &amp; Only Portonovi</span>
+      </a>
+
+      <a href="/boka" class="htl-resort-card">
+        <img src="/images/lustica.webp" alt="Luštica Resort" loading="lazy" />
+        <div class="htl-resort-overlay"></div>
+        <span class="htl-resort-title">Luštica Resort</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA (Lord Byron quote) ===== -->
+<section class="cta-banner" id="kontakt">
+  <img class="cta-banner-bg" src="/images/kotorbukten.jpg" alt="" aria-hidden="true" loading="lazy" />
+  <div class="cta-banner-inner" style="text-align:center;">
+    <p class="fade-up" style="font-size:clamp(1rem,1.5vw,1.2rem);color:rgba(255,255,255,0.55);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:20px;">Lord Byron</p>
+    <h2 class="cta-banner-title fade-up delay-1" style="max-width:800px;margin:0 auto 24px;font-style:italic;font-size:clamp(1.3rem,2.5vw,2rem);">
+      "At the birth of our planet, the most beautiful encounter between the land and the sea must have happened at the coast of Montenegro."
+    </h2>
+    <a href="/kontakt" class="btn-gold fade-up delay-2" style="display:inline-flex;">
+      KONTAKTA OSS OM HOTELL
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+</section>
+
+</MBLayout>

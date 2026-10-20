@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
+import vue from '@astrojs/vue';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
@@ -26,6 +27,7 @@ export default defineConfig({
   output: 'static',
 
   integrations: [
+    vue(),
     tailwind({
       applyBaseStyles: false,
     }),

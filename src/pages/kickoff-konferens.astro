@@ -1,0 +1,390 @@
+---
+import MBLayout from '../layouts/MBLayout.astro';
+---
+
+<MBLayout
+  title="Kickoff & Konferens i Montenegro — MediteranoBay"
+  description="Konferenser och kickoffer som inspirerar, engagerar och bygger framtidens team. Skräddarsydda event i Montenegro."
+  ogImage="/images/barkanoc2.jpg"
+  ogUrl="https://mediteranobay.com/kickoff-konferens"
+  activeNav="upplevelser"
+>
+
+<Fragment slot="head">
+<style is:global>
+  .lv-values { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 48px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.15); }
+  .lv-value-icon { color: var(--gold); margin-bottom: 10px; }
+  .lv-value-title { font-size: 12px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .lv-value-desc { font-size: 11px; color: rgba(255,255,255,0.58); line-height: 1.5; }
+  .lv-tabs { background: #fff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 68px; z-index: 50; }
+  .lv-tabs-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .lv-tabs-inner::-webkit-scrollbar { display: none; }
+  .lv-tab { display: inline-flex; align-items: center; gap: 8px; padding: 15px 20px; font-size: 11px; font-weight: 700; color: #6b7280; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.2s, border-color 0.2s; flex-shrink: 0; }
+  .lv-tab:hover { color: var(--navy); border-bottom-color: rgba(11,60,93,0.3); }
+  .lv-tab-cta { background: var(--gold); color: #fff !important; border-radius: 4px; margin: 8px 0 8px 8px; padding: 8px 18px !important; border-bottom: none !important; }
+  .lv-tab-cta:hover { background: var(--gold-dark) !important; }
+  .lv-program { padding: 88px 32px; background: #fff; }
+  .lv-prog-layout { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 4fr 8fr; gap: 72px; align-items: start; }
+  .lv-prog-days { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+  .lv-prog-day { display: flex; flex-direction: column; }
+  .lv-prog-day-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px 4px 0 0; display: block; }
+  .lv-prog-day-body { background: #f8f6f1; border-radius: 0 0 4px 4px; padding: 16px 14px 18px; flex: 1; }
+  .lv-day-label { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+  .lv-day-title { font-size: 14px; font-weight: 800; color: #0d2235; margin-bottom: 10px; line-height: 1.2; letter-spacing: -0.01em; }
+  .lv-day-items { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .lv-day-item { font-size: 11px; color: #6b7280; line-height: 1.5; padding-left: 12px; position: relative; }
+  .lv-day-item::before { content: '·'; position: absolute; left: 2px; color: var(--gold); font-weight: 700; }
+  .lv-hotels { padding: 88px 32px; background: #f8f6f1; }
+  .lv-hotels-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 72px; align-items: start; }
+  .lv-hotel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .lv-hotel-card { background: #fff; border-radius: 6px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: box-shadow 0.3s; }
+  .lv-hotel-card:hover { box-shadow: 0 8px 28px rgba(13,34,53,0.12); }
+  .lv-hotel-img-wrap { overflow: hidden; flex-shrink: 0; }
+  .lv-hotel-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; transition: transform 0.55s ease; }
+  .lv-hotel-card:hover .lv-hotel-img { transform: scale(1.04); }
+  .lv-hotel-body { padding: 16px 18px 18px; flex: 1; display: flex; flex-direction: column; }
+  .lv-hotel-name { font-size: 13px; font-weight: 800; color: #0d2235; margin-bottom: 2px; line-height: 1.2; }
+  .lv-hotel-place { font-size: 10px; color: var(--gold); font-weight: 700; margin-bottom: 8px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .lv-hotel-desc { font-size: 12px; color: #6b7280; line-height: 1.6; flex: 1; margin-bottom: 12px; }
+  .lv-hotel-link { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase; transition: gap 0.2s; }
+  .lv-hotel-card:hover .lv-hotel-link { gap: 10px; }
+  .lv-acts { padding: 88px 32px; background: #fff; }
+  .lv-acts-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 72px; align-items: start; }
+  .lv-act-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 56px; }
+  .lv-act-item { display: flex; flex-direction: column; gap: 8px; }
+  .lv-act-icon { color: var(--gold); }
+  .lv-act-title { font-size: 14px; font-weight: 800; color: #0d2235; line-height: 1.2; }
+  .lv-act-desc { font-size: 13px; color: #6b7280; line-height: 1.65; }
+  .lv-faq { padding: 88px 32px; background: #f8f6f1; }
+  .lv-faq-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 72px; align-items: start; }
+  @media (max-width: 1023px) {
+    .lv-values { grid-template-columns: repeat(2,1fr); }
+    .lv-prog-layout { grid-template-columns: 1fr; gap: 40px; }
+    .lv-prog-days { grid-template-columns: repeat(2,1fr); }
+    .lv-hotels-inner, .lv-acts-inner, .lv-faq-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 767px) {
+    .lv-program, .lv-hotels, .lv-acts, .lv-faq { padding: 64px 24px; }
+    .lv-prog-days { grid-template-columns: repeat(2,1fr); }
+    .lv-hotel-grid { grid-template-columns: 1fr; }
+    .lv-act-grid { grid-template-columns: 1fr; gap: 28px; }
+    .lv-values { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .lv-tabs-inner { padding: 0 16px; }
+  }
+</style>
+</Fragment>
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-labelledby="hero-h1">
+  <img class="hero-img" src="/images/barkanoc2.jpg" alt="Kickoff och Konferens i Montenegro" style="object-position: center 60%;" />
+  <div class="hero-overlay"></div>
+  <div class="hero-scroll" aria-hidden="true"><div class="hero-scroll-line"></div></div>
+  <div class="hero-content">
+    <nav aria-label="Brödsmula" class="fade-up" style="margin-bottom:16px;">
+      <a href="/upplevelser" style="font-size:11px;color:rgba(255,255,255,0.5);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Upplevelser</a>
+      <span style="color:rgba(255,255,255,0.3);margin:0 8px;">›</span>
+      <span style="font-size:11px;color:rgba(255,255,255,0.7);letter-spacing:0.08em;text-transform:uppercase;">Kickoff &amp; Konferens</span>
+    </nav>
+    <div class="hero-kicker fade-up delay-1">Kickoff &amp; Konferens</div>
+    <h1 id="hero-h1" class="hero-title fade-up delay-1">
+      En kickoff som<br />faktiskt inspirerar.
+    </h1>
+    <p class="hero-sub fade-up delay-2">
+      Konferenser och kickoffer som engagerar, skapar energi och bygger framtidens team — i en av världens vackraste miljöer.
+    </p>
+    <a href="#kontakt" class="btn-gold fade-up delay-3">
+      BOKA ETT KOSTNADSFRITT MÖTE
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+    <div class="lv-values fade-up delay-4">
+      <div>
+        <svg class="lv-value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <div class="lv-value-title">Inspirerande start</div>
+        <div class="lv-value-desc">Sätt tonen för hela året framåt.</div>
+      </div>
+      <div>
+        <svg class="lv-value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <div class="lv-value-title">Engagerat team</div>
+        <div class="lv-value-desc">Motivation och riktning för alla.</div>
+      </div>
+      <div>
+        <svg class="lv-value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M3 10h18M8 6V4M16 6V4"/></svg>
+        <div class="lv-value-title">Professionella lokaler</div>
+        <div class="lv-value-desc">Mötesutrymmen med utsikt och kvalitet.</div>
+      </div>
+      <div>
+        <svg class="lv-value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        <div class="lv-value-title">Oförglömliga minnen</div>
+        <div class="lv-value-desc">En kickoff som pratas om länge.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IN-PAGE NAVIGATION ===== -->
+<nav class="lv-tabs" aria-label="Sidonavigation">
+  <div class="lv-tabs-inner">
+    <a href="#program" class="lv-tab">Program</a>
+    <a href="#hotell" class="lv-tab">Hotell</a>
+    <a href="#aktiviteter" class="lv-tab">Aktiviteter</a>
+    <a href="#faq" class="lv-tab">FAQ</a>
+    <a href="#kontakt" class="lv-tab lv-tab-cta">Boka möte</a>
+  </div>
+</nav>
+
+<!-- ===== PROGRAM ===== -->
+<section class="lv-program" id="program">
+  <div class="lv-prog-layout">
+    <div class="fade-up">
+      <div class="pg-kicker">Program</div>
+      <h2 class="pg-h2">Tre dagar som<br />sätter tonen för hela året.</h2>
+      <p class="pg-body">Varje kickoff och konferens skapas utifrån er agenda, era mål och er grupp. Nedan är ett exempel på ett 3-dagars upplägg.</p>
+    </div>
+    <div class="lv-prog-days fade-up delay-1">
+
+      <div class="lv-prog-day">
+        <img class="lv-prog-day-img" src="/images/konferens3.jpg" alt="Välkomstmiddag och ankomst" loading="lazy" />
+        <div class="lv-prog-day-body">
+          <div class="lv-day-label">Dag 1</div>
+          <h3 class="lv-day-title">Ankomst &amp; Uppstart</h3>
+          <ul class="lv-day-items">
+            <li class="lv-day-item">Ankomst och incheckning</li>
+            <li class="lv-day-item">Välkomstmiddag utomhus</li>
+            <li class="lv-day-item">Kickoff-ceremoni</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lv-prog-day">
+        <img class="lv-prog-day-img" src="/images/konferens2.webp" alt="Konferens och workshops" loading="lazy" />
+        <div class="lv-prog-day-body">
+          <div class="lv-day-label">Dag 2</div>
+          <h3 class="lv-day-title">Konferens &amp; Workshops</h3>
+          <ul class="lv-day-items">
+            <li class="lv-day-item">Plenum och presentationer</li>
+            <li class="lv-day-item">Parallella workshops</li>
+            <li class="lv-day-item">Aktivitet eller utflykt</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lv-prog-day">
+        <img class="lv-prog-day-img" src="/images/barkanoc2.jpg" alt="Festmiddag och firande" loading="lazy" />
+        <div class="lv-prog-day-body">
+          <div class="lv-day-label">Dag 3</div>
+          <h3 class="lv-day-title">Firande &amp; Framtid</h3>
+          <ul class="lv-day-items">
+            <li class="lv-day-item">Summering och nästa steg</li>
+            <li class="lv-day-item">Gallamiddag eller festkväll</li>
+            <li class="lv-day-item">Avresa med ny energi</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lv-prog-day">
+        <img class="lv-prog-day-img" src="/images/kotorbukten.jpg" alt="Fridag och aktivitet" loading="lazy" />
+        <div class="lv-prog-day-body">
+          <div class="lv-day-label">Tillägg</div>
+          <h3 class="lv-day-title">Valfri extra dag</h3>
+          <ul class="lv-day-items">
+            <li class="lv-day-item">Naturäventyr eller utflykt</li>
+            <li class="lv-day-item">Teamaktiviteter</li>
+            <li class="lv-day-item">Fri tid och återhämtning</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOTELL ===== -->
+<section class="lv-hotels" id="hotell">
+  <div class="lv-hotels-inner">
+    <div class="fade-up">
+      <div class="pg-kicker">Hotell</div>
+      <h2 class="pg-h2">Venues som imponerar<br />och inspirerar.</h2>
+      <p class="pg-body">Vi väljer konferenshotell med moderna möteslokaler, teknisk utrustning och atmosfär som sätter rätt stämning.</p>
+      <a href="/hotell" class="btn-gold">
+        SE ALLA HOTELL
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <div class="lv-hotel-grid fade-up delay-2">
+
+      <a href="/hotell" class="lv-hotel-card">
+        <div class="lv-hotel-img-wrap">
+          <img class="lv-hotel-img" src="/images/splendid.jpg" alt="Splendid Konferens & Spa" loading="lazy" />
+        </div>
+        <div class="lv-hotel-body">
+          <div class="lv-hotel-name">Splendid Konferens &amp; Spa</div>
+          <div class="lv-hotel-place">Budva</div>
+          <div class="lv-hotel-desc">Kapacitet för upp till 1 000 personer med toppmodern konferensteknik och strandspa.</div>
+          <span class="lv-hotel-link">Läs mer <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/hotell" class="lv-hotel-card">
+        <div class="lv-hotel-img-wrap">
+          <img class="lv-hotel-img" src="/images/chedi3.jpg" alt="The Chedi Luštica Bay" loading="lazy" />
+        </div>
+        <div class="lv-hotel-body">
+          <div class="lv-hotel-name">The Chedi Luštica Bay</div>
+          <div class="lv-hotel-place">Luštica Bay</div>
+          <div class="lv-hotel-desc">Lyxigt resort med flexibla möteslokaler och fantastisk havsutsikt.</div>
+          <span class="lv-hotel-link">Läs mer <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/hotell" class="lv-hotel-card">
+        <div class="lv-hotel-img-wrap">
+          <img class="lv-hotel-img" src="/images/lazure.webp" alt="Lazure Hotel & Marina" loading="lazy" />
+        </div>
+        <div class="lv-hotel-body">
+          <div class="lv-hotel-name">Lazure Hotel &amp; Marina</div>
+          <div class="lv-hotel-place">Herceg Novi</div>
+          <div class="lv-hotel-desc">Historisk charm med moderna konferensanläggningar vid Kotorbukten.</div>
+          <span class="lv-hotel-link">Läs mer <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/hotell" class="lv-hotel-card">
+        <div class="lv-hotel-img-wrap">
+          <img class="lv-hotel-img" src="/images/palmon.jpg" alt="Palmon Bay Spa" loading="lazy" />
+        </div>
+        <div class="lv-hotel-body">
+          <div class="lv-hotel-name">Palmon Bay Hotel &amp; Spa</div>
+          <div class="lv-hotel-place">Igalo</div>
+          <div class="lv-hotel-desc">Modernt hotell med konferenslokal och spa — perfekt för längre evenemang.</div>
+          <span class="lv-hotel-link">Läs mer <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== AKTIVITETER ===== -->
+<section class="lv-acts" id="aktiviteter">
+  <div class="lv-acts-inner">
+    <div class="fade-up">
+      <div class="pg-kicker">Aktiviteter</div>
+      <h2 class="pg-h2">Konferens på dagen.<br />Äventyr på kvällen.</h2>
+      <p class="pg-body">Kombinera möten med upplevelser som skapar energi, stärker sammanhållningen och ger er kickoffen ett lyft.</p>
+      <a href="/aktiviteter" class="btn-gold" style="margin-top:8px;">
+        SE ALLA AKTIVITETER
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <div class="lv-act-grid fade-up delay-1">
+      <div class="lv-act-item">
+        <svg class="lv-act-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 17l1.5-5.5 3 2 3-7 3 4 3-8 4 14H3z"/>
+        </svg>
+        <div class="lv-act-title">Segling &amp; kustäventyr</div>
+        <div class="lv-act-desc">Avsluta dagen med segling längs kusten — perfekt för networking och avkoppling.</div>
+      </div>
+      <div class="lv-act-item">
+        <svg class="lv-act-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+        </svg>
+        <div class="lv-act-title">Teambuilding</div>
+        <div class="lv-act-desc">Stärk sammanhållningen med aktiviteter som skapar energi och nya kontakter.</div>
+      </div>
+      <div class="lv-act-item">
+        <svg class="lv-act-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+        </svg>
+        <div class="lv-act-title">Gallamiddag</div>
+        <div class="lv-act-desc">Fira framgångarna med en exklusiv middag under bar himmel med fantastisk utsikt.</div>
+      </div>
+      <div class="lv-act-item">
+        <svg class="lv-act-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 21h18M5 21V7l7-5 7 5v14"/><path d="M9 21V15h6v6"/>
+        </svg>
+        <div class="lv-act-title">Stadsutflykter</div>
+        <div class="lv-act-desc">Utforska Kotors medeltida murar eller Herceg Novis historiska stadskärna.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="lv-faq" id="faq">
+  <div class="lv-faq-inner">
+    <div class="fade-up">
+      <div class="pg-kicker">FAQ</div>
+      <h2 class="pg-h2">Vanliga frågor om<br />kickoff &amp; konferens.</h2>
+    </div>
+    <div class="pg-faq-list fade-up delay-1" style="margin-top:0;">
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          Hur stor kan gruppen vara?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Vi arrangerar event för allt från 20 till 500+ deltagare. Vi har tillgång till venues med kapacitet för stora grupper, och skapar alltid rätt upplägg oavsett storlek.</p></div>
+      </div>
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          Kan ni hjälpa med hela upplägget?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Ja, vi tar hand om allt — venue, logistik, catering, aktiviteter, teknik och projektledning. Ni fokuserar på ert innehåll, vi sköter resten.</p></div>
+      </div>
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          Finns det AV-teknik och mötesteknik?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Alla våra konferenshotell har professionell ljud- och videoutrustning, snabbt wifi och teknisk support på plats. Vi säkerställer att tekniken fungerar felfritt.</p></div>
+      </div>
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          Hur lång tid i förväg ska vi boka?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Vi rekommenderar att boka minst 2–3 månader i förväg för bästa urval av datum och hotell. Vi kan dock hantera kortare ledtider — hör av er så löser vi det.</p></div>
+      </div>
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          Kan vi ha hybrid-konferens?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Ja, vi kan arrangera hybridlösningar med streaming och digitala deltagare. Berätta om ert upplägg så hittar vi rätt teknisk lösning.</p></div>
+      </div>
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          Hur bokar vi ett möte?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Fyll i formuläret nedan eller kontakta oss på info@mediteranobay.com. Vi återkommer inom 24 timmar för ett kostnadsfritt inledande samtal.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-banner" id="kontakt">
+  <img class="cta-banner-bg" src="/images/kotorbukten.jpg" alt="" aria-hidden="true" loading="lazy" />
+  <div class="cta-banner-inner" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px;">
+    <div>
+      <h2 class="cta-banner-title fade-up">Redo att planera<br />er nästa kickoff?</h2>
+      <p class="cta-banner-desc fade-up delay-1">Boka ett kostnadsfritt möte så berättar vi mer och skapar ett förslag utifrån era mål och behov.</p>
+    </div>
+    <div class="fade-up delay-2" style="flex-shrink:0;">
+      <a href="/kontakt" class="btn-gold">
+        BOKA ETT KOSTNADSFRITT MÖTE
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</MBLayout>

@@ -1,0 +1,411 @@
+---
+import MBLayout from '../layouts/MBLayout.astro';
+---
+
+<MBLayout
+  title="Ledningsretreat i Montenegro — MediteranoBay"
+  description="Strategiska möten i inspirerande miljöer som driver utveckling och skapar resultat. Skräddarsydda ledningsretreat i Montenegro."
+  ogImage="/images/konferens3.jpg"
+  ogUrl="https://mediteranobay.com/ledningsretreat"
+  activeNav="upplevelser"
+>
+
+<Fragment slot="head">
+<style is:global>
+
+  /* ===== HERO VALUES ===== */
+  .lv-values { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 48px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.15); }
+  .lv-value-icon { color: var(--gold); margin-bottom: 10px; }
+  .lv-value-title { font-size: 12px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .lv-value-desc { font-size: 11px; color: rgba(255,255,255,0.58); line-height: 1.5; }
+
+  /* ===== IN-PAGE TABS ===== */
+  .lv-tabs { background: #fff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 68px; z-index: 50; }
+  .lv-tabs-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .lv-tabs-inner::-webkit-scrollbar { display: none; }
+  .lv-tab { display: inline-flex; align-items: center; gap: 8px; padding: 15px 20px; font-size: 11px; font-weight: 700; color: #6b7280; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.2s, border-color 0.2s; flex-shrink: 0; }
+  .lv-tab:hover { color: var(--navy); border-bottom-color: rgba(11,60,93,0.3); }
+  .lv-tab-cta { background: var(--gold); color: #fff !important; border-radius: 4px; margin: 8px 0 8px 8px; padding: 8px 18px !important; border-bottom: none !important; }
+  .lv-tab-cta:hover { background: var(--gold-dark) !important; border-bottom-color: transparent !important; }
+
+  /* ===== PROGRAM SECTION ===== */
+  .lv-program { padding: 88px 32px; background: #fff; }
+  .lv-prog-layout { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 4fr 8fr; gap: 72px; align-items: start; }
+  .lv-prog-days { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+  .lv-prog-day { display: flex; flex-direction: column; }
+  .lv-prog-day-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px 4px 0 0; display: block; }
+  .lv-prog-day-body { background: #f8f6f1; border-radius: 0 0 4px 4px; padding: 16px 14px 18px; flex: 1; }
+  .lv-day-label { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
+  .lv-day-title { font-size: 14px; font-weight: 800; color: #0d2235; margin-bottom: 10px; line-height: 1.2; letter-spacing: -0.01em; }
+  .lv-day-items { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .lv-day-item { font-size: 11px; color: #6b7280; line-height: 1.5; padding-left: 12px; position: relative; }
+  .lv-day-item::before { content: '·'; position: absolute; left: 2px; color: var(--gold); font-weight: 700; }
+
+  /* ===== HOTEL SECTION ===== */
+  .lv-hotels { padding: 88px 32px; background: #f8f6f1; }
+  .lv-hotels-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 72px; align-items: start; }
+  .lv-hotel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .lv-hotel-card { background: #fff; border-radius: 6px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: box-shadow 0.3s; }
+  .lv-hotel-card:hover { box-shadow: 0 8px 28px rgba(13,34,53,0.12); }
+  .lv-hotel-img-wrap { overflow: hidden; flex-shrink: 0; }
+  .lv-hotel-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; transition: transform 0.55s ease; }
+  .lv-hotel-card:hover .lv-hotel-img { transform: scale(1.04); }
+  .lv-hotel-body { padding: 16px 18px 18px; flex: 1; display: flex; flex-direction: column; }
+  .lv-hotel-name { font-size: 13px; font-weight: 800; color: #0d2235; margin-bottom: 2px; line-height: 1.2; }
+  .lv-hotel-place { font-size: 10px; color: var(--gold); font-weight: 700; margin-bottom: 8px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .lv-hotel-desc { font-size: 12px; color: #6b7280; line-height: 1.6; flex: 1; margin-bottom: 12px; }
+  .lv-hotel-link { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase; transition: gap 0.2s; }
+  .lv-hotel-card:hover .lv-hotel-link { gap: 10px; }
+
+  /* ===== ACTIVITIES SECTION ===== */
+  .lv-acts { padding: 88px 32px; background: #fff; }
+  .lv-acts-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 72px; align-items: start; }
+  .lv-act-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 56px; }
+  .lv-act-item { display: flex; flex-direction: column; gap: 8px; }
+  .lv-act-icon { color: var(--gold); }
+  .lv-act-title { font-size: 14px; font-weight: 800; color: #0d2235; line-height: 1.2; }
+  .lv-act-desc { font-size: 13px; color: #6b7280; line-height: 1.65; }
+
+  /* ===== FAQ SECTION ===== */
+  .lv-faq { padding: 88px 32px; background: #f8f6f1; }
+  .lv-faq-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 72px; align-items: start; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1023px) {
+    .lv-values { grid-template-columns: repeat(2,1fr); }
+    .lv-prog-layout { grid-template-columns: 1fr; gap: 40px; }
+    .lv-prog-days { grid-template-columns: repeat(2,1fr); }
+    .lv-hotels-inner { grid-template-columns: 1fr; gap: 40px; }
+    .lv-acts-inner { grid-template-columns: 1fr; gap: 40px; }
+    .lv-faq-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 767px) {
+    .lv-program { padding: 64px 24px; }
+    .lv-prog-days { grid-template-columns: repeat(2,1fr); }
+    .lv-hotels { padding: 64px 24px; }
+    .lv-hotel-grid { grid-template-columns: 1fr; }
+    .lv-acts { padding: 64px 24px; }
+    .lv-act-grid { grid-template-columns: 1fr; gap: 28px; }
+    .lv-faq { padding: 64px 24px; }
+    .lv-values { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .lv-tabs-inner { padding: 0 16px; }
+    .cta-banner-inner[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  }
+</style>
+</Fragment>
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-labelledby="hero-h1">
+  <img class="hero-img" src="/images/konferens3.jpg" alt="Ledningsretreat i Montenegro – strategiska möten med utsikt" />
+  <div class="hero-overlay"></div>
+  <div class="hero-scroll" aria-hidden="true"><div class="hero-scroll-line"></div></div>
+  <div class="hero-content">
+    <nav aria-label="Brödsmula" class="fade-up" style="margin-bottom:16px;">
+      <a href="/upplevelser" style="font-size:11px;color:rgba(255,255,255,0.5);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Upplevelser</a>
+      <span style="color:rgba(255,255,255,0.3);margin:0 8px;">›</span>
+      <span style="font-size:11px;color:rgba(255,255,255,0.7);letter-spacing:0.08em;text-transform:uppercase;">Ledningsretreat</span>
+    </nav>
+    <div class="hero-kicker fade-up delay-1">Ledningsretreat</div>
+    <h1 id="hero-h1" class="hero-title fade-up delay-1">
+      Strategiska möten<br />som driver resultat.
+    </h1>
+    <p class="hero-sub fade-up delay-2">
+      Skapa fokus, nya insikter och starkare beslutskraft i inspirerande miljöer där strategier blir verklighet.
+    </p>
+    <a href="#kontakt" class="btn-gold fade-up delay-3">
+      BOKA ETT KOSTNADSFRITT MÖTE
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+
+    <div class="lv-values fade-up delay-4">
+      <div>
+        <svg class="lv-value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <div class="lv-value-title">Strategisk riktning</div>
+        <div class="lv-value-desc">Fokus på det som driver er framåt.</div>
+      </div>
+      <div>
+        <svg class="lv-value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <div class="lv-value-title">Nya perspektiv</div>
+        <div class="lv-value-desc">Tid för reflektion skapar bättre beslut.</div>
+      </div>
+      <div>
+        <svg class="lv-value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <div class="lv-value-title">Starkare team</div>
+        <div class="lv-value-desc">Gemenskap och energi som håller i längden.</div>
+      </div>
+      <div>
+        <svg class="lv-value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        <div class="lv-value-title">Hållbar effekt</div>
+        <div class="lv-value-desc">Resultat som märks långt efter resan.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IN-PAGE NAVIGATION ===== -->
+<nav class="lv-tabs" aria-label="Sidonavigation">
+  <div class="lv-tabs-inner">
+    <a href="#program" class="lv-tab">Program</a>
+    <a href="#hotell" class="lv-tab">Hotell</a>
+    <a href="#aktiviteter" class="lv-tab">Aktiviteter</a>
+    <a href="#faq" class="lv-tab">FAQ</a>
+    <a href="#kontakt" class="lv-tab lv-tab-cta">Boka möte</a>
+  </div>
+</nav>
+
+<!-- ===== PROGRAM ===== -->
+<section class="lv-program" id="program">
+  <div class="lv-prog-layout">
+    <div class="fade-up">
+      <div class="pg-kicker">Program</div>
+      <h2 class="pg-h2">Ett upplägg som ger<br />fokus, energi och resultat.</h2>
+      <p class="pg-body">Varje retreat är skräddarsytt efter era mål och behov. Nedan är ett exempel på ett 4-dagars upplägg.</p>
+    </div>
+    <div class="lv-prog-days fade-up delay-1">
+
+      <div class="lv-prog-day">
+        <img class="lv-prog-day-img" src="/images/konferens.webp" alt="Ankomst och välkomstmiddag" loading="lazy" />
+        <div class="lv-prog-day-body">
+          <div class="lv-day-label">Dag 1</div>
+          <h3 class="lv-day-title">Ankomst &amp; Inspiration</h3>
+          <ul class="lv-day-items">
+            <li class="lv-day-item">Ankomst och incheckning</li>
+            <li class="lv-day-item">Välkomstmiddag</li>
+            <li class="lv-day-item">Introduktion och målbild</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lv-prog-day">
+        <img class="lv-prog-day-img" src="/images/konferens2.webp" alt="Strategimöte" loading="lazy" />
+        <div class="lv-prog-day-body">
+          <div class="lv-day-label">Dag 2</div>
+          <h3 class="lv-day-title">Strategi &amp; Fördjupning</h3>
+          <ul class="lv-day-items">
+            <li class="lv-day-item">Strategisessioner</li>
+            <li class="lv-day-item">Gruppdiskussioner</li>
+            <li class="lv-day-item">Eftermiddag för reflektion</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lv-prog-day">
+        <img class="lv-prog-day-img" src="/images/hiking.webp" alt="Aktivitet i naturen" loading="lazy" />
+        <div class="lv-prog-day-body">
+          <div class="lv-day-label">Dag 3</div>
+          <h3 class="lv-day-title">Utveckling &amp; Perspektiv</h3>
+          <ul class="lv-day-items">
+            <li class="lv-day-item">Workshop och plan framåt</li>
+            <li class="lv-day-item">Erfarenhetsutbyte</li>
+            <li class="lv-day-item">Aktivitet i naturen</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lv-prog-day">
+        <img class="lv-prog-day-img" src="/images/kotorbukten.jpg" alt="Kotorbukten utsikt" loading="lazy" />
+        <div class="lv-prog-day-body">
+          <div class="lv-day-label">Dag 4</div>
+          <h3 class="lv-day-title">Beslut &amp; Framdrift</h3>
+          <ul class="lv-day-items">
+            <li class="lv-day-item">Sammanfattning och beslut</li>
+            <li class="lv-day-item">Handlingsplan</li>
+            <li class="lv-day-item">Avresa med ny energi</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOTELL ===== -->
+<section class="lv-hotels" id="hotell">
+  <div class="lv-hotels-inner">
+    <div class="fade-up">
+      <div class="pg-kicker">Hotell</div>
+      <h2 class="pg-h2">Noggrant utvalda<br />boenden för ledningsgrupper.</h2>
+      <p class="pg-body">Vi samarbetar med handplockade hotell som erbjuder avskildhet, komfort och förstklassig service.</p>
+      <a href="/hotell" class="btn-gold">
+        SE ALLA HOTELL
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <div class="lv-hotel-grid fade-up delay-2">
+
+      <a href="/hotell" class="lv-hotel-card">
+        <div class="lv-hotel-img-wrap">
+          <img class="lv-hotel-img" src="/images/chedi3.jpg" alt="The Chedi Luštica Bay" loading="lazy" />
+        </div>
+        <div class="lv-hotel-body">
+          <div class="lv-hotel-name">The Chedi Luštica Bay</div>
+          <div class="lv-hotel-place">Luštica Bay</div>
+          <div class="lv-hotel-desc">Lyxigt resort vid havet med fantastisk utsikt och moderna möteslokaler.</div>
+          <span class="lv-hotel-link">Läs mer <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/hotell" class="lv-hotel-card">
+        <div class="lv-hotel-img-wrap">
+          <img class="lv-hotel-img" src="/images/kotor.jpg" alt="Hyatt Regency Kotor Bay" loading="lazy" />
+        </div>
+        <div class="lv-hotel-body">
+          <div class="lv-hotel-name">Hyatt Regency Kotor Bay</div>
+          <div class="lv-hotel-place">Kotor</div>
+          <div class="lv-hotel-desc">Modernt hotell i hjärtat av Kotorbukten med stora konferenslokaler.</div>
+          <span class="lv-hotel-link">Läs mer <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/hotell" class="lv-hotel-card">
+        <div class="lv-hotel-img-wrap">
+          <img class="lv-hotel-img" src="/images/HNbest.webp" alt="Hotel Heritage Herceg Novi" loading="lazy" />
+        </div>
+        <div class="lv-hotel-body">
+          <div class="lv-hotel-name">Hotel Heritage</div>
+          <div class="lv-hotel-place">Herceg Novi</div>
+          <div class="lv-hotel-desc">Boutiquehotell med historisk charm och utsikt över Adriatiska havet.</div>
+          <span class="lv-hotel-link">Läs mer <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/hotell" class="lv-hotel-card">
+        <div class="lv-hotel-img-wrap">
+          <img class="lv-hotel-img" src="/images/splendid.jpg" alt="Maestral Resort & Casino" loading="lazy" />
+        </div>
+        <div class="lv-hotel-body">
+          <div class="lv-hotel-name">Maestral Resort &amp; Casino</div>
+          <div class="lv-hotel-place">Budva</div>
+          <div class="lv-hotel-desc">Elegant hotell vid stranden med spa, casino och moderna mötesytor.</div>
+          <span class="lv-hotel-link">Läs mer <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== AKTIVITETER ===== -->
+<section class="lv-acts" id="aktiviteter">
+  <div class="lv-acts-inner">
+    <div class="fade-up">
+      <div class="pg-kicker">Aktiviteter</div>
+      <h2 class="pg-h2">Aktiviteter som<br />stärker och inspirerar.</h2>
+      <p class="pg-body">Kombinera strategiska möten med upplevelser som ger energi och skapar minnen tillsammans.</p>
+      <a href="/aktiviteter" class="btn-gold" style="margin-top:8px;">
+        SE ALLA AKTIVITETER
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <div class="lv-act-grid fade-up delay-1">
+      <div class="lv-act-item">
+        <svg class="lv-act-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 17l1.5-5.5 3 2 3-7 3 4 3-8 4 14H3z"/>
+        </svg>
+        <div class="lv-act-title">Segling &amp; båtturer</div>
+        <div class="lv-act-desc">Upplev kusten från havet och njut av spektakulära vyer.</div>
+      </div>
+      <div class="lv-act-item">
+        <svg class="lv-act-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 17l4-8 4 4 3-6 4 10H3z"/>
+        </svg>
+        <div class="lv-act-title">Vandring &amp; natur</div>
+        <div class="lv-act-desc">Stärk teamet med vandring i orörd och vacker natur.</div>
+      </div>
+      <div class="lv-act-item">
+        <svg class="lv-act-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+        </svg>
+        <div class="lv-act-title">Mat &amp; vin</div>
+        <div class="lv-act-desc">Lokala smaker och vinprovningar i unika omgivningar.</div>
+      </div>
+      <div class="lv-act-item">
+        <svg class="lv-act-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 21h18M5 21V7l7-5 7 5v14"/><path d="M9 21V15h6v6"/>
+        </svg>
+        <div class="lv-act-title">Kultur &amp; historia</div>
+        <div class="lv-act-desc">Utforska historiska platser och lär känna regionens kultur.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="lv-faq" id="faq">
+  <div class="lv-faq-inner">
+    <div class="fade-up">
+      <div class="pg-kicker">FAQ</div>
+      <h2 class="pg-h2">Vanliga frågor om<br />ledningsretreat.</h2>
+    </div>
+    <div class="pg-faq-list fade-up delay-1" style="margin-top:0;">
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          För vilka passar ett ledningsretreat?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Retreatet passar ledningsgrupper och chefsgrupper i alla branscher och storlekar. Typiskt 6–15 deltagare som vill skapa strategisk riktning, stärka samarbetet och fatta viktiga beslut tillsammans.</p></div>
+      </div>
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          Hur lång tid rekommenderas?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Vi rekommenderar 3–5 dagar för ett fullt ledningsretreat. Det ger tillräckligt med tid för fördjupning, reflektion och beslutsfattande utan att stressa igenom materialet.</p></div>
+      </div>
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          Kan ni skräddarsy upplägget?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Absolut. Varje retreat skapas utifrån era specifika mål, utmaningar och önskemål. Vi börjar alltid med ett kostnadsfritt möte för att förstå vad ni vill uppnå.</p></div>
+      </div>
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          När är bästa tiden på året?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Montenegro är vackert hela året. Vår och höst (april–juni, september–oktober) är idealiskt med behaglig värme och färre turister. Sommaren erbjuder fantastiska utomhusaktiviteter längs kusten.</p></div>
+      </div>
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          Vad ingår i ett retreat?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Varje paket är unikt men inkluderar typiskt boende på handplockat hotell, alla måltider, facilitering av strategisessioner, utvalda aktiviteter, transfer samt lokal support och projektledning på svenska.</p></div>
+      </div>
+
+      <div class="pg-faq-item">
+        <button class="pg-faq-q" aria-expanded="false">
+          Hur bokar vi ett möte?
+          <span class="pg-faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="pg-faq-answer"><p>Fyll i formuläret nedan eller kontakta oss direkt på info@mediteranobay.com. Vi återkommer inom 24 timmar för ett kostnadsfritt inledande samtal.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-banner" id="kontakt">
+  <img class="cta-banner-bg" src="/images/kotorbukten.jpg" alt="" aria-hidden="true" loading="lazy" />
+  <div class="cta-banner-inner" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px;">
+    <div>
+      <h2 class="cta-banner-title fade-up">Redo att planera<br />ert ledningsretreat?</h2>
+      <p class="cta-banner-desc fade-up delay-1">Boka ett kostnadsfritt möte så tar vi fram ett skräddarsytt förslag utifrån era mål och behov.</p>
+    </div>
+    <div class="fade-up delay-2" style="flex-shrink:0;">
+      <a href="/kontakt" class="btn-gold">
+        BOKA ETT KOSTNADSFRITT MÖTE
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</MBLayout>
