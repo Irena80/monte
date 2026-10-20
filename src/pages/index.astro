@@ -1,472 +1,461 @@
 ---
-// filepath: /Users/irena80/Documents/GitHub/monte/src/pages/index.astro
-import Layout from '~/layouts/PageLayout.astro';
-import Header from '~/components/widgets/Header.astro';
-import { headerData } from '~/navigation';
-
-import Packages from '~/components/mbay/Packages.astro';
-
-
-import Features2 from '~/components/widgets/Features2.astro';
-
-
-
-// Lägg överst i src/pages/index.astro
-const metadata = {
-  title: 'MediteranoBay — Företags- & gruppresor till Montenegro och Balkan',
-  description: 'Företags- & gruppresor till Montenegro och utvalda platser på Balkan— smarta, personliga och lokala. Snabb offert, lokal expertis och premiumservice.',
-  url: 'https://www.mediteranobay.com',
-  image: '/og-mediteranobay.jpg', // byt till din OG-bild
-};
+// Startsida – Corporate Offsites landing
+import CorporatePackages from '~/components/mbay/CorporatePackages.astro';
 ---
 
-
-<Layout metadata={metadata}>
-  <!-- Egen header på startsidan utan RSS & tema-knappar -->
-  <Header slot="header" {...headerData} isSticky />
-
-<!-- Announce bar under menu: Calendly CTA -->
-<div class="w-full bg-[#123055] text-white/95">
-  <a
-    href="https://calendly.com/info-53407"
-    target="_blank"
-    rel="noopener"
-    class="block text-center py-2.5 sm:py-3 text-[10px] sm:text-xs font-extrabold tracking-[0.2em] uppercase hover:text-white"
-    aria-label="Boka ett samtal via Calendly (öppnas i ny flik)"
-  >
-   BOKNINGAR ÖPPNA 🎉 — BOKA DITT ÄVENTYR NU
-  </a>
-  <div class="h-[2px] w-full bg-white/5"></div>
-  
-  
-</div>
-
-<!-- Global font laddas numera via huvudlayouten -->
-
-<section data-section="hero" class="relative w-full h-[92vh] min-h-[640px] overflow-hidden">
-  <!-- Background media: video on all devices -->
-  <video
-    class="absolute inset-0 w-full h-full object-cover"
-    src="/videos/vildamng.mp4"
-    autoplay
-    muted
-    loop
-    playsinline
-    aria-hidden="true"
-    poster="/images/mnghero.jpeg"
-  ></video>
-
-  <!-- Dark overlay for readability -->
-  <div class="absolute inset-0 bg-black/50"></div>
-
-  <!-- Centered content -->
-  <div class="relative h-full flex items-center justify-center px-6 z-10">
-    <div class="w-full max-w-4xl text-center">
-      <h1 class="font-extrabold tracking-tight leading-[0.98] text-[2.4rem] xs:text-[3rem] sm:text-6xl md:text-7xl lg:text-[5.2rem]">
-        <span class="block text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]">DEN ULTIMATA</span>
-        <span class="block bg-gradient-to-r from-cyan-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_4px_18px_rgba(0,0,0,0.45)]">MONTENEGRO</span>
-        <span class="block bg-gradient-to-r from-lime-200 via-emerald-300 to-lime-200 bg-clip-text text-transparent drop-shadow-[0_4px_18px_rgba(0,0,0,0.35)]">UPPLEVELSEN</span>
-      </h1>
-
-      <p class="mt-5 text-white text-lg sm:text-xl md:text-2xl font-extrabold leading-relaxed max-w-2xl mx-auto">
-      Med handplockade pärlor runt hela Balkan
-      </p>
-
-      <div class="mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-        <!-- Teal filled button (like screenshot) -->
-        <a
-          href="/boka"
-          class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-300 to-teal-400 text-[#0b1f3a] uppercase tracking-wide font-extrabold px-8 py-3 sm:px-9 sm:py-3.5 text-base shadow-[0_6px_18px_rgba(0,0,0,0.25)] hover:from-cyan-200 hover:to-teal-300 focus:outline-none focus:ring-2 focus:ring-cyan-200 transition"
-        >
-          Utforska Upplevelser
-        </a>
-
-        <!-- Teal outline button (like screenshot) -->
-        <a
-          href="/videos/video.mp4"
-          class="inline-flex items-center justify-center rounded-xl bg-transparent text-cyan-300 uppercase tracking-wide font-extrabold px-8 py-3 sm:px-9 sm:py-3.5 text-base ring-2 ring-cyan-300 hover:bg-cyan-300/10 focus:outline-none focus:ring-2 focus:ring-cyan-200 transition"
-        >
-          Se trailer
-        </a>
-      </div>
-
-      
-    </div>
-  </div>
-
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 text-[10px] tracking-[0.35em]">SCROLLA</div>
-</section>
-
-
-
-
-
-   <!-- Features2 Widget ************** -->
-
-<div data-section="mission">
-  <Features2
-    title='Vi säljer inte resor. Vi skapar rum för utveckling. <span class="text-amber-600"></span>'
-    subtitle="På MediteranoBay designar vi upplevelser för team, nätverk och grupper som söker något mer- mellan berg och hav, möten och äventyr."
-  />
-</div>
-<div class="container mx-auto">
-  <section class="max-w-7xl mx-auto px-4 py-16 opacity-0 transform translate-y-8 transition-all duration-500 ease-out" 
-    id="reseSection"
-  >
-   <!-- Titel + ingress (ersätter tidigare centrerade block) -->
-    <div class="mb-14 md:mb-20">
-      <div class="grid md:grid-cols-12 gap-6 md:gap-8">
-        <!-- Full tagline (desktop & tablets) -->
-        <h2 class="md:col-span-7 display-h2 text-slate-900 hidden sm:block">
-          Vandra i <span class="bg-gradient-to-r from-cyan-700 via-teal-600 to-cyan-700 bg-clip-text text-transparent">bergen</span> på morgonen, ta ett dopp i <span class="bg-gradient-to-r from-lime-700 via-emerald-600 to-lime-700 bg-clip-text text-transparent">havet</span> på kvällen.
-        </h2>
-        <!-- Short mobile tagline -->
-        <h2 class="md:col-span-7 display-h2 text-slate-900 sm:hidden leading-tight">
-          <span class="bg-gradient-to-r from-cyan-700 via-teal-600 to-cyan-700 bg-clip-text text-transparent">Berg</span> på morgonen <span class="bg-gradient-to-r from-lime-700 via-emerald-600 to-lime-700 bg-clip-text text-transparent">Havet</span> på kvällen
-        </h2>
-        <p class="md:col-span-5 text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed md:pt-2 mt-4 md:mt-0">
-          Upplev landet där du på morgonen kan vandra i bergen och på eftermiddagen ta ett dopp i havet. Från äventyr i bergen till avkoppling vid Adriatiska havet – vi skräddarsyr upplevelser för grupp och företag.
-        </p>
-      </div>
-    </div>
-  <!-- Företagsresor -->
-  <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
-    <img 
-      src="/images/barka.png"
-      alt="Yacht sailing in Montenegro" 
-      width="800"
-      height="600"
-      loading="lazy"
-      decoding="async"
-      class="rounded-2xl w-full aspect-[4/3] object-cover"
-    />
-    <div class="space-y-4">
-      <div class="flex items-center gap-2">
-        <div class="bg-blue-900 p-2 rounded-lg">
-          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-          </svg>
-        </div>
-  <h3 class="display-h3 text-slate-900">Företagsresor</h3>
-      </div>
-  <p class="text-gray-600">Äventyrliga företagsresor</p>
-  <p class="text-gray-700">
-        Kombinera konferens och äventyr för att förbättra teambildningen. Segla i den vackra Adriatiska havet med kristallblått vatten, åk linbana över en hissnande kanjon, kör jeep runt höga berg eller prova på extrem canyoning.
-      </p>
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Konferensanläggningar med havsutsikt</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Teambuilding-aktiviteter</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Företagsevent och middagar</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Transport och logistik</span>
-        </li>
-      </ul>
-  <a href="/resor/foretagsresor" class="inline-flex items-center font-semibold text-black hover:underline underline-offset-4 decoration-black/60 transition focus:outline-none focus:ring-2 focus:ring-black/30 rounded-sm">
-        Läs mer
-        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-      </a>
-    </div>
-  </div>
-
- <!-- Gruppresor -->
-  <div class="grid md:grid-cols-2 gap-8 mb-16 items-start">
-    <div class="space-y-4">
-      <div class="flex items-center gap-2">
-        <div class="bg-amber-500 p-2 rounded-lg">
-          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-          </svg>
-        </div>
-  <h3 class="display-h3 text-slate-900">Gruppresor</h3>
-      </div>
-  <p class="text-gray-600">Upplev en smakfull resa med vänner</p>
-  <p class="text-gray-700">
-        Från gömd natur till de bästa attraktionerna, kulturella utflykter och mysiga restauranger. Sockersöta kloster, vidunderliga berg och sandstränder med kristallklart vatten.
-      </p>
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Stadsvandring och kulturupplevelser</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Vinprovning och gastronomi</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Flexibla gruppstorlekar</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Lokala guider och expertis</span>
-        </li>
-      </ul>
-  <a href="/resor/gruppresor" class="inline-flex items-center font-semibold text-black hover:underline underline-offset-4 decoration-black/60 transition focus:outline-none focus:ring-2 focus:ring-black/30 rounded-sm">
-        Läs mer
-        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-      </a>
-    </div>
-    <img 
-      src="/images/grupp.jpg"
-      alt="Group hiking in mountains" 
-      width="800"
-      height="600"
-      loading="lazy"
-      decoding="async"
-      class="rounded-2xl w-full aspect-[4/3] object-cover"
-    />
-  </div>
-
-  <!-- Sportresor -->
-  <div class="grid md:grid-cols-2 gap-8 items-start">
-    <img 
-      src="/images/biciklizam.jpg"
-      alt="Sports activities in Montenegro" 
-      width="800"
-      height="600"
-      loading="lazy"
-      decoding="async"
-      class="rounded-2xl w-full aspect-[4/3] object-cover order-2 md:order-1"
-    />
-    <div class="space-y-4 order-1 md:order-2">
-      <div class="flex items-center gap-2">
-        <div class="bg-cyan-500 p-2 rounded-lg">
-          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
-  <h3 class="display-h3 text-slate-900">Sportresor</h3>
-      </div>
-  <p class="text-gray-600">Från yogapass till vattensport</p>
-  <p class="text-gray-700">
-        Med det härligt varmt klimat året runt är både våren och hösten perfekt tid för träningsläger med lagom temperatur och ett lugnt och behagligt tempo.
-      </p>
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Fotbollsläger och träningsanläggningar</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Seglingskurser och båtuthyrning</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Vandring och bergsklättring</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
-          <span>Yoga och wellness-program</span>
-        </li>
-      </ul>
-  <a href="/resor/sportresor" class="inline-flex items-center font-semibold text-black hover:underline underline-offset-4 decoration-black/60 transition focus:outline-none focus:ring-2 focus:ring-black/30 rounded-sm">
-        Läs mer
-        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-  <script>
-  function handleScroll() {
-    const section = document.getElementById('reseSection');
-    if (!section) return;
-
-    const sectionTop = section.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (sectionTop < windowHeight * 0.75) {
-      section.classList.remove('opacity-0', 'translate-y-8');
-      section.classList.add('opacity-100', 'translate-y-0');
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediteranoBay — Företagsupplevelser i Montenegro</title>
+  <meta name="description" content="Vi skapar minnesvärda företagsresor, konferenser och teamupplevelser i en av Europas mest inspirerande destinationer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mediteranobay.com/" />
+  <meta property="og:title" content="MediteranoBay — Corporate Offsites in Montenegro" />
+  <meta property="og:description" content="Vi skapar minnesvärda företagsresor, konferenser och teamupplevelser i en av Europas mest inspirerande destinationer." />
+  <meta property="og:image" content="https://mediteranobay.com/images/kotorbukten.jpg" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0b3c5d;
+      --navy-dark: #071e2e;
+      --gold: #c9a227;
+      --gold-light: #e8bb3d;
+      --gold-dark: #a88420;
     }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* ===== NAV ===== */
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid rgba(0,0,0,0.07); backdrop-filter: blur(8px); }
+    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon { width: 34px; height: 34px; background: var(--navy); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-logo-wordmark { display: flex; flex-direction: column; }
+    .nav-logo-name { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: var(--navy); line-height: 1.1; text-transform: uppercase; }
+    .nav-logo-sub { font-size: 8px; font-weight: 500; letter-spacing: 0.16em; color: #9ca3af; text-transform: uppercase; line-height: 1.2; }
+    .nav-links { display: none; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 11px; font-weight: 700; color: #374151; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta { background: var(--gold); color: #fff; font-size: 11px; font-weight: 700; padding: 10px 20px; border-radius: 4px; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+    .nav-cta:hover { background: var(--gold-dark); }
+    .hamburger { display: flex; flex-direction: column; gap: 5px; padding: 4px; background: none; border: none; cursor: pointer; }
+    .hamburger span { width: 22px; height: 2px; background: #374151; border-radius: 2px; display: block; }
+    .mobile-menu { display: none; border-top: 1px solid #f3f4f6; padding: 12px 24px 16px; background: #fff; }
+    .mobile-menu a { display: block; padding: 10px 0; font-size: 13px; font-weight: 600; color: #374151; text-decoration: none; border-bottom: 1px solid #f3f4f6; letter-spacing: 0.05em; text-transform: uppercase; }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ===== HERO ===== */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; margin-top: 68px; }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(7,30,46,0.72) 50%, rgba(7,30,46,0.3) 100%); }
+    .hero-pause { position: absolute; bottom: 32px; right: 32px; z-index: 3; background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.35); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(4px); padding: 0; }
+    .hero-pause:hover { background: rgba(255,255,255,0.25); }
+    .hero-scroll { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; flex-direction: column; align-items: center; opacity: 0.6; }
+    .hero-scroll-line { width: 1px; height: 40px; background: #fff; animation: scrollpulse 1.8s ease-in-out infinite; }
+    @keyframes scrollpulse { 0%, 100% { opacity: 0.4; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.2); } }
+    .hero-content { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 80px 32px; width: 100%; }
+    .hero-title { font-size: clamp(2.4rem, 5.5vw, 4.4rem); font-weight: 800; line-height: 1.06; color: #fff; letter-spacing: -0.025em; max-width: 680px; margin-bottom: 20px; }
+    .hero-sub { font-size: clamp(0.95rem, 1.5vw, 1.05rem); color: rgba(255,255,255,0.78); max-width: 420px; line-height: 1.7; margin-bottom: 36px; }
+    .btn-gold { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: #fff; font-weight: 700; font-size: 12px; letter-spacing: 0.08em; padding: 14px 28px; border-radius: 4px; text-decoration: none; text-transform: uppercase; border: none; cursor: pointer; }
+    .btn-gold:hover { background: var(--gold-dark); }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 40px; }
+    .hero-badge { display: flex; align-items: center; gap: 10px; }
+    .hero-badge-icon { width: 36px; height: 36px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .hero-badge-label { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.3; letter-spacing: 0.03em; max-width: 80px; }
+
+    /* ===== DESTINATION SECTION ===== */
+    .destination-section { padding: 96px 32px; background: #fff; }
+    .destination-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: center; }
+    .dest-label { font-size: 10px; font-weight: 700; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+    .dest-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: #0d2235; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 20px; }
+    .dest-desc { font-size: 14px; color: #6b7280; line-height: 1.8; margin-bottom: 28px; }
+    .dest-link { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold); text-decoration: none; text-transform: uppercase; }
+    .dest-link:hover { color: var(--gold-dark); }
+    .dest-images { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .dest-images img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px; display: block; }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; }
+    .about-dark { background: #0d2235; padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
+    .about-label { font-size: 10px; font-weight: 700; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
+    .about-title { font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .about-desc { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.8; max-width: 360px; margin-bottom: 28px; }
+    .about-link { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold); text-decoration: none; text-transform: uppercase; }
+    .about-link:hover { color: var(--gold-light); }
+    .about-img-wrap { position: relative; overflow: hidden; }
+    .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(25%); }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-section { position: relative; background: #0d2235; overflow: hidden; }
+    .contact-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.12; }
+    .contact-inner { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 96px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 16px; }
+    .contact-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; max-width: 360px; }
+    .contact-form { display: flex; flex-direction: column; gap: 12px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-field { width: 100%; background: rgba(255,255,255,0.95); border: 1px solid transparent; border-radius: 4px; padding: 12px 14px; font-size: 13px; font-family: inherit; outline: none; color: #1a1a2e; }
+    .form-field::placeholder { color: #9ca3af; }
+    .form-field:focus { border-color: var(--gold); }
+    textarea.form-field { resize: vertical; min-height: 100px; }
+    .btn-gold-full { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--gold); color: #fff; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; padding: 15px; border-radius: 4px; text-transform: uppercase; border: none; cursor: pointer; font-family: inherit; }
+    .btn-gold-full:hover { background: var(--gold-dark); }
+
+    /* ===== FOOTER ===== */
+    .footer { background: var(--navy); padding: 64px 32px 32px; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 14px; }
+    .footer-logo-icon { width: 34px; height: 34px; background: rgba(255,255,255,0.1); border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+    .footer-logo-name { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; color: #fff; }
+    .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 20px; }
+    .social-row { display: flex; gap: 10px; }
+    .social-btn { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s; }
+    .social-btn:hover { background: rgba(255,255,255,0.2); }
+    .footer-col-label { font-size: 9px; font-weight: 800; letter-spacing: 0.2em; color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 16px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.58); text-decoration: none; }
+    .footer-links a:hover { color: #fff; }
+    .footer-links li span { font-size: 13px; color: rgba(255,255,255,0.58); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 11px; color: rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: space-between; }
+    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 1024px) {
+      .nav-links { display: flex; }
+      .hamburger { display: none; }
+    }
+    @media (max-width: 1023px) {
+      .about-dark { padding: 56px 40px; }
+      .destination-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 767px) {
+      .hero { min-height: 92vh; }
+      .hero-badges { gap: 16px; }
+      .about-section { grid-template-columns: 1fr; }
+      .about-img-wrap { min-height: 280px; }
+      .about-dark { padding: 48px 24px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; padding: 64px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .destination-section { padding: 64px 24px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="MediteranoBay hem">
+      <div class="nav-logo-icon">
+        <span style="color:#fff;font-weight:900;font-size:16px;letter-spacing:-1px;">M</span>
+      </div>
+      <div class="nav-logo-wordmark">
+        <span class="nav-logo-name">MEDITERANOBAY</span>
+        <span class="nav-logo-sub">Företagsupplevelser i Montenegro</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="/upplevelser">Upplevelser</a>
+      <a href="/montenegro">Montenegro</a>
+      <a href="/blog">Journal</a>
+      <a href="/om">Om oss</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;">
+      <a href="#kontakt" class="nav-cta">BOKA MÖTE</a>
+      <button class="hamburger" id="menu-btn" aria-label="Öppna meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/upplevelser">Upplevelser</a>
+    <a href="/montenegro">Montenegro</a>
+    <a href="/blog">Journal</a>
+    <a href="/om">Om oss</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" aria-labelledby="hero-h1">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="/videos/vildamng.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+
+  <button class="hero-pause" type="button" id="pause-btn" aria-label="Pausa video">
+    <svg id="pause-icon" width="13" height="13" viewBox="0 0 24 24" fill="#fff"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+    <svg id="play-icon" width="13" height="13" viewBox="0 0 24 24" fill="#fff" style="display:none;"><polygon points="5,3 19,12 5,21"/></svg>
+  </button>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+  </div>
+
+  <div class="hero-content">
+    <h1 id="hero-h1" class="hero-title fade-up">
+      Vandra i bergen<br />på morgonen.<br />Ta ett dopp i havet<br />på kvällen.
+    </h1>
+    <p class="hero-sub fade-up delay-1">
+      Vi skapar skräddarsydda företagsupplevelser i Montenegro där natur, möten och gemenskap blir en del av resan.
+    </p>
+    <a href="#kontakt" class="btn-gold fade-up delay-2">
+      BOKA ETT KOSTNADSFRITT MÖTE
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+
+    <div class="hero-badges fade-up delay-3">
+      <div class="hero-badge">
+        <div class="hero-badge-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </div>
+        <span class="hero-badge-label">Svensk<br />projektledning</span>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>
+          </svg>
+        </div>
+        <span class="hero-badge-label">Lokal<br />destinationsexpert</span>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+          </svg>
+        </div>
+        <span class="hero-badge-label">Skräddarsydda<br />upplevelser</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FÖRETAGSPAKET ========== -->
+<CorporatePackages />
+
+<!-- ========== DESTINATION ========== -->
+<section class="destination-section">
+  <div class="destination-inner">
+    <div class="fade-up">
+      <div class="dest-label">Montenegro</div>
+      <h2 class="dest-title">En destination.<br />Oändliga möjligheter.</h2>
+      <p class="dest-desc">Där berg möter hav och varje dag bjuder på något nytt. Autentiskt, vackert och nära.</p>
+      <a href="/kusten" class="dest-link">
+        Upptäck Montenegro
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <div class="dest-images fade-up delay-2">
+      <img src="/images/morecovek.webp" alt="Hiker overlooking Montenegro coast" loading="lazy" />
+      <img src="/images/bluecave.webp" alt="Crystal blue water Montenegro" loading="lazy" />
+      <img src="/images/perast.jpg" alt="Perast historic town" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="about-section" aria-label="Om MediteranoBay">
+  <div class="about-dark fade-up">
+    <div class="about-label">Vi är MediteranoBay</div>
+    <h2 class="about-title">Personliga.<br />Lokala.<br />Engagerade.</h2>
+    <p class="about-desc">Vi brinner för Montenegro och för att skapa minnesvärda upplevelser som gör skillnad.</p>
+    <a href="/om" class="about-link">
+      Läs mer om oss
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+  <div class="about-img-wrap">
+    <img src="/images/grupp.jpg" alt="MediteranoBay team" loading="lazy" />
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="kontakt" class="contact-section">
+  <img class="contact-bg-img" src="/images/kotorbukten.jpg" alt="" aria-hidden="true" loading="lazy" />
+  <div class="contact-inner">
+    <div class="contact-left fade-up">
+      <h2 class="contact-title">Låt oss planera<br />er nästa företagsresa.</h2>
+      <p class="contact-desc">Berätta om era planer så återkommer vi med ett förslag som är helt anpassat efter era behov.</p>
+    </div>
+    <div class="fade-up delay-2">
+      <form method="POST" action="/tack" class="contact-form">
+        <div class="form-row">
+          <input class="form-field" type="text" name="company" placeholder="Företag" required />
+          <input class="form-field" type="text" name="name" placeholder="Namn" required />
+        </div>
+        <div class="form-row">
+          <input class="form-field" type="email" name="email" placeholder="E-post" required />
+          <input class="form-field" type="text" name="travelers" placeholder="Antal deltagare" required />
+        </div>
+        <input class="form-field" type="text" name="travel_period" placeholder="Önskad reseperiod" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" />
+        <textarea class="form-field" name="message" rows="4" placeholder="Meddelande"></textarea>
+        <button type="submit" class="btn-gold-full">
+          SKICKA FÖRFRÅGAN
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+
+      <div>
+        <a href="/" class="footer-logo-wrap" aria-label="MediteranoBay">
+          <div class="footer-logo-icon">
+            <span style="color:#fff;font-weight:900;font-size:15px;">M</span>
+          </div>
+          <span class="footer-logo-name">MEDITERANOBAY</span>
+        </a>
+        <p class="footer-tagline">Vi skapar minnesvärda företagsupplevelser i Montenegro och västra Balkan.</p>
+        <div class="social-row">
+          <a href="https://linkedin.com/company/mediteranobay" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://instagram.com/mediteranobay" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.7" fill="#fff"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-label">Snabblänkar</div>
+        <ul class="footer-links">
+          <li><a href="/resor/foretagsresor">Upplevelser</a></li>
+          <li><a href="/kusten">Montenegro</a></li>
+          <li><a href="/blog">Journal</a></li>
+          <li><a href="/om">Om oss</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-label">Destinationer</div>
+        <ul class="footer-links">
+          <li><a href="/kusten">Montenegro</a></li>
+          <li><a href="/belgrad">Serbien</a></li>
+          <li><a href="/hercegnovi">Bosnien &amp; Hercegovina</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-label">Kontakt</div>
+        <ul class="footer-links">
+          <li><a href="mailto:info@mediteranobay.com">info@mediteranobay.com</a></li>
+          <li><a href="tel:+46739347034">073-9347034</a></li>
+          <li><span>Stockholm, Sverige</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-label">Följ oss</div>
+        <ul class="footer-links">
+          <li>
+            <a href="https://linkedin.com/company/mediteranobay" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:8px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/mediteranobay" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:8px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.7" fill="currentColor"/></svg>
+              Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 MediteranoBay AB. Alla rättigheter förbehållna.</span>
+      <span>
+        <a href="/resevillkor">Resevillkor</a>
+        &nbsp;·&nbsp;
+        <a href="/terms">Villkor</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.style.display === 'block';
+      mobileMenu.style.display = open ? 'none' : 'block';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+    });
   }
 
-  // Add scroll event listener
-  window.addEventListener('scroll', handleScroll);
-  // Initial check in case section is already in view
-  handleScroll();
+  // Video pause/play
+  const pauseBtn = document.getElementById('pause-btn');
+  const video = document.querySelector('.hero-video') as HTMLVideoElement | null;
+  const pauseIcon = document.getElementById('pause-icon') as HTMLElement | null;
+  const playIcon = document.getElementById('play-icon') as HTMLElement | null;
+  if (pauseBtn && video && pauseIcon && playIcon) {
+    pauseBtn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        pauseIcon.style.display = '';
+        playIcon.style.display = 'none';
+        pauseBtn.setAttribute('aria-label', 'Pausa video');
+      } else {
+        video.pause();
+        pauseIcon.style.display = 'none';
+        playIcon.style.display = '';
+        pauseBtn.setAttribute('aria-label', 'Spela upp video');
+      }
+    });
+  }
+
+  // Fade-up on scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
-
-
-
-<!-- NYTT – lägg precis här -->
-<div data-section="packages"><Packages /></div>
-
-<!-- Why Montenegro Section (light, no blue background) -->
-<section data-section="unesco" class="py-16 sm:py-20 lg:py-24 bg-white">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-slate-900 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">Varför Montenegro?</h2>
-
-    <!-- Feature icons -->
-    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-      <!-- UNESCO Heritage -->
-      <div class="flex flex-col items-center">
-        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-cyan-300 flex items-center justify-center shadow">
-          <svg class="w-9 h-9 text-[#0b1f3a]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <polygon points="12,2 15,8.5 22,9.3 17,14 18.5,21 12,17.8 5.5,21 7,14 2,9.3 9,8.5" />
-          </svg>
-        </div>
-        <div class="mt-5 font-extrabold text-slate-900 text-lg">UNESCO‑arv</div>
-        <div class="mt-1 text-slate-500 text-sm">Historiska platser och kulturskatter</div>
-      </div>
-
-      <!-- Group Experiences -->
-      <div class="flex flex-col items-center">
-        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-cyan-300 flex items-center justify-center shadow">
-          <svg class="w-9 h-9 text-[#0b1f3a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-          </svg>
-        </div>
-        <div class="mt-5 font-extrabold text-slate-900 text-lg">Gruppupplevelser</div>
-        <div class="mt-1 text-slate-500 text-sm">Skräddarsydda för team och organisationer</div>
-      </div>
-
-      <!-- Year-Round -->
-      <div class="flex flex-col items-center">
-        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-cyan-300 flex items-center justify-center shadow">
-          <svg class="w-9 h-9 text-[#0b1f3a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-            <path stroke-linecap="round" d="M16 3v4M8 3v4M3 11h18"></path>
-          </svg>
-        </div>
-        <div class="mt-5 font-extrabold text-slate-900 text-lg">Året runt</div>
-        <div class="mt-1 text-slate-500 text-sm">Perfekt väder från april till oktober</div>
-      </div>
-
-      <!-- Premium Service -->
-      <div class="flex flex-col items-center">
-        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-cyan-300 flex items-center justify-center shadow">
-          <svg class="w-9 h-9 text-[#0b1f3a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="12" cy="8" r="4"></circle>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5"></path>
-          </svg>
-        </div>
-        <div class="mt-5 font-extrabold text-slate-900 text-lg">Premiumservice</div>
-        <div class="mt-1 text-slate-500 text-sm">Lyxigt boende och mat</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA Section: Light style like screenshot -->
-<section data-section="cta-card" class="py-16 sm:py-20 bg-gradient-to-b from-blue-50 via-white to-amber-50/40">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <h2 class="text-slate-900 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">Redo för livets äventyr?</h2>
-    <p class="mt-4 text-slate-600 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
-      Boka din Montenegro‑upplevelse idag och gå med i tusentals äventyrare som har upptäckt paradiset.
-    </p>
-    <div class="mt-8 flex items-center justify-center gap-3 sm:gap-4">
-      <!-- Primary filled button -->
-      <a href="/boka" class="inline-flex items-center gap-3 rounded-full bg-cyan-300 text-[#0b1f3a] font-extrabold px-6 py-3 sm:px-7 sm:py-3.5 text-base shadow hover:bg-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-200 transition">
-        Börja Planera
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-
-      <!-- Secondary outlined button -->
-      <a href="/kontakt" class="inline-flex items-center rounded-full bg-white text-slate-900 font-extrabold px-6 py-3 sm:px-7 sm:py-3.5 text-base ring-2 ring-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-300 transition">
-        Kontakt
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<section id="blog" data-section="blog-teaser" class="py-12 sm:py-16 bg-gradient-to-b from-blue-50 via-white to-white relative overflow-hidden">
-  <div class="max-w-5xl mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold mb-3 text-slate-900">
-        Låt dig inspireras i vår reseblogg 
-      </h2>
-      <p class="text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
-        Smaka på Montenegro. Dyk ner i vår resa om Montenegro och låt dig inspireras av inhemska maträtter, pampiga sevärdheter och magnifik historia.
-      </p>
-    </div>
-
-    <div class="grid gap-6 md:grid-cols-3">
-      <!-- Kort 1 -->
-      <a href="/skatt" class="group rounded-2xl bg-white shadow-md hover:shadow-xl transition p-0 overflow-hidden flex flex-col">
-        <div class="relative">
-          <img src="/images/muslje.jpg" alt="Mat & Vin i Montenegro" width="400" height="250" loading="lazy" decoding="async" class="h-40 sm:h-48 w-full object-cover transition duration-300 group-hover:scale-[1.05]" />
-          <span class="absolute top-4 left-4 inline-flex items-center rounded-full bg-orange-500/90 text-white text-[11px] font-semibold px-3 py-1 shadow">
-            Mat & Vin
-          </span>
-        </div>
-        <div class="p-5 flex flex-col flex-1">
-          <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1 leading-snug">Mat & Vin i Montenegro</h3>
-          <p class="text-sm text-slate-600 mb-3 leading-relaxed">
-            Upptäck Montenegros kulinariska traditioner och vingårdar med lokala specialiteter och autentiska smaker.
-          </p>
-        </div>
-      </a>
-
-      <!-- Kort 2 -->
-      <a href="/skatt" class="group rounded-2xl bg-white shadow-md hover:shadow-xl transition p-0 overflow-hidden flex flex-col">
-        <div class="relative">
-          <img src="/images/biciklizam.jpg" alt="Äventyr vid kusten" width="400" height="250" loading="lazy" decoding="async" class="h-40 sm:h-48 w-full object-cover transition duration-300 group-hover:scale-[1.05]" />
-          <span class="absolute top-4 left-4 inline-flex items-center rounded-full bg-green-600/90 text-white text-[11px] font-semibold px-3 py-1 shadow">
-            Äventyr
-          </span>
-        </div>
-        <div class="p-5 flex flex-col flex-1">
-          <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1 leading-snug">Äventyr vid kusten</h3>
-            <p class="text-sm text-slate-600 mb-3 leading-relaxed">
-              Tips om vandring, cykling och aktiviteter längs Adriatiska havet med breathtaking vyer och kristallklart vatten.
-            </p>
-        </div>
-      </a>
-
-      <!-- Kort 3 -->
-      <a href="/skatt" class="group rounded-2xl bg-white shadow-md hover:shadow-xl transition p-0 overflow-hidden flex flex-col">
-        <div class="relative">
-          <img src="/images/Prcanj.jpeg" alt="Kultur & Historia" width="400" height="250" loading="lazy" decoding="async" class="h-40 sm:h-48 w-full object-cover transition duration-300 group-hover:scale-[1.05]" />
-          <span class="absolute top-4 left-4 inline-flex items-center rounded-full bg-yellow-500/90 text-white text-[11px] font-semibold px-3 py-1 shadow">
-            Kultur
-          </span>
-        </div>
-        <div class="p-5 flex flex-col flex-1">
-          <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1 leading-snug">Kultur & Historia</h3>
-          <p class="text-sm text-slate-600 mb-3 leading-relaxed">
-            Få inspiration om kuststäder, historia och kulturupplevelser i Montenegros charmiga medeltidsstäder.
-          </p>
-        </div>
-      </a>
-    </div>
-
-    <div class="text-center mt-12">
-  <a href="/blogg" class="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold bg-white text-black hover:bg-slate-100 transition text-base md:text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-black/20">
-        Till bloggen
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-    </div>
-  </div>
-
-  <!-- Dekorativa blobs -->
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30 absolute -top-32 -left-32"></div>
-    <div class="w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-20 absolute -bottom-32 -right-32"></div>
-  </div>
-</section>
-
-
-  
-
- 
-</Layout>
-
+</body>
+</html>
